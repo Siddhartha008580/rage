@@ -1,0 +1,4907 @@
+{
+  "schema_version": 1,
+  "source_file": "d5.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "unstructured",
+  "tables": [
+    {
+      "table_id": "page-0006-table-01",
+      "caption": "Table 1: Adverse Reactions in Pool of Placebo-Controlled Trials That Occurred in ≥5% of TRULICITY-Treated",
+      "source_pages": [
+        6
+      ],
+      "bbox": [
+        38.30769230769231,
+        73.67999999999995,
+        573.7923161538462,
+        193.81999999999994
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "Placebo",
+            "TRULICITY 0.75 mg",
+            "TRULICITY 1.5 mg"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "(N=568)",
+            "(N=836)",
+            "(N=834)"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "%",
+            "%",
+            "%"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Nausea",
+            "5.3",
+            "12.4",
+            "21.1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Diarrheaa",
+            "6.7",
+            "8.9",
+            "12.6"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Vomitingb",
+            "2.3",
+            "6.0",
+            "12.7"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Abdominal Painc",
+            "4.9",
+            "6.5",
+            "9.4"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Decreased Appetite",
+            "1.6",
+            "4.9",
+            "8.6"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dyspepsia",
+            "2.3",
+            "4.1",
+            "5.8"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fatigued",
+            "2.6",
+            "4.2",
+            "5.6"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Adverse Reaction",
+          "Placebo\n(N=568)\n%",
+          "TRULICITY 0.75 mg\n(N=836)\n%",
+          "TRULICITY 1.5 mg\n(N=834)\n%"
+        ],
+        [
+          "Nausea",
+          "5.3",
+          "12.4",
+          "21.1"
+        ],
+        [
+          "Diarrheaa",
+          "6.7",
+          "8.9",
+          "12.6"
+        ],
+        [
+          "Vomitingb",
+          "2.3",
+          "6.0",
+          "12.7"
+        ],
+        [
+          "Abdominal Painc",
+          "4.9",
+          "6.5",
+          "9.4"
+        ],
+        [
+          "Decreased Appetite",
+          "1.6",
+          "4.9",
+          "8.6"
+        ],
+        [
+          "Dyspepsia",
+          "2.3",
+          "4.1",
+          "5.8"
+        ],
+        [
+          "Fatigued",
+          "2.6",
+          "4.2",
+          "5.6"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Adverse Reaction</td><td>Placebo<br>(N=568)<br>%</td><td>TRULICITY 0.75 mg<br>(N=836)<br>%</td><td>TRULICITY 1.5 mg<br>(N=834)<br>%</td></tr>\n<tr><td>Nausea</td><td>5.3</td><td>12.4</td><td>21.1</td></tr>\n<tr><td>Diarrheaa</td><td>6.7</td><td>8.9</td><td>12.6</td></tr>\n<tr><td>Vomitingb</td><td>2.3</td><td>6.0</td><td>12.7</td></tr>\n<tr><td>Abdominal Painc</td><td>4.9</td><td>6.5</td><td>9.4</td></tr>\n<tr><td>Decreased Appetite</td><td>1.6</td><td>4.9</td><td>8.6</td></tr>\n<tr><td>Dyspepsia</td><td>2.3</td><td>4.1</td><td>5.8</td></tr>\n<tr><td>Fatigued</td><td>2.6</td><td>4.2</td><td>5.6</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Nausea",
+          "values": [
+            5.3,
+            12.4,
+            21.1
+          ]
+        },
+        {
+          "label": "Diarrheaa",
+          "values": [
+            6.7,
+            8.9,
+            12.6
+          ]
+        },
+        {
+          "label": "Vomitingb",
+          "values": [
+            2.3,
+            6.0,
+            12.7
+          ]
+        },
+        {
+          "label": "Abdominal Painc",
+          "values": [
+            4.9,
+            6.5,
+            9.4
+          ]
+        },
+        {
+          "label": "Decreased Appetite",
+          "values": [
+            1.6,
+            4.9,
+            8.6
+          ]
+        },
+        {
+          "label": "Dyspepsia",
+          "values": [
+            2.3,
+            4.1,
+            5.8
+          ]
+        },
+        {
+          "label": "Fatigued",
+          "values": [
+            2.6,
+            4.2,
+            5.6
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0006-table-02",
+      "caption": "Table 2: Adverse Reactions That Occurred in ≥5% of TRULICITY-treated Adult Patients with Type 2 Diabetes",
+      "source_pages": [
+        6
+      ],
+      "bbox": [
+        38.30769230769231,
+        524.82998,
+        573.7923161538462,
+        618.81998
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "TRULICITY 1.5 mg",
+            "TRULICITY 3 mg",
+            "TRULICITY 4.5 mg"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "(N=612)",
+            "(N=616)",
+            "(N=614)"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "%",
+            "%",
+            "%"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Nausea",
+            "13.4",
+            "15.6",
+            "16.4"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Diarrhea",
+            "7.0",
+            "11.4",
+            "10.7"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Vomiting",
+            "5.6",
+            "8.3",
+            "9.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dyspepsia",
+            "2.8",
+            "5.0",
+            "2.6"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Adverse Reaction",
+          "TRULICITY 1.5 mg\n(N=612)\n%",
+          "TRULICITY 3 mg\n(N=616)\n%",
+          "TRULICITY 4.5 mg\n(N=614)\n%"
+        ],
+        [
+          "Nausea",
+          "13.4",
+          "15.6",
+          "16.4"
+        ],
+        [
+          "Diarrhea",
+          "7.0",
+          "11.4",
+          "10.7"
+        ],
+        [
+          "Vomiting",
+          "5.6",
+          "8.3",
+          "9.3"
+        ],
+        [
+          "Dyspepsia",
+          "2.8",
+          "5.0",
+          "2.6"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Adverse Reaction</td><td>TRULICITY 1.5 mg<br>(N=612)<br>%</td><td>TRULICITY 3 mg<br>(N=616)<br>%</td><td>TRULICITY 4.5 mg<br>(N=614)<br>%</td></tr>\n<tr><td>Nausea</td><td>13.4</td><td>15.6</td><td>16.4</td></tr>\n<tr><td>Diarrhea</td><td>7.0</td><td>11.4</td><td>10.7</td></tr>\n<tr><td>Vomiting</td><td>5.6</td><td>8.3</td><td>9.3</td></tr>\n<tr><td>Dyspepsia</td><td>2.8</td><td>5.0</td><td>2.6</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Nausea",
+          "values": [
+            13.4,
+            15.6,
+            16.4
+          ]
+        },
+        {
+          "label": "Diarrhea",
+          "values": [
+            7.0,
+            11.4,
+            10.7
+          ]
+        },
+        {
+          "label": "Vomiting",
+          "values": [
+            5.6,
+            8.3,
+            9.3
+          ]
+        },
+        {
+          "label": "Dyspepsia",
+          "values": [
+            2.8,
+            5.0,
+            2.6
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0007-table-01",
+      "caption": "Table 3: Incidence (%) of Hypoglycemia in Adult Patients with Type 2 Diabetes Mellitus in Placebo-Controlled",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        38.64,
+        94.22000000000003,
+        573.45999,
+        503.83001
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.933,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "TRULICITY 0.75 mg",
+        "TRULICITY 1.5 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to Metformin",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(26 weeks)",
+            "N=177",
+            "N=302",
+            "N=304"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hypoglycemia with a\nglucose level <54 mg/dL",
+            "0",
+            "0.3",
+            "0.7"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe hypoglycemia",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to Metformin +",
+            "Pioglitazone",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(26 weeks)",
+            "N=141",
+            "N=280",
+            "N=279"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hypoglycemia with a\nglucose level <54 mg/dL",
+            "1.4",
+            "2.1",
+            "0"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe hypoglycemia",
+            "0",
+            "0",
+            "0"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to Glimepiride",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(24 weeks)",
+            "N=60",
+            "-",
+            "N=239"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hypoglycemia with a\nglucose level <54 mg/dL",
+            "0",
+            "-",
+            "3.3"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe hypoglycemia",
+            "0",
+            "-",
+            "0"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "In Combination with Insulin",
+            "Glargine ± Metformin",
+            "",
+            ""
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(28 weeks)",
+            "N=150",
+            "-",
+            "N=150"
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hypoglycemia with a\nglucose level <54 mg/dL",
+            "9.3",
+            "-",
+            "14.7"
+          ],
+          "source_row_index": 15,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe hypoglycemia",
+            "0",
+            "-",
+            "0.7"
+          ],
+          "source_row_index": 16,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to SGLT2i ± Metformin",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 17,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(24 weeks)",
+            "N=140",
+            "N=141",
+            "N=142"
+          ],
+          "source_row_index": 18,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hypoglycemia with a\nglucose level <54 mg/dL",
+            "0.7",
+            "0.7",
+            "0.7"
+          ],
+          "source_row_index": 19,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe hypoglycemia",
+            "0",
+            "0.7",
+            "0"
+          ],
+          "source_row_index": 20,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 6",
+        "Cells reconstructed from PDF word positions in source row 14"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "TRULICITY 0.75 mg",
+          "TRULICITY 1.5 mg"
+        ],
+        [
+          "Add-on to Metformin",
+          null,
+          null,
+          null
+        ],
+        [
+          "(26 weeks)",
+          "N=177",
+          "N=302",
+          "N=304"
+        ],
+        [
+          "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "0",
+          "0.3",
+          "0.7"
+        ],
+        [
+          "Severe hypoglycemia",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "Add-on to Metformin + Pioglitazone",
+          null,
+          null,
+          null
+        ],
+        [
+          "(26 weeks)",
+          "N=141",
+          "N=280",
+          "N=279"
+        ],
+        [
+          "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "1.4",
+          "2.1",
+          "0"
+        ],
+        [
+          "Severe hypoglycemia",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "Add-on to Glimepiride",
+          null,
+          null,
+          null
+        ],
+        [
+          "(24 weeks)",
+          "N=60",
+          "-",
+          "N=239"
+        ],
+        [
+          "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "0",
+          "-",
+          "3.3"
+        ],
+        [
+          "Severe hypoglycemia",
+          "0",
+          "-",
+          "0"
+        ],
+        [
+          "In Combination with Insulin Glargine ± Metformin",
+          null,
+          null,
+          null
+        ],
+        [
+          "(28 weeks)",
+          "N=150",
+          "-",
+          "N=150"
+        ],
+        [
+          "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "9.3",
+          "-",
+          "14.7"
+        ],
+        [
+          "Severe hypoglycemia",
+          "0",
+          "-",
+          "0.7"
+        ],
+        [
+          "Add-on to SGLT2i ± Metformin",
+          null,
+          null,
+          null
+        ],
+        [
+          "(24 weeks)",
+          "N=140",
+          "N=141",
+          "N=142"
+        ],
+        [
+          "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "0.7",
+          "0.7",
+          "0.7"
+        ],
+        [
+          "Severe hypoglycemia",
+          "0",
+          "0.7",
+          "0"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>TRULICITY 0.75 mg</th><th>TRULICITY 1.5 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Add-on to Metformin</td><td></td><td></td><td></td></tr>\n<tr><td>(26 weeks)</td><td>N=177</td><td>N=302</td><td>N=304</td></tr>\n<tr><td>Hypoglycemia with a<br>glucose level &lt;54 mg/dL</td><td>0</td><td>0.3</td><td>0.7</td></tr>\n<tr><td>Severe hypoglycemia</td><td>0</td><td>0</td><td>0</td></tr>\n<tr><td>Add-on to Metformin + Pioglitazone</td><td></td><td></td><td></td></tr>\n<tr><td>(26 weeks)</td><td>N=141</td><td>N=280</td><td>N=279</td></tr>\n<tr><td>Hypoglycemia with a<br>glucose level &lt;54 mg/dL</td><td>1.4</td><td>2.1</td><td>0</td></tr>\n<tr><td>Severe hypoglycemia</td><td>0</td><td>0</td><td>0</td></tr>\n<tr><td>Add-on to Glimepiride</td><td></td><td></td><td></td></tr>\n<tr><td>(24 weeks)</td><td>N=60</td><td>-</td><td>N=239</td></tr>\n<tr><td>Hypoglycemia with a<br>glucose level &lt;54 mg/dL</td><td>0</td><td>-</td><td>3.3</td></tr>\n<tr><td>Severe hypoglycemia</td><td>0</td><td>-</td><td>0</td></tr>\n<tr><td>In Combination with Insulin Glargine ± Metformin</td><td></td><td></td><td></td></tr>\n<tr><td>(28 weeks)</td><td>N=150</td><td>-</td><td>N=150</td></tr>\n<tr><td>Hypoglycemia with a<br>glucose level &lt;54 mg/dL</td><td>9.3</td><td>-</td><td>14.7</td></tr>\n<tr><td>Severe hypoglycemia</td><td>0</td><td>-</td><td>0.7</td></tr>\n<tr><td>Add-on to SGLT2i ± Metformin</td><td></td><td></td><td></td></tr>\n<tr><td>(24 weeks)</td><td>N=140</td><td>N=141</td><td>N=142</td></tr>\n<tr><td>Hypoglycemia with a<br>glucose level &lt;54 mg/dL</td><td>0.7</td><td>0.7</td><td>0.7</td></tr>\n<tr><td>Severe hypoglycemia</td><td>0</td><td>0.7</td><td>0</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "values": [
+            0.0,
+            0.3,
+            0.7
+          ]
+        },
+        {
+          "label": "Severe hypoglycemia",
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "label": "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "values": [
+            1.4,
+            2.1,
+            0.0
+          ]
+        },
+        {
+          "label": "Severe hypoglycemia",
+          "values": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "label": "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "values": [
+            0.0,
+            null,
+            3.3
+          ]
+        },
+        {
+          "label": "Severe hypoglycemia",
+          "values": [
+            0.0,
+            null,
+            0.0
+          ]
+        },
+        {
+          "label": "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "values": [
+            9.3,
+            null,
+            14.7
+          ]
+        },
+        {
+          "label": "Severe hypoglycemia",
+          "values": [
+            0.0,
+            null,
+            0.7
+          ]
+        },
+        {
+          "label": "Hypoglycemia with a\nglucose level <54 mg/dL",
+          "values": [
+            0.7,
+            0.7,
+            0.7
+          ]
+        },
+        {
+          "label": "Severe hypoglycemia",
+          "values": [
+            0.0,
+            0.7,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0016-table-01",
+      "caption": "Table 4: Results at Week 26 in a Trial of TRULICITY as Monotherapy in Adult Patients with Type 2 Diabetes",
+      "source_pages": [
+        16
+      ],
+      "bbox": [
+        37.559999999999995,
+        416.83001,
+        574.4015292307691,
+        647.4759839999999
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.76,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "26-Week Primary Time Point / TRULICITY 0.75 mg",
+        "26-Week Primary Time Point / TRULICITY 1.5 mg",
+        "26-Week Primary Time Point / Metformin 1500-2000 mg",
+        "26-Week Primary Time Point / Metformin 1500-2000 mg (2)",
+        "26-Week Primary Time Point / Metformin 1500-2000 mg (3)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)‡",
+            "270",
+            "269",
+            "268",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "7.6",
+            "7.6",
+            "7.6",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-0.7",
+            "-0.8",
+            "-0.6",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "161",
+            "164",
+            "161",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-26",
+            "-29",
+            "-24",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "91.8",
+            "92.7",
+            "",
+            "92.4",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-1.4",
+            "-2.3",
+            "",
+            "92.4",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "-2.2",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "26-Week Primary Time Point",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg",
+          "Metformin\n1500-2000 mg",
+          null,
+          null
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)‡",
+          "270",
+          "269",
+          "268",
+          null,
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb",
+          "7.6\n-0.7",
+          "7.6\n-0.8",
+          "7.6\n-0.6",
+          null,
+          null
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb",
+          "161\n-26",
+          "164\n-29",
+          "161\n-24",
+          null,
+          null
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb",
+          "91.8\n-1.4",
+          "92.7\n-2.3",
+          "",
+          "92.4",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "-2.2",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>26-Week Primary Time Point</th><th></th><th></th><th></th><th></th></tr>\n<tr><th></th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th><th>Metformin<br>1500-2000 mg</th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)‡</td><td>270</td><td>269</td><td>268</td><td></td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb</td><td>7.6<br>-0.7</td><td>7.6<br>-0.8</td><td>7.6<br>-0.6</td><td></td><td></td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb</td><td>161<br>-26</td><td>164<br>-29</td><td>161<br>-24</td><td></td><td></td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb</td><td>91.8<br>-1.4</td><td>92.7<br>-2.3</td><td></td><td>92.4</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>-2.2</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0017-table-01",
+      "caption": "Table 5: Results at Week 52 of TRULICITY Compared to Sitagliptin used as Add-On to Metformin in Adult Patients",
+      "source_pages": [
+        17
+      ],
+      "bbox": [
+        38.28,
+        322.249995,
+        573.7884378947368,
+        631.084008
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.842,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "52-Week Primary Time Point / TRULICITY 0.75 mg",
+        "52-Week Primary Time Point / TRULICITY 1.5 mg",
+        "52-Week Primary Time Point / Sitagliptin 100 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)‡",
+            "281",
+            "279",
+            "273"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.2",
+            "8.1",
+            "8.0"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-0.9",
+            "-1.1",
+            "-0.4"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from sitagliptinb (95% CI)",
+            "-0.5 (-0.7, -0.3)††",
+            "-0.7 (-0.9, -0.5)††",
+            "-"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <7.0%",
+            "49##",
+            "59##",
+            "33"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Plasma Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "174",
+            "173",
+            "171"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-30",
+            "-41",
+            "-14"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from sitagliptinb (95% CI)",
+            "-15 (-22, -9)",
+            "-27 (-33, -20)",
+            "-"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "85.5",
+            "86.5",
+            "85.8"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-2.7",
+            "-3.1",
+            "85.8"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from sitagliptinb (95% CI)",
+            "-1.2 (-1.8, -0.6)",
+            "-1.5 (-2.1, -0.9)",
+            "85.8"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-1.5"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "52-Week Primary Time Point",
+          null,
+          null
+        ],
+        [
+          null,
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg",
+          "Sitagliptin\n100 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)‡",
+          "281",
+          "279",
+          "273"
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from sitagliptinb (95% CI)",
+          "8.2\n-0.9\n-0.5 (-0.7, -0.3)††",
+          "8.1\n-1.1\n-0.7 (-0.9, -0.5)††",
+          "8.0\n-0.4\n-"
+        ],
+        [
+          "Percentage of patients HbA1c <7.0%",
+          "49##",
+          "59##",
+          "33"
+        ],
+        [
+          "Fasting Plasma Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from sitagliptinb (95% CI)",
+          "174\n-30\n-15 (-22, -9)",
+          "173\n-41\n-27 (-33, -20)",
+          "171\n-14\n-"
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from sitagliptinb (95% CI)",
+          "85.5\n-2.7\n-1.2 (-1.8, -0.6)",
+          "86.5\n-3.1\n-1.5 (-2.1, -0.9)",
+          "85.8"
+        ],
+        [
+          null,
+          null,
+          null,
+          "-1.5"
+        ],
+        [
+          null,
+          null,
+          null,
+          "-"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>52-Week Primary Time Point</th><th></th><th></th></tr>\n<tr><th></th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th><th>Sitagliptin<br>100 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)‡</td><td>281</td><td>279</td><td>273</td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from sitagliptinb (95% CI)</td><td>8.2<br>-0.9<br>-0.5 (-0.7, -0.3)††</td><td>8.1<br>-1.1<br>-0.7 (-0.9, -0.5)††</td><td>8.0<br>-0.4<br>-</td></tr>\n<tr><td>Percentage of patients HbA1c &lt;7.0%</td><td>49##</td><td>59##</td><td>33</td></tr>\n<tr><td>Fasting Plasma Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from sitagliptinb (95% CI)</td><td>174<br>-30<br>-15 (-22, -9)</td><td>173<br>-41<br>-27 (-33, -20)</td><td>171<br>-14<br>-</td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from sitagliptinb (95% CI)</td><td>85.5<br>-2.7<br>-1.2 (-1.8, -0.6)</td><td>86.5<br>-3.1<br>-1.5 (-2.1, -0.9)</td><td>85.8</td></tr>\n<tr><td></td><td></td><td></td><td>-1.5</td></tr>\n<tr><td></td><td></td><td></td><td>-</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)‡",
+          "values": [
+            281.0,
+            279.0,
+            273.0
+          ]
+        },
+        {
+          "label": "Percentage of patients HbA1c <7.0%",
+          "values": [
+            null,
+            null,
+            33.0
+          ]
+        },
+        {
+          "label": "Baseline\nChange from baselineb\nDifference from sitagliptinb (95% CI)",
+          "values": [
+            null,
+            null,
+            85.8
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0018-table-01",
+      "caption": "Table 6. Results at Week 36 of TRULICITY 1.5 mg Compared to 3 mg and 4.5 mg as Add-On to Metformin in Adult",
+      "source_pages": [
+        18
+      ],
+      "bbox": [
+        39.84,
+        592.78001,
+        579.9599900000001,
+        736.77601
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.883,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "36-Week Primary Time Point / TRULICITY 1.5 mg",
+        "36-Week Primary Time Point / TRULICITY 3 mg",
+        "36-Week Primary Time Point / TRULICITY 4.5 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)",
+            "612",
+            "616",
+            "614"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.6<br>-1.5",
+            "8.6",
+            "8.6"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "8.6<br>-1.5",
+            "-1.6",
+            "-1.8"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from 1.5 mgb (95% CI)",
+            "8.6<br>-1.5",
+            "-0.1 (-0.2, 0.0)",
+            "-0.2 (-0.4, -0.1) ^"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <7.0% c",
+            "50",
+            "56",
+            "62"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "36-Week Primary Time Point",
+          null,
+          null
+        ],
+        [
+          null,
+          "TRULICITY\n1.5 mg",
+          "TRULICITY\n3 mg",
+          "TRULICITY\n4.5 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)",
+          "612",
+          "616",
+          "614"
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from 1.5 mgb (95% CI)",
+          "8.6\n-1.5",
+          "8.6\n-1.6\n-0.1 (-0.2, 0.0)",
+          "8.6\n-1.8\n-0.2 (-0.4, -0.1) ^"
+        ],
+        [
+          "Percentage of patients HbA1c <7.0% c",
+          "50",
+          "56",
+          "62"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>36-Week Primary Time Point</th><th></th><th></th></tr>\n<tr><th></th><th>TRULICITY<br>1.5 mg</th><th>TRULICITY<br>3 mg</th><th>TRULICITY<br>4.5 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)</td><td>612</td><td>616</td><td>614</td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from 1.5 mgb (95% CI)</td><td>8.6<br>-1.5</td><td>8.6<br>-1.6<br>-0.1 (-0.2, 0.0)</td><td>8.6<br>-1.8<br>-0.2 (-0.4, -0.1) ^</td></tr>\n<tr><td>Percentage of patients HbA1c &lt;7.0% c</td><td>50</td><td>56</td><td>62</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0019-table-01",
+      "caption": null,
+      "source_pages": [
+        19
+      ],
+      "bbox": [
+        39.84,
+        47.75999999999999,
+        579.9220968421054,
+        174.06799999999998
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.733,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4",
+        "Column 5",
+        "Column 6"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "185<br>-45",
+            "184",
+            "183",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "185<br>-45",
+            "-46",
+            "-51",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from 1.5 mgb (95% CI)",
+            "185<br>-45",
+            "- 2 (-7, 3)",
+            "-6 (-11, -2)",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "95.5<br>-3.0",
+            "96.3",
+            "",
+            "95.4",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "95.5<br>-3.0",
+            "-3.8",
+            "",
+            "95.4",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from 1.5 mgb (95% CI)",
+            "95.5<br>-3.0",
+            "-0.9 (-1.4, -0.4)",
+            "",
+            "95.4",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "-4.6",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "-1.6 (-2.2, -1.1) ^^",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from 1.5 mgb (95% CI)",
+          "185\n-45",
+          "184\n-46\n- 2 (-7, 3)",
+          "183\n-51\n-6 (-11, -2)",
+          null,
+          null
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from 1.5 mgb (95% CI)",
+          "95.5\n-3.0",
+          "96.3\n-3.8\n-0.9 (-1.4, -0.4)",
+          "",
+          "95.4",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "-4.6",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "-1.6 (-2.2, -1.1) ^^",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from 1.5 mgb (95% CI)</td><td>185<br>-45</td><td>184<br>-46<br>- 2 (-7, 3)</td><td>183<br>-51<br>-6 (-11, -2)</td><td></td><td></td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from 1.5 mgb (95% CI)</td><td>95.5<br>-3.0</td><td>96.3<br>-3.8<br>-0.9 (-1.4, -0.4)</td><td></td><td>95.4</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>-4.6</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>-1.6 (-2.2, -1.1) ^^</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0020-table-01",
+      "caption": "Table 7: Results at Week 24 of TRULICITY Compared to Placebo as Add-On to Glimepiride in Adult Patients with",
+      "source_pages": [
+        20
+      ],
+      "bbox": [
+        41.64,
+        73.67999999999995,
+        581.7394194285714,
+        338.56999625000003
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.753,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "24-Week Primary Time Point / Placebo",
+        "24-Week Primary Time Point / TRULICITY 1.5 mg",
+        "24-Week Primary Time Point / TRULICITY 1.5 mg (2)",
+        "24-Week Primary Time Point / TRULICITY 1.5 mg (3)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)",
+            "60",
+            "239",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.4<br>-0.3",
+            "8.4",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "8.4<br>-0.3",
+            "-1.3",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "8.4<br>-0.3",
+            "-1.1 (-1.4, -0.7)††",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <7.0%c",
+            "17",
+            "50††",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "175<br>2",
+            "178",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "175<br>2",
+            "-28",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "175<br>2",
+            "-30 (-44, -15)††",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+            "89.5\n-0.2",
+            "",
+            "84.5",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-0.5",
+            ""
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-0.4 (-1.2, 0.5)",
+            ""
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "24-Week Primary Time Point",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "Placebo",
+          "TRULICITY\n1.5 mg",
+          null,
+          null
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)",
+          "60",
+          "239",
+          null,
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "8.4\n-0.3",
+          "8.4\n-1.3\n-1.1 (-1.4, -0.7)††",
+          null,
+          null
+        ],
+        [
+          "Percentage of patients HbA1c <7.0%c",
+          "17",
+          "50††",
+          null,
+          null
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "175\n2",
+          "178\n-28\n-30 (-44, -15)††",
+          null,
+          null
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "89.5\n-0.2",
+          "",
+          "84.5",
+          ""
+        ],
+        [
+          null,
+          null,
+          "",
+          "-0.5",
+          ""
+        ],
+        [
+          null,
+          null,
+          "",
+          "-0.4 (-1.2, 0.5)",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>24-Week Primary Time Point</th><th></th><th></th><th></th></tr>\n<tr><th></th><th>Placebo</th><th>TRULICITY<br>1.5 mg</th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)</td><td>60</td><td>239</td><td></td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>8.4<br>-0.3</td><td>8.4<br>-1.3<br>-1.1 (-1.4, -0.7)††</td><td></td><td></td></tr>\n<tr><td>Percentage of patients HbA1c &lt;7.0%c</td><td>17</td><td>50††</td><td></td><td></td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>175<br>2</td><td>178<br>-28<br>-30 (-44, -15)††</td><td></td><td></td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>89.5<br>-0.2</td><td></td><td>84.5</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>-0.5</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>-0.4 (-1.2, 0.5)</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)",
+          "values": [
+            60.0,
+            239.0,
+            null
+          ]
+        },
+        {
+          "label": "Percentage of patients HbA1c <7.0%c",
+          "values": [
+            17.0,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "values": [
+            null,
+            null,
+            84.5
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0021-table-01",
+      "caption": "Table 8: Results at Week 26 of TRULICITY Compared to Placebo and Exenatide, All as Add-On to Metformin and",
+      "source_pages": [
+        21
+      ],
+      "bbox": [
+        38.4,
+        76.67999999999995,
+        578.2913208695652,
+        383.44999642857147
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.84,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "26-Week Primary Time Point / Placebo",
+        "26-Week Primary Time Point / TRULICITY 0.75 mg",
+        "26-Week Primary Time Point / TRULICITY 1.5 mg",
+        "26-Week Primary Time Point / Exenatide 10 mcg BID"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)‡",
+            "141",
+            "280",
+            "279",
+            "276"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.1",
+            "8.1",
+            "8.1",
+            "8.1"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-0.5",
+            "-1.3",
+            "-1.5",
+            "-1.0"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "-",
+            "-0.8 (-1.0, -0.7)‡‡",
+            "-1.1 (-1.2, -0.9)‡‡",
+            "-"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from exenatideb (95% CI)",
+            "-",
+            "-0.3 (-0.4, -0.2)††",
+            "-0.5 (-0.7, -0.4)††",
+            "-"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <7.0%",
+            "43",
+            "66**, ##",
+            "78**, ##",
+            "52"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "166",
+            "159",
+            "162",
+            "164"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-5",
+            "-34",
+            "-42",
+            "-24"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "-",
+            "-30 (-36, -23)",
+            "-38 (-45, -31)",
+            "-"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from exenatideb (95% CI)",
+            "-",
+            "-10 (-15, -5)",
+            "-18 (-24, -13)",
+            "-"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "94.1",
+            "95.5",
+            "96.2",
+            "97.4"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "1.2",
+            "0.2",
+            "96.2",
+            "97.4"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "-",
+            "-1.0 (-1.8, -0.3)",
+            "96.2",
+            "97.4"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from exenatideb (95% CI)",
+            "-",
+            "1.3 (0.6, 1.9)",
+            "96.2",
+            "97.4"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-1.3",
+            "-1.1"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-2.5 (-3.3, -1.8)",
+            "-"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-0.2 (-0.9, 0.4)",
+            "-"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "26-Week Primary Time Point",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "Placebo",
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg",
+          "Exenatide\n10 mcg BID"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)‡",
+          "141",
+          "280",
+          "279",
+          "276"
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)\nDifference from exenatideb (95% CI)",
+          "8.1\n-0.5\n-\n-",
+          "8.1\n-1.3\n-0.8 (-1.0, -0.7)‡‡\n-0.3 (-0.4, -0.2)††",
+          "8.1\n-1.5\n-1.1 (-1.2, -0.9)‡‡\n-0.5 (-0.7, -0.4)††",
+          "8.1\n-1.0\n-\n-"
+        ],
+        [
+          "Percentage of patients HbA1c <7.0%",
+          "43",
+          "66**, ##",
+          "78**, ##",
+          "52"
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)\nDifference from exenatideb (95% CI)",
+          "166\n-5\n-\n-",
+          "159\n-34\n-30 (-36, -23)\n-10 (-15, -5)",
+          "162\n-42\n-38 (-45, -31)\n-18 (-24, -13)",
+          "164\n-24\n-\n-"
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)\nDifference from exenatideb (95% CI)",
+          "94.1\n1.2\n-\n-",
+          "95.5\n0.2\n-1.0 (-1.8, -0.3)\n1.3 (0.6, 1.9)",
+          "96.2",
+          "97.4"
+        ],
+        [
+          null,
+          null,
+          null,
+          "-1.3",
+          "-1.1"
+        ],
+        [
+          null,
+          null,
+          null,
+          "-2.5 (-3.3, -1.8)",
+          "-"
+        ],
+        [
+          null,
+          null,
+          null,
+          "-0.2 (-0.9, 0.4)",
+          "-"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>26-Week Primary Time Point</th><th></th><th></th><th></th></tr>\n<tr><th></th><th>Placebo</th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th><th>Exenatide<br>10 mcg BID</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)‡</td><td>141</td><td>280</td><td>279</td><td>276</td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)<br>Difference from exenatideb (95% CI)</td><td>8.1<br>-0.5<br>-<br>-</td><td>8.1<br>-1.3<br>-0.8 (-1.0, -0.7)‡‡<br>-0.3 (-0.4, -0.2)††</td><td>8.1<br>-1.5<br>-1.1 (-1.2, -0.9)‡‡<br>-0.5 (-0.7, -0.4)††</td><td>8.1<br>-1.0<br>-<br>-</td></tr>\n<tr><td>Percentage of patients HbA1c &lt;7.0%</td><td>43</td><td>66**, ##</td><td>78**, ##</td><td>52</td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)<br>Difference from exenatideb (95% CI)</td><td>166<br>-5<br>-<br>-</td><td>159<br>-34<br>-30 (-36, -23)<br>-10 (-15, -5)</td><td>162<br>-42<br>-38 (-45, -31)<br>-18 (-24, -13)</td><td>164<br>-24<br>-<br>-</td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)<br>Difference from exenatideb (95% CI)</td><td>94.1<br>1.2<br>-<br>-</td><td>95.5<br>0.2<br>-1.0 (-1.8, -0.3)<br>1.3 (0.6, 1.9)</td><td>96.2</td><td>97.4</td></tr>\n<tr><td></td><td></td><td></td><td>-1.3</td><td>-1.1</td></tr>\n<tr><td></td><td></td><td></td><td>-2.5 (-3.3, -1.8)</td><td>-</td></tr>\n<tr><td></td><td></td><td></td><td>-0.2 (-0.9, 0.4)</td><td>-</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)‡",
+          "values": [
+            141.0,
+            280.0,
+            279.0,
+            276.0
+          ]
+        },
+        {
+          "label": "Percentage of patients HbA1c <7.0%",
+          "values": [
+            43.0,
+            null,
+            null,
+            52.0
+          ]
+        },
+        {
+          "label": "Baseline\nChange from baselineb\nDifference from placebob (95% CI)\nDifference from exenatideb (95% CI)",
+          "values": [
+            null,
+            null,
+            96.2,
+            97.4
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0023-table-01",
+      "caption": "Table 9: Results at Week 24 of TRULICITY as Add-on to SGLT2i in Adult Patients with Type 2 Diabetes Mellitusa",
+      "source_pages": [
+        23
+      ],
+      "bbox": [
+        39.839999999999996,
+        65.27999999999997,
+        579.95999,
+        267.649995
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.875,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "24-Week Primary Time Point / Placebo",
+        "24-Week Primary Time Point / TRULICITY 0.75 mg",
+        "24-Week Primary Time Point / TRULICITY 1.5 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)",
+            "140",
+            "141",
+            "142"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.1",
+            "8.1",
+            "8.0"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-0.6",
+            "-1.2",
+            "-1.3"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "-",
+            "-0.7 (-0.8, -0.5)††",
+            "-0.8 (-0.9, -0.6)††"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <7.0%c",
+            "31",
+            "59††",
+            "67††"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "153",
+            "162",
+            "161"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-6",
+            "-25",
+            "-30"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "-",
+            "-19 (-25, -13)",
+            "-24 (-30, -18)††"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "24-Week Primary Time Point",
+          null,
+          null
+        ],
+        [
+          null,
+          "Placebo",
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)",
+          "140",
+          "141",
+          "142"
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "8.1\n-0.6\n-",
+          "8.1\n-1.2\n-0.7 (-0.8, -0.5)††",
+          "8.0\n-1.3\n-0.8 (-0.9, -0.6)††"
+        ],
+        [
+          "Percentage of patients HbA1c <7.0%c",
+          "31",
+          "59††",
+          "67††"
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "153\n-6\n-",
+          "162\n-25\n-19 (-25, -13)",
+          "161\n-30\n-24 (-30, -18)††"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>24-Week Primary Time Point</th><th></th><th></th></tr>\n<tr><th></th><th>Placebo</th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)</td><td>140</td><td>141</td><td>142</td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>8.1<br>-0.6<br>-</td><td>8.1<br>-1.2<br>-0.7 (-0.8, -0.5)††</td><td>8.0<br>-1.3<br>-0.8 (-0.9, -0.6)††</td></tr>\n<tr><td>Percentage of patients HbA1c &lt;7.0%c</td><td>31</td><td>59††</td><td>67††</td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>153<br>-6<br>-</td><td>162<br>-25<br>-19 (-25, -13)</td><td>161<br>-30<br>-24 (-30, -18)††</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0024-table-01",
+      "caption": "Table 10: Results at Week 52 of TRULICITY Compared to Insulin Glargine, Both as Add-on to Metformin and",
+      "source_pages": [
+        24
+      ],
+      "bbox": [
+        39.839999999999996,
+        76.67999999999995,
+        579.9367651612904,
+        311.497996
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.752,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "52-Week Primary Time Point / TRULICITY 0.75 mg",
+        "52-Week Primary Time Point / TRULICITY 1.5 mg",
+        "52-Week Primary Time Point / Insulin Glargine",
+        "52-Week Primary Time Point / Insulin Glargine (2)",
+        "52-Week Primary Time Point / Insulin Glargine (3)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)‡",
+            "272",
+            "273",
+            "262",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.1",
+            "8.2",
+            "8.1",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-0.8",
+            "-1.1",
+            "-0.6",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "161",
+            "165",
+            "163",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-16",
+            "-27",
+            "-32",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulin glargineb (95% CI)",
+            "16 (9, 23)",
+            "5 (-2, 12)",
+            "-",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "86.4",
+            "85.2",
+            "",
+            "87.6",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-1.3",
+            "-1.9",
+            "",
+            "87.6",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulinb (95% CI)",
+            "-2.8 (-3.4, -2.2)",
+            "-3.3 (-3.9, -2.7)",
+            "",
+            "87.6",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "1.4",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "-",
+            ""
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "52-Week Primary Time Point",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg",
+          "Insulin Glargine",
+          null,
+          null
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)‡",
+          "272",
+          "273",
+          "262",
+          null,
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb",
+          "8.1\n-0.8",
+          "8.2\n-1.1",
+          "8.1\n-0.6",
+          null,
+          null
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from insulin glargineb (95% CI)",
+          "161\n-16\n16 (9, 23)",
+          "165\n-27\n5 (-2, 12)",
+          "163\n-32\n-",
+          null,
+          null
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from insulinb (95% CI)",
+          "86.4\n-1.3\n-2.8 (-3.4, -2.2)",
+          "85.2\n-1.9\n-3.3 (-3.9, -2.7)",
+          "",
+          "87.6",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "1.4",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "-",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>52-Week Primary Time Point</th><th></th><th></th><th></th><th></th></tr>\n<tr><th></th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th><th>Insulin Glargine</th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)‡</td><td>272</td><td>273</td><td>262</td><td></td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb</td><td>8.1<br>-0.8</td><td>8.2<br>-1.1</td><td>8.1<br>-0.6</td><td></td><td></td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from insulin glargineb (95% CI)</td><td>161<br>-16<br>16 (9, 23)</td><td>165<br>-27<br>5 (-2, 12)</td><td>163<br>-32<br>-</td><td></td><td></td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from insulinb (95% CI)</td><td>86.4<br>-1.3<br>-2.8 (-3.4, -2.2)</td><td>85.2<br>-1.9<br>-3.3 (-3.9, -2.7)</td><td></td><td>87.6</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>1.4</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>-</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0025-table-01",
+      "caption": "Table 11: Results at Week 28 of TRULICITY Compared to Placebo as Add-On to Basal Insulin in Adult Patients",
+      "source_pages": [
+        25
+      ],
+      "bbox": [
+        41.64,
+        76.67999999999995,
+        581.7394194285714,
+        332.9300075
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.753,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "28-Week Primary Time Point / Placebo",
+        "28-Week Primary Time Point / TRULICITY 1.5 mg",
+        "28-Week Primary Time Point / TRULICITY 1.5 mg (2)",
+        "28-Week Primary Time Point / TRULICITY 1.5 mg (3)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)",
+            "150",
+            "150",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.3<br>-0.7",
+            "8.4",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "8.3<br>-0.7",
+            "-1.4",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "8.3<br>-0.7",
+            "-0.7 (-0.9, -0.5)††",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <7.0%c",
+            "33",
+            "67††",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "156<br>-30",
+            "157",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "156<br>-30",
+            "-44",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob (95% CI)",
+            "156<br>-30",
+            "-14 (-23, -4)†",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+            "92.6\n0.8",
+            "",
+            "93.3",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-1.3",
+            ""
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "-2.1 (-2.9, -1.4)††",
+            ""
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "28-Week Primary Time Point",
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "Placebo",
+          "TRULICITY\n1.5 mg",
+          null,
+          null
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)",
+          "150",
+          "150",
+          null,
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "8.3\n-0.7",
+          "8.4\n-1.4\n-0.7 (-0.9, -0.5)††",
+          null,
+          null
+        ],
+        [
+          "Percentage of patients HbA1c <7.0%c",
+          "33",
+          "67††",
+          null,
+          null
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "156\n-30",
+          "157\n-44\n-14 (-23, -4)†",
+          null,
+          null
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "92.6\n0.8",
+          "",
+          "93.3",
+          ""
+        ],
+        [
+          null,
+          null,
+          "",
+          "-1.3",
+          ""
+        ],
+        [
+          null,
+          null,
+          "",
+          "-2.1 (-2.9, -1.4)††",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>28-Week Primary Time Point</th><th></th><th></th><th></th></tr>\n<tr><th></th><th>Placebo</th><th>TRULICITY<br>1.5 mg</th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)</td><td>150</td><td>150</td><td></td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>8.3<br>-0.7</td><td>8.4<br>-1.4<br>-0.7 (-0.9, -0.5)††</td><td></td><td></td></tr>\n<tr><td>Percentage of patients HbA1c &lt;7.0%c</td><td>33</td><td>67††</td><td></td><td></td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>156<br>-30</td><td>157<br>-44<br>-14 (-23, -4)†</td><td></td><td></td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from placebob (95% CI)</td><td>92.6<br>0.8</td><td></td><td>93.3</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>-1.3</td><td></td></tr>\n<tr><td></td><td></td><td></td><td>-2.1 (-2.9, -1.4)††</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)",
+          "values": [
+            150.0,
+            150.0,
+            null
+          ]
+        },
+        {
+          "label": "Percentage of patients HbA1c <7.0%c",
+          "values": [
+            33.0,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Baseline\nChange from baselineb\nDifference from placebob (95% CI)",
+          "values": [
+            null,
+            null,
+            93.3
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0026-table-01",
+      "caption": "Table 12: Results at Week 26 of TRULICITY Compared to Insulin Glargine, Both in Combination with Insulin",
+      "source_pages": [
+        26
+      ],
+      "bbox": [
+        41.63999999999999,
+        76.67999999999995,
+        581.7367651612904,
+        305.85800800000004
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.752,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "26-Week Primary Time Point / TRULICITY 0.75 mg",
+        "26-Week Primary Time Point / TRULICITY 1.5 mg",
+        "26-Week Primary Time Point / Insulin Glargine",
+        "26-Week Primary Time Point / Insulin Glargine (2)",
+        "26-Week Primary Time Point / Insulin Glargine (3)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)‡",
+            "293",
+            "295",
+            "296",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.4",
+            "8.5",
+            "8.5",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-1.6",
+            "-1.6",
+            "-1.4",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "150",
+            "157",
+            "154",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "4",
+            "-5",
+            "-28",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulin glargineb (95% CI)",
+            "32 (24, 41)",
+            "24 (15, 32)",
+            "-",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (kg) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "91.7",
+            "91.0",
+            "",
+            "90.8",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "0.2",
+            "-0.9",
+            "",
+            "90.8",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulin glargineb (95% CI)",
+            "-2.2 (-2.8, -1.5)",
+            "-3.2 (-3.8, -2.6)",
+            "",
+            "90.8",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "2.3",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "-",
+            ""
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "26-Week Primary Time Point",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg",
+          "Insulin Glargine",
+          null,
+          null
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)‡",
+          "293",
+          "295",
+          "296",
+          null,
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb",
+          "8.4\n-1.6",
+          "8.5\n-1.6",
+          "8.5\n-1.4",
+          null,
+          null
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from insulin glargineb (95% CI)",
+          "150\n4\n32 (24, 41)",
+          "157\n-5\n24 (15, 32)",
+          "154\n-28\n-",
+          null,
+          null
+        ],
+        [
+          "Body Weight (kg) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from insulin glargineb (95% CI)",
+          "91.7\n0.2\n-2.2 (-2.8, -1.5)",
+          "91.0\n-0.9\n-3.2 (-3.8, -2.6)",
+          "",
+          "90.8",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "2.3",
+          ""
+        ],
+        [
+          null,
+          null,
+          null,
+          "",
+          "-",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>26-Week Primary Time Point</th><th></th><th></th><th></th><th></th></tr>\n<tr><th></th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th><th>Insulin Glargine</th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)‡</td><td>293</td><td>295</td><td>296</td><td></td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb</td><td>8.4<br>-1.6</td><td>8.5<br>-1.6</td><td>8.5<br>-1.4</td><td></td><td></td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from insulin glargineb (95% CI)</td><td>150<br>4<br>32 (24, 41)</td><td>157<br>-5<br>24 (15, 32)</td><td>154<br>-28<br>-</td><td></td><td></td></tr>\n<tr><td>Body Weight (kg) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from insulin glargineb (95% CI)</td><td>91.7<br>0.2<br>-2.2 (-2.8, -1.5)</td><td>91.0<br>-0.9<br>-3.2 (-3.8, -2.6)</td><td></td><td>90.8</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>2.3</td><td></td></tr>\n<tr><td></td><td></td><td></td><td></td><td>-</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0027-table-01",
+      "caption": "Table 13: Results at Week 26 of TRULICITY Compared to Insulin Glargine, Both in Combination with Insulin",
+      "source_pages": [
+        27
+      ],
+      "bbox": [
+        41.63999999999999,
+        88.22000000000003,
+        581.7503904,
+        294.409995
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.783,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "26-Week Primary Time Point / TRULICITY 0.75 mg",
+        "26-Week Primary Time Point / TRULICITY 1.5 mg",
+        "26-Week Primary Time Point / Insulin Glargine",
+        "26-Week Primary Time Point / Insulin Glargine (2)",
+        "26-Week Primary Time Point / Insulin Glargine (3)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat Population (N)",
+            "190",
+            "192",
+            "194",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.6",
+            "8.6",
+            "8.6<br>-1.0",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "-0.9",
+            "-1.0",
+            "8.6<br>-1.0",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulin glargineb (95% CI)",
+            "0.0 (-0.2, 0.3)",
+            "-0.1 (-0.3, 0.2)",
+            "8.6<br>-1.0",
+            "",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of patients HbA1c <8.0%",
+            "73",
+            "75",
+            "",
+            "74",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Serum Glucose (mg/dL) (Mean)",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "167",
+            "161",
+            "170<br>-23",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baselineb",
+            "6",
+            "14",
+            "170<br>-23",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulin glargineb (95% CI)",
+            "30 (16, 43)",
+            "37 (24, 50)",
+            "170<br>-23",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "26-Week Primary Time Point",
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          null,
+          "TRULICITY\n0.75 mg",
+          "TRULICITY\n1.5 mg",
+          "Insulin Glargine",
+          null,
+          null
+        ],
+        [
+          "Intent-to-Treat Population (N)",
+          "190",
+          "192",
+          "194",
+          null,
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from insulin glargineb (95% CI)",
+          "8.6\n-0.9\n0.0 (-0.2, 0.3)",
+          "8.6\n-1.0\n-0.1 (-0.3, 0.2)",
+          "8.6\n-1.0",
+          null,
+          null
+        ],
+        [
+          "Percentage of patients HbA1c <8.0%",
+          "73",
+          "75",
+          "",
+          "74",
+          ""
+        ],
+        [
+          "Fasting Serum Glucose (mg/dL) (Mean)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baselineb\nDifference from insulin glargineb (95% CI)",
+          "167\n6\n30 (16, 43)",
+          "161\n14\n37 (24, 50)",
+          "170\n-23",
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>26-Week Primary Time Point</th><th></th><th></th><th></th><th></th></tr>\n<tr><th></th><th>TRULICITY<br>0.75 mg</th><th>TRULICITY<br>1.5 mg</th><th>Insulin Glargine</th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat Population (N)</td><td>190</td><td>192</td><td>194</td><td></td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from insulin glargineb (95% CI)</td><td>8.6<br>-0.9<br>0.0 (-0.2, 0.3)</td><td>8.6<br>-1.0<br>-0.1 (-0.3, 0.2)</td><td>8.6<br>-1.0</td><td></td><td></td></tr>\n<tr><td>Percentage of patients HbA1c &lt;8.0%</td><td>73</td><td>75</td><td></td><td>74</td><td></td></tr>\n<tr><td>Fasting Serum Glucose (mg/dL) (Mean)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baselineb<br>Difference from insulin glargineb (95% CI)</td><td>167<br>6<br>30 (16, 43)</td><td>161<br>14<br>37 (24, 50)</td><td>170<br>-23</td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0029-table-01",
+      "caption": "Table 14: Treatment Effect for MACE and the Individual Components in the REWIND Trial, Median Trial",
+      "source_pages": [
+        29
+      ],
+      "bbox": [
+        33.959999999999994,
+        73.67999999999995,
+        578.01999,
+        228.86
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Time to First Occurrence of:",
+            "TRULICITY",
+            "Placebo",
+            "Hazard Ratio"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Time to First Occurrence of:",
+            "N=4949",
+            "N=4952",
+            "(95% CI)b"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Composite of non-fatal myocardial infarction,\nnon-fatal stroke, cardiovascular death (MACE)d",
+            "594 (12.0%)",
+            "663 (13.4%)",
+            "0.88 (0.79, 0.99)c"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cardiovascular deathd,e",
+            "317 (6.4%)",
+            "346 (7.0%)",
+            "0.91 (0.78, 1.06)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Non-fatal myocardial infarctiond,e",
+            "205 (4.1%)",
+            "212 (4.3%)",
+            "0.96 (0.79, 1.16)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Non-fatal stroked,e",
+            "135 (2.7%)",
+            "175 (3.5%)",
+            "0.76 (0.61, 0.95)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fatal or non-fatal myocardial infarctiond,e",
+            "223 (4.5%)",
+            "231 (4.7%)",
+            "0.96 (0.79, 1.15)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fatal or non-fatal stroked,e",
+            "158 (3.2%)",
+            "205 (4.1%)",
+            "0.76 (0.62, 0.94)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Time to First Occurrence of:",
+          "TRULICITY\nN=4949",
+          "Placebo\nN=4952",
+          "Hazard Ratio\n(95% CI)b"
+        ],
+        [
+          "Composite of non-fatal myocardial infarction,\nnon-fatal stroke, cardiovascular death (MACE)d",
+          "594 (12.0%)",
+          "663 (13.4%)",
+          "0.88 (0.79, 0.99)c"
+        ],
+        [
+          "Cardiovascular deathd,e",
+          "317 (6.4%)",
+          "346 (7.0%)",
+          "0.91 (0.78, 1.06)"
+        ],
+        [
+          "Non-fatal myocardial infarctiond,e",
+          "205 (4.1%)",
+          "212 (4.3%)",
+          "0.96 (0.79, 1.16)"
+        ],
+        [
+          "Non-fatal stroked,e",
+          "135 (2.7%)",
+          "175 (3.5%)",
+          "0.76 (0.61, 0.95)"
+        ],
+        [
+          "Fatal or non-fatal myocardial infarctiond,e",
+          "223 (4.5%)",
+          "231 (4.7%)",
+          "0.96 (0.79, 1.15)"
+        ],
+        [
+          "Fatal or non-fatal stroked,e",
+          "158 (3.2%)",
+          "205 (4.1%)",
+          "0.76 (0.62, 0.94)"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Time to First Occurrence of:</td><td>TRULICITY<br>N=4949</td><td>Placebo<br>N=4952</td><td>Hazard Ratio<br>(95% CI)b</td></tr>\n<tr><td>Composite of non-fatal myocardial infarction,<br>non-fatal stroke, cardiovascular death (MACE)d</td><td>594 (12.0%)</td><td>663 (13.4%)</td><td>0.88 (0.79, 0.99)c</td></tr>\n<tr><td>Cardiovascular deathd,e</td><td>317 (6.4%)</td><td>346 (7.0%)</td><td>0.91 (0.78, 1.06)</td></tr>\n<tr><td>Non-fatal myocardial infarctiond,e</td><td>205 (4.1%)</td><td>212 (4.3%)</td><td>0.96 (0.79, 1.16)</td></tr>\n<tr><td>Non-fatal stroked,e</td><td>135 (2.7%)</td><td>175 (3.5%)</td><td>0.76 (0.61, 0.95)</td></tr>\n<tr><td>Fatal or non-fatal myocardial infarctiond,e</td><td>223 (4.5%)</td><td>231 (4.7%)</td><td>0.96 (0.79, 1.15)</td></tr>\n<tr><td>Fatal or non-fatal stroked,e</td><td>158 (3.2%)</td><td>205 (4.1%)</td><td>0.76 (0.62, 0.94)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0030-table-01",
+      "caption": "Table 15: Glycemic Results at Week 26 in Pediatric Patients 10 Years of Age and Older with Type 2 Diabetes",
+      "source_pages": [
+        30
+      ],
+      "bbox": [
+        42.0,
+        94.10000000000002,
+        580.67999,
+        310.369995
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.848,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "TRULICITY 0.75 mg once weekly",
+        "TRULICITY 1.5 mg once weekly",
+        "TRULICITY once weekly Pooleda",
+        "TRULICITY once weekly Pooleda (2)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat Population (N)",
+            "51",
+            "51",
+            "52",
+            "103",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%) (Mean)c",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.1",
+            "7.9",
+            "8.2",
+            "8.0",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baseline at Week 26b",
+            "0.6",
+            "-0.6",
+            "-0.9",
+            "-0.8",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebo (95% CI)b",
+            "-",
+            "-1.2 (-1.8, -0.6)",
+            "-1.5 (-2.1, -0.9)",
+            "-1.4 (-1.9, -0.8)",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Percentage of Patients with HbA1c\n<7.0% at Week 26d",
+            "14%",
+            "55%",
+            "48%",
+            "52%",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fasting Blood Glucose (mg/dL) (Mean)c",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "159",
+            "149",
+            "163",
+            "",
+            "156<br>-18.9<br>-35.9 (-54.2, -<br>17.6)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change from baseline at Week 26b",
+            "17.1",
+            "-12.8",
+            "-24.9",
+            "",
+            "156<br>-18.9<br>-35.9 (-54.2, -<br>17.6)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebo (95% CI)b",
+            "-",
+            "-29.9 (-50.7, -9.1)",
+            "-42.0 (-63.0, -20.9)",
+            "",
+            "156<br>-18.9<br>-35.9 (-54.2, -<br>17.6)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "TRULICITY 0.75 mg\nonce weekly",
+          "TRULICITY 1.5 mg\nonce weekly",
+          "TRULICITY once\nweekly\nPooleda",
+          null
+        ],
+        [
+          "Intent-to-Treat Population (N)",
+          "51",
+          "51",
+          "52",
+          "103",
+          null
+        ],
+        [
+          "HbA1c (%) (Mean)c",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baseline at Week 26b\nDifference from placebo (95% CI)b",
+          "8.1\n0.6\n-",
+          "7.9\n-0.6\n-1.2 (-1.8, -0.6)",
+          "8.2\n-0.9\n-1.5 (-2.1, -0.9)",
+          "8.0\n-0.8\n-1.4 (-1.9, -0.8)",
+          null
+        ],
+        [
+          "Percentage of Patients with HbA1c\n<7.0% at Week 26d",
+          "14%",
+          "55%",
+          "48%",
+          "52%",
+          null
+        ],
+        [
+          "Fasting Blood Glucose (mg/dL) (Mean)c",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Baseline\nChange from baseline at Week 26b\nDifference from placebo (95% CI)b",
+          "159\n17.1\n-",
+          "149\n-12.8\n-29.9 (-50.7, -9.1)",
+          "163\n-24.9\n-42.0 (-63.0, -20.9)",
+          null,
+          "156\n-18.9\n-35.9 (-54.2, -\n17.6)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>TRULICITY 0.75 mg<br>once weekly</th><th>TRULICITY 1.5 mg<br>once weekly</th><th>TRULICITY once<br>weekly<br>Pooleda</th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat Population (N)</td><td>51</td><td>51</td><td>52</td><td>103</td><td></td></tr>\n<tr><td>HbA1c (%) (Mean)c</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baseline at Week 26b<br>Difference from placebo (95% CI)b</td><td>8.1<br>0.6<br>-</td><td>7.9<br>-0.6<br>-1.2 (-1.8, -0.6)</td><td>8.2<br>-0.9<br>-1.5 (-2.1, -0.9)</td><td>8.0<br>-0.8<br>-1.4 (-1.9, -0.8)</td><td></td></tr>\n<tr><td>Percentage of Patients with HbA1c<br>&lt;7.0% at Week 26d</td><td>14%</td><td>55%</td><td>48%</td><td>52%</td><td></td></tr>\n<tr><td>Fasting Blood Glucose (mg/dL) (Mean)c</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Baseline<br>Change from baseline at Week 26b<br>Difference from placebo (95% CI)b</td><td>159<br>17.1<br>-</td><td>149<br>-12.8<br>-29.9 (-50.7, -9.1)</td><td>163<br>-24.9<br>-42.0 (-63.0, -20.9)</td><td></td><td>156<br>-18.9<br>-35.9 (-54.2, -<br>17.6)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0030-table-02",
+      "caption": null,
+      "source_pages": [
+        30
+      ],
+      "bbox": [
+        35.99999999999999,
+        478.87001,
+        408.310005,
+        568.8700100000001
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Total Strength per Total Volume",
+        "NDC"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.75 mg/0.5 mL",
+            "NDC 0002-1433-80"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1.5 mg/0.5 mL",
+            "NDC 0002-1434-80"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "3 mg/0.5 mL",
+            "NDC 0002-2236-80"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "4.5 mg/0.5 mL",
+            "NDC 0002-3182-80"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "Total Strength per Total Volume",
+          "NDC"
+        ],
+        [
+          "0.75 mg/0.5 mL",
+          "NDC 0002-1433-80"
+        ],
+        [
+          "1.5 mg/0.5 mL",
+          "NDC 0002-1434-80"
+        ],
+        [
+          "3 mg/0.5 mL",
+          "NDC 0002-2236-80"
+        ],
+        [
+          "4.5 mg/0.5 mL",
+          "NDC 0002-3182-80"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Total Strength per Total Volume</th><th>NDC</th></tr>\n</thead>\n<tbody>\n<tr><td>0.75 mg/0.5 mL</td><td>NDC 0002-1433-80</td></tr>\n<tr><td>1.5 mg/0.5 mL</td><td>NDC 0002-1434-80</td></tr>\n<tr><td>3 mg/0.5 mL</td><td>NDC 0002-2236-80</td></tr>\n<tr><td>4.5 mg/0.5 mL</td><td>NDC 0002-3182-80</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

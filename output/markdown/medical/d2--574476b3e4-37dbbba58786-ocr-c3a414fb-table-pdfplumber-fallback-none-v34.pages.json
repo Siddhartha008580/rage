@@ -1,0 +1,116 @@
+[
+  {
+    "pdf_page": 1,
+    "printed_page": null,
+    "char_start": 20,
+    "char_end": 7881
+  },
+  {
+    "pdf_page": 2,
+    "printed_page": "2",
+    "char_start": 7919,
+    "char_end": 19263
+  },
+  {
+    "pdf_page": 3,
+    "printed_page": "3",
+    "char_start": 19301,
+    "char_end": 30404
+  },
+  {
+    "pdf_page": 4,
+    "printed_page": "4",
+    "char_start": 30442,
+    "char_end": 42463
+  },
+  {
+    "pdf_page": 5,
+    "printed_page": "5",
+    "char_start": 42501,
+    "char_end": 50990
+  },
+  {
+    "pdf_page": 6,
+    "printed_page": "6",
+    "char_start": 51028,
+    "char_end": 60951
+  },
+  {
+    "pdf_page": 7,
+    "printed_page": "7",
+    "char_start": 60989,
+    "char_end": 70381
+  },
+  {
+    "pdf_page": 8,
+    "printed_page": "8",
+    "char_start": 70419,
+    "char_end": 81072
+  },
+  {
+    "pdf_page": 9,
+    "printed_page": "9",
+    "char_start": 81110,
+    "char_end": 88889
+  },
+  {
+    "pdf_page": 10,
+    "printed_page": "10",
+    "char_start": 88929,
+    "char_end": 92845
+  },
+  {
+    "pdf_page": 11,
+    "printed_page": "11",
+    "char_start": 92885,
+    "char_end": 103228
+  },
+  {
+    "pdf_page": 12,
+    "printed_page": "12",
+    "char_start": 103268,
+    "char_end": 111543
+  },
+  {
+    "pdf_page": 13,
+    "printed_page": "13",
+    "char_start": 111583,
+    "char_end": 121224
+  },
+  {
+    "pdf_page": 14,
+    "printed_page": "14",
+    "char_start": 121264,
+    "char_end": 129034
+  },
+  {
+    "pdf_page": 15,
+    "printed_page": "15",
+    "char_start": 129074,
+    "char_end": 137662
+  },
+  {
+    "pdf_page": 16,
+    "printed_page": "16",
+    "char_start": 137702,
+    "char_end": 145475
+  },
+  {
+    "pdf_page": 17,
+    "printed_page": "17",
+    "char_start": 145515,
+    "char_end": 154411
+  },
+  {
+    "pdf_page": 18,
+    "printed_page": "18",
+    "char_start": 154451,
+    "char_end": 160338
+  },
+  {
+    "pdf_page": 19,
+    "printed_page": "19",
+    "char_start": 160378,
+    "char_end": 163585
+  }
+]

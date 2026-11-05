@@ -1,0 +1,3385 @@
+{
+  "schema_version": 1,
+  "source_file": "d2.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0002-table-01",
+      "caption": null,
+      "source_pages": [
+        2
+      ],
+      "bbox": [
+        30.69272727272727,
+        637.1795999999999,
+        270.97,
+        701.3991
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Single-Patient-Use",
+        "Pens (with multiple weekly",
+        "doses)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dose per Injection",
+            "Total Strength per Total Volume",
+            "Strength per mL"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.25 mg\n0.5 mg",
+            "2 mg / 3 mL",
+            "0.68 mg/mL"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1 mg",
+            "4 mg / 3 mL",
+            "1.34 mg/mL"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "2 mg",
+            "8 mg / 3 mL",
+            "2.68 mg/mL"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 1"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Single-Patient-Use Pens (with multiple weekly doses)",
+          null,
+          null
+        ],
+        [
+          "Dose per Injection",
+          "Total Strength per Total Volume",
+          "Strength per mL"
+        ],
+        [
+          "0.25 mg\n0.5 mg",
+          "2 mg / 3 mL",
+          "0.68 mg/mL"
+        ],
+        [
+          "1 mg",
+          "4 mg / 3 mL",
+          "1.34 mg/mL"
+        ],
+        [
+          "2 mg",
+          "8 mg / 3 mL",
+          "2.68 mg/mL"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Single-Patient-Use Pens (with multiple weekly doses)</td><td></td><td></td></tr>\n<tr><td>Dose per Injection</td><td>Total Strength per Total Volume</td><td>Strength per mL</td></tr>\n<tr><td>0.25 mg<br>0.5 mg</td><td>2 mg / 3 mL</td><td>0.68 mg/mL</td></tr>\n<tr><td>1 mg</td><td>4 mg / 3 mL</td><td>1.34 mg/mL</td></tr>\n<tr><td>2 mg</td><td>8 mg / 3 mL</td><td>2.68 mg/mL</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0002-table-02",
+      "caption": null,
+      "source_pages": [
+        2
+      ],
+      "bbox": [
+        30.69272727272727,
+        708.5305,
+        210.02,
+        764.75
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "2 mg",
+            "8 mg / 3 mL"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Single-Dose",
+            "Prefilled Syringes"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dose per Injection",
+            "Total Strength per Total Volume"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.25 mg",
+            "0.25 mg / 0.5 mL"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.5 mg",
+            "0.5 mg / 0.5 mL"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1 mg",
+            "1 mg / 0.5 mL"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 1",
+        "Column headings recovered from PDF text above the table"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Single-Dose Prefilled Syringes",
+          null
+        ],
+        [
+          "Dose per Injection",
+          "Total Strength per Total Volume"
+        ],
+        [
+          "0.25 mg",
+          "0.25 mg / 0.5 mL"
+        ],
+        [
+          "0.5 mg",
+          "0.5 mg / 0.5 mL"
+        ],
+        [
+          "1 mg",
+          "1 mg / 0.5 mL"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Single-Dose Prefilled Syringes</td><td></td></tr>\n<tr><td>Dose per Injection</td><td>Total Strength per Total Volume</td></tr>\n<tr><td>0.25 mg</td><td>0.25 mg / 0.5 mL</td></tr>\n<tr><td>0.5 mg</td><td>0.5 mg / 0.5 mL</td></tr>\n<tr><td>1 mg</td><td>1 mg / 0.5 mL</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0003-table-01",
+      "caption": null,
+      "source_pages": [
+        3
+      ],
+      "bbox": [
+        312.25,
+        261.92319999999995,
+        584.25,
+        444.1061
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.936,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "OZEMPIC® 0.5 mg",
+        "OZEMPIC® 1 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Monotherapy",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(30 weeks)",
+            "N=129",
+            "N=127",
+            "N=130"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe†",
+            "0%",
+            "0%",
+            "0%"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Documented symptomatic (≤70 mg/dL\nglucose threshold)",
+            "0%",
+            "1.6%",
+            "3.8%"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe† or Blood Glucose Confirmed\nSymptomatic (≤56 mg/dL glucose\nthreshold)",
+            "1.6%",
+            "0%",
+            "0%"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to Basal Insulin with or\nwithout Metformin",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(30 weeks)",
+            "N=132",
+            "N=132",
+            "N=131"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe†",
+            "0%",
+            "0%",
+            "1.5%"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Documented symptomatic (≤70 mg/dL\nglucose threshold)",
+            "15.2%",
+            "16.7%",
+            "29.8%"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe† or Blood Glucose Confirmed\nSymptomatic (≤56 mg/dL glucose\nthreshold)",
+            "5.3%",
+            "8.3%",
+            "10.7%"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "OZEMPIC®\n0.5 mg",
+          "OZEMPIC®\n1 mg"
+        ],
+        [
+          "Monotherapy",
+          "",
+          "",
+          ""
+        ],
+        [
+          "(30 weeks)",
+          "N=129",
+          "N=127",
+          "N=130"
+        ],
+        [
+          "Severe†",
+          "0%",
+          "0%",
+          "0%"
+        ],
+        [
+          "Documented symptomatic (≤70 mg/dL\nglucose threshold)",
+          "0%",
+          "1.6%",
+          "3.8%"
+        ],
+        [
+          "Severe† or Blood Glucose Confirmed\nSymptomatic (≤56 mg/dL glucose\nthreshold)",
+          "1.6%",
+          "0%",
+          "0%"
+        ],
+        [
+          "Add-on to Basal Insulin with or\nwithout Metformin",
+          "",
+          "",
+          ""
+        ],
+        [
+          "(30 weeks)",
+          "N=132",
+          "N=132",
+          "N=131"
+        ],
+        [
+          "Severe†",
+          "0%",
+          "0%",
+          "1.5%"
+        ],
+        [
+          "Documented symptomatic (≤70 mg/dL\nglucose threshold)",
+          "15.2%",
+          "16.7%",
+          "29.8%"
+        ],
+        [
+          "Severe† or Blood Glucose Confirmed\nSymptomatic (≤56 mg/dL glucose\nthreshold)",
+          "5.3%",
+          "8.3%",
+          "10.7%"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>OZEMPIC®<br>0.5 mg</th><th>OZEMPIC®<br>1 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Monotherapy</td><td></td><td></td><td></td></tr>\n<tr><td>(30 weeks)</td><td>N=129</td><td>N=127</td><td>N=130</td></tr>\n<tr><td>Severe†</td><td>0%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Documented symptomatic (≤70 mg/dL<br>glucose threshold)</td><td>0%</td><td>1.6%</td><td>3.8%</td></tr>\n<tr><td>Severe† or Blood Glucose Confirmed<br>Symptomatic (≤56 mg/dL glucose<br>threshold)</td><td>1.6%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Add-on to Basal Insulin with or<br>without Metformin</td><td></td><td></td><td></td></tr>\n<tr><td>(30 weeks)</td><td>N=132</td><td>N=132</td><td>N=131</td></tr>\n<tr><td>Severe†</td><td>0%</td><td>0%</td><td>1.5%</td></tr>\n<tr><td>Documented symptomatic (≤70 mg/dL<br>glucose threshold)</td><td>15.2%</td><td>16.7%</td><td>29.8%</td></tr>\n<tr><td>Severe† or Blood Glucose Confirmed<br>Symptomatic (≤56 mg/dL glucose<br>threshold)</td><td>5.3%</td><td>8.3%</td><td>10.7%</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0003-table-02",
+      "caption": "Table 1. Adverse Reactions in Placebo-Controlled Trials Reported in ≥5% of cases per 100 patient years).",
+      "source_pages": [
+        3
+      ],
+      "bbox": [
+        30.25,
+        633.98532,
+        300.25,
+        712.559
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "Placebo",
+            "OZEMPIC® 0.5 mg",
+            "OZEMPIC® 1 mg"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "(N=262)",
+            "(N=260)",
+            "(N=261)"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "%",
+            "%",
+            "%"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Nausea",
+            "6.1",
+            "15.8",
+            "20.3"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Vomiting",
+            "2.3",
+            "5",
+            "9.2"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Diarrhea",
+            "1.9",
+            "8.5",
+            "8.8"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Abdominal pain",
+            "4.6",
+            "7.3",
+            "5.7"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Constipation",
+            "1.5",
+            "5",
+            "3.1"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Adverse Reaction",
+          "Placebo\n(N=262)\n%",
+          "OZEMPIC® 0.5 mg\n(N=260)\n%",
+          "OZEMPIC® 1 mg\n(N=261)\n%"
+        ],
+        [
+          "Nausea",
+          "6.1",
+          "15.8",
+          "20.3"
+        ],
+        [
+          "Vomiting",
+          "2.3",
+          "5",
+          "9.2"
+        ],
+        [
+          "Diarrhea",
+          "1.9",
+          "8.5",
+          "8.8"
+        ],
+        [
+          "Abdominal pain",
+          "4.6",
+          "7.3",
+          "5.7"
+        ],
+        [
+          "Constipation",
+          "1.5",
+          "5",
+          "3.1"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Adverse Reaction</td><td>Placebo<br>(N=262)<br>%</td><td>OZEMPIC® 0.5 mg<br>(N=260)<br>%</td><td>OZEMPIC® 1 mg<br>(N=261)<br>%</td></tr>\n<tr><td>Nausea</td><td>6.1</td><td>15.8</td><td>20.3</td></tr>\n<tr><td>Vomiting</td><td>2.3</td><td>5</td><td>9.2</td></tr>\n<tr><td>Diarrhea</td><td>1.9</td><td>8.5</td><td>8.8</td></tr>\n<tr><td>Abdominal pain</td><td>4.6</td><td>7.3</td><td>5.7</td></tr>\n<tr><td>Constipation</td><td>1.5</td><td>5</td><td>3.1</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Nausea",
+          "values": [
+            6.1,
+            15.8,
+            20.3
+          ]
+        },
+        {
+          "label": "Vomiting",
+          "values": [
+            2.3,
+            5.0,
+            9.2
+          ]
+        },
+        {
+          "label": "Diarrhea",
+          "values": [
+            1.9,
+            8.5,
+            8.8
+          ]
+        },
+        {
+          "label": "Abdominal pain",
+          "values": [
+            4.6,
+            7.3,
+            5.7
+          ]
+        },
+        {
+          "label": "Constipation",
+          "values": [
+            1.5,
+            5.0,
+            3.1
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0006-table-01",
+      "caption": "Figure 4. Impact of Semaglutide on the Exposure of Coadministered Oral Table 3. Results at Week 30 in a Trial of OZEMPIC® as Monotherapy in Adult",
+      "source_pages": [
+        6
+      ],
+      "bbox": [
+        27.0,
+        67.84400000000005,
+        302.97,
+        200.74
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Relative Ratio and",
+        "exposure Recommendation 90% CI"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Metformin AUC0-12h",
+            "No dose adjustment"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cmax\nS-warfarin AUC0-168h\nCmax\nR-warfarin AUC0-168h\nCmax",
+            "No dose adjustment\nNo dose adjustment"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Digoxin AUC0-120h",
+            "No dose adjustment"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cmax\nAtorvastatin AUC0-72h\nCmax",
+            "No dose adjustment"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Ethinylestradiol AUC0-24h\nCmax\nLevonorgestrel AUC0-24h",
+            "No dose adjustment\nNo dose adjustment"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.5 1",
+            "2"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 1",
+        "Cells reconstructed from PDF word positions in source row 7"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Co-administered Relative exposure Recommendation\nmedication Ratio and 90% CI",
+          null
+        ],
+        [
+          "Metformin AUC0-12h",
+          "No dose adjustment"
+        ],
+        [
+          "Cmax\nS-warfarin AUC0-168h\nCmax\nR-warfarin AUC0-168h\nCmax",
+          "No dose adjustment\nNo dose adjustment"
+        ],
+        [
+          "Digoxin AUC0-120h",
+          "No dose adjustment"
+        ],
+        [
+          "Cmax\nAtorvastatin AUC0-72h\nCmax",
+          "No dose adjustment"
+        ],
+        [
+          "Ethinylestradiol AUC0-24h\nCmax\nLevonorgestrel AUC0-24h",
+          "No dose adjustment\nNo dose adjustment"
+        ],
+        [
+          "Cmax\n0.5 1 2",
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Co-administered Relative exposure Recommendation<br>medication Ratio and 90% CI</td><td></td></tr>\n<tr><td>Metformin AUC0-12h</td><td>No dose adjustment</td></tr>\n<tr><td>Cmax<br>S-warfarin AUC0-168h<br>Cmax<br>R-warfarin AUC0-168h<br>Cmax</td><td>No dose adjustment<br>No dose adjustment</td></tr>\n<tr><td>Digoxin AUC0-120h</td><td>No dose adjustment</td></tr>\n<tr><td>Cmax<br>Atorvastatin AUC0-72h<br>Cmax</td><td>No dose adjustment</td></tr>\n<tr><td>Ethinylestradiol AUC0-24h<br>Cmax<br>Levonorgestrel AUC0-24h</td><td>No dose adjustment<br>No dose adjustment</td></tr>\n<tr><td>Cmax<br>0.5 1 2</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0006-table-02",
+      "caption": "Figure 4. Impact of Semaglutide on the Exposure of Coadministered Oral Table 3. Results at Week 30 in a Trial of OZEMPIC® as Monotherapy in Adult",
+      "source_pages": [
+        6
+      ],
+      "bbox": [
+        309.24995,
+        74.49390000000005,
+        584.24995,
+        184.883
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "OZEMPIC® 0.5 mg",
+        "OZEMPIC® 1 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "129",
+            "128",
+            "130"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8",
+            "8.1",
+            "8.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 30b",
+            "-0.1",
+            "-1.4",
+            "-1.6"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob [95% CI]",
+            "",
+            "-1.2 [-1.5, -0.9]c",
+            "-1.4 [-1.7, -1.1]c"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "28",
+            "73",
+            "70"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "174",
+            "174",
+            "179"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 30b",
+            "-15",
+            "-41",
+            "-44"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "OZEMPIC® 0.5 mg",
+          "OZEMPIC® 1 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "129",
+          "128",
+          "130"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8",
+          "8.1",
+          "8.1"
+        ],
+        [
+          "Change at week 30b",
+          "-0.1",
+          "-1.4",
+          "-1.6"
+        ],
+        [
+          "Difference from placebob [95% CI]",
+          "",
+          "-1.2 [-1.5, -0.9]c",
+          "-1.4 [-1.7, -1.1]c"
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "28",
+          "73",
+          "70"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "174",
+          "174",
+          "179"
+        ],
+        [
+          "Change at week 30b",
+          "-15",
+          "-41",
+          "-44"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>OZEMPIC® 0.5 mg</th><th>OZEMPIC® 1 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>129</td><td>128</td><td>130</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8</td><td>8.1</td><td>8.1</td></tr>\n<tr><td>Change at week 30b</td><td>-0.1</td><td>-1.4</td><td>-1.6</td></tr>\n<tr><td>Difference from placebob [95% CI]</td><td></td><td>-1.2 [-1.5, -0.9]c</td><td>-1.4 [-1.7, -1.1]c</td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>28</td><td>73</td><td>70</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>174</td><td>174</td><td>179</td></tr>\n<tr><td>Change at week 30b</td><td>-15</td><td>-41</td><td>-44</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            129.0,
+            128.0,
+            130.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.0,
+            8.1,
+            8.1
+          ]
+        },
+        {
+          "label": "Change at week 30b",
+          "values": [
+            -0.1,
+            -1.4,
+            -1.6
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            28.0,
+            73.0,
+            70.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            174.0,
+            174.0,
+            179.0
+          ]
+        },
+        {
+          "label": "Change at week 30b",
+          "values": [
+            -15.0,
+            -41.0,
+            -44.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0006-table-03",
+      "caption": null,
+      "source_pages": [
+        6
+      ],
+      "bbox": [
+        309.24995,
+        384.5148,
+        584.24995,
+        499.9538
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "OZEMPIC® 0.5 mg",
+        "OZEMPIC® 1 mg",
+        "Sitagliptin"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "409",
+            "409",
+            "407"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8",
+            "8",
+            "8.2"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 56b",
+            "-1.3",
+            "-1.5",
+            "-0.7"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from sitagliptinb",
+            "-0.6",
+            "-0.8",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "[-0.7, -0.4]c",
+            "[-0.9, -0.6]c",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "66",
+            "73",
+            "40"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "168",
+            "167",
+            "173"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 56b",
+            "-35",
+            "-43",
+            "-23"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "OZEMPIC® 0.5 mg",
+          "OZEMPIC® 1 mg",
+          "Sitagliptin"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "409",
+          "409",
+          "407"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8",
+          "8",
+          "8.2"
+        ],
+        [
+          "Change at week 56b",
+          "-1.3",
+          "-1.5",
+          "-0.7"
+        ],
+        [
+          "Difference from sitagliptinb\n[95% CI]",
+          "-0.6\n[-0.7, -0.4]c",
+          "-0.8\n[-0.9, -0.6]c",
+          ""
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "66",
+          "73",
+          "40"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "168",
+          "167",
+          "173"
+        ],
+        [
+          "Change at week 56b",
+          "-35",
+          "-43",
+          "-23"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>OZEMPIC® 0.5 mg</th><th>OZEMPIC® 1 mg</th><th>Sitagliptin</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>409</td><td>409</td><td>407</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8</td><td>8</td><td>8.2</td></tr>\n<tr><td>Change at week 56b</td><td>-1.3</td><td>-1.5</td><td>-0.7</td></tr>\n<tr><td>Difference from sitagliptinb<br>[95% CI]</td><td>-0.6<br>[-0.7, -0.4]c</td><td>-0.8<br>[-0.9, -0.6]c</td><td></td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>66</td><td>73</td><td>40</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>168</td><td>167</td><td>173</td></tr>\n<tr><td>Change at week 56b</td><td>-35</td><td>-43</td><td>-23</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            409.0,
+            409.0,
+            407.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.0,
+            8.0,
+            8.2
+          ]
+        },
+        {
+          "label": "Change at week 56b",
+          "values": [
+            -1.3,
+            -1.5,
+            -0.7
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            66.0,
+            73.0,
+            40.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            168.0,
+            167.0,
+            173.0
+          ]
+        },
+        {
+          "label": "Change at week 56b",
+          "values": [
+            -35.0,
+            -43.0,
+            -23.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0007-table-01",
+      "caption": "Figure 5. Mean HbA1c (%) Over Time - Baseline to Week 56 Table 6. Results at Week 30 in a Trial of OZEMPIC® Compared to Insulin Glargine",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        310.74995,
+        74.49390000000005,
+        584.25,
+        194.93290000000002
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.944,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "OZEMPIC® 0.5 mg",
+        "OZEMPIC® 1 mg",
+        "Insulin Glargine"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "362",
+            "360",
+            "360"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.1",
+            "8.2",
+            "8.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 30b",
+            "-1.2",
+            "-1.5",
+            "-0.9"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from insulin glargineb",
+            "-0.3",
+            "-0.6",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "[-0.5, -0.1]c",
+            "[-0.8, -0.4]c",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%\nFPG (mg/dL)",
+            "55",
+            "66",
+            "40"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "172",
+            "179",
+            "174"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 30b",
+            "-35",
+            "-46",
+            "-37"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "OZEMPIC® 0.5 mg",
+          "OZEMPIC® 1 mg",
+          "Insulin Glargine"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "362",
+          "360",
+          "360"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.1",
+          "8.2",
+          "8.1"
+        ],
+        [
+          "Change at week 30b",
+          "-1.2",
+          "-1.5",
+          "-0.9"
+        ],
+        [
+          "Difference from insulin glargineb\n[95% CI]",
+          "-0.3\n[-0.5, -0.1]c",
+          "-0.6\n[-0.8, -0.4]c",
+          ""
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%\nFPG (mg/dL)",
+          "55",
+          "66",
+          "40"
+        ],
+        [
+          "Baseline (mean)",
+          "172",
+          "179",
+          "174"
+        ],
+        [
+          "Change at week 30b",
+          "-35",
+          "-46",
+          "-37"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>OZEMPIC® 0.5 mg</th><th>OZEMPIC® 1 mg</th><th>Insulin Glargine</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>362</td><td>360</td><td>360</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.1</td><td>8.2</td><td>8.1</td></tr>\n<tr><td>Change at week 30b</td><td>-1.2</td><td>-1.5</td><td>-0.9</td></tr>\n<tr><td>Difference from insulin glargineb<br>[95% CI]</td><td>-0.3<br>[-0.5, -0.1]c</td><td>-0.6<br>[-0.8, -0.4]c</td><td></td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%<br>FPG (mg/dL)</td><td>55</td><td>66</td><td>40</td></tr>\n<tr><td>Baseline (mean)</td><td>172</td><td>179</td><td>174</td></tr>\n<tr><td>Change at week 30b</td><td>-35</td><td>-46</td><td>-37</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            362.0,
+            360.0,
+            360.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.1,
+            8.2,
+            8.1
+          ]
+        },
+        {
+          "label": "Change at week 30b",
+          "values": [
+            -1.2,
+            -1.5,
+            -0.9
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%\nFPG (mg/dL)",
+          "values": [
+            55.0,
+            66.0,
+            40.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            172.0,
+            179.0,
+            174.0
+          ]
+        },
+        {
+          "label": "Change at week 30b",
+          "values": [
+            -35.0,
+            -46.0,
+            -37.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0007-table-02",
+      "caption": "Table 5. Results at Week 56 in a Trial of OZEMPIC® Compared to Exenatide 2 mg randomization, 53.3% of patients were treated with sulfonylurea and metformin. Overall, 88.1%",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        27.227272727272727,
+        351.0744,
+        266.70885714285714,
+        470.2048
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "OZEMPIC® 1 mg",
+        "Exenatide ER 2 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "404",
+            "405"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.4",
+            "8.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 56b",
+            "-1.4",
+            "-0.9"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from exenatideb",
+            "-0.5",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "[-0.7, -0.3]c",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "62",
+            "40"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "191",
+            "188"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 56b",
+            "-44",
+            "-34"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "OZEMPIC® 1 mg",
+          "Exenatide ER 2 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "404",
+          "405"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.4",
+          "8.3"
+        ],
+        [
+          "Change at week 56b",
+          "-1.4",
+          "-0.9"
+        ],
+        [
+          "Difference from exenatideb\n[95% CI]",
+          "-0.5\n[-0.7, -0.3]c",
+          ""
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "62",
+          "40"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "191",
+          "188"
+        ],
+        [
+          "Change at week 56b",
+          "-44",
+          "-34"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>OZEMPIC® 1 mg</th><th>Exenatide ER 2 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>404</td><td>405</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.4</td><td>8.3</td></tr>\n<tr><td>Change at week 56b</td><td>-1.4</td><td>-0.9</td></tr>\n<tr><td>Difference from exenatideb<br>[95% CI]</td><td>-0.5<br>[-0.7, -0.3]c</td><td></td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>62</td><td>40</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>191</td><td>188</td></tr>\n<tr><td>Change at week 56b</td><td>-44</td><td>-34</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            404.0,
+            405.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.4,
+            8.3
+          ]
+        },
+        {
+          "label": "Change at week 56b",
+          "values": [
+            -1.4,
+            -0.9
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            62.0,
+            40.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            191.0,
+            188.0
+          ]
+        },
+        {
+          "label": "Change at week 56b",
+          "values": [
+            -44.0,
+            -34.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0007-table-03",
+      "caption": "Table 7. Results at Week 40 in a Trial of OZEMPIC® 2 mg Compared to OZEMPIC®",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        310.74995,
+        394.74145,
+        542.2499,
+        513.8718
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "OZEMPIC® 1 mg",
+        "OZEMPIC® 2 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "481",
+            "480"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.8",
+            "8.9"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 40b",
+            "-1.9",
+            "-2.1"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from OZEMPIC® 1 mg",
+            "",
+            "-0.2"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-0.31 ; -0.04]c"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%a",
+            "56",
+            "64"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "196",
+            "193"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 40b",
+            "-55",
+            "-59"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "OZEMPIC® 1 mg",
+          "OZEMPIC® 2 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "481",
+          "480"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.8",
+          "8.9"
+        ],
+        [
+          "Change at week 40b",
+          "-1.9",
+          "-2.1"
+        ],
+        [
+          "Difference from OZEMPIC® 1 mg\n[95% CI]",
+          "",
+          "-0.2\n[-0.31 ; -0.04]c"
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%a",
+          "56",
+          "64"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "196",
+          "193"
+        ],
+        [
+          "Change at week 40b",
+          "-55",
+          "-59"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>OZEMPIC® 1 mg</th><th>OZEMPIC® 2 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>481</td><td>480</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.8</td><td>8.9</td></tr>\n<tr><td>Change at week 40b</td><td>-1.9</td><td>-2.1</td></tr>\n<tr><td>Difference from OZEMPIC® 1 mg<br>[95% CI]</td><td></td><td>-0.2<br>[-0.31 ; -0.04]c</td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%a</td><td>56</td><td>64</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>196</td><td>193</td></tr>\n<tr><td>Change at week 40b</td><td>-55</td><td>-59</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            481.0,
+            480.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.8,
+            8.9
+          ]
+        },
+        {
+          "label": "Change at week 40b",
+          "values": [
+            -1.9,
+            -2.1
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%a",
+          "values": [
+            56.0,
+            64.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            196.0,
+            193.0
+          ]
+        },
+        {
+          "label": "Change at week 40b",
+          "values": [
+            -55.0,
+            -59.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0008-table-01",
+      "caption": "Table 8. Results at Week 30 in a Trial of OZEMPIC® in Adult Patients with Type 2 Table 9. Treatment Effect for MACE and its Components, Median Study Observation",
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        27.25,
+        66.49390000000005,
+        295.85526363636365,
+        188.31705
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "OZEMPIC® 0.5 mg",
+        "OZEMPIC® 1 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "133",
+            "132",
+            "131"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.4",
+            "8.4",
+            "8.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 30b",
+            "-0.2",
+            "-1.3",
+            "-1.7"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob",
+            "",
+            "-1.1",
+            "-1.6"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-1.4, -0.8]c",
+            "[-1.8, -1.3]c"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "13",
+            "56",
+            "73"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "154",
+            "161",
+            "153"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at week 30b",
+            "-8",
+            "-28",
+            "-39"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "OZEMPIC® 0.5 mg",
+          "OZEMPIC® 1 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "133",
+          "132",
+          "131"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.4",
+          "8.4",
+          "8.3"
+        ],
+        [
+          "Change at week 30b",
+          "-0.2",
+          "-1.3",
+          "-1.7"
+        ],
+        [
+          "Difference from placebob\n[95% CI]",
+          "",
+          "-1.1\n[-1.4, -0.8]c",
+          "-1.6\n[-1.8, -1.3]c"
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "13",
+          "56",
+          "73"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "154",
+          "161",
+          "153"
+        ],
+        [
+          "Change at week 30b",
+          "-8",
+          "-28",
+          "-39"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>OZEMPIC® 0.5 mg</th><th>OZEMPIC® 1 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>133</td><td>132</td><td>131</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.4</td><td>8.4</td><td>8.3</td></tr>\n<tr><td>Change at week 30b</td><td>-0.2</td><td>-1.3</td><td>-1.7</td></tr>\n<tr><td>Difference from placebob<br>[95% CI]</td><td></td><td>-1.1<br>[-1.4, -0.8]c</td><td>-1.6<br>[-1.8, -1.3]c</td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>13</td><td>56</td><td>73</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>154</td><td>161</td><td>153</td></tr>\n<tr><td>Change at week 30b</td><td>-8</td><td>-28</td><td>-39</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            133.0,
+            132.0,
+            131.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.4,
+            8.4,
+            8.3
+          ]
+        },
+        {
+          "label": "Change at week 30b",
+          "values": [
+            -0.2,
+            -1.3,
+            -1.7
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            13.0,
+            56.0,
+            73.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            154.0,
+            161.0,
+            153.0
+          ]
+        },
+        {
+          "label": "Change at week 30b",
+          "values": [
+            -8.0,
+            -28.0,
+            -39.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0008-table-02",
+      "caption": "Table 8. Results at Week 30 in a Trial of OZEMPIC® in Adult Patients with Type 2 Table 9. Treatment Effect for MACE and its Components, Median Study Observation",
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        303.2499411764706,
+        66.49390000000005,
+        577.0,
+        188.31705
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.986,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo N=1649 (%)",
+        "OZEMPIC® N=1648 (%)",
+        "Hazard ratio vs Placebo (95% CI)a"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Composite of cardiovascular death,\nnon-fatal myocardial infarction,\nnon-fatal stroke (time to first\noccurrence)",
+            "146 (8.9)",
+            "108 (6.6)",
+            "0.74 (0.58, 0.95)"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Non-fatal Myocardial Infarction",
+            "64 (3.9)",
+            "47 (2.9)",
+            "0.74 (0.51, 1.08)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Non-fatal Stroke",
+            "44 (2.7)",
+            "27 (1.6)",
+            "0.61 (0.38, 0.99)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cardiovascular Death",
+            "46 (2.8)",
+            "44 (2.7)",
+            "0.98 (0.65, 1.48)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fatal or Non-fatal Myocardial\nInfarction",
+            "67 (4.1)",
+            "54 (3.3)",
+            "0.81 (0.57, 1.16)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fatal or Non-fatal Stroke",
+            "46 (2.8)",
+            "30 (1.8)",
+            "0.65 (0.41, 1.03)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo\nN=1649 (%)",
+          "OZEMPIC®\nN=1648 (%)",
+          "Hazard ratio\nvs Placebo\n(95% CI)a"
+        ],
+        [
+          "Composite of cardiovascular death,\nnon-fatal myocardial infarction,\nnon-fatal stroke (time to first\noccurrence)",
+          "146 (8.9)",
+          "108 (6.6)",
+          "0.74 (0.58, 0.95)"
+        ],
+        [
+          "Non-fatal Myocardial Infarction",
+          "64 (3.9)",
+          "47 (2.9)",
+          "0.74 (0.51, 1.08)"
+        ],
+        [
+          "Non-fatal Stroke",
+          "44 (2.7)",
+          "27 (1.6)",
+          "0.61 (0.38, 0.99)"
+        ],
+        [
+          "Cardiovascular Death",
+          "46 (2.8)",
+          "44 (2.7)",
+          "0.98 (0.65, 1.48)"
+        ],
+        [
+          "Fatal or Non-fatal Myocardial\nInfarction",
+          "67 (4.1)",
+          "54 (3.3)",
+          "0.81 (0.57, 1.16)"
+        ],
+        [
+          "Fatal or Non-fatal Stroke",
+          "46 (2.8)",
+          "30 (1.8)",
+          "0.65 (0.41, 1.03)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo<br>N=1649 (%)</th><th>OZEMPIC®<br>N=1648 (%)</th><th>Hazard ratio<br>vs Placebo<br>(95% CI)a</th></tr>\n</thead>\n<tbody>\n<tr><td>Composite of cardiovascular death,<br>non-fatal myocardial infarction,<br>non-fatal stroke (time to first<br>occurrence)</td><td>146 (8.9)</td><td>108 (6.6)</td><td>0.74 (0.58, 0.95)</td></tr>\n<tr><td>Non-fatal Myocardial Infarction</td><td>64 (3.9)</td><td>47 (2.9)</td><td>0.74 (0.51, 1.08)</td></tr>\n<tr><td>Non-fatal Stroke</td><td>44 (2.7)</td><td>27 (1.6)</td><td>0.61 (0.38, 0.99)</td></tr>\n<tr><td>Cardiovascular Death</td><td>46 (2.8)</td><td>44 (2.7)</td><td>0.98 (0.65, 1.48)</td></tr>\n<tr><td>Fatal or Non-fatal Myocardial<br>Infarction</td><td>67 (4.1)</td><td>54 (3.3)</td><td>0.81 (0.57, 1.16)</td></tr>\n<tr><td>Fatal or Non-fatal Stroke</td><td>46 (2.8)</td><td>30 (1.8)</td><td>0.65 (0.41, 1.03)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0008-table-03",
+      "caption": null,
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        303.2499411764706,
+        487.7012,
+        584.7499,
+        643.4959677419355
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.88,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo N=1766 (%) / Number of Patients (%)",
+        "OZEMPIC® 1 mg N=1767 (%) / Number of Patients (%)",
+        "Hazard Ratio vs Placebo (95% CI)1 / Number of Patients (%)",
+        "p-value2 / Number of Patients (%)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Composite Endpoint (≥50%\nsustained eGFR decline, sustained\neGFR <15 mL/min/1.73m2, chronic\nrenal replacement therapy, or renal\nor cardiovascular death (time to first\noccurrence)3",
+            "410 (23.2)",
+            "331 (18.7)",
+            "0.76 (0.66, 0.88)",
+            "0.0003"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "≥50% sustained eGFR decline3",
+            "213 (12.1)",
+            "165 (9.3)",
+            "0.73 (0.59, 0.89)",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Sustained eGFR <15mL/min/1.73m2 3",
+            "110 (6.2)",
+            "92 (5.2)",
+            "0.8 (0.61, 1.06)",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Chronic renal replacement therapy",
+            "100 (5.7)",
+            "87 (4.9)",
+            "0.84 (0.63, 1.12)",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Renal death",
+            "5 (0.3)",
+            "5 (0.3)",
+            "0.97 (0.27, 3.49)",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cardiovascular death",
+            "169 (9.6)",
+            "123 (7)",
+            "0.71 (0.56, 0.89)",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 5,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo\nN=1766 (%)",
+          "OZEMPIC®\n1 mg\nN=1767 (%)",
+          "Hazard Ratio\nvs Placebo\n(95% CI)1",
+          "p-value2"
+        ],
+        [
+          "",
+          "Number of\nPatients (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Composite Endpoint (≥50%\nsustained eGFR decline, sustained\neGFR <15 mL/min/1.73m2, chronic\nrenal replacement therapy, or renal\nor cardiovascular death (time to first\noccurrence)3",
+          "410 (23.2)",
+          "331 (18.7)",
+          "0.76 (0.66, 0.88)",
+          "0.0003"
+        ],
+        [
+          "≥50% sustained eGFR decline3\nSustained eGFR <15mL/min/1.73m2 3\nChronic renal replacement therapy\nRenal death\nCardiovascular death",
+          "213 (12.1)\n110 (6.2)\n100 (5.7)\n5 (0.3)\n169 (9.6)",
+          "165 (9.3)\n92 (5.2)\n87 (4.9)\n5 (0.3)\n123 (7)",
+          "0.73 (0.59, 0.89)\n0.8 (0.61, 1.06)\n0.84 (0.63, 1.12)\n0.97 (0.27, 3.49)\n0.71 (0.56, 0.89)",
+          ""
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo<br>N=1766 (%)</th><th>OZEMPIC®<br>1 mg<br>N=1767 (%)</th><th>Hazard Ratio<br>vs Placebo<br>(95% CI)1</th><th>p-value2</th></tr>\n<tr><th></th><th>Number of<br>Patients (%)</th><th></th><th></th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Composite Endpoint (≥50%<br>sustained eGFR decline, sustained<br>eGFR &lt;15 mL/min/1.73m2, chronic<br>renal replacement therapy, or renal<br>or cardiovascular death (time to first<br>occurrence)3</td><td>410 (23.2)</td><td>331 (18.7)</td><td>0.76 (0.66, 0.88)</td><td>0.0003</td></tr>\n<tr><td>≥50% sustained eGFR decline3<br>Sustained eGFR &lt;15mL/min/1.73m2 3<br>Chronic renal replacement therapy<br>Renal death<br>Cardiovascular death</td><td>213 (12.1)<br>110 (6.2)<br>100 (5.7)<br>5 (0.3)<br>169 (9.6)</td><td>165 (9.3)<br>92 (5.2)<br>87 (4.9)<br>5 (0.3)<br>123 (7)</td><td>0.73 (0.59, 0.89)<br>0.8 (0.61, 1.06)<br>0.84 (0.63, 1.12)<br>0.97 (0.27, 3.49)<br>0.71 (0.56, 0.89)</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0009-table-01",
+      "caption": "Figure 7. Cumulative Incidence: Time to First Occurrence of the Primary Observed data from the in-trial period until week 104. Error bars are +/- 1.96 *standard error of the",
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        309.25,
+        135.29150000000004,
+        584.9722222222222,
+        257.01099999999997
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.973,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4",
+        "Column 5",
+        "Column 6"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Single-Patient-Use",
+            "Pens",
+            "(with multiple",
+            "weekly doses)",
+            "",
+            ""
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dose per",
+            "Use For",
+            "Total Strength",
+            "Doses per Pen",
+            "Carton",
+            "NDC"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Injection",
+            "Use For",
+            "per Total Volume",
+            "Doses per Pen",
+            "Contents",
+            "NDC"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.25 mg",
+            "Initiation",
+            "2 mg/3 mL",
+            "4 doses of 0.25 mg and<br>2 doses of 0.5 mg<br>or<br>4 doses of 0.5 mg",
+            "1 pen<br>6 NovoFine®<br>Plus needles",
+            "0169-4181-13"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "0.5 mg",
+            "Maintenance",
+            "2 mg/3 mL",
+            "4 doses of 0.25 mg and<br>2 doses of 0.5 mg<br>or<br>4 doses of 0.5 mg",
+            "1 pen<br>6 NovoFine®<br>Plus needles",
+            "0169-4181-13"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1 mg",
+            "Maintenance",
+            "4 mg/3 mL",
+            "4 doses of 1 mg",
+            "1 pen\n4 NovoFine®\nPlus needles",
+            "0169-4130-13"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "2 mg",
+            "Maintenance",
+            "8 mg/3 mL",
+            "4 doses of 2 mg",
+            "1 pen\n4 NovoFine®\nPlus needles",
+            "0169-4772-12"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 1"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Single-Patient-Use Pens (with multiple weekly doses)",
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        [
+          "Dose per\nInjection",
+          "Use For",
+          "Total Strength\nper Total Volume",
+          "Doses per Pen",
+          "Carton\nContents",
+          "NDC"
+        ],
+        [
+          "0.25 mg\n0.5 mg",
+          "Initiation\nMaintenance",
+          "2 mg/3 mL",
+          "4 doses of 0.25 mg and\n2 doses of 0.5 mg\nor\n4 doses of 0.5 mg",
+          "1 pen\n6 NovoFine®\nPlus needles",
+          "0169-4181-13"
+        ],
+        [
+          "1 mg",
+          "Maintenance",
+          "4 mg/3 mL",
+          "4 doses of 1 mg",
+          "1 pen\n4 NovoFine®\nPlus needles",
+          "0169-4130-13"
+        ],
+        [
+          "2 mg",
+          "Maintenance",
+          "8 mg/3 mL",
+          "4 doses of 2 mg",
+          "1 pen\n4 NovoFine®\nPlus needles",
+          "0169-4772-12"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Single-Patient-Use Pens (with multiple weekly doses)</td><td></td><td></td><td></td><td></td><td></td></tr>\n<tr><td>Dose per<br>Injection</td><td>Use For</td><td>Total Strength<br>per Total Volume</td><td>Doses per Pen</td><td>Carton<br>Contents</td><td>NDC</td></tr>\n<tr><td>0.25 mg<br>0.5 mg</td><td>Initiation<br>Maintenance</td><td>2 mg/3 mL</td><td>4 doses of 0.25 mg and<br>2 doses of 0.5 mg<br>or<br>4 doses of 0.5 mg</td><td>1 pen<br>6 NovoFine®<br>Plus needles</td><td>0169-4181-13</td></tr>\n<tr><td>1 mg</td><td>Maintenance</td><td>4 mg/3 mL</td><td>4 doses of 1 mg</td><td>1 pen<br>4 NovoFine®<br>Plus needles</td><td>0169-4130-13</td></tr>\n<tr><td>2 mg</td><td>Maintenance</td><td>8 mg/3 mL</td><td>4 doses of 2 mg</td><td>1 pen<br>4 NovoFine®<br>Plus needles</td><td>0169-4772-12</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0009-table-02",
+      "caption": null,
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        309.25,
+        486.6366,
+        584.9722222222222,
+        547.6122
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.9,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Single-Patient-Use Pens",
+            "(with multiple weekly doses)",
+            ""
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Prior to first use",
+            "After first use",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Refrigerated",
+            "Room Temperature",
+            "Refrigerated"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "2°C to 8°C",
+            "15°C to 30°C",
+            "2°C to 8°C"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(36°F to 46°F)",
+            "(59°F to 86°F)",
+            "(36°F to 46°F)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Until expiration date",
+            "56 days",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 1"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Single-Patient-Use Pens (with multiple weekly doses)",
+          null,
+          null
+        ],
+        [
+          "Prior to first use",
+          "After first use",
+          null
+        ],
+        [
+          "Refrigerated\n2°C to 8°C\n(36°F to 46°F)",
+          "Room Temperature\n15°C to 30°C\n(59°F to 86°F)",
+          "Refrigerated\n2°C to 8°C\n(36°F to 46°F)"
+        ],
+        [
+          "Until expiration date",
+          "56 days",
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Single-Patient-Use Pens (with multiple weekly doses)</td><td></td><td></td></tr>\n<tr><td>Prior to first use</td><td>After first use</td><td></td></tr>\n<tr><td>Refrigerated<br>2°C to 8°C<br>(36°F to 46°F)</td><td>Room Temperature<br>15°C to 30°C<br>(59°F to 86°F)</td><td>Refrigerated<br>2°C to 8°C<br>(36°F to 46°F)</td></tr>\n<tr><td>Until expiration date</td><td>56 days</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0009-table-03",
+      "caption": "Figure 9. Observed Mean Plot: eGFR (mL/min/1.73m2) by Week in FLOW Trial",
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        309.25,
+        608.205257142857,
+        493.25,
+        645.95465
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Refrigerated",
+            "Room Temperature"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "2°C to 8°C",
+            "8°C to 30°C"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(36°F to 46°F)",
+            "(46°F to 86°F)"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Until expiration date",
+            "28 days"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "Refrigerated\n2°C to 8°C\n(36°F to 46°F)",
+          "Room Temperature\n8°C to 30°C\n(46°F to 86°F)"
+        ],
+        [
+          "Until expiration date",
+          "28 days"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Refrigerated<br>2°C to 8°C<br>(36°F to 46°F)</td><td>Room Temperature<br>8°C to 30°C<br>(46°F to 86°F)</td></tr>\n<tr><td>Until expiration date</td><td>28 days</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0011-table-01",
+      "caption": null,
+      "source_pages": [
+        11
+      ],
+      "bbox": [
+        27.328125,
+        46.875,
+        585.3,
+        723.3506
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.844,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Medication Guide OZEMPIC® (oh-ZEM-pick) (semaglutide) injection, for subcutaneous use",
+        "How should I use OZEMPIC®? • Read the Instructions for Use that comes with OZEMPIC®. • Use OZEMPIC® exactly as your healthcare provider tells you to. • Your healthcare provider should show you how to use OZEMPIC® before you use it for the first time. • OZEMPIC® is injected under the skin (subcutaneously) of your stomach (abdomen), thigh, or upper arm. Do not inject OZEMPIC® into a muscle (intramuscularly) or vein (intravenously). • Use OZEMPIC® 1 time each week, on the same day each week, at any time of the day. • You may change the day of the week you use OZEMPIC® as long as your last dose was given 2 or more days before. • If you miss a dose of OZEMPIC®, take the missed dose as soon as possible within 5 days after the missed dose. If more than 5 days have passed, skip the missed dose and take your next dose on the regularly scheduled day. • OZEMPIC® may be taken with or without food. • Do not mix insulin and OZEMPIC® together in the same injection. • You may give an injection of OZEMPIC® and insulin in the same body area (such as your stomach area), but not right next to each other. • Change (rotate) your injection site with each injection. Do not use the same site for each injection. • Do not share your OZEMPIC® pen with other people, even if the needle has been changed. You may give other people a serious infection, or get a serious infection from them. • If you take too much OZEMPIC®, call your healthcare provider or Poison Help line at 1-800-222-1222 or go to the nearest hospital emergency room right away."
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Do not share your OZEMPIC® pen with other people, even if the needle\nhas been changed. You may give other people a serious infection, or get\na serious infection from them.",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Read this Medication Guide before you start using OZEMPIC® and each time you get\na refill. There may be new information. This information does not take the place of\ntalking to your healthcare provider about your medical condition or your treatment.",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "What is the most important information I should know about OZEMPIC®?\nOZEMPIC® may cause serious side effects, including:\n• Possible thyroid tumors, including cancer. Tell your healthcare provider\nif you get a lump or swelling in your neck, hoarseness, trouble swallowing, or\nshortness of breath. These may be symptoms of thyroid cancer. In studies with\nrodents, OZEMPIC® and medicines that work like OZEMPIC® caused thyroid\ntumors, including thyroid cancer. It is not known if OZEMPIC® will cause thyroid\ntumors or a type of thyroid cancer called medullary thyroid carcinoma (MTC) in\npeople.\n• Do not use OZEMPIC® if you or any of your family have ever had a type of thyroid\ncancer called medullary thyroid carcinoma (MTC), or if you have an endocrine\nsystem condition called Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "What is OZEMPIC®?\nOZEMPIC® is an injectable prescription medicine used:\n• along with diet and exercise to improve blood sugar (glucose) in adults with type 2\ndiabetes mellitus.\n• to reduce the risk of major cardiovascular events such as heart attack, stroke or\ndeath in adults with type 2 diabetes mellitus with known heart disease.\n• to reduce the risk of kidney disease worsening, kidney failure (end-stage kidney\ndisease), and death due to cardiovascular disease in adults with type 2 diabetes\nmellitus and chronic kidney disease.\nIt is not known if OZEMPIC® is safe and effective for use in children.",
+            "What are the possible side effects of OZEMPIC®?\nOZEMPIC® may cause serious side effects, including:\n• See “What is the most important information I should know about OZEMPIC®?”\n• inflammation of your pancreas (pancreatitis). Stop using OZEMPIC® and call your healthcare\nprovider right away if you have severe pain in your stomach area (abdomen) that will not go away, with or\nwithout vomiting. You may feel the pain from your abdomen to your back.\n• changes in vision. Tell your healthcare provider if you have changes in vision during treatment with\nOZEMPIC®.\n• low blood sugar (hypoglycemia). Your risk for getting low blood sugar may be higher if you use\nOZEMPIC® with another medicine that can cause low blood sugar, such as a sulfonylurea or insulin. Signs\nand symptoms of low blood sugar may include:\n• dizziness or light-headedness • blurred vision • anxiety, irritability, or mood changes\n• sweating • slurred speech • hunger\n• confusion or drowsiness • shakiness • weakness\n• headache • fast heartbeat • feeling jittery\n• Dehydration leading to kidney problems. Diarrhea, nausea, and vomiting may cause a loss of fluids\n(dehydration) which may cause kidney problems. It is important for you to drink fluids to help reduce your\nchance of dehydration. Tell your healthcare provider right away if you have nausea, vomiting, or diarrhea\nthat does not go away.\n• Severe stomach problems. Stomach problems, sometimes severe, have been reported in people who\nuse OZEMPIC®. Tell your healthcare provider if you have stomach problems that are severe or will not go\naway.\n• serious allergic reactions. Stop using OZEMPIC® and get medical help right away, if you have any\nsymptoms of a serious allergic reaction including:\n• swelling of your face, lips, tongue or throat • problems breathing or swallowing\n• severe rash or itching • fainting or feeling dizzy • very rapid heartbeat\n• gallbladder problems. Gallbladder problems have happened in some people who take OZEMPIC®.\nTell your healthcare provider right away if you get symptoms of gallbladder problems which may include:\n• pain in your upper stomach (abdomen) • yellowing of skin or eyes (jaundice)\n• fever • clay-colored stools\n• food or liquid getting into the lungs during surgery or other procedures that use anesthesia\nor deep sleepiness (deep sedation). OZEMPIC® may increase the chance of food getting into your\nlungs during surgery or other procedures. Tell all your healthcare providers that you are taking OZEMPIC®\nbefore you are scheduled to have surgery or other procedures.\nThe most common side effects of OZEMPIC® may include nausea, vomiting, diarrhea, stomach\n(abdominal) pain, and constipation.\nTalk to your healthcare provider about any side effect that bothers you or does not go away.\nThese are not all the possible side effects of OZEMPIC®.\nCall your doctor for medical advice about side effects. You may report side effects to FDA at\n1-800-FDA-1088."
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Do not use OZEMPIC® if"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "• you or any of your family have ever had a type of thyroid cancer called medullary\nthyroid carcinoma (MTC) or if you have an endocrine system condition called\nMultiple Endocrine Neoplasia syndrome type 2 (MEN 2).\n• you have had a serious allergic reaction to semaglutide or any of the ingredients in\nOZEMPIC®. See the end of this Medication Guide for a complete list of ingredients\nin OZEMPIC®. See “What are the possible side effects of OZEMPIC®?” for\nsymptoms of a serious allergic reaction.",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Do not use OZEMPIC® if"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Before using OZEMPIC®, tell your healthcare provider if you have any\nother medical conditions, including if you:\n• have or have had problems with your pancreas.\n• have a history of diabetic retinopathy.\n• have severe problems with your stomach, such as slowed emptying of your\nstomach (gastroparesis) or problems with digesting food.\n• are scheduled to have surgery or other procedures that use anesthesia or deep\nsleepiness (deep sedation).\n• are pregnant or plan to become pregnant. It is not known if OZEMPIC® will harm\nyour unborn baby. You should stop using OZEMPIC® at least 2 months before you\nplan to become pregnant. Talk to your healthcare provider about the best way to\ncontrol your blood sugar if you plan to become pregnant or while you are pregnant.\n• are breastfeeding or plan to breastfeed. It is not known if OZEMPIC® passes into\nyour breast milk. You should talk with your healthcare provider about the best way\nto feed your baby while using OZEMPIC®.\nTell your healthcare provider about all the medicines you take, including\nprescription and over-the-counter medicines, vitamins, and herbal supplements.\nOZEMPIC® may affect the way some medicines work and some medicines may affect\nthe way OZEMPIC® works.\nBefore using OZEMPIC®, talk to your healthcare provider about low blood\nsugar and how to manage it. Tell your healthcare provider if you are taking other\nmedicines to treat diabetes, including insulin or sulfonylureas.\nKnow the medicines you take. Keep a list of them to show your healthcare provider\nand pharmacist when you get a new medicine.",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Do not use OZEMPIC® if"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "General information about the safe and effective use of OZEMPIC®.\nMedicines are sometimes prescribed for purposes other than those listed in a Medication Guide. Do not use\nOZEMPIC® for a condition for which it was not prescribed. Do not give OZEMPIC® to other people, even if\nthey have the same symptoms that you have. It may harm them.\nYou can ask your pharmacist or healthcare provider for information about OZEMPIC® that is written for health\nprofessionals."
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Do not use OZEMPIC® if"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "What are the ingredients in OZEMPIC®?\nActive Ingredient: semaglutide\nInactive Ingredients: disodium phosphate dihydrate, propylene glycol, phenol and water for injection.\nHydrochloric acid or sodium hydroxide may be added to adjust pH."
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Medication Guide\nOZEMPIC® (oh-ZEM-pick)\n(semaglutide) injection, for subcutaneous use",
+          "How should I use OZEMPIC®?\n• Read the Instructions for Use that comes with OZEMPIC®.\n• Use OZEMPIC® exactly as your healthcare provider tells you to.\n• Your healthcare provider should show you how to use OZEMPIC® before you use it for the\nfirst time.\n• OZEMPIC® is injected under the skin (subcutaneously) of your stomach (abdomen), thigh, or upper arm.\nDo not inject OZEMPIC® into a muscle (intramuscularly) or vein (intravenously).\n• Use OZEMPIC® 1 time each week, on the same day each week, at any time of the day.\n• You may change the day of the week you use OZEMPIC® as long as your last dose was given 2 or more\ndays before.\n• If you miss a dose of OZEMPIC®, take the missed dose as soon as possible within 5 days after the missed\ndose. If more than 5 days have passed, skip the missed dose and take your next dose on the regularly\nscheduled day.\n• OZEMPIC® may be taken with or without food.\n• Do not mix insulin and OZEMPIC® together in the same injection.\n• You may give an injection of OZEMPIC® and insulin in the same body area (such as your stomach area),\nbut not right next to each other.\n• Change (rotate) your injection site with each injection. Do not use the same site for each injection.\n• Do not share your OZEMPIC® pen with other people, even if the needle has been changed.\nYou may give other people a serious infection, or get a serious infection from them.\n• If you take too much OZEMPIC®, call your healthcare provider or Poison Help line at 1-800-222-1222 or\ngo to the nearest hospital emergency room right away."
+        ],
+        [
+          "Do not share your OZEMPIC® pen with other people, even if the needle\nhas been changed. You may give other people a serious infection, or get\na serious infection from them.",
+          null
+        ],
+        [
+          "Read this Medication Guide before you start using OZEMPIC® and each time you get\na refill. There may be new information. This information does not take the place of\ntalking to your healthcare provider about your medical condition or your treatment.",
+          null
+        ],
+        [
+          "What is the most important information I should know about OZEMPIC®?\nOZEMPIC® may cause serious side effects, including:\n• Possible thyroid tumors, including cancer. Tell your healthcare provider\nif you get a lump or swelling in your neck, hoarseness, trouble swallowing, or\nshortness of breath. These may be symptoms of thyroid cancer. In studies with\nrodents, OZEMPIC® and medicines that work like OZEMPIC® caused thyroid\ntumors, including thyroid cancer. It is not known if OZEMPIC® will cause thyroid\ntumors or a type of thyroid cancer called medullary thyroid carcinoma (MTC) in\npeople.\n• Do not use OZEMPIC® if you or any of your family have ever had a type of thyroid\ncancer called medullary thyroid carcinoma (MTC), or if you have an endocrine\nsystem condition called Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).",
+          null
+        ],
+        [
+          "What is OZEMPIC®?\nOZEMPIC® is an injectable prescription medicine used:\n• along with diet and exercise to improve blood sugar (glucose) in adults with type 2\ndiabetes mellitus.\n• to reduce the risk of major cardiovascular events such as heart attack, stroke or\ndeath in adults with type 2 diabetes mellitus with known heart disease.\n• to reduce the risk of kidney disease worsening, kidney failure (end-stage kidney\ndisease), and death due to cardiovascular disease in adults with type 2 diabetes\nmellitus and chronic kidney disease.\nIt is not known if OZEMPIC® is safe and effective for use in children.",
+          "What are the possible side effects of OZEMPIC®?\nOZEMPIC® may cause serious side effects, including:\n• See “What is the most important information I should know about OZEMPIC®?”\n• inflammation of your pancreas (pancreatitis). Stop using OZEMPIC® and call your healthcare\nprovider right away if you have severe pain in your stomach area (abdomen) that will not go away, with or\nwithout vomiting. You may feel the pain from your abdomen to your back.\n• changes in vision. Tell your healthcare provider if you have changes in vision during treatment with\nOZEMPIC®.\n• low blood sugar (hypoglycemia). Your risk for getting low blood sugar may be higher if you use\nOZEMPIC® with another medicine that can cause low blood sugar, such as a sulfonylurea or insulin. Signs\nand symptoms of low blood sugar may include:\n• dizziness or light-headedness • blurred vision • anxiety, irritability, or mood changes\n• sweating • slurred speech • hunger\n• confusion or drowsiness • shakiness • weakness\n• headache • fast heartbeat • feeling jittery\n• Dehydration leading to kidney problems. Diarrhea, nausea, and vomiting may cause a loss of fluids\n(dehydration) which may cause kidney problems. It is important for you to drink fluids to help reduce your\nchance of dehydration. Tell your healthcare provider right away if you have nausea, vomiting, or diarrhea\nthat does not go away.\n• Severe stomach problems. Stomach problems, sometimes severe, have been reported in people who\nuse OZEMPIC®. Tell your healthcare provider if you have stomach problems that are severe or will not go\naway.\n• serious allergic reactions. Stop using OZEMPIC® and get medical help right away, if you have any\nsymptoms of a serious allergic reaction including:\n• swelling of your face, lips, tongue or throat • problems breathing or swallowing\n• severe rash or itching • fainting or feeling dizzy • very rapid heartbeat\n• gallbladder problems. Gallbladder problems have happened in some people who take OZEMPIC®.\nTell your healthcare provider right away if you get symptoms of gallbladder problems which may include:\n• pain in your upper stomach (abdomen) • yellowing of skin or eyes (jaundice)\n• fever • clay-colored stools\n• food or liquid getting into the lungs during surgery or other procedures that use anesthesia\nor deep sleepiness (deep sedation). OZEMPIC® may increase the chance of food getting into your\nlungs during surgery or other procedures. Tell all your healthcare providers that you are taking OZEMPIC®\nbefore you are scheduled to have surgery or other procedures.\nThe most common side effects of OZEMPIC® may include nausea, vomiting, diarrhea, stomach\n(abdominal) pain, and constipation.\nTalk to your healthcare provider about any side effect that bothers you or does not go away.\nThese are not all the possible side effects of OZEMPIC®.\nCall your doctor for medical advice about side effects. You may report side effects to FDA at\n1-800-FDA-1088."
+        ],
+        [
+          "Do not use OZEMPIC® if:\n• you or any of your family have ever had a type of thyroid cancer called medullary\nthyroid carcinoma (MTC) or if you have an endocrine system condition called\nMultiple Endocrine Neoplasia syndrome type 2 (MEN 2).\n• you have had a serious allergic reaction to semaglutide or any of the ingredients in\nOZEMPIC®. See the end of this Medication Guide for a complete list of ingredients\nin OZEMPIC®. See “What are the possible side effects of OZEMPIC®?” for\nsymptoms of a serious allergic reaction.",
+          null
+        ],
+        [
+          "Before using OZEMPIC®, tell your healthcare provider if you have any\nother medical conditions, including if you:\n• have or have had problems with your pancreas.\n• have a history of diabetic retinopathy.\n• have severe problems with your stomach, such as slowed emptying of your\nstomach (gastroparesis) or problems with digesting food.\n• are scheduled to have surgery or other procedures that use anesthesia or deep\nsleepiness (deep sedation).\n• are pregnant or plan to become pregnant. It is not known if OZEMPIC® will harm\nyour unborn baby. You should stop using OZEMPIC® at least 2 months before you\nplan to become pregnant. Talk to your healthcare provider about the best way to\ncontrol your blood sugar if you plan to become pregnant or while you are pregnant.\n• are breastfeeding or plan to breastfeed. It is not known if OZEMPIC® passes into\nyour breast milk. You should talk with your healthcare provider about the best way\nto feed your baby while using OZEMPIC®.\nTell your healthcare provider about all the medicines you take, including\nprescription and over-the-counter medicines, vitamins, and herbal supplements.\nOZEMPIC® may affect the way some medicines work and some medicines may affect\nthe way OZEMPIC® works.\nBefore using OZEMPIC®, talk to your healthcare provider about low blood\nsugar and how to manage it. Tell your healthcare provider if you are taking other\nmedicines to treat diabetes, including insulin or sulfonylureas.\nKnow the medicines you take. Keep a list of them to show your healthcare provider\nand pharmacist when you get a new medicine.",
+          null
+        ],
+        [
+          null,
+          "General information about the safe and effective use of OZEMPIC®.\nMedicines are sometimes prescribed for purposes other than those listed in a Medication Guide. Do not use\nOZEMPIC® for a condition for which it was not prescribed. Do not give OZEMPIC® to other people, even if\nthey have the same symptoms that you have. It may harm them.\nYou can ask your pharmacist or healthcare provider for information about OZEMPIC® that is written for health\nprofessionals."
+        ],
+        [
+          null,
+          "What are the ingredients in OZEMPIC®?\nActive Ingredient: semaglutide\nInactive Ingredients: disodium phosphate dihydrate, propylene glycol, phenol and water for injection.\nHydrochloric acid or sodium hydroxide may be added to adjust pH."
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Medication Guide<br>OZEMPIC® (oh-ZEM-pick)<br>(semaglutide) injection, for subcutaneous use</th><th>How should I use OZEMPIC®?<br>• Read the Instructions for Use that comes with OZEMPIC®.<br>• Use OZEMPIC® exactly as your healthcare provider tells you to.<br>• Your healthcare provider should show you how to use OZEMPIC® before you use it for the<br>first time.<br>• OZEMPIC® is injected under the skin (subcutaneously) of your stomach (abdomen), thigh, or upper arm.<br>Do not inject OZEMPIC® into a muscle (intramuscularly) or vein (intravenously).<br>• Use OZEMPIC® 1 time each week, on the same day each week, at any time of the day.<br>• You may change the day of the week you use OZEMPIC® as long as your last dose was given 2 or more<br>days before.<br>• If you miss a dose of OZEMPIC®, take the missed dose as soon as possible within 5 days after the missed<br>dose. If more than 5 days have passed, skip the missed dose and take your next dose on the regularly<br>scheduled day.<br>• OZEMPIC® may be taken with or without food.<br>• Do not mix insulin and OZEMPIC® together in the same injection.<br>• You may give an injection of OZEMPIC® and insulin in the same body area (such as your stomach area),<br>but not right next to each other.<br>• Change (rotate) your injection site with each injection. Do not use the same site for each injection.<br>• Do not share your OZEMPIC® pen with other people, even if the needle has been changed.<br>You may give other people a serious infection, or get a serious infection from them.<br>• If you take too much OZEMPIC®, call your healthcare provider or Poison Help line at 1-800-222-1222 or<br>go to the nearest hospital emergency room right away.</th></tr>\n</thead>\n<tbody>\n<tr><td>Do not share your OZEMPIC® pen with other people, even if the needle<br>has been changed. You may give other people a serious infection, or get<br>a serious infection from them.</td><td></td></tr>\n<tr><td>Read this Medication Guide before you start using OZEMPIC® and each time you get<br>a refill. There may be new information. This information does not take the place of<br>talking to your healthcare provider about your medical condition or your treatment.</td><td></td></tr>\n<tr><td>What is the most important information I should know about OZEMPIC®?<br>OZEMPIC® may cause serious side effects, including:<br>• Possible thyroid tumors, including cancer. Tell your healthcare provider<br>if you get a lump or swelling in your neck, hoarseness, trouble swallowing, or<br>shortness of breath. These may be symptoms of thyroid cancer. In studies with<br>rodents, OZEMPIC® and medicines that work like OZEMPIC® caused thyroid<br>tumors, including thyroid cancer. It is not known if OZEMPIC® will cause thyroid<br>tumors or a type of thyroid cancer called medullary thyroid carcinoma (MTC) in<br>people.<br>• Do not use OZEMPIC® if you or any of your family have ever had a type of thyroid<br>cancer called medullary thyroid carcinoma (MTC), or if you have an endocrine<br>system condition called Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).</td><td></td></tr>\n<tr><td>What is OZEMPIC®?<br>OZEMPIC® is an injectable prescription medicine used:<br>• along with diet and exercise to improve blood sugar (glucose) in adults with type 2<br>diabetes mellitus.<br>• to reduce the risk of major cardiovascular events such as heart attack, stroke or<br>death in adults with type 2 diabetes mellitus with known heart disease.<br>• to reduce the risk of kidney disease worsening, kidney failure (end-stage kidney<br>disease), and death due to cardiovascular disease in adults with type 2 diabetes<br>mellitus and chronic kidney disease.<br>It is not known if OZEMPIC® is safe and effective for use in children.</td><td>What are the possible side effects of OZEMPIC®?<br>OZEMPIC® may cause serious side effects, including:<br>• See “What is the most important information I should know about OZEMPIC®?”<br>• inflammation of your pancreas (pancreatitis). Stop using OZEMPIC® and call your healthcare<br>provider right away if you have severe pain in your stomach area (abdomen) that will not go away, with or<br>without vomiting. You may feel the pain from your abdomen to your back.<br>• changes in vision. Tell your healthcare provider if you have changes in vision during treatment with<br>OZEMPIC®.<br>• low blood sugar (hypoglycemia). Your risk for getting low blood sugar may be higher if you use<br>OZEMPIC® with another medicine that can cause low blood sugar, such as a sulfonylurea or insulin. Signs<br>and symptoms of low blood sugar may include:<br>• dizziness or light-headedness • blurred vision • anxiety, irritability, or mood changes<br>• sweating • slurred speech • hunger<br>• confusion or drowsiness • shakiness • weakness<br>• headache • fast heartbeat • feeling jittery<br>• Dehydration leading to kidney problems. Diarrhea, nausea, and vomiting may cause a loss of fluids<br>(dehydration) which may cause kidney problems. It is important for you to drink fluids to help reduce your<br>chance of dehydration. Tell your healthcare provider right away if you have nausea, vomiting, or diarrhea<br>that does not go away.<br>• Severe stomach problems. Stomach problems, sometimes severe, have been reported in people who<br>use OZEMPIC®. Tell your healthcare provider if you have stomach problems that are severe or will not go<br>away.<br>• serious allergic reactions. Stop using OZEMPIC® and get medical help right away, if you have any<br>symptoms of a serious allergic reaction including:<br>• swelling of your face, lips, tongue or throat • problems breathing or swallowing<br>• severe rash or itching • fainting or feeling dizzy • very rapid heartbeat<br>• gallbladder problems. Gallbladder problems have happened in some people who take OZEMPIC®.<br>Tell your healthcare provider right away if you get symptoms of gallbladder problems which may include:<br>• pain in your upper stomach (abdomen) • yellowing of skin or eyes (jaundice)<br>• fever • clay-colored stools<br>• food or liquid getting into the lungs during surgery or other procedures that use anesthesia<br>or deep sleepiness (deep sedation). OZEMPIC® may increase the chance of food getting into your<br>lungs during surgery or other procedures. Tell all your healthcare providers that you are taking OZEMPIC®<br>before you are scheduled to have surgery or other procedures.<br>The most common side effects of OZEMPIC® may include nausea, vomiting, diarrhea, stomach<br>(abdominal) pain, and constipation.<br>Talk to your healthcare provider about any side effect that bothers you or does not go away.<br>These are not all the possible side effects of OZEMPIC®.<br>Call your doctor for medical advice about side effects. You may report side effects to FDA at<br>1-800-FDA-1088.</td></tr>\n<tr><td>Do not use OZEMPIC® if:<br>• you or any of your family have ever had a type of thyroid cancer called medullary<br>thyroid carcinoma (MTC) or if you have an endocrine system condition called<br>Multiple Endocrine Neoplasia syndrome type 2 (MEN 2).<br>• you have had a serious allergic reaction to semaglutide or any of the ingredients in<br>OZEMPIC®. See the end of this Medication Guide for a complete list of ingredients<br>in OZEMPIC®. See “What are the possible side effects of OZEMPIC®?” for<br>symptoms of a serious allergic reaction.</td><td></td></tr>\n<tr><td>Before using OZEMPIC®, tell your healthcare provider if you have any<br>other medical conditions, including if you:<br>• have or have had problems with your pancreas.<br>• have a history of diabetic retinopathy.<br>• have severe problems with your stomach, such as slowed emptying of your<br>stomach (gastroparesis) or problems with digesting food.<br>• are scheduled to have surgery or other procedures that use anesthesia or deep<br>sleepiness (deep sedation).<br>• are pregnant or plan to become pregnant. It is not known if OZEMPIC® will harm<br>your unborn baby. You should stop using OZEMPIC® at least 2 months before you<br>plan to become pregnant. Talk to your healthcare provider about the best way to<br>control your blood sugar if you plan to become pregnant or while you are pregnant.<br>• are breastfeeding or plan to breastfeed. It is not known if OZEMPIC® passes into<br>your breast milk. You should talk with your healthcare provider about the best way<br>to feed your baby while using OZEMPIC®.<br>Tell your healthcare provider about all the medicines you take, including<br>prescription and over-the-counter medicines, vitamins, and herbal supplements.<br>OZEMPIC® may affect the way some medicines work and some medicines may affect<br>the way OZEMPIC® works.<br>Before using OZEMPIC®, talk to your healthcare provider about low blood<br>sugar and how to manage it. Tell your healthcare provider if you are taking other<br>medicines to treat diabetes, including insulin or sulfonylureas.<br>Know the medicines you take. Keep a list of them to show your healthcare provider<br>and pharmacist when you get a new medicine.</td><td></td></tr>\n<tr><td></td><td>General information about the safe and effective use of OZEMPIC®.<br>Medicines are sometimes prescribed for purposes other than those listed in a Medication Guide. Do not use<br>OZEMPIC® for a condition for which it was not prescribed. Do not give OZEMPIC® to other people, even if<br>they have the same symptoms that you have. It may harm them.<br>You can ask your pharmacist or healthcare provider for information about OZEMPIC® that is written for health<br>professionals.</td></tr>\n<tr><td></td><td>What are the ingredients in OZEMPIC®?<br>Active Ingredient: semaglutide<br>Inactive Ingredients: disodium phosphate dihydrate, propylene glycol, phenol and water for injection.<br>Hydrochloric acid or sodium hydroxide may be added to adjust pH.</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

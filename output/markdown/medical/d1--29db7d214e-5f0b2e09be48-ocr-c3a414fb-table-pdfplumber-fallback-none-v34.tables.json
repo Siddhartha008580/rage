@@ -1,0 +1,2551 @@
+{
+  "schema_version": 1,
+  "source_file": "d1.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0005-table-01",
+      "caption": "Table 1: Select Mean (±S.D.) Metformin Pharmacokinetic Parameters Following Single or",
+      "source_pages": [
+        5
+      ],
+      "bbox": [
+        88.132993,
+        86.93357200000003,
+        559.2529930000001,
+        354.173572
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 1.0,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells",
+          "footnote-markers",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Subject Groups: GLUCOPHAGE dose (number of subjects)",
+        "Cmax (µg/mL)",
+        "Tmax (hrs)",
+        "Renal Clearance (mL/min)"
+      ],
+      "header_footnote_markers": [
+        "a",
+        "b",
+        "c"
+      ],
+      "normalized_rows": [
+        {
+          "row_group_path": [
+            "Healthy, nondiabetic adults"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "500 mg single dose (24)",
+            "1.03 (±0.33)",
+            "2.75 (±0.81)",
+            "600 (±132)"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Healthy, nondiabetic adults"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "850 mg single dose (74)",
+            "1.60 (±0.38)",
+            "2.64 (±0.82)",
+            "552 (±139)"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": [
+            "d"
+          ]
+        },
+        {
+          "row_group_path": [
+            "Healthy, nondiabetic adults"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "850 mg three times daily for 19 doses (9)",
+            "2.01 (±0.42)",
+            "1.79 (±0.94)",
+            "642 (±173)"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 3,
+          "footnote_markers": [
+            "e"
+          ]
+        },
+        {
+          "row_group_path": [
+            "Adults with type 2 diabetes"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "850 mg single dose (23)",
+            "1.48 (±0.5)",
+            "3.32 (±1.08)",
+            "491 (±138)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Adults with type 2 diabetes"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "850 mg three times daily for 19 doses (9)",
+            "1.90 (±0.62)",
+            "2.01 (±1.22)",
+            "550 (±160)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": [
+            "e"
+          ]
+        },
+        {
+          "row_group_path": [
+            "Elderly , healthy nondiabetic adults"
+          ],
+          "row_group_footnote_markers": [
+            "f"
+          ],
+          "values": [
+            "850 mg single dose (12)",
+            "2.45 (±0.70)",
+            "2.71 (±1.05)",
+            "412 (±98)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Renal-impaired adults",
+            "850 mg single dose"
+          ],
+          "row_group_footnote_markers": [
+            "g"
+          ],
+          "values": [
+            "Mild (CLcr 61-90 mL/min) (5)",
+            "1.86 (±0.52)",
+            "3.20 (±0.45)",
+            "384 (±122)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Renal-impaired adults",
+            "850 mg single dose"
+          ],
+          "row_group_footnote_markers": [
+            "g"
+          ],
+          "values": [
+            "Moderate (CLcr 31-60 mL/min) (4)",
+            "4.12 (±1.83)",
+            "3.75 (±0.50)",
+            "108 (±57)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Renal-impaired adults",
+            "850 mg single dose"
+          ],
+          "row_group_footnote_markers": [
+            "g"
+          ],
+          "values": [
+            "Severe (CLcr 10-30 mL/min) (6)",
+            "3.93 (±0.92)",
+            "4.01 (±1.10)",
+            "130 (±90)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g"
+      ],
+      "footnotes": {
+        "b": "Peak plasma concentration",
+        "c": "Time to peak plasma concentration",
+        "d": "Combined results (average means) of five studies: mean age 32 years (range 23-59 years)",
+        "e": "Kinetic study done following dose 19, given fasting",
+        "f": "Elderly subjects, mean age 71 years (range 65-81 years)",
+        "g": "2 CLcr = creatinine clearance normalized to body surface area of 1.73 m"
+      },
+      "unresolved_footnote_markers": [
+        "a"
+      ],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "a\nSubject Groups: GLUCOPHAGE dose\n(number of subjects)",
+          "b\nCmax\n(µg/mL)",
+          "c\nTmax\n(hrs)",
+          "Renal Clearance\n(mL/min)"
+        ],
+        [
+          "Healthy, nondiabetic adults:\n500 mg single dose (24)\nd\n850 mg single dose (74)\ne\n850 mg three times daily for 19 doses (9)",
+          "1.03 (±0.33)\n1.60 (±0.38)\n2.01 (±0.42)",
+          "2.75 (±0.81)\n2.64 (±0.82)\n1.79 (±0.94)",
+          "600 (±132)\n552 (±139)\n642 (±173)"
+        ],
+        [
+          "Adults with type 2 diabetes:\n850 mg single dose (23)\ne\n850 mg three times daily for 19 doses (9)",
+          "1.48 (±0.5)\n1.90 (±0.62)",
+          "3.32 (±1.08)\n2.01 (±1.22)",
+          "491 (±138)\n550 (±160)"
+        ],
+        [
+          "f\nElderly , healthy nondiabetic adults:\n850 mg single dose (12)",
+          "2.45 (±0.70)",
+          "2.71 (±1.05)",
+          "412 (±98)"
+        ],
+        [
+          "Renal-impaired adults:\n850 mg single dose\ng\nMild (CLcr 61-90 mL/min) (5)\nModerate (CLcr 31-60 mL/min) (4)\nSevere (CLcr 10-30 mL/min) (6)",
+          "1.86 (±0.52)\n4.12 (±1.83)\n3.93 (±0.92)",
+          "3.20 (±0.45)\n3.75 (±0.50)\n4.01 (±1.10)",
+          "384 (±122)\n108 (±57)\n130 (±90)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>a<br>Subject Groups: GLUCOPHAGE dose<br>(number of subjects)</th><th>b<br>Cmax<br>(µg/mL)</th><th>c<br>Tmax<br>(hrs)</th><th>Renal Clearance<br>(mL/min)</th></tr>\n</thead>\n<tbody>\n<tr><td>Healthy, nondiabetic adults:<br>500 mg single dose (24)<br>d<br>850 mg single dose (74)<br>e<br>850 mg three times daily for 19 doses (9)</td><td>1.03 (±0.33)<br>1.60 (±0.38)<br>2.01 (±0.42)</td><td>2.75 (±0.81)<br>2.64 (±0.82)<br>1.79 (±0.94)</td><td>600 (±132)<br>552 (±139)<br>642 (±173)</td></tr>\n<tr><td>Adults with type 2 diabetes:<br>850 mg single dose (23)<br>e<br>850 mg three times daily for 19 doses (9)</td><td>1.48 (±0.5)<br>1.90 (±0.62)</td><td>3.32 (±1.08)<br>2.01 (±1.22)</td><td>491 (±138)<br>550 (±160)</td></tr>\n<tr><td>f<br>Elderly , healthy nondiabetic adults:<br>850 mg single dose (12)</td><td>2.45 (±0.70)</td><td>2.71 (±1.05)</td><td>412 (±98)</td></tr>\n<tr><td>Renal-impaired adults:<br>850 mg single dose<br>g<br>Mild (CLcr 61-90 mL/min) (5)<br>Moderate (CLcr 31-60 mL/min) (4)<br>Severe (CLcr 10-30 mL/min) (6)</td><td>1.86 (±0.52)<br>4.12 (±1.83)<br>3.93 (±0.92)</td><td>3.20 (±0.45)<br>3.75 (±0.50)<br>4.01 (±1.10)</td><td>384 (±122)<br>108 (±57)<br>130 (±90)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0006-table-01",
+      "caption": "Table 2: GLUCOPHAGE vs Placebo Summary of Mean Changes from Baseline* in",
+      "source_pages": [
+        6
+      ],
+      "bbox": [
+        88.108823,
+        417.601941,
+        559.228823,
+        561.481941
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.975,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE (n=141)",
+        "Placebo (n=145)",
+        "p-Value"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [
+            "FPG (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "241.5",
+            "237.7",
+            "NS**"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "FPG (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–53.0",
+            "6.3",
+            "0.001"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Hemoglobin A1c (%)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.4",
+            "8.2",
+            "NS**"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Hemoglobin A1c (%)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–1.4",
+            "0.4",
+            "0.001"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Body Weight (lbs)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "201.0",
+            "206.0",
+            "NS**"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Body Weight (lbs)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–1.4",
+            "–2.4",
+            "NS**"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE\n(n=141)",
+          "Placebo\n(n=145)",
+          "p-Value"
+        ],
+        [
+          "FPG (mg/dL)\nBaseline\nChange at FINAL VISIT",
+          "241.5\n–53.0",
+          "237.7\n6.3",
+          "NS**\n0.001"
+        ],
+        [
+          "Hemoglobin A1c (%)\nBaseline\nChange at FINAL VISIT",
+          "8.4\n–1.4",
+          "8.2\n0.4",
+          "NS**\n0.001"
+        ],
+        [
+          "Body Weight (lbs)\nBaseline\nChange at FINAL VISIT",
+          "201.0\n–1.4",
+          "206.0\n–2.4",
+          "NS**\nNS**"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE<br>(n=141)</th><th>Placebo<br>(n=145)</th><th>p-Value</th></tr>\n</thead>\n<tbody>\n<tr><td>FPG (mg/dL)<br>Baseline<br>Change at FINAL VISIT</td><td>241.5<br>–53.0</td><td>237.7<br>6.3</td><td>NS**<br>0.001</td></tr>\n<tr><td>Hemoglobin A1c (%)<br>Baseline<br>Change at FINAL VISIT</td><td>8.4<br>–1.4</td><td>8.2<br>0.4</td><td>NS**<br>0.001</td></tr>\n<tr><td>Body Weight (lbs)<br>Baseline<br>Change at FINAL VISIT</td><td>201.0<br>–1.4</td><td>206.0<br>–2.4</td><td>NS**<br>NS**</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0007-table-01",
+      "caption": "Table 3: Combined GLUCOPHAGE/Glyburide (Comb) vs Glyburide (Glyb) or",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        88.115049,
+        333.481941,
+        559.235049,
+        503.041941
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Comb (n=213)",
+        "Glyb (n=209)",
+        "GLU (n=210)",
+        "p-values / Glyb vs Comb",
+        "p-values / GLU vs Comb",
+        "p-values / GLU vs Glyb"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [
+            "Fasting Plasma Glucose (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "250.5",
+            "247.5",
+            "253.9",
+            "NS**",
+            "NS**",
+            "NS**"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Fasting Plasma Glucose (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–63.5",
+            "13.7",
+            "–0.9",
+            "0.001",
+            "0.001",
+            "0.025"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Hemoglobin A1c (%)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.8",
+            "8.5",
+            "8.9",
+            "NS**",
+            "NS**",
+            "0.007"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Hemoglobin A1c (%)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–1.7",
+            "0.2",
+            "–0.4",
+            "0.001",
+            "0.001",
+            "0.001"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Body Weight (lbs)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "202.2",
+            "203.0",
+            "204.0",
+            "NS**",
+            "NS**",
+            "NS**"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Body Weight (lbs)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "0.9",
+            "–0.7",
+            "–8.4",
+            "0.011",
+            "0.001",
+            "0.001"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Comb\n(n=213)",
+          "Glyb\n(n=209)",
+          "GLU\n(n=210)",
+          "p-values",
+          null,
+          null
+        ],
+        [
+          null,
+          null,
+          null,
+          null,
+          "Glyb vs\nComb",
+          "GLU vs\nComb",
+          "GLU vs\nGlyb"
+        ],
+        [
+          "Fasting Plasma Glucose (mg/dL)\nBaseline\nChange at FINAL VISIT",
+          "250.5\n–63.5",
+          "247.5\n13.7",
+          "253.9\n–0.9",
+          "NS**\n0.001",
+          "NS**\n0.001",
+          "NS**\n0.025"
+        ],
+        [
+          "Hemoglobin A1c (%)\nBaseline\nChange at FINAL VISIT",
+          "8.8\n–1.7",
+          "8.5\n0.2",
+          "8.9\n–0.4",
+          "NS**\n0.001",
+          "NS**\n0.001",
+          "0.007\n0.001"
+        ],
+        [
+          "Body Weight (lbs)\nBaseline\nChange at FINAL VISIT",
+          "202.2\n0.9",
+          "203.0\n–0.7",
+          "204.0\n–8.4",
+          "NS**\n0.011",
+          "NS**\n0.001",
+          "NS**\n0.001"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Comb<br>(n=213)</th><th>Glyb<br>(n=209)</th><th>GLU<br>(n=210)</th><th>p-values</th><th></th><th></th></tr>\n<tr><th></th><th></th><th></th><th></th><th>Glyb vs<br>Comb</th><th>GLU vs<br>Comb</th><th>GLU vs<br>Glyb</th></tr>\n</thead>\n<tbody>\n<tr><td>Fasting Plasma Glucose (mg/dL)<br>Baseline<br>Change at FINAL VISIT</td><td>250.5<br>–63.5</td><td>247.5<br>13.7</td><td>253.9<br>–0.9</td><td>NS**<br>0.001</td><td>NS**<br>0.001</td><td>NS**<br>0.025</td></tr>\n<tr><td>Hemoglobin A1c (%)<br>Baseline<br>Change at FINAL VISIT</td><td>8.8<br>–1.7</td><td>8.5<br>0.2</td><td>8.9<br>–0.4</td><td>NS**<br>0.001</td><td>NS**<br>0.001</td><td>0.007<br>0.001</td></tr>\n<tr><td>Body Weight (lbs)<br>Baseline<br>Change at FINAL VISIT</td><td>202.2<br>0.9</td><td>203.0<br>–0.7</td><td>204.0<br>–8.4</td><td>NS**<br>0.011</td><td>NS**<br>0.001</td><td>NS**<br>0.001</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0008-table-01",
+      "caption": "Table 4: Summary of Mean Percent Change From Baseline of Major Serum Lipid",
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        88.078885,
+        86.93357200000003,
+        559.198885,
+        316.973572
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.944,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE vs Placebo / GLUCOPHAGE (n=141)",
+        "GLUCOPHAGE vs Placebo / Placebo (n=145)",
+        "Combined GLUCOPHAGE/Glyburide vs Monotherapy / GLUCOPHAGE (n=210)",
+        "Combined GLUCOPHAGE/Glyburide vs Monotherapy / GLUCOPHAGE/ Glyburide (n=213)",
+        "Combined GLUCOPHAGE/Glyburide vs Monotherapy / Glyburide (n=209)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [
+            "Total Cholesterol (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "211.0",
+            "212.3",
+            "213.1",
+            "215.6",
+            "219.6"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Total Cholesterol (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "–5%",
+            "1%",
+            "–2%",
+            "–4%",
+            "1%"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Total Triglycerides (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "236.1",
+            "203.5",
+            "242.5",
+            "215.0",
+            "266.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Total Triglycerides (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "–16%",
+            "1%",
+            "–3%",
+            "–8%",
+            "4%"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "LDL-Cholesterol (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "135.4",
+            "138.5",
+            "134.3",
+            "136.0",
+            "137.5"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "LDL-Cholesterol (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "–8%",
+            "1%",
+            "–4%",
+            "–6%",
+            "3%"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "HDL-Cholesterol (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "39.0",
+            "40.5",
+            "37.2",
+            "39.0",
+            "37.0"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "HDL-Cholesterol (mg/dL)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "2%",
+            "–1%",
+            "5%",
+            "3%",
+            "1%"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE vs\nPlacebo",
+          null,
+          "Combined GLUCOPHAGE/Glyburide\nvs Monotherapy",
+          null,
+          null
+        ],
+        [
+          "",
+          "GLUCOPHAGE\n(n=141)",
+          "Placebo\n(n=145)",
+          "GLUCOPHAGE\n(n=210)",
+          "GLUCOPHAGE/\nGlyburide\n(n=213)",
+          "Glyburide\n(n=209)"
+        ],
+        [
+          "Total Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "211.0\n–5%",
+          "212.3\n1%",
+          "213.1\n–2%",
+          "215.6\n–4%",
+          "219.6\n1%"
+        ],
+        [
+          "Total Triglycerides (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "236.1\n–16%",
+          "203.5\n1%",
+          "242.5\n–3%",
+          "215.0\n–8%",
+          "266.1\n4%"
+        ],
+        [
+          "LDL-Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "135.4\n–8%",
+          "138.5\n1%",
+          "134.3\n–4%",
+          "136.0\n–6%",
+          "137.5\n3%"
+        ],
+        [
+          "HDL-Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "39.0\n2%",
+          "40.5\n–1%",
+          "37.2\n5%",
+          "39.0\n3%",
+          "37.0\n1%"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE vs<br>Placebo</th><th></th><th>Combined GLUCOPHAGE/Glyburide<br>vs Monotherapy</th><th></th><th></th></tr>\n<tr><th></th><th>GLUCOPHAGE<br>(n=141)</th><th>Placebo<br>(n=145)</th><th>GLUCOPHAGE<br>(n=210)</th><th>GLUCOPHAGE/<br>Glyburide<br>(n=213)</th><th>Glyburide<br>(n=209)</th></tr>\n</thead>\n<tbody>\n<tr><td>Total Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>211.0<br>–5%</td><td>212.3<br>1%</td><td>213.1<br>–2%</td><td>215.6<br>–4%</td><td>219.6<br>1%</td></tr>\n<tr><td>Total Triglycerides (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>236.1<br>–16%</td><td>203.5<br>1%</td><td>242.5<br>–3%</td><td>215.0<br>–8%</td><td>266.1<br>4%</td></tr>\n<tr><td>LDL-Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>135.4<br>–8%</td><td>138.5<br>1%</td><td>134.3<br>–4%</td><td>136.0<br>–6%</td><td>137.5<br>3%</td></tr>\n<tr><td>HDL-Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>39.0<br>2%</td><td>40.5<br>–1%</td><td>37.2<br>5%</td><td>39.0<br>3%</td><td>37.0<br>1%</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0009-table-01",
+      "caption": "Table 5: Combined GLUCOPHAGE/Insulin vs Placebo/Insulin Summary of Mean",
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        88.012937,
+        89.21305300000006,
+        559.1329370000001,
+        223.73305300000004
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.967,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "footnote-markers"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE/ Insulin (n=26)",
+        "Placebo/ Insulin (n=28)",
+        "Treatment Difference Mean ± SE"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [
+            "Hemoglobin A1c (%)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.95",
+            "9.32",
+            "–0.54 ± 0.43"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": [
+            "a"
+          ]
+        },
+        {
+          "row_group_path": [
+            "Hemoglobin A1c (%)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–2.10",
+            "–1.56",
+            "–0.54 ± 0.43"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "Insulin Dose (U/day)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "93.12",
+            "94.64",
+            "–16.08 ± 7.77"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": [
+            "b"
+          ]
+        },
+        {
+          "row_group_path": [
+            "Insulin Dose (U/day)"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–0.15",
+            "15.93",
+            "–16.08 ± 7.77"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [
+        "a",
+        "b"
+      ],
+      "footnotes": {
+        "b": "Statistically significant for insulin (p=0.04)",
+        "a": "24-week, double-blind, placebo-controlled study of GLUCOPHAGE XR, taken once daily with the evening meal, was conducted in patients with type 2 diabetes who had failed to achieve glycemic control with diet and exercise (HbA1c 7.0%-10.0%, FPG 126-270 mg/dL). Patients entering the study had a mean baseline HbA1c of 8.0% and a mean baseline FPG of 176 mg/dL. After 12 weeks treatment, mean HbA1c had increased from baseline by 0.1% and mean FPG decreased from baseline by 2 mg/dL in the placebo group, compared with a decrease in mean HbA1c of 0.6% and a decrease in mean FPG of 23 mg/dL in patients treated with GLUCOPHAGE XR 1000 mg once daily. Subsequently, the treatment dose was increased to 1500 mg once daily if HbA1c was ≥7.0% but <8.0% (patients with HbA1c ≥8.0% were discontinued from the study). At the final visit (24-week), mean HbA1c had increased 0.2% from baseline in placebo patients and decreased 0.6% with GLUCOPHAGE XR."
+      },
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE/\nInsulin\n(n=26)",
+          "Placebo/\nInsulin\n(n=28)",
+          "Treatment\nDifference\nMean ± SE"
+        ],
+        [
+          "Hemoglobin A1c (%)\nBaseline\nChange at FINAL VISIT",
+          "8.95\n–2.10",
+          "9.32\n–1.56",
+          "a\n–0.54 ± 0.43"
+        ],
+        [
+          "Insulin Dose (U/day)\nBaseline\nChange at FINAL VISIT",
+          "93.12\n–0.15",
+          "94.64\n15.93",
+          "b\n–16.08 ± 7.77"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE/<br>Insulin<br>(n=26)</th><th>Placebo/<br>Insulin<br>(n=28)</th><th>Treatment<br>Difference<br>Mean ± SE</th></tr>\n</thead>\n<tbody>\n<tr><td>Hemoglobin A1c (%)<br>Baseline<br>Change at FINAL VISIT</td><td>8.95<br>–2.10</td><td>9.32<br>–1.56</td><td>a<br>–0.54 ± 0.43</td></tr>\n<tr><td>Insulin Dose (U/day)<br>Baseline<br>Change at FINAL VISIT</td><td>93.12<br>–0.15</td><td>94.64<br>15.93</td><td>b<br>–16.08 ± 7.77</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0010-table-01",
+      "caption": "Table 6: Summary of Mean Changes from Baseline* in HbA , Fasting Plasma Glucose,",
+      "source_pages": [
+        10
+      ],
+      "bbox": [
+        88.03671,
+        193.20194099999992,
+        559.1567100000001,
+        440.52194099999997
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "footnote-markers",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE XR / 500 mg Once Daily",
+        "GLUCOPHAGE XR / 1000 mg Once Daily",
+        "GLUCOPHAGE XR / 1500 mg Once Daily",
+        "GLUCOPHAGE XR / 2000 mg Once Daily",
+        "GLUCOPHAGE XR / 1000 mg Twice Daily",
+        "Placebo / 1000 mg Twice Daily"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hemoglobin A1c (%)",
+            "(n=115)",
+            "(n=115)",
+            "(n=111)",
+            "(n=125)",
+            "(n=112)",
+            "(n=111)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "8.2",
+            "8.4",
+            "8.3",
+            "8.4",
+            "8.4",
+            "8.4"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–0.4",
+            "–0.6",
+            "–0.9",
+            "–0.8",
+            "–1.1",
+            "0.1"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "p-value",
+            "<0.001",
+            "<0.001",
+            "<0.001",
+            "<0.001",
+            "<0.001",
+            "–"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 4,
+          "footnote_markers": [
+            "a"
+          ]
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "(n=126)",
+            "(n=118)",
+            "(n=120)",
+            "(n=132)",
+            "(n=122)",
+            "(n=113)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "182.7",
+            "183.7",
+            "178.9",
+            "181.0",
+            "181.6",
+            "179.6"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–15.2",
+            "–19.3",
+            "–28.5",
+            "–29.9",
+            "–33.6",
+            "7.6"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "p-value",
+            "<0.001",
+            "<0.001",
+            "<0.001",
+            "<0.001",
+            "<0.001",
+            "–"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 4,
+          "footnote_markers": [
+            "a"
+          ]
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (lbs)",
+            "(n=125)",
+            "(n=119)",
+            "(n=117)",
+            "(n=131)",
+            "(n=119)",
+            "(n=113)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "192.9",
+            "191.8",
+            "188.3",
+            "195.4",
+            "192.5",
+            "194.3"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–1.3",
+            "–1.3",
+            "–0.7",
+            "–1.5",
+            "–2.2",
+            "–1.8"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "p-value",
+            "NS**",
+            "NS**",
+            "NS**",
+            "NS**",
+            "NS**",
+            "–"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 4,
+          "footnote_markers": [
+            "a"
+          ]
+        }
+      ],
+      "footnote_markers": [
+        "a"
+      ],
+      "footnotes": {
+        "a": "24-week, double-blind, randomized study of GLUCOPHAGE XR, taken once daily with the evening meal, and GLUCOPHAGE Tablets, taken twice daily (with breakfast and evening meal), was conducted in patients with type 2 diabetes who had been treated with GLUCOPHAGE 500 mg twice daily for at least 8 weeks prior to study entry. The GLUCOPHAGE dose had not necessarily been titrated to achieve a specific level of glycemic control prior to study entry. Patients qualified for the study if HbA1c was ≤8.5% and FPG was ≤200 mg/dL. Changes in glycemic control and body weight are shown in **Table 7** ."
+      },
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE XR",
+          null,
+          null,
+          null,
+          null,
+          "Placebo"
+        ],
+        [
+          null,
+          "500 mg\nOnce\nDaily",
+          "1000 mg\nOnce\nDaily",
+          "1500 mg\nOnce\nDaily",
+          "2000 mg\nOnce\nDaily",
+          "1000 mg\nTwice\nDaily",
+          null
+        ],
+        [
+          "Hemoglobin A1c (%)\nBaseline\nChange at FINAL VISIT\na\np-value",
+          "(n=115)\n8.2\n–0.4\n<0.001",
+          "(n=115)\n8.4\n–0.6\n<0.001",
+          "(n=111)\n8.3\n–0.9\n<0.001",
+          "(n=125)\n8.4\n–0.8\n<0.001",
+          "(n=112)\n8.4\n–1.1\n<0.001",
+          "(n=111)\n8.4\n0.1\n–"
+        ],
+        [
+          "FPG (mg/dL)\nBaseline\nChange at FINAL VISIT\na\np-value",
+          "(n=126)\n182.7\n–15.2\n<0.001",
+          "(n=118)\n183.7\n–19.3\n<0.001",
+          "(n=120)\n178.9\n–28.5\n<0.001",
+          "(n=132)\n181.0\n–29.9\n<0.001",
+          "(n=122)\n181.6\n–33.6\n<0.001",
+          "(n=113)\n179.6\n7.6\n–"
+        ],
+        [
+          "Body Weight (lbs)\nBaseline\nChange at FINAL VISIT\na\np-value",
+          "(n=125)\n192.9\n–1.3\nNS**",
+          "(n=119)\n191.8\n–1.3\nNS**",
+          "(n=117)\n188.3\n–0.7\nNS**",
+          "(n=131)\n195.4\n–1.5\nNS**",
+          "(n=119)\n192.5\n–2.2\nNS**",
+          "(n=113)\n194.3\n–1.8\n–"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE XR</th><th></th><th></th><th></th><th></th><th>Placebo</th></tr>\n<tr><th></th><th>500 mg<br>Once<br>Daily</th><th>1000 mg<br>Once<br>Daily</th><th>1500 mg<br>Once<br>Daily</th><th>2000 mg<br>Once<br>Daily</th><th>1000 mg<br>Twice<br>Daily</th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Hemoglobin A1c (%)<br>Baseline<br>Change at FINAL VISIT<br>a<br>p-value</td><td>(n=115)<br>8.2<br>–0.4<br>&lt;0.001</td><td>(n=115)<br>8.4<br>–0.6<br>&lt;0.001</td><td>(n=111)<br>8.3<br>–0.9<br>&lt;0.001</td><td>(n=125)<br>8.4<br>–0.8<br>&lt;0.001</td><td>(n=112)<br>8.4<br>–1.1<br>&lt;0.001</td><td>(n=111)<br>8.4<br>0.1<br>–</td></tr>\n<tr><td>FPG (mg/dL)<br>Baseline<br>Change at FINAL VISIT<br>a<br>p-value</td><td>(n=126)<br>182.7<br>–15.2<br>&lt;0.001</td><td>(n=118)<br>183.7<br>–19.3<br>&lt;0.001</td><td>(n=120)<br>178.9<br>–28.5<br>&lt;0.001</td><td>(n=132)<br>181.0<br>–29.9<br>&lt;0.001</td><td>(n=122)<br>181.6<br>–33.6<br>&lt;0.001</td><td>(n=113)<br>179.6<br>7.6<br>–</td></tr>\n<tr><td>Body Weight (lbs)<br>Baseline<br>Change at FINAL VISIT<br>a<br>p-value</td><td>(n=125)<br>192.9<br>–1.3<br>NS**</td><td>(n=119)<br>191.8<br>–1.3<br>NS**</td><td>(n=117)<br>188.3<br>–0.7<br>NS**</td><td>(n=131)<br>195.4<br>–1.5<br>NS**</td><td>(n=119)<br>192.5<br>–2.2<br>NS**</td><td>(n=113)<br>194.3<br>–1.8<br>–</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0011-table-01",
+      "caption": "Table 7: Summary of Mean Changes from Baseline* in HbA , Fasting Plasma Glucose,",
+      "source_pages": [
+        11
+      ],
+      "bbox": [
+        88.072874,
+        90.31199100000003,
+        559.1928740000001,
+        404.711991
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "footnote-markers",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE 500 mg Twice Daily",
+        "GLUCOPHAGE XR / 1000 mg Once Daily",
+        "GLUCOPHAGE XR / 1500 mg Once Daily"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hemoglobin A1c (%)",
+            "(n=67)",
+            "(n=72)",
+            "(n=66)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "7.06",
+            "6.99",
+            "7.02"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at 12 Weeks",
+            "0.14",
+            "0.23",
+            "0.04"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(95% CI)",
+            "(–0.03, 0.31)",
+            "(0.10, 0.36)",
+            "(–0.08, 0.15)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "0.14",
+            "0.27",
+            "0.13"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 5,
+          "footnote_markers": [
+            "a"
+          ]
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(95% CI)",
+            "(–0.04, 0.31)",
+            "(0.11, 0.43)",
+            "(–0.02, 0.28)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 6,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "(n=69)",
+            "(n=72)",
+            "(n=70)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "127.2",
+            "131.0",
+            "131.4"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at 12 Weeks",
+            "12.9",
+            "9.5",
+            "3.7"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(95% CI)",
+            "(6.5, 19.4)",
+            "(4.4, 14.6)",
+            "(–0.4, 7.8)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "14.0",
+            "11.5",
+            "7.6"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 5,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(95% CI)",
+            "(7.0, 21.0)",
+            "(4.4, 18.6)",
+            "(1.0, 14.2)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 6,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (lbs)",
+            "(n=71)",
+            "(n=74)",
+            "(n=71)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "210.3",
+            "202.8",
+            "192.7"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at 12 Weeks",
+            "0.4",
+            "0.9",
+            "0.7"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(95% CI)",
+            "(–0.4, 1.5)",
+            "(0.0, 2.0)",
+            "(–0.4, 1.8)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "0.9",
+            "1.1",
+            "0.9"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 5,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(95% CI)",
+            "(–0.4, 2.2)",
+            "(–0.2, 2.4)",
+            "(–0.4, 2.0)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 6,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [
+        "a"
+      ],
+      "footnotes": {},
+      "unresolved_footnote_markers": [
+        "a"
+      ],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE\n500 mg\nTwice Daily",
+          "GLUCOPHAGE XR",
+          null
+        ],
+        [
+          null,
+          null,
+          "1000 mg\nOnce Daily",
+          "1500 mg\nOnce Daily"
+        ],
+        [
+          "Hemoglobin A1c (%)\nBaseline\nChange at 12 Weeks\n(95% CI)\nChange at FINAL VISIT\n(95% CI)",
+          "(n=67)\n7.06\n0.14\n(–0.03, 0.31)\na\n0.14\n(–0.04, 0.31)",
+          "(n=72)\n6.99\n0.23\n(0.10, 0.36)\n0.27\n(0.11, 0.43)",
+          "(n=66)\n7.02\n0.04\n(–0.08, 0.15)\n0.13\n(–0.02, 0.28)"
+        ],
+        [
+          "FPG (mg/dL)\nBaseline\nChange at 12 Weeks\n(95% CI)\nChange at FINAL VISIT\n(95% CI)",
+          "(n=69)\n127.2\n12.9\n(6.5, 19.4)\n14.0\n(7.0, 21.0)",
+          "(n=72)\n131.0\n9.5\n(4.4, 14.6)\n11.5\n(4.4, 18.6)",
+          "(n=70)\n131.4\n3.7\n(–0.4, 7.8)\n7.6\n(1.0, 14.2)"
+        ],
+        [
+          "Body Weight (lbs)\nBaseline\nChange at 12 Weeks\n(95% CI)\nChange at FINAL VISIT\n(95% CI)",
+          "(n=71)\n210.3\n0.4\n(–0.4, 1.5)\n0.9\n(–0.4, 2.2)",
+          "(n=74)\n202.8\n0.9\n(0.0, 2.0)\n1.1\n(–0.2, 2.4)",
+          "(n=71)\n192.7\n0.7\n(–0.4, 1.8)\n0.9\n(–0.4, 2.0)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE<br>500 mg<br>Twice Daily</th><th>GLUCOPHAGE XR</th><th></th></tr>\n<tr><th></th><th></th><th>1000 mg<br>Once Daily</th><th>1500 mg<br>Once Daily</th></tr>\n</thead>\n<tbody>\n<tr><td>Hemoglobin A1c (%)<br>Baseline<br>Change at 12 Weeks<br>(95% CI)<br>Change at FINAL VISIT<br>(95% CI)</td><td>(n=67)<br>7.06<br>0.14<br>(–0.03, 0.31)<br>a<br>0.14<br>(–0.04, 0.31)</td><td>(n=72)<br>6.99<br>0.23<br>(0.10, 0.36)<br>0.27<br>(0.11, 0.43)</td><td>(n=66)<br>7.02<br>0.04<br>(–0.08, 0.15)<br>0.13<br>(–0.02, 0.28)</td></tr>\n<tr><td>FPG (mg/dL)<br>Baseline<br>Change at 12 Weeks<br>(95% CI)<br>Change at FINAL VISIT<br>(95% CI)</td><td>(n=69)<br>127.2<br>12.9<br>(6.5, 19.4)<br>14.0<br>(7.0, 21.0)</td><td>(n=72)<br>131.0<br>9.5<br>(4.4, 14.6)<br>11.5<br>(4.4, 18.6)</td><td>(n=70)<br>131.4<br>3.7<br>(–0.4, 7.8)<br>7.6<br>(1.0, 14.2)</td></tr>\n<tr><td>Body Weight (lbs)<br>Baseline<br>Change at 12 Weeks<br>(95% CI)<br>Change at FINAL VISIT<br>(95% CI)</td><td>(n=71)<br>210.3<br>0.4<br>(–0.4, 1.5)<br>0.9<br>(–0.4, 2.2)</td><td>(n=74)<br>202.8<br>0.9<br>(0.0, 2.0)<br>1.1<br>(–0.2, 2.4)</td><td>(n=71)<br>192.7<br>0.7<br>(–0.4, 1.8)<br>0.9<br>(–0.4, 2.0)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0012-table-01",
+      "caption": "Table 8: Summary of Mean Percent Changes from Baseline* in Major Lipid Variables at",
+      "source_pages": [
+        12
+      ],
+      "bbox": [
+        88.13290199999999,
+        86.93357200000003,
+        559.2529020000001,
+        317.45357199999995
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.933,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE XR / 500 mg Once Daily",
+        "GLUCOPHAGE XR / 1000 mg Once Daily",
+        "GLUCOPHAGE XR / 1500 mg Once Daily",
+        "GLUCOPHAGE XR / 2000 mg Once Daily",
+        "GLUCOPHAGE XR / 1000 mg Twice Daily",
+        "Placebo / 1000 mg Twice Daily"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total Cholesterol (mg/dL)",
+            "(n=120)",
+            "(n=113)",
+            "(n=110)",
+            "(n=126)",
+            "(n=117)",
+            "(n=110)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "210.3",
+            "218.1",
+            "214.6",
+            "204.4",
+            "208.2",
+            "208.6"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "1.0%",
+            "1.7%",
+            "0.7%",
+            "–1.6%",
+            "–2.6%",
+            "2.6%"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total Triglycerides (mg/dL)",
+            "(n=120)",
+            "(n=113)",
+            "(n=110)",
+            "(n=126)",
+            "(n=117)",
+            "(n=110)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "220.2",
+            "211.9",
+            "198.0",
+            "194.2",
+            "179.0",
+            "211.7"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "14.5%",
+            "9.4%",
+            "15.1%",
+            "14.9%",
+            "9.4%",
+            "10.9%"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "LDL-Cholesterol (mg/dL)",
+            "(n=119)",
+            "(n=113)",
+            "(n=109)",
+            "(n=126)",
+            "(n=117)",
+            "(n=107)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "131.0",
+            "134.9",
+            "135.8",
+            "125.8",
+            "131.4",
+            "131.9"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "–1.4%",
+            "–1.6%",
+            "–3.5%",
+            "–3.3%",
+            "–5.5%",
+            "3.2%"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HDL-Cholesterol (mg/dL)",
+            "(n=120)",
+            "(n=108)",
+            "(n=108)",
+            "(n=125)",
+            "(n=117)",
+            "(n=108)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "40.8",
+            "41.6",
+            "40.6",
+            "40.2",
+            "42.4",
+            "39.4"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "6.2%",
+            "8.6%",
+            "5.5%",
+            "6.1%",
+            "7.1%",
+            "5.8%"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE XR",
+          null,
+          null,
+          null,
+          null,
+          "Placebo"
+        ],
+        [
+          null,
+          "500 mg\nOnce\nDaily",
+          "1000 mg\nOnce\nDaily",
+          "1500 mg\nOnce\nDaily",
+          "2000 mg\nOnce\nDaily",
+          "1000 mg\nTwice\nDaily",
+          null
+        ],
+        [
+          "Total Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=120)\n210.3\n1.0%",
+          "(n=113)\n218.1\n1.7%",
+          "(n=110)\n214.6\n0.7%",
+          "(n=126)\n204.4\n–1.6%",
+          "(n=117)\n208.2\n–2.6%",
+          "(n=110)\n208.6\n2.6%"
+        ],
+        [
+          "Total Triglycerides (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=120)\n220.2\n14.5%",
+          "(n=113)\n211.9\n9.4%",
+          "(n=110)\n198.0\n15.1%",
+          "(n=126)\n194.2\n14.9%",
+          "(n=117)\n179.0\n9.4%",
+          "(n=110)\n211.7\n10.9%"
+        ],
+        [
+          "LDL-Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=119)\n131.0\n–1.4%",
+          "(n=113)\n134.9\n–1.6%",
+          "(n=109)\n135.8\n–3.5%",
+          "(n=126)\n125.8\n–3.3%",
+          "(n=117)\n131.4\n–5.5%",
+          "(n=107)\n131.9\n3.2%"
+        ],
+        [
+          "HDL-Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=120)\n40.8\n6.2%",
+          "(n=108)\n41.6\n8.6%",
+          "(n=108)\n40.6\n5.5%",
+          "(n=125)\n40.2\n6.1%",
+          "(n=117)\n42.4\n7.1%",
+          "(n=108)\n39.4\n5.8%"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE XR</th><th></th><th></th><th></th><th></th><th>Placebo</th></tr>\n<tr><th></th><th>500 mg<br>Once<br>Daily</th><th>1000 mg<br>Once<br>Daily</th><th>1500 mg<br>Once<br>Daily</th><th>2000 mg<br>Once<br>Daily</th><th>1000 mg<br>Twice<br>Daily</th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Total Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=120)<br>210.3<br>1.0%</td><td>(n=113)<br>218.1<br>1.7%</td><td>(n=110)<br>214.6<br>0.7%</td><td>(n=126)<br>204.4<br>–1.6%</td><td>(n=117)<br>208.2<br>–2.6%</td><td>(n=110)<br>208.6<br>2.6%</td></tr>\n<tr><td>Total Triglycerides (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=120)<br>220.2<br>14.5%</td><td>(n=113)<br>211.9<br>9.4%</td><td>(n=110)<br>198.0<br>15.1%</td><td>(n=126)<br>194.2<br>14.9%</td><td>(n=117)<br>179.0<br>9.4%</td><td>(n=110)<br>211.7<br>10.9%</td></tr>\n<tr><td>LDL-Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=119)<br>131.0<br>–1.4%</td><td>(n=113)<br>134.9<br>–1.6%</td><td>(n=109)<br>135.8<br>–3.5%</td><td>(n=126)<br>125.8<br>–3.3%</td><td>(n=117)<br>131.4<br>–5.5%</td><td>(n=107)<br>131.9<br>3.2%</td></tr>\n<tr><td>HDL-Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=120)<br>40.8<br>6.2%</td><td>(n=108)<br>41.6<br>8.6%</td><td>(n=108)<br>40.6<br>5.5%</td><td>(n=125)<br>40.2<br>6.1%</td><td>(n=117)<br>42.4<br>7.1%</td><td>(n=108)<br>39.4<br>5.8%</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0013-table-01",
+      "caption": "Table 9: Summary of Mean Percent Changes from Baseline* in Major Lipid Variables at",
+      "source_pages": [
+        13
+      ],
+      "bbox": [
+        88.061216,
+        104.4059729999999,
+        559.1812160000001,
+        321.125973
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.95,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE / 500 mg Twice Daily",
+        "GLUCOPHAGE XR / 1000 mg Once Daily",
+        "GLUCOPHAGE XR / 1500 mg Once Daily"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total Cholesterol (mg/dL)",
+            "(n=68)",
+            "(n=70)",
+            "(n=66)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "199.0",
+            "201.9",
+            "201.6"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "0.1%",
+            "1.3%",
+            "0.1%"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total Triglycerides (mg/dL)",
+            "(n=68)",
+            "(n=70)",
+            "(n=66)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "178.0",
+            "169.2",
+            "206.8"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "6.3%",
+            "25.3%",
+            "33.4%"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "LDL-Cholesterol (mg/dL)",
+            "(n=68)",
+            "(n=70)",
+            "(n=66)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "122.1",
+            "126.2",
+            "115.7"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "−1.3%",
+            "−3.3%",
+            "−3.7%"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HDL-Cholesterol (mg/dL)",
+            "(n=68)",
+            "(n=70)",
+            "(n=65)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "41.9",
+            "41.7",
+            "44.6"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mean % Change at FINAL VISIT",
+            "4.8%",
+            "1.0%",
+            "–2.1%"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE",
+          "GLUCOPHAGE XR",
+          null
+        ],
+        [
+          null,
+          "500 mg\nTwice Daily",
+          "1000 mg\nOnce Daily",
+          "1500 mg\nOnce Daily"
+        ],
+        [
+          "Total Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=68)\n199.0\n0.1%",
+          "(n=70)\n201.9\n1.3%",
+          "(n=66)\n201.6\n0.1%"
+        ],
+        [
+          "Total Triglycerides (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=68)\n178.0\n6.3%",
+          "(n=70)\n169.2\n25.3%",
+          "(n=66)\n206.8\n33.4%"
+        ],
+        [
+          "LDL-Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=68)\n122.1\n−1.3%",
+          "(n=70)\n126.2\n−3.3%",
+          "(n=66)\n115.7\n−3.7%"
+        ],
+        [
+          "HDL-Cholesterol (mg/dL)\nBaseline\nMean % Change at FINAL VISIT",
+          "(n=68)\n41.9\n4.8%",
+          "(n=70)\n41.7\n1.0%",
+          "(n=65)\n44.6\n–2.1%"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE</th><th>GLUCOPHAGE XR</th><th></th></tr>\n<tr><th></th><th>500 mg<br>Twice Daily</th><th>1000 mg<br>Once Daily</th><th>1500 mg<br>Once Daily</th></tr>\n</thead>\n<tbody>\n<tr><td>Total Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=68)<br>199.0<br>0.1%</td><td>(n=70)<br>201.9<br>1.3%</td><td>(n=66)<br>201.6<br>0.1%</td></tr>\n<tr><td>Total Triglycerides (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=68)<br>178.0<br>6.3%</td><td>(n=70)<br>169.2<br>25.3%</td><td>(n=66)<br>206.8<br>33.4%</td></tr>\n<tr><td>LDL-Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=68)<br>122.1<br>−1.3%</td><td>(n=70)<br>126.2<br>−3.3%</td><td>(n=66)<br>115.7<br>−3.7%</td></tr>\n<tr><td>HDL-Cholesterol (mg/dL)<br>Baseline<br>Mean % Change at FINAL VISIT</td><td>(n=68)<br>41.9<br>4.8%</td><td>(n=70)<br>41.7<br>1.0%</td><td>(n=65)<br>44.6<br>–2.1%</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0013-table-02",
+      "caption": "Table 10: GLUCOPHAGE vs Placebo (Pediatrics ) Summary of Mean Changes from",
+      "source_pages": [
+        13
+      ],
+      "bbox": [
+        88.061216,
+        489.605973,
+        559.1812160000001,
+        585.8459730000001
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.967,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "GLUCOPHAGE",
+        "Placebo",
+        "p-Value"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "(n=37)",
+            "(n=36)",
+            "<0.001"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "162.4",
+            "192.3",
+            "<0.001"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–42.9",
+            "21.4",
+            "<0.001"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Body Weight (lbs)",
+            "(n=39)",
+            "(n=38)",
+            "NS**"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline",
+            "205.3",
+            "189.0",
+            "NS**"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at FINAL VISIT",
+            "–3.3",
+            "–2.0",
+            "NS**"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 3,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "GLUCOPHAGE",
+          "Placebo",
+          "p-Value"
+        ],
+        [
+          "FPG (mg/dL)\nBaseline\nChange at FINAL VISIT",
+          "(n=37)\n162.4\n–42.9",
+          "(n=36)\n192.3\n21.4",
+          "<0.001"
+        ],
+        [
+          "Body Weight (lbs)\nBaseline\nChange at FINAL VISIT",
+          "(n=39)\n205.3\n–3.3",
+          "(n=38)\n189.0\n–2.0",
+          "NS**"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>GLUCOPHAGE</th><th>Placebo</th><th>p-Value</th></tr>\n</thead>\n<tbody>\n<tr><td>FPG (mg/dL)<br>Baseline<br>Change at FINAL VISIT</td><td>(n=37)<br>162.4<br>–42.9</td><td>(n=36)<br>192.3<br>21.4</td><td>&lt;0.001</td></tr>\n<tr><td>Body Weight (lbs)<br>Baseline<br>Change at FINAL VISIT</td><td>(n=39)<br>205.3<br>–3.3</td><td>(n=38)<br>189.0<br>–2.0</td><td>NS**</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0023-table-01",
+      "caption": "Table 11: Most Common Adverse Reactions (>5.0 Percent) in a Placebo-Controlled",
+      "source_pages": [
+        23
+      ],
+      "bbox": [
+        88.06097199999999,
+        216.5118329999999,
+        559.1809720000001,
+        376.711833
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.97,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Adverse Reaction",
+        "GLUCOPHAGE Monotherapy (n=141) / % of Patients",
+        "Placebo (n=145) / % of Patients"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Diarrhea",
+            "53.2",
+            "11.7"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Nausea/Vomiting",
+            "25.5",
+            "8.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Flatulence",
+            "12.1",
+            "5.5"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Asthenia",
+            "9.2",
+            "5.5"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Indigestion",
+            "7.1",
+            "4.1"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Abdominal Discomfort",
+            "6.4",
+            "4.8"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Headache",
+            "5.7",
+            "4.8"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Adverse Reaction",
+          "GLUCOPHAGE\nMonotherapy\n(n=141)",
+          "Placebo\n(n=145)"
+        ],
+        [
+          null,
+          "% of Patients",
+          null
+        ],
+        [
+          "Diarrhea",
+          "53.2",
+          "11.7"
+        ],
+        [
+          "Nausea/Vomiting",
+          "25.5",
+          "8.3"
+        ],
+        [
+          "Flatulence",
+          "12.1",
+          "5.5"
+        ],
+        [
+          "Asthenia",
+          "9.2",
+          "5.5"
+        ],
+        [
+          "Indigestion",
+          "7.1",
+          "4.1"
+        ],
+        [
+          "Abdominal Discomfort",
+          "6.4",
+          "4.8"
+        ],
+        [
+          "Headache",
+          "5.7",
+          "4.8"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Adverse Reaction</th><th>GLUCOPHAGE<br>Monotherapy<br>(n=141)</th><th>Placebo<br>(n=145)</th></tr>\n<tr><th></th><th>% of Patients</th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Diarrhea</td><td>53.2</td><td>11.7</td></tr>\n<tr><td>Nausea/Vomiting</td><td>25.5</td><td>8.3</td></tr>\n<tr><td>Flatulence</td><td>12.1</td><td>5.5</td></tr>\n<tr><td>Asthenia</td><td>9.2</td><td>5.5</td></tr>\n<tr><td>Indigestion</td><td>7.1</td><td>4.1</td></tr>\n<tr><td>Abdominal Discomfort</td><td>6.4</td><td>4.8</td></tr>\n<tr><td>Headache</td><td>5.7</td><td>4.8</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Diarrhea",
+          "values": [
+            53.2,
+            11.7
+          ]
+        },
+        {
+          "label": "Nausea/Vomiting",
+          "values": [
+            25.5,
+            8.3
+          ]
+        },
+        {
+          "label": "Flatulence",
+          "values": [
+            12.1,
+            5.5
+          ]
+        },
+        {
+          "label": "Asthenia",
+          "values": [
+            9.2,
+            5.5
+          ]
+        },
+        {
+          "label": "Indigestion",
+          "values": [
+            7.1,
+            4.1
+          ]
+        },
+        {
+          "label": "Abdominal Discomfort",
+          "values": [
+            6.4,
+            4.8
+          ]
+        },
+        {
+          "label": "Headache",
+          "values": [
+            5.7,
+            4.8
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0024-table-01",
+      "caption": "Table 12: Most Common Adverse Reactions (>5.0 Percent) in Placebo-Controlled Studies",
+      "source_pages": [
+        24
+      ],
+      "bbox": [
+        88.072812,
+        86.93357200000003,
+        559.1928120000001,
+        159.41357199999993
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.933,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Adverse Reaction",
+        "GLUCOPHAGE XR (n=781) / % of Patients",
+        "Placebo (n=195) / % of Patients"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Diarrhea",
+            "9.6",
+            "2.6"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Nausea/Vomiting",
+            "6.5",
+            "1.5"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Adverse Reaction",
+          "GLUCOPHAGE XR\n(n=781)",
+          "Placebo\n(n=195)"
+        ],
+        [
+          null,
+          "% of Patients",
+          null
+        ],
+        [
+          "Diarrhea",
+          "9.6",
+          "2.6"
+        ],
+        [
+          "Nausea/Vomiting",
+          "6.5",
+          "1.5"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Adverse Reaction</th><th>GLUCOPHAGE XR<br>(n=781)</th><th>Placebo<br>(n=195)</th></tr>\n<tr><th></th><th>% of Patients</th><th></th></tr>\n</thead>\n<tbody>\n<tr><td>Diarrhea</td><td>9.6</td><td>2.6</td></tr>\n<tr><td>Nausea/Vomiting</td><td>6.5</td><td>1.5</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

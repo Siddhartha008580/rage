@@ -1,0 +1,2744 @@
+{
+  "schema_version": 1,
+  "source_file": "d3.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "unstructured",
+  "tables": [
+    {
+      "table_id": "page-0003-table-01",
+      "caption": "Table 1. Switching Between Escalation or Maintenance Dosage of RYBELSUS® and",
+      "source_pages": [
+        3
+      ],
+      "bbox": [
+        18.312575,
+        707.013,
+        223.05010000000001,
+        742.2447
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "RYBELSUS®",
+        "OZEMPIC® Tablets"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "7 mg orally once daily",
+            "4 mg orally once daily"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "14 mg orally once daily",
+            "9 mg orally once daily"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "RYBELSUS®",
+          "OZEMPIC® Tablets"
+        ],
+        [
+          "7 mg orally once daily",
+          "4 mg orally once daily"
+        ],
+        [
+          "14 mg orally once daily",
+          "9 mg orally once daily"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>RYBELSUS®</th><th>OZEMPIC® Tablets</th></tr>\n</thead>\n<tbody>\n<tr><td>7 mg orally once daily</td><td>4 mg orally once daily</td></tr>\n<tr><td>14 mg orally once daily</td><td>9 mg orally once daily</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0004-table-01",
+      "caption": "Table 2. Adverse Reactions in Placebo-Controlled Trials Reported in ≥5% of",
+      "source_pages": [
+        4
+      ],
+      "bbox": [
+        310.75,
+        200.24390000000005,
+        592.75,
+        297.4512
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "Placebo<br>(N=362)<br>%",
+            "Semaglutide",
+            "Semaglutide"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "Placebo<br>(N=362)<br>%",
+            "Tablets 7 mg",
+            "Tablets 14 mg"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "Placebo<br>(N=362)<br>%",
+            "(N=356)",
+            "(N=356)"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 3,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Adverse Reaction",
+            "Placebo<br>(N=362)<br>%",
+            "%",
+            "%"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 4,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Nausea",
+            "6",
+            "11",
+            "20"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Abdominal Pain",
+            "4",
+            "10",
+            "11"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Diarrhea",
+            "4",
+            "9",
+            "10"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Decreased appetite",
+            "1",
+            "6",
+            "9"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Vomiting",
+            "3",
+            "6",
+            "8"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Constipation",
+            "2",
+            "6",
+            "5"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Adverse Reaction",
+          "Placebo\n(N=362)\n%",
+          "Semaglutide\nTablets 7 mg\n(N=356)\n%",
+          "Semaglutide\nTablets 14 mg\n(N=356)\n%"
+        ],
+        [
+          "Nausea",
+          "6",
+          "11",
+          "20"
+        ],
+        [
+          "Abdominal Pain",
+          "4",
+          "10",
+          "11"
+        ],
+        [
+          "Diarrhea",
+          "4",
+          "9",
+          "10"
+        ],
+        [
+          "Decreased appetite",
+          "1",
+          "6",
+          "9"
+        ],
+        [
+          "Vomiting",
+          "3",
+          "6",
+          "8"
+        ],
+        [
+          "Constipation",
+          "2",
+          "6",
+          "5"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Adverse Reaction</td><td>Placebo<br>(N=362)<br>%</td><td>Semaglutide<br>Tablets 7 mg<br>(N=356)<br>%</td><td>Semaglutide<br>Tablets 14 mg<br>(N=356)<br>%</td></tr>\n<tr><td>Nausea</td><td>6</td><td>11</td><td>20</td></tr>\n<tr><td>Abdominal Pain</td><td>4</td><td>10</td><td>11</td></tr>\n<tr><td>Diarrhea</td><td>4</td><td>9</td><td>10</td></tr>\n<tr><td>Decreased appetite</td><td>1</td><td>6</td><td>9</td></tr>\n<tr><td>Vomiting</td><td>3</td><td>6</td><td>8</td></tr>\n<tr><td>Constipation</td><td>2</td><td>6</td><td>5</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Nausea",
+          "values": [
+            6.0,
+            11.0,
+            20.0
+          ]
+        },
+        {
+          "label": "Abdominal Pain",
+          "values": [
+            4.0,
+            10.0,
+            11.0
+          ]
+        },
+        {
+          "label": "Diarrhea",
+          "values": [
+            4.0,
+            9.0,
+            10.0
+          ]
+        },
+        {
+          "label": "Decreased appetite",
+          "values": [
+            1.0,
+            6.0,
+            9.0
+          ]
+        },
+        {
+          "label": "Vomiting",
+          "values": [
+            3.0,
+            6.0,
+            8.0
+          ]
+        },
+        {
+          "label": "Constipation",
+          "values": [
+            2.0,
+            6.0,
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0005-table-01",
+      "caption": "Table 3. Hypoglycemia Adverse Reactions in Placebo-Controlled Trials in Patients at exposure below the MRHD (rabbit) and ≥10-fold the MRHD (monkey). These findings coincided",
+      "source_pages": [
+        5
+      ],
+      "bbox": [
+        18.25,
+        54.662000000000035,
+        295.2,
+        213.33270000000005
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.954,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "Semaglutide Tablets 7 mg",
+        "Semaglutide Tablets 14 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Monotherapy",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(26 weeks)",
+            "N=178",
+            "N=175",
+            "N=175"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe*",
+            "0%",
+            "1%",
+            "0%"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "P lasma glucose <54 mg/dL",
+            "1%",
+            "0%",
+            "0%"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to metformin and/or",
+            "sulfonylurea, basal",
+            "insulin alone or",
+            "metformin in"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "combination with basal insulin",
+            "in patients with",
+            "moderate renal",
+            "impairment"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(26 weeks)",
+            "N=161",
+            "–",
+            "N=163"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe*",
+            "0%",
+            "–",
+            "0%"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "P lasma glucose <54 mg/dL",
+            "3%",
+            "–",
+            "6%"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Add-on to insulin with or",
+            "without metformin",
+            "",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "(52 weeks)",
+            "N=184",
+            "N=181",
+            "N=181"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Severe*",
+            "1%",
+            "0%",
+            "1%"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "P lasma glucose <54 mg/dL",
+            "32%",
+            "26%",
+            "30%"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 6",
+        "Cells reconstructed from PDF word positions in source row 10"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "Semaglutide\nTablets\n7 mg",
+          "Semaglutide\nTablets\n14 mg"
+        ],
+        [
+          "Monotherapy",
+          "",
+          "",
+          ""
+        ],
+        [
+          "(26 weeks)",
+          "N=178",
+          "N=175",
+          "N=175"
+        ],
+        [
+          "Severe*",
+          "0%",
+          "1%",
+          "0%"
+        ],
+        [
+          "P lasma glucose <54 mg/dL",
+          "1%",
+          "0%",
+          "0%"
+        ],
+        [
+          "Add-on to metformin and/or sulfonylurea, basal insulin alone or metformin in\ncombination with basal insulin in patients with moderate renal impairment",
+          null,
+          null,
+          null
+        ],
+        [
+          "(26 weeks)",
+          "N=161",
+          "–",
+          "N=163"
+        ],
+        [
+          "Severe*",
+          "0%",
+          "–",
+          "0%"
+        ],
+        [
+          "P lasma glucose <54 mg/dL",
+          "3%",
+          "–",
+          "6%"
+        ],
+        [
+          "Add-on to insulin with or without metformin",
+          null,
+          null,
+          null
+        ],
+        [
+          "(52 weeks)",
+          "N=184",
+          "N=181",
+          "N=181"
+        ],
+        [
+          "Severe*",
+          "1%",
+          "0%",
+          "1%"
+        ],
+        [
+          "P lasma glucose <54 mg/dL",
+          "32%",
+          "26%",
+          "30%"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>Semaglutide<br>Tablets<br>7 mg</th><th>Semaglutide<br>Tablets<br>14 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Monotherapy</td><td></td><td></td><td></td></tr>\n<tr><td>(26 weeks)</td><td>N=178</td><td>N=175</td><td>N=175</td></tr>\n<tr><td>Severe*</td><td>0%</td><td>1%</td><td>0%</td></tr>\n<tr><td>P lasma glucose &lt;54 mg/dL</td><td>1%</td><td>0%</td><td>0%</td></tr>\n<tr><td>Add-on to metformin and/or sulfonylurea, basal insulin alone or metformin in<br>combination with basal insulin in patients with moderate renal impairment</td><td></td><td></td><td></td></tr>\n<tr><td>(26 weeks)</td><td>N=161</td><td>–</td><td>N=163</td></tr>\n<tr><td>Severe*</td><td>0%</td><td>–</td><td>0%</td></tr>\n<tr><td>P lasma glucose &lt;54 mg/dL</td><td>3%</td><td>–</td><td>6%</td></tr>\n<tr><td>Add-on to insulin with or without metformin</td><td></td><td></td><td></td></tr>\n<tr><td>(52 weeks)</td><td>N=184</td><td>N=181</td><td>N=181</td></tr>\n<tr><td>Severe*</td><td>1%</td><td>0%</td><td>1%</td></tr>\n<tr><td>P lasma glucose &lt;54 mg/dL</td><td>32%</td><td>26%</td><td>30%</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0007-table-01",
+      "caption": "Table 5. Trial 2 Results at Week 26 in a Trial of Semaglutide Tablets Compared to",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        310.75,
+        213.46550000000002,
+        568.75,
+        332.9044
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Semaglutide Tablets 14 mg",
+        "Empagliflozin 25 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "411",
+            "410"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.1",
+            "8.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-1.3",
+            "-0.9"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from empagliflozinb",
+            "-0.4",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "[-0.6, -0.3]c",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "67",
+            "40"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "172",
+            "174"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-36",
+            "-36"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "Semaglutide Tablets\n14 mg",
+          "Empagliflozin\n25 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "411",
+          "410"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.1",
+          "8.1"
+        ],
+        [
+          "Change at Week 26b",
+          "-1.3",
+          "-0.9"
+        ],
+        [
+          "Difference from empagliflozinb\n[95% CI]",
+          "-0.4\n[-0.6, -0.3]c",
+          ""
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "67",
+          "40"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "172",
+          "174"
+        ],
+        [
+          "Change at Week 26b",
+          "-36",
+          "-36"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Semaglutide Tablets<br>14 mg</th><th>Empagliflozin<br>25 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>411</td><td>410</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.1</td><td>8.1</td></tr>\n<tr><td>Change at Week 26b</td><td>-1.3</td><td>-0.9</td></tr>\n<tr><td>Difference from empagliflozinb<br>[95% CI]</td><td>-0.4<br>[-0.6, -0.3]c</td><td></td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>67</td><td>40</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>172</td><td>174</td></tr>\n<tr><td>Change at Week 26b</td><td>-36</td><td>-36</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            411.0,
+            410.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.1,
+            8.1
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -1.3,
+            -0.9
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            67.0,
+            40.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            172.0,
+            174.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -36.0,
+            -36.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0007-table-02",
+      "caption": "Table 4. Trial 1 Results at Week 26 in a Monotherapy Trial of Semaglutide Tablets in Sitagliptin 100 mg Once Daily in Adult Patients with Type 2 Diabetes Mellitus in",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        310.75,
+        563.1287,
+        592.75,
+        690.3476499999999
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Semaglutide Tablets 7 mg",
+        "Semaglutide Tablets 14 mg",
+        "Sitagliptin 100 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "465",
+            "465",
+            "467"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.4",
+            "8.3",
+            "8.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-1",
+            "-1.3",
+            "-0.8"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from sitagliptinb",
+            "-0.3",
+            "-0.5",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "[-0.4; -0.1]c",
+            "[-0.6; -0.4]c",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "44",
+            "56",
+            "32"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "170",
+            "168",
+            "172"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-21",
+            "-31",
+            "-15"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Semaglutide\nTablets\n7 mg",
+          "Semaglutide\nTablets\n14 mg",
+          "Sitagliptin\n100 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "465",
+          "465",
+          "467"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.4",
+          "8.3",
+          "8.3"
+        ],
+        [
+          "Change at Week 26b",
+          "-1",
+          "-1.3",
+          "-0.8"
+        ],
+        [
+          "Difference from sitagliptinb\n[95% CI]",
+          "-0.3\n[-0.4; -0.1]c",
+          "-0.5\n[-0.6; -0.4]c",
+          ""
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "44",
+          "56",
+          "32"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "170",
+          "168",
+          "172"
+        ],
+        [
+          "Change at Week 26b",
+          "-21",
+          "-31",
+          "-15"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Semaglutide<br>Tablets<br>7 mg</th><th>Semaglutide<br>Tablets<br>14 mg</th><th>Sitagliptin<br>100 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>465</td><td>465</td><td>467</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.4</td><td>8.3</td><td>8.3</td></tr>\n<tr><td>Change at Week 26b</td><td>-1</td><td>-1.3</td><td>-0.8</td></tr>\n<tr><td>Difference from sitagliptinb<br>[95% CI]</td><td>-0.3<br>[-0.4; -0.1]c</td><td>-0.5<br>[-0.6; -0.4]c</td><td></td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>44</td><td>56</td><td>32</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>170</td><td>168</td><td>172</td></tr>\n<tr><td>Change at Week 26b</td><td>-21</td><td>-31</td><td>-15</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            465.0,
+            465.0,
+            467.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.4,
+            8.3,
+            8.3
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -1.0,
+            -1.3,
+            -0.8
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            44.0,
+            56.0,
+            32.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            170.0,
+            168.0,
+            172.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -21.0,
+            -31.0,
+            -15.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0007-table-03",
+      "caption": "Table 4. Trial 1 Results at Week 26 in a Monotherapy Trial of Semaglutide Tablets in Sitagliptin 100 mg Once Daily in Adult Patients with Type 2 Diabetes Mellitus in",
+      "source_pages": [
+        7
+      ],
+      "bbox": [
+        18.25,
+        571.9326,
+        301.25,
+        699.8716
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "Semaglutide Tablets 7 mg",
+        "Semaglutide Tablets 14 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "178",
+            "175",
+            "175"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "7.9",
+            "8",
+            "8"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-0.3",
+            "-1.2",
+            "-1.4"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob",
+            "",
+            "-0.9",
+            "-1.1"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-1.1; -0.6]c",
+            "[-1.3; -0.9]c"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "31",
+            "69",
+            "77"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "F PG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "160",
+            "162",
+            "158"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-3",
+            "-28",
+            "-33"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "Semaglutide\nTablets\n7 mg",
+          "Semaglutide\nTablets\n14 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "178",
+          "175",
+          "175"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "7.9",
+          "8",
+          "8"
+        ],
+        [
+          "Change at Week 26b",
+          "-0.3",
+          "-1.2",
+          "-1.4"
+        ],
+        [
+          "Difference from placebob\n[95% CI]",
+          "",
+          "-0.9\n[-1.1; -0.6]c",
+          "-1.1\n[-1.3; -0.9]c"
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "31",
+          "69",
+          "77"
+        ],
+        [
+          "F PG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "160",
+          "162",
+          "158"
+        ],
+        [
+          "Change at Week 26b",
+          "-3",
+          "-28",
+          "-33"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>Semaglutide<br>Tablets<br>7 mg</th><th>Semaglutide<br>Tablets<br>14 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>178</td><td>175</td><td>175</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>7.9</td><td>8</td><td>8</td></tr>\n<tr><td>Change at Week 26b</td><td>-0.3</td><td>-1.2</td><td>-1.4</td></tr>\n<tr><td>Difference from placebob<br>[95% CI]</td><td></td><td>-0.9<br>[-1.1; -0.6]c</td><td>-1.1<br>[-1.3; -0.9]c</td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>31</td><td>69</td><td>77</td></tr>\n<tr><td>F PG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>160</td><td>162</td><td>158</td></tr>\n<tr><td>Change at Week 26b</td><td>-3</td><td>-28</td><td>-33</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            178.0,
+            175.0,
+            175.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            7.9,
+            8.0,
+            8.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -0.3,
+            -1.2,
+            -1.4
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            31.0,
+            69.0,
+            77.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            160.0,
+            162.0,
+            158.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -3.0,
+            -28.0,
+            -33.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0008-table-01",
+      "caption": "Table 7. Trial 4 Results at Week 26 in a Trial of Semaglutide Tablets Compared were allowed to increase the insulin dose only up to the starting insulin dose prior to randomization.",
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        18.249952380952383,
+        200.24390000000005,
+        300.25,
+        347.11025
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.9,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multiline-cells",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "Semaglutide Tablets 14 mg",
+        "Liraglutide 1.8 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "142",
+            "285",
+            "284"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "7.9",
+            "8",
+            "8"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-0.2",
+            "-1.2",
+            "-1.1"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob",
+            "",
+            "-1.1",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-1.2; -0.9]c",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from liraglutideb",
+            "",
+            "-0.1",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-0.3; 0]",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "14",
+            "68",
+            "62"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "167",
+            "167",
+            "168"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-7",
+            "-36",
+            "-34"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "Semaglutide\nTablets\n14 mg",
+          "Liraglutide\n1.8 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "142",
+          "285",
+          "284"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "7.9",
+          "8",
+          "8"
+        ],
+        [
+          "Change at Week 26b",
+          "-0.2",
+          "-1.2",
+          "-1.1"
+        ],
+        [
+          "Difference from placebob\n[95% CI]",
+          "",
+          "-1.1\n[-1.2; -0.9]c",
+          ""
+        ],
+        [
+          "Difference from liraglutideb\n[95% CI]",
+          "",
+          "-0.1\n[-0.3; 0]",
+          ""
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "14",
+          "68",
+          "62"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "167",
+          "167",
+          "168"
+        ],
+        [
+          "Change at Week 26b",
+          "-7",
+          "-36",
+          "-34"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>Semaglutide<br>Tablets<br>14 mg</th><th>Liraglutide<br>1.8 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>142</td><td>285</td><td>284</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>7.9</td><td>8</td><td>8</td></tr>\n<tr><td>Change at Week 26b</td><td>-0.2</td><td>-1.2</td><td>-1.1</td></tr>\n<tr><td>Difference from placebob<br>[95% CI]</td><td></td><td>-1.1<br>[-1.2; -0.9]c</td><td></td></tr>\n<tr><td>Difference from liraglutideb<br>[95% CI]</td><td></td><td>-0.1<br>[-0.3; 0]</td><td></td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>14</td><td>68</td><td>62</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>167</td><td>167</td><td>168</td></tr>\n<tr><td>Change at Week 26b</td><td>-7</td><td>-36</td><td>-34</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            142.0,
+            285.0,
+            284.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            7.9,
+            8.0,
+            8.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -0.2,
+            -1.2,
+            -1.1
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            14.0,
+            68.0,
+            62.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            167.0,
+            167.0,
+            168.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -7.0,
+            -36.0,
+            -34.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0008-table-02",
+      "caption": "Table 9. Trial 6 Results at Week 26 in a Trial of Semaglutide Tablets Compared to",
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        310.75,
+        258.95595000000003,
+        593.7,
+        388.2693
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "Semaglutide Tablets 7 mg",
+        "Semaglutide Tablets 14 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "184",
+            "182",
+            "181"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "8.2",
+            "8.2",
+            "8.2"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-0.1",
+            "-0.9",
+            "-1.3"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob",
+            "",
+            "-0.9",
+            "-1.2"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-1.1; -0.7]c",
+            "[-1.4; -1]c"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "7",
+            "43",
+            "58"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "150",
+            "153",
+            "150"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "5",
+            "-20",
+            "-24"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "Semaglutide\nTablets\n7 mg",
+          "Semaglutide\nTablets\n14 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "184",
+          "182",
+          "181"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "8.2",
+          "8.2",
+          "8.2"
+        ],
+        [
+          "Change at Week 26b",
+          "-0.1",
+          "-0.9",
+          "-1.3"
+        ],
+        [
+          "Difference from placebob\n[95% CI]",
+          "",
+          "-0.9\n[-1.1; -0.7]c",
+          "-1.2\n[-1.4; -1]c"
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "7",
+          "43",
+          "58"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "150",
+          "153",
+          "150"
+        ],
+        [
+          "Change at Week 26b",
+          "5",
+          "-20",
+          "-24"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>Semaglutide<br>Tablets<br>7 mg</th><th>Semaglutide<br>Tablets<br>14 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>184</td><td>182</td><td>181</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>8.2</td><td>8.2</td><td>8.2</td></tr>\n<tr><td>Change at Week 26b</td><td>-0.1</td><td>-0.9</td><td>-1.3</td></tr>\n<tr><td>Difference from placebob<br>[95% CI]</td><td></td><td>-0.9<br>[-1.1; -0.7]c</td><td>-1.2<br>[-1.4; -1]c</td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>7</td><td>43</td><td>58</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>150</td><td>153</td><td>150</td></tr>\n<tr><td>Change at Week 26b</td><td>5</td><td>-20</td><td>-24</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            184.0,
+            182.0,
+            181.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            8.2,
+            8.2,
+            8.2
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -0.1,
+            -0.9,
+            -1.3
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            7.0,
+            43.0,
+            58.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            150.0,
+            153.0,
+            150.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            5.0,
+            -20.0,
+            -24.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0008-table-03",
+      "caption": "Table 8. Trial 5 Results at Week 26 in a Trial of Semaglutide Tablets Compared to",
+      "source_pages": [
+        8
+      ],
+      "bbox": [
+        18.249952380952383,
+        628.6768,
+        278.9999,
+        748.1157
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.92,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo",
+        "Semaglutide Tablets 14 mg"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Intent-to-Treat (ITT) Population (N)a",
+            "161",
+            "163"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HbA1c (%)",
+            "",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "7.9",
+            "8"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-0.2",
+            "-1"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Difference from placebob",
+            "",
+            "-0.8"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "[95% CI]",
+            "",
+            "[-1.0; -0.6]c"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Patients (%) achieving HbA1c <7%",
+            "23",
+            "58"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "FPG (mg/dL)",
+            "",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Baseline (mean)",
+            "164",
+            "164"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Change at Week 26b",
+            "-7",
+            "-28"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "",
+          "Placebo",
+          "Semaglutide Tablets\n14 mg"
+        ],
+        [
+          "Intent-to-Treat (ITT) Population (N)a",
+          "161",
+          "163"
+        ],
+        [
+          "HbA1c (%)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "7.9",
+          "8"
+        ],
+        [
+          "Change at Week 26b",
+          "-0.2",
+          "-1"
+        ],
+        [
+          "Difference from placebob\n[95% CI]",
+          "",
+          "-0.8\n[-1.0; -0.6]c"
+        ],
+        [
+          "Patients (%) achieving HbA1c <7%",
+          "23",
+          "58"
+        ],
+        [
+          "FPG (mg/dL)",
+          "",
+          ""
+        ],
+        [
+          "Baseline (mean)",
+          "164",
+          "164"
+        ],
+        [
+          "Change at Week 26b",
+          "-7",
+          "-28"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo</th><th>Semaglutide Tablets<br>14 mg</th></tr>\n</thead>\n<tbody>\n<tr><td>Intent-to-Treat (ITT) Population (N)a</td><td>161</td><td>163</td></tr>\n<tr><td>HbA1c (%)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>7.9</td><td>8</td></tr>\n<tr><td>Change at Week 26b</td><td>-0.2</td><td>-1</td></tr>\n<tr><td>Difference from placebob<br>[95% CI]</td><td></td><td>-0.8<br>[-1.0; -0.6]c</td></tr>\n<tr><td>Patients (%) achieving HbA1c &lt;7%</td><td>23</td><td>58</td></tr>\n<tr><td>FPG (mg/dL)</td><td></td><td></td></tr>\n<tr><td>Baseline (mean)</td><td>164</td><td>164</td></tr>\n<tr><td>Change at Week 26b</td><td>-7</td><td>-28</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Intent-to-Treat (ITT) Population (N)a",
+          "values": [
+            161.0,
+            163.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            7.9,
+            8.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -0.2,
+            -1.0
+          ]
+        },
+        {
+          "label": "Patients (%) achieving HbA1c <7%",
+          "values": [
+            23.0,
+            58.0
+          ]
+        },
+        {
+          "label": "Baseline (mean)",
+          "values": [
+            164.0,
+            164.0
+          ]
+        },
+        {
+          "label": "Change at Week 26b",
+          "values": [
+            -7.0,
+            -28.0
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0009-table-01",
+      "caption": "Table 10. Trial 7 Treatment Effect for MACE and its Components 16 HOW SUPPLIED/STORAGE AND HANDLING",
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        18.25,
+        45.74390000000005,
+        301.25,
+        141.70730000000003
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.933,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Placebo N=4,825",
+        "Semaglutide Tablets 14 mg N=4,825",
+        "Hazard Ratio vs Placebo (95% CI)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Primary composite endpoint",
+            "",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "MACE: Composite of CV death, non-fatal MI,\nnon-fatal stroke (time to first occurrence)",
+            "668 (13.8%)",
+            "579 (12%)",
+            "0.86 (0.77, 0.96)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "CV death",
+            "320 (6.6%)",
+            "301 (6.2%)",
+            "0.93 (0.8, 1.09)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Non-fatal MI",
+            "253 (5.2%)",
+            "191 (4%)",
+            "0.74 (0.61, 0.89)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Non-fatal stroke",
+            "161 (3.3%)",
+            "144 (3%)",
+            "0.88 (0.7, 1.11)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "",
+          "Placebo\nN=4,825",
+          "Semaglutide\nTablets 14 mg\nN=4,825",
+          "Hazard Ratio\nvs Placebo\n(95% CI)"
+        ],
+        [
+          "Primary composite endpoint",
+          "",
+          "",
+          ""
+        ],
+        [
+          "MACE: Composite of CV death, non-fatal MI,\nnon-fatal stroke (time to first occurrence)",
+          "668 (13.8%)",
+          "579 (12%)",
+          "0.86 (0.77, 0.96)"
+        ],
+        [
+          "CV death",
+          "320 (6.6%)",
+          "301 (6.2%)",
+          "0.93 (0.8, 1.09)"
+        ],
+        [
+          "Non-fatal MI",
+          "253 (5.2%)",
+          "191 (4%)",
+          "0.74 (0.61, 0.89)"
+        ],
+        [
+          "Non-fatal stroke",
+          "161 (3.3%)",
+          "144 (3%)",
+          "0.88 (0.7, 1.11)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th></th><th>Placebo<br>N=4,825</th><th>Semaglutide<br>Tablets 14 mg<br>N=4,825</th><th>Hazard Ratio<br>vs Placebo<br>(95% CI)</th></tr>\n</thead>\n<tbody>\n<tr><td>Primary composite endpoint</td><td></td><td></td><td></td></tr>\n<tr><td>MACE: Composite of CV death, non-fatal MI,<br>non-fatal stroke (time to first occurrence)</td><td>668 (13.8%)</td><td>579 (12%)</td><td>0.86 (0.77, 0.96)</td></tr>\n<tr><td>CV death</td><td>320 (6.6%)</td><td>301 (6.2%)</td><td>0.93 (0.8, 1.09)</td></tr>\n<tr><td>Non-fatal MI</td><td>253 (5.2%)</td><td>191 (4%)</td><td>0.74 (0.61, 0.89)</td></tr>\n<tr><td>Non-fatal stroke</td><td>161 (3.3%)</td><td>144 (3%)</td><td>0.88 (0.7, 1.11)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0009-table-02",
+      "caption": "Table 10. Trial 7 Treatment Effect for MACE and its Components 16 HOW SUPPLIED/STORAGE AND HANDLING",
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        310.75,
+        67.74390000000005,
+        593.75,
+        152.71950000000004
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Tablet Strength",
+        "Description",
+        "Package Configuration",
+        "NDC Number"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "3 mg",
+            "White to light yellow, oval shaped debossed with",
+            "Bottle of",
+            "0169-4303-30"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "3 mg",
+            "“3” on one side and “novo” on the other side",
+            "30 tablets",
+            "0169-4303-30"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "7 mg",
+            "White to light yellow, oval shaped debossed with",
+            "Bottle of",
+            "0169-4307-30"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "7 mg",
+            "“7” on one side and “novo” on the other side",
+            "30 tablets",
+            "0169-4307-30"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "14 mg",
+            "White to light yellow, oval shaped debossed with",
+            "Bottle of",
+            "0169-4314-30"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "14 mg",
+            "“14” on one side and “novo” on the other side",
+            "30 tablets",
+            "0169-4314-30"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Tablet\nStrength",
+          "Description",
+          "Package\nConfiguration",
+          "NDC\nNumber"
+        ],
+        [
+          "3 mg",
+          "White to light yellow, oval shaped debossed with\n“3” on one side and “novo” on the other side",
+          "Bottle of\n30 tablets",
+          "0169-4303-30"
+        ],
+        [
+          "7 mg",
+          "White to light yellow, oval shaped debossed with\n“7” on one side and “novo” on the other side",
+          "Bottle of\n30 tablets",
+          "0169-4307-30"
+        ],
+        [
+          "14 mg",
+          "White to light yellow, oval shaped debossed with\n“14” on one side and “novo” on the other side",
+          "Bottle of\n30 tablets",
+          "0169-4314-30"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Tablet<br>Strength</th><th>Description</th><th>Package<br>Configuration</th><th>NDC<br>Number</th></tr>\n</thead>\n<tbody>\n<tr><td>3 mg</td><td>White to light yellow, oval shaped debossed with<br>“3” on one side and “novo” on the other side</td><td>Bottle of<br>30 tablets</td><td>0169-4303-30</td></tr>\n<tr><td>7 mg</td><td>White to light yellow, oval shaped debossed with<br>“7” on one side and “novo” on the other side</td><td>Bottle of<br>30 tablets</td><td>0169-4307-30</td></tr>\n<tr><td>14 mg</td><td>White to light yellow, oval shaped debossed with<br>“14” on one side and “novo” on the other side</td><td>Bottle of<br>30 tablets</td><td>0169-4314-30</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0009-table-03",
+      "caption": null,
+      "source_pages": [
+        9
+      ],
+      "bbox": [
+        310.75,
+        168.96950000000004,
+        593.75,
+        254.32530000000003
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Tablet Strength",
+        "Description",
+        "Package Configuration",
+        "NDC Number"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1.5 mg",
+            "White to light yellow, round shaped debossed with",
+            "Bottle of",
+            "0169-1715-30"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1.5 mg",
+            "“1.5” on one side and “novo” on the other side",
+            "30 tablets",
+            "0169-1715-30"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "4 mg",
+            "White to light yellow, round shaped debossed with",
+            "Bottle of",
+            "0169-1704-30"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "4 mg",
+            "“4” on one side and “novo” on the other side",
+            "30 tablets",
+            "0169-1704-30"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 2,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "9 mg",
+            "White to light yellow, round shaped debossed with",
+            "Bottle of",
+            "0169-1709-30"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "9 mg",
+            "“9” on one side and “novo” on the other side",
+            "30 tablets",
+            "0169-1709-30"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 2,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Tablet\nStrength",
+          "Description",
+          "Package\nConfiguration",
+          "NDC\nNumber"
+        ],
+        [
+          "1.5 mg",
+          "White to light yellow, round shaped debossed with\n“1.5” on one side and “novo” on the other side",
+          "Bottle of\n30 tablets",
+          "0169-1715-30"
+        ],
+        [
+          "4 mg",
+          "White to light yellow, round shaped debossed with\n“4” on one side and “novo” on the other side",
+          "Bottle of\n30 tablets",
+          "0169-1704-30"
+        ],
+        [
+          "9 mg",
+          "White to light yellow, round shaped debossed with\n“9” on one side and “novo” on the other side",
+          "Bottle of\n30 tablets",
+          "0169-1709-30"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Tablet<br>Strength</th><th>Description</th><th>Package<br>Configuration</th><th>NDC<br>Number</th></tr>\n</thead>\n<tbody>\n<tr><td>1.5 mg</td><td>White to light yellow, round shaped debossed with<br>“1.5” on one side and “novo” on the other side</td><td>Bottle of<br>30 tablets</td><td>0169-1715-30</td></tr>\n<tr><td>4 mg</td><td>White to light yellow, round shaped debossed with<br>“4” on one side and “novo” on the other side</td><td>Bottle of<br>30 tablets</td><td>0169-1704-30</td></tr>\n<tr><td>9 mg</td><td>White to light yellow, round shaped debossed with<br>“9” on one side and “novo” on the other side</td><td>Bottle of<br>30 tablets</td><td>0169-1709-30</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

@@ -5,7 +5,6 @@ import json
 from pathlib import Path
 from typing import Any
 
-import pdfplumber
 import pymupdf
 
 try:
@@ -17,29 +16,10 @@ except ImportError:
 
 
 def _page_table_summary(page: Any) -> tuple[float, list[dict[str, Any]]]:
-    tables = []
-    score = 0.0
-    try:
-        detected_tables = page.find_tables()
-    except Exception:
-        detected_tables = []
-    for table in detected_tables:
-        try:
-            rows = table.extract()
-        except Exception:
-            continue
-        columns = max((len(row) for row in rows), default=0)
-        if not rows or columns < 2:
-            continue
-        score += len(rows) * columns
-        tables.append(
-            {
-                "bbox": tuple(float(value) for value in table.bbox),
-                "rows": len(rows),
-                "columns": columns,
-            }
-        )
-    return score, tables
+    text = page.get_text("text") or ""
+    words = text.split()
+    score = float(len(words))
+    return score, []
 
 
 def select_sample_pages(input_dir: Path, max_documents: int = 10) -> list[dict[str, Any]]:
@@ -49,10 +29,10 @@ def select_sample_pages(input_dir: Path, max_documents: int = 10) -> list[dict[s
         best_table_score = 0.0
         best_text_page = 0
         best_text_score = -1
-        with pdfplumber.open(path) as pdf:
-            for page_index, page in enumerate(pdf.pages):
+        with pymupdf.open(path) as document:
+            for page_index, page in enumerate(document):
                 score, tables = _page_table_summary(page)
-                text_score = len(page.extract_text() or "")
+                text_score = len(page.get_text("text") or "")
                 if text_score > best_text_score:
                     best_text_score = text_score
                     best_text_page = page_index
@@ -61,7 +41,7 @@ def select_sample_pages(input_dir: Path, max_documents: int = 10) -> list[dict[s
                     best_table_page = {
                         "source": path,
                         "page_index": page_index,
-                        "selection": "highest table row-column density",
+                        "selection": "highest text density",
                         "baseline_tables": tables,
                     }
         if best_table_page is not None:

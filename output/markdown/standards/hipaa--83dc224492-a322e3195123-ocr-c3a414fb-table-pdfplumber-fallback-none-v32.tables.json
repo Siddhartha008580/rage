@@ -1,0 +1,873 @@
+{
+  "schema_version": 1,
+  "source_file": "hipaa.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0069-table-01",
+      "caption": null,
+      "source_pages": [
+        69
+      ],
+      "bbox": [
+        72.584,
+        107.30000000000001,
+        539.5400000000001,
+        718.1759999999999
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.843,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Standards",
+        "Sections / Administrative",
+        "Implementation Specifications (R)=Required, (A)=Addressable / Safeguards"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Security Management Process",
+            "164.308(a)(1)",
+            "Risk Analysis (R)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Risk Management (R)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Sanction Policy (R)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Information System Activity Review (R)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Assigned Security Responsibility",
+            "164.308(a)(2)",
+            "(R)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Workforce Security",
+            "164.308(a)(3)",
+            "Authorization and/or Supervision (A)"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Workforce Clearance Procedure (A)"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Termination Procedures (A)"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Information Access Management",
+            "164.308(a)(4)",
+            "Isolating Health care Clearinghouse Function (R)"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Access Authorization (A)"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Access Establishment and Modification (A)"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Security Awareness and Training",
+            "164.308(a)(5)",
+            "Security Reminders (A)"
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Protection from Malicious Software (A)"
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Log-in Monitoring (A)"
+          ],
+          "source_row_index": 15,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Password Management (A)"
+          ],
+          "source_row_index": 16,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Security Incident Procedures",
+            "164.308(a)(6)",
+            "Response and Reporting (R)"
+          ],
+          "source_row_index": 17,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Contingency Plan",
+            "164.308(a)(7)",
+            "Data Backup Plan (R)"
+          ],
+          "source_row_index": 18,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Disaster Recovery Plan (R)"
+          ],
+          "source_row_index": 19,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Emergency Mode Operation Plan (R)"
+          ],
+          "source_row_index": 20,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Testing and Revision Procedure (A)"
+          ],
+          "source_row_index": 21,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Applications and Data Criticality Analysis (A)"
+          ],
+          "source_row_index": 22,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Evaluation",
+            "164.308(a)(8)",
+            "(R)"
+          ],
+          "source_row_index": 23,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Business Associate Contracts and Other\nArrangement",
+            "164.308(b)(1)",
+            "Written Contract or Other Arrangement (R)"
+          ],
+          "source_row_index": 24,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "Physical",
+            "Safeguards"
+          ],
+          "source_row_index": 25,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Facility Access Controls",
+            "164.310(a)(1)",
+            "Contingency Operations (A)"
+          ],
+          "source_row_index": 26,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Facility Security Plan (A)"
+          ],
+          "source_row_index": 27,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Access Control and Validation Procedures (A)"
+          ],
+          "source_row_index": 28,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Maintenance Records (A)"
+          ],
+          "source_row_index": 29,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Workstation Use",
+            "164.310(b)",
+            "(R)"
+          ],
+          "source_row_index": 30,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Workstation Security",
+            "164.310(c)",
+            "(R)"
+          ],
+          "source_row_index": 31,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Device and Media Controls",
+            "164.310(d)(1)",
+            "Disposal (R)"
+          ],
+          "source_row_index": 32,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Media Re-use (R)"
+          ],
+          "source_row_index": 33,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Accountability (A)"
+          ],
+          "source_row_index": 34,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Data Backup and Storage (A)"
+          ],
+          "source_row_index": 35,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "Technical Safeguards(see",
+            "§ 164.312)"
+          ],
+          "source_row_index": 36,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Access Control",
+            "164.312(a)(1)",
+            "Unique User Identification (R)"
+          ],
+          "source_row_index": 37,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Emergency Access Procedure (R)"
+          ],
+          "source_row_index": 38,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Automatic Logoff (A)"
+          ],
+          "source_row_index": 39,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 2",
+        "Cells reconstructed from PDF word positions in source row 26",
+        "Cells reconstructed from PDF word positions in source row 37"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Standards",
+          "Sections",
+          "Implementation Specifications (R)=Required,\n(A)=Addressable"
+        ],
+        [
+          "Administrative Safeguards",
+          null,
+          null
+        ],
+        [
+          "Security Management Process",
+          "164.308(a)(1)",
+          "Risk Analysis (R)"
+        ],
+        [
+          "",
+          "",
+          "Risk Management (R)"
+        ],
+        [
+          "",
+          "",
+          "Sanction Policy (R)"
+        ],
+        [
+          "",
+          "",
+          "Information System Activity Review (R)"
+        ],
+        [
+          "Assigned Security Responsibility",
+          "164.308(a)(2)",
+          "(R)"
+        ],
+        [
+          "Workforce Security",
+          "164.308(a)(3)",
+          "Authorization and/or Supervision (A)"
+        ],
+        [
+          "",
+          "",
+          "Workforce Clearance Procedure (A)"
+        ],
+        [
+          "",
+          "",
+          "Termination Procedures (A)"
+        ],
+        [
+          "Information Access Management",
+          "164.308(a)(4)",
+          "Isolating Health care Clearinghouse Function (R)"
+        ],
+        [
+          "",
+          "",
+          "Access Authorization (A)"
+        ],
+        [
+          "",
+          "",
+          "Access Establishment and Modification (A)"
+        ],
+        [
+          "Security Awareness and Training",
+          "164.308(a)(5)",
+          "Security Reminders (A)"
+        ],
+        [
+          "",
+          "",
+          "Protection from Malicious Software (A)"
+        ],
+        [
+          "",
+          "",
+          "Log-in Monitoring (A)"
+        ],
+        [
+          "",
+          "",
+          "Password Management (A)"
+        ],
+        [
+          "Security Incident Procedures",
+          "164.308(a)(6)",
+          "Response and Reporting (R)"
+        ],
+        [
+          "Contingency Plan",
+          "164.308(a)(7)",
+          "Data Backup Plan (R)"
+        ],
+        [
+          "",
+          "",
+          "Disaster Recovery Plan (R)"
+        ],
+        [
+          "",
+          "",
+          "Emergency Mode Operation Plan (R)"
+        ],
+        [
+          "",
+          "",
+          "Testing and Revision Procedure (A)"
+        ],
+        [
+          "",
+          "",
+          "Applications and Data Criticality Analysis (A)"
+        ],
+        [
+          "Evaluation",
+          "164.308(a)(8)",
+          "(R)"
+        ],
+        [
+          "Business Associate Contracts and Other\nArrangement",
+          "164.308(b)(1)",
+          "Written Contract or Other Arrangement (R)"
+        ],
+        [
+          "Physical Safeguards",
+          null,
+          null
+        ],
+        [
+          "Facility Access Controls",
+          "164.310(a)(1)",
+          "Contingency Operations (A)"
+        ],
+        [
+          "",
+          "",
+          "Facility Security Plan (A)"
+        ],
+        [
+          "",
+          "",
+          "Access Control and Validation Procedures (A)"
+        ],
+        [
+          "",
+          "",
+          "Maintenance Records (A)"
+        ],
+        [
+          "Workstation Use",
+          "164.310(b)",
+          "(R)"
+        ],
+        [
+          "Workstation Security",
+          "164.310(c)",
+          "(R)"
+        ],
+        [
+          "Device and Media Controls",
+          "164.310(d)(1)",
+          "Disposal (R)"
+        ],
+        [
+          "",
+          "",
+          "Media Re-use (R)"
+        ],
+        [
+          "",
+          "",
+          "Accountability (A)"
+        ],
+        [
+          "",
+          "",
+          "Data Backup and Storage (A)"
+        ],
+        [
+          "Technical Safeguards(see § 164.312)",
+          null,
+          null
+        ],
+        [
+          "Access Control",
+          "164.312(a)(1)",
+          "Unique User Identification (R)"
+        ],
+        [
+          "",
+          "",
+          "Emergency Access Procedure (R)"
+        ],
+        [
+          "",
+          "",
+          "Automatic Logoff (A)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Standards</th><th>Sections</th><th>Implementation Specifications (R)=Required,<br>(A)=Addressable</th></tr>\n</thead>\n<tbody>\n<tr><td>Administrative Safeguards</td><td></td><td></td></tr>\n<tr><td>Security Management Process</td><td>164.308(a)(1)</td><td>Risk Analysis (R)</td></tr>\n<tr><td></td><td></td><td>Risk Management (R)</td></tr>\n<tr><td></td><td></td><td>Sanction Policy (R)</td></tr>\n<tr><td></td><td></td><td>Information System Activity Review (R)</td></tr>\n<tr><td>Assigned Security Responsibility</td><td>164.308(a)(2)</td><td>(R)</td></tr>\n<tr><td>Workforce Security</td><td>164.308(a)(3)</td><td>Authorization and/or Supervision (A)</td></tr>\n<tr><td></td><td></td><td>Workforce Clearance Procedure (A)</td></tr>\n<tr><td></td><td></td><td>Termination Procedures (A)</td></tr>\n<tr><td>Information Access Management</td><td>164.308(a)(4)</td><td>Isolating Health care Clearinghouse Function (R)</td></tr>\n<tr><td></td><td></td><td>Access Authorization (A)</td></tr>\n<tr><td></td><td></td><td>Access Establishment and Modification (A)</td></tr>\n<tr><td>Security Awareness and Training</td><td>164.308(a)(5)</td><td>Security Reminders (A)</td></tr>\n<tr><td></td><td></td><td>Protection from Malicious Software (A)</td></tr>\n<tr><td></td><td></td><td>Log-in Monitoring (A)</td></tr>\n<tr><td></td><td></td><td>Password Management (A)</td></tr>\n<tr><td>Security Incident Procedures</td><td>164.308(a)(6)</td><td>Response and Reporting (R)</td></tr>\n<tr><td>Contingency Plan</td><td>164.308(a)(7)</td><td>Data Backup Plan (R)</td></tr>\n<tr><td></td><td></td><td>Disaster Recovery Plan (R)</td></tr>\n<tr><td></td><td></td><td>Emergency Mode Operation Plan (R)</td></tr>\n<tr><td></td><td></td><td>Testing and Revision Procedure (A)</td></tr>\n<tr><td></td><td></td><td>Applications and Data Criticality Analysis (A)</td></tr>\n<tr><td>Evaluation</td><td>164.308(a)(8)</td><td>(R)</td></tr>\n<tr><td>Business Associate Contracts and Other<br>Arrangement</td><td>164.308(b)(1)</td><td>Written Contract or Other Arrangement (R)</td></tr>\n<tr><td>Physical Safeguards</td><td></td><td></td></tr>\n<tr><td>Facility Access Controls</td><td>164.310(a)(1)</td><td>Contingency Operations (A)</td></tr>\n<tr><td></td><td></td><td>Facility Security Plan (A)</td></tr>\n<tr><td></td><td></td><td>Access Control and Validation Procedures (A)</td></tr>\n<tr><td></td><td></td><td>Maintenance Records (A)</td></tr>\n<tr><td>Workstation Use</td><td>164.310(b)</td><td>(R)</td></tr>\n<tr><td>Workstation Security</td><td>164.310(c)</td><td>(R)</td></tr>\n<tr><td>Device and Media Controls</td><td>164.310(d)(1)</td><td>Disposal (R)</td></tr>\n<tr><td></td><td></td><td>Media Re-use (R)</td></tr>\n<tr><td></td><td></td><td>Accountability (A)</td></tr>\n<tr><td></td><td></td><td>Data Backup and Storage (A)</td></tr>\n<tr><td>Technical Safeguards(see § 164.312)</td><td></td><td></td></tr>\n<tr><td>Access Control</td><td>164.312(a)(1)</td><td>Unique User Identification (R)</td></tr>\n<tr><td></td><td></td><td>Emergency Access Procedure (R)</td></tr>\n<tr><td></td><td></td><td>Automatic Logoff (A)</td></tr>\n</tbody>\n</table>",
+      "alternative": null
+    },
+    {
+      "table_id": "page-0070-table-01",
+      "caption": null,
+      "source_pages": [
+        70
+      ],
+      "bbox": [
+        72.584,
+        72.83999999999997,
+        539.54,
+        198.74
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.924,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Standards",
+            "Sections",
+            "Implementation Specifications (R)=Required,\n(A)=Addressable"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Encryption and Decryption (A)"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Audit Controls",
+            "164.312(b)",
+            "(R)"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Integrity",
+            "164.312(c)(1)",
+            "Mechanism to Authenticate Electronic Protected Health\nInformation (A)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Person or Entity Authentication",
+            "164.312(d)",
+            "(R)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Transmission Security",
+            "164.312(e)(1)",
+            "Integrity Controls (A)"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "",
+            "Encryption (A)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Standards",
+          "Sections",
+          "Implementation Specifications (R)=Required,\n(A)=Addressable"
+        ],
+        [
+          "",
+          "",
+          "Encryption and Decryption (A)"
+        ],
+        [
+          "Audit Controls",
+          "164.312(b)",
+          "(R)"
+        ],
+        [
+          "Integrity",
+          "164.312(c)(1)",
+          "Mechanism to Authenticate Electronic Protected Health\nInformation (A)"
+        ],
+        [
+          "Person or Entity Authentication",
+          "164.312(d)",
+          "(R)"
+        ],
+        [
+          "Transmission Security",
+          "164.312(e)(1)",
+          "Integrity Controls (A)"
+        ],
+        [
+          "",
+          "",
+          "Encryption (A)"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Standards</td><td>Sections</td><td>Implementation Specifications (R)=Required,<br>(A)=Addressable</td></tr>\n<tr><td></td><td></td><td>Encryption and Decryption (A)</td></tr>\n<tr><td>Audit Controls</td><td>164.312(b)</td><td>(R)</td></tr>\n<tr><td>Integrity</td><td>164.312(c)(1)</td><td>Mechanism to Authenticate Electronic Protected Health<br>Information (A)</td></tr>\n<tr><td>Person or Entity Authentication</td><td>164.312(d)</td><td>(R)</td></tr>\n<tr><td>Transmission Security</td><td>164.312(e)(1)</td><td>Integrity Controls (A)</td></tr>\n<tr><td></td><td></td><td>Encryption (A)</td></tr>\n</tbody>\n</table>",
+      "alternative": null
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 import unittest
 
-from src.convert import _bbox_iou, _merge_table_transformer_predictions
+from src.ingest import _bbox_iou, _merge_table_transformer_predictions
 from src.table_transformer import _normalize_processor_size, _table_html
 
 

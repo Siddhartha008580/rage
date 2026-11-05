@@ -1,0 +1,3564 @@
+{
+  "schema_version": 1,
+  "source_file": "RFC9110.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0013-table-01",
+      "caption": null,
+      "source_pages": [
+        13
+      ],
+      "bbox": [
+        39.461536817307696,
+        399.24998336458225,
+        526.9615165048076,
+        641.4999732708329
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Title",
+        "Reference",
+        "See"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP Over TLS",
+            "[RFC2818]",
+            "B.1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP/1.1 Message Syntax and Routing [*]",
+            "[RFC7230]",
+            "B.2"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP/1.1 Semantics and Content",
+            "[RFC7231]",
+            "B.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP/1.1 Conditional Requests",
+            "[RFC7232]",
+            "B.4"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP/1.1 Range Requests",
+            "[RFC7233]",
+            "B.5"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP/1.1 Authentication",
+            "[RFC7235]",
+            "B.6"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP Status Code 308 (Permanent Redirect)",
+            "[RFC7538]",
+            "B.7"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP Authentication-Info and Proxy-Authentication-Info Response Header Fields",
+            "[RFC7615]",
+            "B.8"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP Client-Initiated Content-Encoding",
+            "[RFC7694]",
+            "B.9"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7",
+        "Cells reconstructed from PDF word positions in source row 9"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Title",
+          "Reference",
+          "See"
+        ],
+        [
+          "HTTP Over TLS",
+          "[RFC2818]",
+          "B.1"
+        ],
+        [
+          "HTTP/1.1 Message Syntax and Routing [*] [RFC7230] B.2",
+          null,
+          null
+        ],
+        [
+          "HTTP/1.1 Semantics and Content",
+          "[RFC7231]",
+          "B.3"
+        ],
+        [
+          "HTTP/1.1 Conditional Requests [RFC7232] B.4",
+          null,
+          null
+        ],
+        [
+          "HTTP/1.1 Range Requests",
+          "[RFC7233]",
+          "B.5"
+        ],
+        [
+          "HTTP/1.1 Authentication [RFC7235] B.6",
+          null,
+          null
+        ],
+        [
+          "HTTP Status Code 308 (Permanent Redirect)",
+          "[RFC7538]",
+          "B.7"
+        ],
+        [
+          "HTTP Authentication-Info and Proxy-Authentication-Info Response Header Fields [RFC7615] B.8",
+          null,
+          null
+        ],
+        [
+          "HTTP Client-Initiated Content-Encoding",
+          "[RFC7694]",
+          "B.9"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Title</th><th>Reference</th><th>See</th></tr>\n</thead>\n<tbody>\n<tr><td>HTTP Over TLS</td><td>[RFC2818]</td><td>B.1</td></tr>\n<tr><td>HTTP/1.1 Message Syntax and Routing [*] [RFC7230] B.2</td><td></td><td></td></tr>\n<tr><td>HTTP/1.1 Semantics and Content</td><td>[RFC7231]</td><td>B.3</td></tr>\n<tr><td>HTTP/1.1 Conditional Requests [RFC7232] B.4</td><td></td><td></td></tr>\n<tr><td>HTTP/1.1 Range Requests</td><td>[RFC7233]</td><td>B.5</td></tr>\n<tr><td>HTTP/1.1 Authentication [RFC7235] B.6</td><td></td><td></td></tr>\n<tr><td>HTTP Status Code 308 (Permanent Redirect)</td><td>[RFC7538]</td><td>B.7</td></tr>\n<tr><td>HTTP Authentication-Info and Proxy-Authentication-Info Response Header Fields [RFC7615] B.8</td><td></td><td></td></tr>\n<tr><td>HTTP Client-Initiated Content-Encoding</td><td>[RFC7694]</td><td>B.9</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0022-table-01",
+      "caption": null,
+      "source_pages": [
+        22
+      ],
+      "bbox": [
+        39.374998359375,
+        379.24998419791524,
+        340.03123583203126,
+        451.8749811718729
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "URI Scheme",
+            "Description",
+            "Section"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "http",
+            "Hypertext Transfer Protocol",
+            "4.2.1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "https",
+            "Hypertext Transfer Protocol Secure",
+            "4.2.2"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "URI Scheme",
+          "Description",
+          "Section"
+        ],
+        [
+          "http",
+          "Hypertext Transfer Protocol",
+          "4.2.1"
+        ],
+        [
+          "https Hypertext Transfer Protocol Secure 4.2.2",
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>URI Scheme</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>http</td><td>Hypertext Transfer Protocol</td><td>4.2.1</td></tr>\n<tr><td>https Hypertext Transfer Protocol Secure 4.2.2</td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0061-table-01",
+      "caption": "Table 3",
+      "source_pages": [
+        61
+      ],
+      "bbox": [
+        39.461536817307696,
+        437.499981770834,
+        337.96152437980766,
+        558.3749767343737
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "ETag 1",
+            "ETag 2",
+            "Strong Comparison",
+            "Weak Comparison"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "W/\"1\"",
+            "W/\"1\"",
+            "no match",
+            "match"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "W/\"1\"",
+            "W/\"2\"",
+            "no match",
+            "no match"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "W/\"1\"",
+            "\"1\"",
+            "no match",
+            "match"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "\"1\"",
+            "\"1\"",
+            "match",
+            "match"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "ETag 1",
+          "ETag 2",
+          "Strong Comparison",
+          "Weak Comparison"
+        ],
+        [
+          "W/\"1\"",
+          "W/\"1\"",
+          "no match",
+          "match"
+        ],
+        [
+          "W/\"1\" W/\"2\" no match no match",
+          null,
+          null,
+          null
+        ],
+        [
+          "W/\"1\"",
+          "\"1\"",
+          "no match",
+          "match"
+        ],
+        [
+          "\"1\" \"1\" match match",
+          null,
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>ETag 1</th><th>ETag 2</th><th>Strong Comparison</th><th>Weak Comparison</th></tr>\n</thead>\n<tbody>\n<tr><td>W/&quot;1&quot;</td><td>W/&quot;1&quot;</td><td>no match</td><td>match</td></tr>\n<tr><td>W/&quot;1&quot; W/&quot;2&quot; no match no match</td><td></td><td></td><td></td></tr>\n<tr><td>W/&quot;1&quot;</td><td>&quot;1&quot;</td><td>no match</td><td>match</td></tr>\n<tr><td>&quot;1&quot; &quot;1&quot; match match</td><td></td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0063-table-01",
+      "caption": "Table 4",
+      "source_pages": [
+        63
+      ],
+      "bbox": [
+        39.434998356875,
+        336.9999859583368,
+        556.814976799375,
+        582.3749757343807
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Method\nName",
+            "Description",
+            "Section"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "GET",
+            "Transfer a current representation of the target resource.",
+            "9.3.1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HEAD",
+            "Same as GET, but do not transfer the response content.",
+            "9.3.2"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "POST",
+            "Perform resource-specific processing on the request content.",
+            "9.3.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "PUT",
+            "Replace all current representations of the target resource with the request\ncontent.",
+            "9.3.4"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "DELETE",
+            "Remove all current representations of the target resource.",
+            "9.3.5"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "CONNECT",
+            "Establish a tunnel to the server identified by the target resource.",
+            "9.3.6"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "OPTIONS",
+            "Describe the communication options for the target resource.",
+            "9.3.7"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "TRACE",
+            "Perform a message loop-back test along the path to the target resource.",
+            "9.3.8"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7",
+        "Cells reconstructed from PDF word positions in source row 9"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Method\nName",
+          "Description",
+          "Section"
+        ],
+        [
+          "GET",
+          "Transfer a current representation of the target resource.",
+          "9.3.1"
+        ],
+        [
+          "HEAD Same as GET, but do not transfer the response content. 9.3.2",
+          null,
+          null
+        ],
+        [
+          "POST",
+          "Perform resource-specific processing on the request content.",
+          "9.3.3"
+        ],
+        [
+          "PUT Replace all current representations of the target resource with the request 9.3.4\ncontent.",
+          null,
+          null
+        ],
+        [
+          "DELETE",
+          "Remove all current representations of the target resource.",
+          "9.3.5"
+        ],
+        [
+          "CONNECT Establish a tunnel to the server identified by the target resource. 9.3.6",
+          null,
+          null
+        ],
+        [
+          "OPTIONS",
+          "Describe the communication options for the target resource.",
+          "9.3.7"
+        ],
+        [
+          "TRACE Perform a message loop-back test along the path to the target resource. 9.3.8",
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Method<br>Name</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>GET</td><td>Transfer a current representation of the target resource.</td><td>9.3.1</td></tr>\n<tr><td>HEAD Same as GET, but do not transfer the response content. 9.3.2</td><td></td><td></td></tr>\n<tr><td>POST</td><td>Perform resource-specific processing on the request content.</td><td>9.3.3</td></tr>\n<tr><td>PUT Replace all current representations of the target resource with the request 9.3.4<br>content.</td><td></td><td></td></tr>\n<tr><td>DELETE</td><td>Remove all current representations of the target resource.</td><td>9.3.5</td></tr>\n<tr><td>CONNECT Establish a tunnel to the server identified by the target resource. 9.3.6</td><td></td><td></td></tr>\n<tr><td>OPTIONS</td><td>Describe the communication options for the target resource.</td><td>9.3.7</td></tr>\n<tr><td>TRACE Perform a message loop-back test along the path to the target resource. 9.3.8</td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0088-table-01",
+      "caption": "Table 5",
+      "source_pages": [
+        88
+      ],
+      "bbox": [
+        39.374998359375,
+        531.2487778646282,
+        249.29165627951386,
+        700.873770796917
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Media Type",
+        "Quality Value"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "text/plain;format=flowed",
+            "1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "text/plain",
+            "0.7"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "text/html",
+            "0.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "image/jpeg",
+            "0.5"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "text/plain;format=fixed",
+            "0.4"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "text/html;level=3",
+            "0.7"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Media Type",
+          "Quality Value"
+        ],
+        [
+          "text/plain;format=flowed",
+          "1"
+        ],
+        [
+          "text/plain 0.7",
+          null
+        ],
+        [
+          "text/html",
+          "0.3"
+        ],
+        [
+          "image/jpeg 0.5",
+          null
+        ],
+        [
+          "text/plain;format=fixed",
+          "0.4"
+        ],
+        [
+          "text/html;level=3 0.7",
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Media Type</th><th>Quality Value</th></tr>\n</thead>\n<tbody>\n<tr><td>text/plain;format=flowed</td><td>1</td></tr>\n<tr><td>text/plain 0.7</td><td></td></tr>\n<tr><td>text/html</td><td>0.3</td></tr>\n<tr><td>image/jpeg 0.5</td><td></td></tr>\n<tr><td>text/plain;format=fixed</td><td>0.4</td></tr>\n<tr><td>text/html;level=3 0.7</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "text/plain;format=flowed",
+          "values": [
+            1.0
+          ]
+        },
+        {
+          "label": "text/plain",
+          "values": [
+            0.7
+          ]
+        },
+        {
+          "label": "text/html",
+          "values": [
+            0.3
+          ]
+        },
+        {
+          "label": "image/jpeg",
+          "values": [
+            0.5
+          ]
+        },
+        {
+          "label": "text/plain;format=fixed",
+          "values": [
+            0.4
+          ]
+        },
+        {
+          "label": "text/html;level=3",
+          "values": [
+            0.7
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0110-table-01",
+      "caption": null,
+      "source_pages": [
+        110
+      ],
+      "bbox": [
+        39.46874835546875,
+        629.748773760457,
+        512.5312286445313,
+        702.3737707344129
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Request Method",
+            "Response content is a representation of:"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "GET",
+            "the target resource"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HEAD",
+            "the target resource, like GET, but without transferring the representation data"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Request Method",
+          "Response content is a representation of:"
+        ],
+        [
+          "GET",
+          "the target resource"
+        ],
+        [
+          "HEAD the target resource, like GET, but without transferring the representation data",
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Request Method</td><td>Response content is a representation of:</td></tr>\n<tr><td>GET</td><td>the target resource</td></tr>\n<tr><td>HEAD the target resource, like GET, but without transferring the representation data</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0111-table-01",
+      "caption": null,
+      "source_pages": [
+        111
+      ],
+      "bbox": [
+        39.461536817307696,
+        43.99999816665638,
+        512.5384401826924,
+        165.37499310937108
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "12:31 PM",
+            "RFC 9110: HTTP Semantics"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Request Method",
+            "Response content is a representation of:"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "POST",
+            "the status of, or results obtained from, the action"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "PUT, DELETE",
+            "the status of the action"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "OPTIONS",
+            "communication options for the target resource"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "TRACE",
+            "the request message as received by the server returning the trace"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Column headings recovered from PDF text above the table"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Request Method",
+          "Response content is a representation of:"
+        ],
+        [
+          "POST",
+          "the status of, or results obtained from, the action"
+        ],
+        [
+          "PUT, DELETE the status of the action",
+          null
+        ],
+        [
+          "OPTIONS",
+          "communication options for the target resource"
+        ],
+        [
+          "TRACE the request message as received by the server returning the trace",
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>Request Method</td><td>Response content is a representation of:</td></tr>\n<tr><td>POST</td><td>the status of, or results obtained from, the action</td></tr>\n<tr><td>PUT, DELETE the status of the action</td><td></td></tr>\n<tr><td>OPTIONS</td><td>communication options for the target resource</td></tr>\n<tr><td>TRACE the request message as received by the server returning the trace</td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0140-table-01",
+      "caption": null,
+      "source_pages": [
+        140
+      ],
+      "bbox": [
+        189.28845365144227,
+        133.9987944167018,
+        406.9615215048077,
+        376.2487843229549
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "footnote-markers",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Method",
+            "Safe",
+            "Idempotent",
+            "Section"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "CONNECT",
+            "no",
+            "no",
+            "9.3.6"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "DELETE",
+            "no",
+            "yes",
+            "9.3.5"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "GET",
+            "yes",
+            "yes",
+            "9.3.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HEAD",
+            "yes",
+            "yes",
+            "9.3.2"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "OPTIONS",
+            "yes",
+            "yes",
+            "9.3.7"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "POST",
+            "no",
+            "no",
+            "9.3.3"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "PUT",
+            "no",
+            "yes",
+            "9.3.4"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "TRACE",
+            "yes",
+            "yes",
+            "9.3.8"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "no",
+            "no",
+            "18.2"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [
+        "*"
+      ],
+      "footnotes": {},
+      "unresolved_footnote_markers": [
+        "*"
+      ],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7",
+        "Cells reconstructed from PDF word positions in source row 9"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Method",
+          "Safe",
+          "Idempotent",
+          "Section"
+        ],
+        [
+          "CONNECT",
+          "no",
+          "no",
+          "9.3.6"
+        ],
+        [
+          "DELETE no yes 9.3.5",
+          null,
+          null,
+          null
+        ],
+        [
+          "GET",
+          "yes",
+          "yes",
+          "9.3.1"
+        ],
+        [
+          "HEAD yes yes 9.3.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "OPTIONS",
+          "yes",
+          "yes",
+          "9.3.7"
+        ],
+        [
+          "POST no no 9.3.3",
+          null,
+          null,
+          null
+        ],
+        [
+          "PUT",
+          "no",
+          "yes",
+          "9.3.4"
+        ],
+        [
+          "TRACE yes yes 9.3.8",
+          null,
+          null,
+          null
+        ],
+        [
+          "*",
+          "no",
+          "no",
+          "18.2"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Method</th><th>Safe</th><th>Idempotent</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>CONNECT</td><td>no</td><td>no</td><td>9.3.6</td></tr>\n<tr><td>DELETE no yes 9.3.5</td><td></td><td></td><td></td></tr>\n<tr><td>GET</td><td>yes</td><td>yes</td><td>9.3.1</td></tr>\n<tr><td>HEAD yes yes 9.3.2</td><td></td><td></td><td></td></tr>\n<tr><td>OPTIONS</td><td>yes</td><td>yes</td><td>9.3.7</td></tr>\n<tr><td>POST no no 9.3.3</td><td></td><td></td><td></td></tr>\n<tr><td>PUT</td><td>no</td><td>yes</td><td>9.3.4</td></tr>\n<tr><td>TRACE yes yes 9.3.8</td><td></td><td></td><td></td></tr>\n<tr><td>*</td><td>no</td><td>no</td><td>18.2</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0140-table-02",
+      "caption": null,
+      "source_pages": [
+        140
+      ],
+      "bbox": [
+        173.5357070550595,
+        514.2487785729548,
+        422.71426810119044,
+        708.2487704896181
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Value",
+        "Description",
+        "Section"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "100",
+            "Continue",
+            "15.2.1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "101",
+            "Switching Protocols",
+            "15.2.2"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "200",
+            "OK",
+            "15.3.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "201",
+            "Created",
+            "15.3.2"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "202",
+            "Accepted",
+            "15.3.3"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "203",
+            "Non-Authoritative Information",
+            "15.3.4"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "204",
+            "No Content",
+            "15.3.5"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Value",
+          "Description",
+          "Section"
+        ],
+        [
+          "100",
+          "Continue",
+          "15.2.1"
+        ],
+        [
+          "101 Switching Protocols 15.2.2",
+          null,
+          null
+        ],
+        [
+          "200",
+          "OK",
+          "15.3.1"
+        ],
+        [
+          "201 Created 15.3.2",
+          null,
+          null
+        ],
+        [
+          "202",
+          "Accepted",
+          "15.3.3"
+        ],
+        [
+          "203 Non-Authoritative Information 15.3.4",
+          null,
+          null
+        ],
+        [
+          "204",
+          "No Content",
+          "15.3.5"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Value</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>100</td><td>Continue</td><td>15.2.1</td></tr>\n<tr><td>101 Switching Protocols 15.2.2</td><td></td><td></td></tr>\n<tr><td>200</td><td>OK</td><td>15.3.1</td></tr>\n<tr><td>201 Created 15.3.2</td><td></td><td></td></tr>\n<tr><td>202</td><td>Accepted</td><td>15.3.3</td></tr>\n<tr><td>203 Non-Authoritative Information 15.3.4</td><td></td><td></td></tr>\n<tr><td>204</td><td>No Content</td><td>15.3.5</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0141-table-01",
+      "caption": null,
+      "source_pages": [
+        141
+      ],
+      "bbox": [
+        173.54778688648895,
+        43.99999816665638,
+        422.702188269761,
+        697.9999709166623
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Value",
+        "Description",
+        "Section"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "205",
+            "Reset Content",
+            "15.3.6"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "206",
+            "Partial Content",
+            "15.3.7"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "300",
+            "Multiple Choices",
+            "15.4.1"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "301",
+            "Moved Permanently",
+            "15.4.2"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "302",
+            "Found",
+            "15.4.3"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "303",
+            "See Other",
+            "15.4.4"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "304",
+            "Not Modified",
+            "15.4.5"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "305",
+            "Use Proxy",
+            "15.4.6"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "306",
+            "(Unused)",
+            "15.4.7"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "307",
+            "Temporary Redirect",
+            "15.4.8"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "308",
+            "Permanent Redirect",
+            "15.4.9"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "400",
+            "Bad Request",
+            "15.5.1"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "401",
+            "Unauthorized",
+            "15.5.2"
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "402",
+            "Payment Required",
+            "15.5.3"
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "403",
+            "Forbidden",
+            "15.5.4"
+          ],
+          "source_row_index": 15,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "404",
+            "Not Found",
+            "15.5.5"
+          ],
+          "source_row_index": 16,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "405",
+            "Method Not Allowed",
+            "15.5.6"
+          ],
+          "source_row_index": 17,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "406",
+            "Not Acceptable",
+            "15.5.7"
+          ],
+          "source_row_index": 18,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "407",
+            "Proxy Authentication Required",
+            "15.5.8"
+          ],
+          "source_row_index": 19,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "408",
+            "Request Timeout",
+            "15.5.9"
+          ],
+          "source_row_index": 20,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "409",
+            "Conflict",
+            "15.5.10"
+          ],
+          "source_row_index": 21,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "410",
+            "Gone",
+            "15.5.11"
+          ],
+          "source_row_index": 22,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "411",
+            "Length Required",
+            "15.5.12"
+          ],
+          "source_row_index": 23,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "412",
+            "Precondition Failed",
+            "15.5.13"
+          ],
+          "source_row_index": 24,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "413",
+            "Content Too Large",
+            "15.5.14"
+          ],
+          "source_row_index": 25,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "414",
+            "URI Too Long",
+            "15.5.15"
+          ],
+          "source_row_index": 26,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 2",
+        "Cells reconstructed from PDF word positions in source row 4",
+        "Cells reconstructed from PDF word positions in source row 6",
+        "Cells reconstructed from PDF word positions in source row 8",
+        "Cells reconstructed from PDF word positions in source row 10",
+        "Cells reconstructed from PDF word positions in source row 12",
+        "Cells reconstructed from PDF word positions in source row 14",
+        "Cells reconstructed from PDF word positions in source row 16",
+        "Cells reconstructed from PDF word positions in source row 18",
+        "Cells reconstructed from PDF word positions in source row 20",
+        "Cells reconstructed from PDF word positions in source row 22",
+        "Cells reconstructed from PDF word positions in source row 24",
+        "Cells reconstructed from PDF word positions in source row 26"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Value",
+          "Description",
+          "Section"
+        ],
+        [
+          "205 Reset Content 15.3.6",
+          null,
+          null
+        ],
+        [
+          "206",
+          "Partial Content",
+          "15.3.7"
+        ],
+        [
+          "300 Multiple Choices 15.4.1",
+          null,
+          null
+        ],
+        [
+          "301",
+          "Moved Permanently",
+          "15.4.2"
+        ],
+        [
+          "302 Found 15.4.3",
+          null,
+          null
+        ],
+        [
+          "303",
+          "See Other",
+          "15.4.4"
+        ],
+        [
+          "304 Not Modified 15.4.5",
+          null,
+          null
+        ],
+        [
+          "305",
+          "Use Proxy",
+          "15.4.6"
+        ],
+        [
+          "306 (Unused) 15.4.7",
+          null,
+          null
+        ],
+        [
+          "307",
+          "Temporary Redirect",
+          "15.4.8"
+        ],
+        [
+          "308 Permanent Redirect 15.4.9",
+          null,
+          null
+        ],
+        [
+          "400",
+          "Bad Request",
+          "15.5.1"
+        ],
+        [
+          "401 Unauthorized 15.5.2",
+          null,
+          null
+        ],
+        [
+          "402",
+          "Payment Required",
+          "15.5.3"
+        ],
+        [
+          "403 Forbidden 15.5.4",
+          null,
+          null
+        ],
+        [
+          "404",
+          "Not Found",
+          "15.5.5"
+        ],
+        [
+          "405 Method Not Allowed 15.5.6",
+          null,
+          null
+        ],
+        [
+          "406",
+          "Not Acceptable",
+          "15.5.7"
+        ],
+        [
+          "407 Proxy Authentication Required 15.5.8",
+          null,
+          null
+        ],
+        [
+          "408",
+          "Request Timeout",
+          "15.5.9"
+        ],
+        [
+          "409 Conflict 15.5.10",
+          null,
+          null
+        ],
+        [
+          "410",
+          "Gone",
+          "15.5.11"
+        ],
+        [
+          "411 Length Required 15.5.12",
+          null,
+          null
+        ],
+        [
+          "412",
+          "Precondition Failed",
+          "15.5.13"
+        ],
+        [
+          "413 Content Too Large 15.5.14",
+          null,
+          null
+        ],
+        [
+          "414",
+          "URI Too Long",
+          "15.5.15"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Value</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>205 Reset Content 15.3.6</td><td></td><td></td></tr>\n<tr><td>206</td><td>Partial Content</td><td>15.3.7</td></tr>\n<tr><td>300 Multiple Choices 15.4.1</td><td></td><td></td></tr>\n<tr><td>301</td><td>Moved Permanently</td><td>15.4.2</td></tr>\n<tr><td>302 Found 15.4.3</td><td></td><td></td></tr>\n<tr><td>303</td><td>See Other</td><td>15.4.4</td></tr>\n<tr><td>304 Not Modified 15.4.5</td><td></td><td></td></tr>\n<tr><td>305</td><td>Use Proxy</td><td>15.4.6</td></tr>\n<tr><td>306 (Unused) 15.4.7</td><td></td><td></td></tr>\n<tr><td>307</td><td>Temporary Redirect</td><td>15.4.8</td></tr>\n<tr><td>308 Permanent Redirect 15.4.9</td><td></td><td></td></tr>\n<tr><td>400</td><td>Bad Request</td><td>15.5.1</td></tr>\n<tr><td>401 Unauthorized 15.5.2</td><td></td><td></td></tr>\n<tr><td>402</td><td>Payment Required</td><td>15.5.3</td></tr>\n<tr><td>403 Forbidden 15.5.4</td><td></td><td></td></tr>\n<tr><td>404</td><td>Not Found</td><td>15.5.5</td></tr>\n<tr><td>405 Method Not Allowed 15.5.6</td><td></td><td></td></tr>\n<tr><td>406</td><td>Not Acceptable</td><td>15.5.7</td></tr>\n<tr><td>407 Proxy Authentication Required 15.5.8</td><td></td><td></td></tr>\n<tr><td>408</td><td>Request Timeout</td><td>15.5.9</td></tr>\n<tr><td>409 Conflict 15.5.10</td><td></td><td></td></tr>\n<tr><td>410</td><td>Gone</td><td>15.5.11</td></tr>\n<tr><td>411 Length Required 15.5.12</td><td></td><td></td></tr>\n<tr><td>412</td><td>Precondition Failed</td><td>15.5.13</td></tr>\n<tr><td>413 Content Too Large 15.5.14</td><td></td><td></td></tr>\n<tr><td>414</td><td>URI Too Long</td><td>15.5.15</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0142-table-01",
+      "caption": null,
+      "source_pages": [
+        142
+      ],
+      "bbox": [
+        173.54999276875,
+        43.99879816671095,
+        422.6999823875,
+        382.87378404691236
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Value",
+        "Description",
+        "Section"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "415",
+            "Unsupported Media Type",
+            "15.5.16"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "416",
+            "Range Not Satisfiable",
+            "15.5.17"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "417",
+            "Expectation Failed",
+            "15.5.18"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "418",
+            "(Unused)",
+            "15.5.19"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "421",
+            "Misdirected Request",
+            "15.5.20"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "422",
+            "Unprocessable Content",
+            "15.5.21"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "426",
+            "Upgrade Required",
+            "15.5.22"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "500",
+            "Internal Server Error",
+            "15.6.1"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "501",
+            "Not Implemented",
+            "15.6.2"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "502",
+            "Bad Gateway",
+            "15.6.3"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "503",
+            "Service Unavailable",
+            "15.6.4"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "504",
+            "Gateway Timeout",
+            "15.6.5"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "505",
+            "HTTP Version Not Supported",
+            "15.6.6"
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 2",
+        "Cells reconstructed from PDF word positions in source row 4",
+        "Cells reconstructed from PDF word positions in source row 6",
+        "Cells reconstructed from PDF word positions in source row 8",
+        "Cells reconstructed from PDF word positions in source row 10",
+        "Cells reconstructed from PDF word positions in source row 12",
+        "Cells reconstructed from PDF word positions in source row 14"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Value",
+          "Description",
+          "Section"
+        ],
+        [
+          "415 Unsupported Media Type 15.5.16",
+          null,
+          null
+        ],
+        [
+          "416",
+          "Range Not Satisfiable",
+          "15.5.17"
+        ],
+        [
+          "417 Expectation Failed 15.5.18",
+          null,
+          null
+        ],
+        [
+          "418",
+          "(Unused)",
+          "15.5.19"
+        ],
+        [
+          "421 Misdirected Request 15.5.20",
+          null,
+          null
+        ],
+        [
+          "422",
+          "Unprocessable Content",
+          "15.5.21"
+        ],
+        [
+          "426 Upgrade Required 15.5.22",
+          null,
+          null
+        ],
+        [
+          "500",
+          "Internal Server Error",
+          "15.6.1"
+        ],
+        [
+          "501 Not Implemented 15.6.2",
+          null,
+          null
+        ],
+        [
+          "502",
+          "Bad Gateway",
+          "15.6.3"
+        ],
+        [
+          "503 Service Unavailable 15.6.4",
+          null,
+          null
+        ],
+        [
+          "504",
+          "Gateway Timeout",
+          "15.6.5"
+        ],
+        [
+          "505 HTTP Version Not Supported 15.6.6",
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Value</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>415 Unsupported Media Type 15.5.16</td><td></td><td></td></tr>\n<tr><td>416</td><td>Range Not Satisfiable</td><td>15.5.17</td></tr>\n<tr><td>417 Expectation Failed 15.5.18</td><td></td><td></td></tr>\n<tr><td>418</td><td>(Unused)</td><td>15.5.19</td></tr>\n<tr><td>421 Misdirected Request 15.5.20</td><td></td><td></td></tr>\n<tr><td>422</td><td>Unprocessable Content</td><td>15.5.21</td></tr>\n<tr><td>426 Upgrade Required 15.5.22</td><td></td><td></td></tr>\n<tr><td>500</td><td>Internal Server Error</td><td>15.6.1</td></tr>\n<tr><td>501 Not Implemented 15.6.2</td><td></td><td></td></tr>\n<tr><td>502</td><td>Bad Gateway</td><td>15.6.3</td></tr>\n<tr><td>503 Service Unavailable 15.6.4</td><td></td><td></td></tr>\n<tr><td>504</td><td>Gateway Timeout</td><td>15.6.5</td></tr>\n<tr><td>505 HTTP Version Not Supported 15.6.6</td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0143-table-01",
+      "caption": null,
+      "source_pages": [
+        143
+      ],
+      "bbox": [
+        39.45258456303879,
+        145.24999394791064,
+        360.2973987807112,
+        702.3749707343753
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.904,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Field Name",
+            "Status",
+            "Section",
+            "Comments"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Accept",
+            "permanent",
+            "12.5.1",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Accept-Charset",
+            "deprecated",
+            "12.5.2",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Accept-Encoding",
+            "permanent",
+            "12.5.3",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Accept-Language",
+            "permanent",
+            "12.5.4",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Accept-Ranges",
+            "permanent",
+            "14.3",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Allow",
+            "permanent",
+            "10.2.1",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Authentication-Info",
+            "permanent",
+            "11.6.3",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Authorization",
+            "permanent",
+            "11.6.2",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Connection",
+            "permanent",
+            "7.6.1",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Content-Encoding",
+            "permanent",
+            "8.4",
+            ""
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Content-Language",
+            "permanent",
+            "8.5",
+            ""
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Content-Length",
+            "permanent",
+            "8.6",
+            ""
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Content-Location",
+            "permanent",
+            "8.7",
+            ""
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Content-Range",
+            "permanent",
+            "14.4",
+            ""
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Content-Type",
+            "permanent",
+            "8.3",
+            ""
+          ],
+          "source_row_index": 15,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Date",
+            "permanent",
+            "6.6.1",
+            ""
+          ],
+          "source_row_index": 16,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "ETag",
+            "permanent",
+            "8.8.3",
+            ""
+          ],
+          "source_row_index": 17,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Expect",
+            "permanent",
+            "10.1.1",
+            ""
+          ],
+          "source_row_index": 18,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "From",
+            "permanent",
+            "10.1.2",
+            ""
+          ],
+          "source_row_index": 19,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Host",
+            "permanent",
+            "7.2",
+            ""
+          ],
+          "source_row_index": 20,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "If-Match",
+            "permanent",
+            "13.1.1",
+            ""
+          ],
+          "source_row_index": 21,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "If-Modified-Since",
+            "permanent",
+            "13.1.3",
+            ""
+          ],
+          "source_row_index": 22,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7",
+        "Cells reconstructed from PDF word positions in source row 9",
+        "Cells reconstructed from PDF word positions in source row 11",
+        "Cells reconstructed from PDF word positions in source row 13",
+        "Cells reconstructed from PDF word positions in source row 15",
+        "Cells reconstructed from PDF word positions in source row 17",
+        "Cells reconstructed from PDF word positions in source row 19",
+        "Cells reconstructed from PDF word positions in source row 21",
+        "Cells reconstructed from PDF word positions in source row 23"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Field Name",
+          "Status",
+          "Section",
+          "Comments"
+        ],
+        [
+          "Accept",
+          "permanent",
+          "12.5.1",
+          ""
+        ],
+        [
+          "Accept-Charset deprecated 12.5.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "Accept-Encoding",
+          "permanent",
+          "12.5.3",
+          ""
+        ],
+        [
+          "Accept-Language permanent 12.5.4",
+          null,
+          null,
+          null
+        ],
+        [
+          "Accept-Ranges",
+          "permanent",
+          "14.3",
+          ""
+        ],
+        [
+          "Allow permanent 10.2.1",
+          null,
+          null,
+          null
+        ],
+        [
+          "Authentication-Info",
+          "permanent",
+          "11.6.3",
+          ""
+        ],
+        [
+          "Authorization permanent 11.6.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "Connection",
+          "permanent",
+          "7.6.1",
+          ""
+        ],
+        [
+          "Content-Encoding permanent 8.4",
+          null,
+          null,
+          null
+        ],
+        [
+          "Content-Language",
+          "permanent",
+          "8.5",
+          ""
+        ],
+        [
+          "Content-Length permanent 8.6",
+          null,
+          null,
+          null
+        ],
+        [
+          "Content-Location",
+          "permanent",
+          "8.7",
+          ""
+        ],
+        [
+          "Content-Range permanent 14.4",
+          null,
+          null,
+          null
+        ],
+        [
+          "Content-Type",
+          "permanent",
+          "8.3",
+          ""
+        ],
+        [
+          "Date permanent 6.6.1",
+          null,
+          null,
+          null
+        ],
+        [
+          "ETag",
+          "permanent",
+          "8.8.3",
+          ""
+        ],
+        [
+          "Expect permanent 10.1.1",
+          null,
+          null,
+          null
+        ],
+        [
+          "From",
+          "permanent",
+          "10.1.2",
+          ""
+        ],
+        [
+          "Host permanent 7.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "If-Match",
+          "permanent",
+          "13.1.1",
+          ""
+        ],
+        [
+          "If-Modified-Since permanent 13.1.3",
+          null,
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Field Name</th><th>Status</th><th>Section</th><th>Comments</th></tr>\n</thead>\n<tbody>\n<tr><td>Accept</td><td>permanent</td><td>12.5.1</td><td></td></tr>\n<tr><td>Accept-Charset deprecated 12.5.2</td><td></td><td></td><td></td></tr>\n<tr><td>Accept-Encoding</td><td>permanent</td><td>12.5.3</td><td></td></tr>\n<tr><td>Accept-Language permanent 12.5.4</td><td></td><td></td><td></td></tr>\n<tr><td>Accept-Ranges</td><td>permanent</td><td>14.3</td><td></td></tr>\n<tr><td>Allow permanent 10.2.1</td><td></td><td></td><td></td></tr>\n<tr><td>Authentication-Info</td><td>permanent</td><td>11.6.3</td><td></td></tr>\n<tr><td>Authorization permanent 11.6.2</td><td></td><td></td><td></td></tr>\n<tr><td>Connection</td><td>permanent</td><td>7.6.1</td><td></td></tr>\n<tr><td>Content-Encoding permanent 8.4</td><td></td><td></td><td></td></tr>\n<tr><td>Content-Language</td><td>permanent</td><td>8.5</td><td></td></tr>\n<tr><td>Content-Length permanent 8.6</td><td></td><td></td><td></td></tr>\n<tr><td>Content-Location</td><td>permanent</td><td>8.7</td><td></td></tr>\n<tr><td>Content-Range permanent 14.4</td><td></td><td></td><td></td></tr>\n<tr><td>Content-Type</td><td>permanent</td><td>8.3</td><td></td></tr>\n<tr><td>Date permanent 6.6.1</td><td></td><td></td><td></td></tr>\n<tr><td>ETag</td><td>permanent</td><td>8.8.3</td><td></td></tr>\n<tr><td>Expect permanent 10.1.1</td><td></td><td></td><td></td></tr>\n<tr><td>From</td><td>permanent</td><td>10.1.2</td><td></td></tr>\n<tr><td>Host permanent 7.2</td><td></td><td></td><td></td></tr>\n<tr><td>If-Match</td><td>permanent</td><td>13.1.1</td><td></td></tr>\n<tr><td>If-Modified-Since permanent 13.1.3</td><td></td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": [
+        {
+          "label": "Accept-Ranges",
+          "values": [
+            14.3
+          ]
+        },
+        {
+          "label": "Content-Encoding",
+          "values": [
+            8.4
+          ]
+        },
+        {
+          "label": "Content-Language",
+          "values": [
+            8.5
+          ]
+        },
+        {
+          "label": "Content-Length",
+          "values": [
+            8.6
+          ]
+        },
+        {
+          "label": "Content-Location",
+          "values": [
+            8.7
+          ]
+        },
+        {
+          "label": "Content-Range",
+          "values": [
+            14.4
+          ]
+        },
+        {
+          "label": "Content-Type",
+          "values": [
+            8.3
+          ]
+        },
+        {
+          "label": "Host",
+          "values": [
+            7.2
+          ]
+        }
+      ]
+    },
+    {
+      "table_id": "page-0144-table-01",
+      "caption": null,
+      "source_pages": [
+        144
+      ],
+      "bbox": [
+        39.455355498883925,
+        43.99879816671095,
+        360.29462784486606,
+        576.9987759583734
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 0.904,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "sparse-cells",
+          "footnote-markers",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "12:31 PM",
+            "",
+            "",
+            "RFC 9110: HTTP"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Field Name",
+            "Status",
+            "Section",
+            "Comments"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "If-None-Match",
+            "permanent",
+            "13.1.2",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "If-Range",
+            "permanent",
+            "13.1.5",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "If-Unmodified-Since",
+            "permanent",
+            "13.1.4",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Last-Modified",
+            "permanent",
+            "8.8.2",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Location",
+            "permanent",
+            "10.2.2",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Max-Forwards",
+            "permanent",
+            "7.6.2",
+            ""
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Proxy-Authenticate",
+            "permanent",
+            "11.7.1",
+            ""
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Proxy-Authentication-Info",
+            "permanent",
+            "11.7.3",
+            ""
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Proxy-Authorization",
+            "permanent",
+            "11.7.2",
+            ""
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Range",
+            "permanent",
+            "14.2",
+            ""
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Referer",
+            "permanent",
+            "10.1.3",
+            ""
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Retry-After",
+            "permanent",
+            "10.2.3",
+            ""
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Server",
+            "permanent",
+            "10.2.4",
+            ""
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "TE",
+            "permanent",
+            "10.1.4",
+            ""
+          ],
+          "source_row_index": 15,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Trailer",
+            "permanent",
+            "6.6.2",
+            ""
+          ],
+          "source_row_index": 16,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Upgrade",
+            "permanent",
+            "7.8",
+            ""
+          ],
+          "source_row_index": 17,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "User-Agent",
+            "permanent",
+            "10.1.5",
+            ""
+          ],
+          "source_row_index": 18,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Vary",
+            "permanent",
+            "12.5.5",
+            ""
+          ],
+          "source_row_index": 19,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Via",
+            "permanent",
+            "7.6.3",
+            ""
+          ],
+          "source_row_index": 20,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "WWW-Authenticate",
+            "permanent",
+            "11.6.1",
+            ""
+          ],
+          "source_row_index": 21,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "permanent",
+            "12.5.5",
+            "(reserved)"
+          ],
+          "source_row_index": 22,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [
+        "*"
+      ],
+      "footnotes": {},
+      "unresolved_footnote_markers": [
+        "*"
+      ],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7",
+        "Cells reconstructed from PDF word positions in source row 9",
+        "Cells reconstructed from PDF word positions in source row 11",
+        "Cells reconstructed from PDF word positions in source row 13",
+        "Cells reconstructed from PDF word positions in source row 15",
+        "Cells reconstructed from PDF word positions in source row 17",
+        "Cells reconstructed from PDF word positions in source row 19",
+        "Cells reconstructed from PDF word positions in source row 21",
+        "Column headings recovered from PDF text above the table"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Field Name",
+          "Status",
+          "Section",
+          "Comments"
+        ],
+        [
+          "If-None-Match",
+          "permanent",
+          "13.1.2",
+          ""
+        ],
+        [
+          "If-Range permanent 13.1.5",
+          null,
+          null,
+          null
+        ],
+        [
+          "If-Unmodified-Since",
+          "permanent",
+          "13.1.4",
+          ""
+        ],
+        [
+          "Last-Modified permanent 8.8.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "Location",
+          "permanent",
+          "10.2.2",
+          ""
+        ],
+        [
+          "Max-Forwards permanent 7.6.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "Proxy-Authenticate",
+          "permanent",
+          "11.7.1",
+          ""
+        ],
+        [
+          "Proxy-Authentication-Info permanent 11.7.3",
+          null,
+          null,
+          null
+        ],
+        [
+          "Proxy-Authorization",
+          "permanent",
+          "11.7.2",
+          ""
+        ],
+        [
+          "Range permanent 14.2",
+          null,
+          null,
+          null
+        ],
+        [
+          "Referer",
+          "permanent",
+          "10.1.3",
+          ""
+        ],
+        [
+          "Retry-After permanent 10.2.3",
+          null,
+          null,
+          null
+        ],
+        [
+          "Server",
+          "permanent",
+          "10.2.4",
+          ""
+        ],
+        [
+          "TE permanent 10.1.4",
+          null,
+          null,
+          null
+        ],
+        [
+          "Trailer",
+          "permanent",
+          "6.6.2",
+          ""
+        ],
+        [
+          "Upgrade permanent 7.8",
+          null,
+          null,
+          null
+        ],
+        [
+          "User-Agent",
+          "permanent",
+          "10.1.5",
+          ""
+        ],
+        [
+          "Vary permanent 12.5.5",
+          null,
+          null,
+          null
+        ],
+        [
+          "Via",
+          "permanent",
+          "7.6.3",
+          ""
+        ],
+        [
+          "WWW-Authenticate permanent 11.6.1",
+          null,
+          null,
+          null
+        ],
+        [
+          "*",
+          "permanent",
+          "12.5.5",
+          "(reserved)"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Field Name</th><th>Status</th><th>Section</th><th>Comments</th></tr>\n</thead>\n<tbody>\n<tr><td>If-None-Match</td><td>permanent</td><td>13.1.2</td><td></td></tr>\n<tr><td>If-Range permanent 13.1.5</td><td></td><td></td><td></td></tr>\n<tr><td>If-Unmodified-Since</td><td>permanent</td><td>13.1.4</td><td></td></tr>\n<tr><td>Last-Modified permanent 8.8.2</td><td></td><td></td><td></td></tr>\n<tr><td>Location</td><td>permanent</td><td>10.2.2</td><td></td></tr>\n<tr><td>Max-Forwards permanent 7.6.2</td><td></td><td></td><td></td></tr>\n<tr><td>Proxy-Authenticate</td><td>permanent</td><td>11.7.1</td><td></td></tr>\n<tr><td>Proxy-Authentication-Info permanent 11.7.3</td><td></td><td></td><td></td></tr>\n<tr><td>Proxy-Authorization</td><td>permanent</td><td>11.7.2</td><td></td></tr>\n<tr><td>Range permanent 14.2</td><td></td><td></td><td></td></tr>\n<tr><td>Referer</td><td>permanent</td><td>10.1.3</td><td></td></tr>\n<tr><td>Retry-After permanent 10.2.3</td><td></td><td></td><td></td></tr>\n<tr><td>Server</td><td>permanent</td><td>10.2.4</td><td></td></tr>\n<tr><td>TE permanent 10.1.4</td><td></td><td></td><td></td></tr>\n<tr><td>Trailer</td><td>permanent</td><td>6.6.2</td><td></td></tr>\n<tr><td>Upgrade permanent 7.8</td><td></td><td></td><td></td></tr>\n<tr><td>User-Agent</td><td>permanent</td><td>10.1.5</td><td></td></tr>\n<tr><td>Vary permanent 12.5.5</td><td></td><td></td><td></td></tr>\n<tr><td>Via</td><td>permanent</td><td>7.6.3</td><td></td></tr>\n<tr><td>WWW-Authenticate permanent 11.6.1</td><td></td><td></td><td></td></tr>\n<tr><td>*</td><td>permanent</td><td>12.5.5</td><td>(reserved)</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0145-table-01",
+      "caption": "Table 10",
+      "source_pages": [
+        145
+      ],
+      "bbox": [
+        39.461536817307696,
+        210.49999122915693,
+        542.5416440607639,
+        379.8749841718612
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Name",
+        "Description",
+        "Section"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "compress",
+            "UNIX \"compress\" data format [Welch]",
+            "8.4.1.1"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "deflate",
+            "\"deflate\" compressed data ([RFC1951]) inside the \"zlib\" data format ([RFC1950])",
+            "8.4.1.2"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "gzip",
+            "GZIP file format [RFC1952]",
+            "8.4.1.3"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "identity",
+            "Reserved",
+            "12.5.3"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "x-compress",
+            "Deprecated (alias for compress)",
+            "8.4.1.1"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "x-gzip",
+            "Deprecated (alias for gzip)",
+            "8.4.1.3"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3",
+        "Cells reconstructed from PDF word positions in source row 5",
+        "Cells reconstructed from PDF word positions in source row 7"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Name",
+          "Description",
+          "Section"
+        ],
+        [
+          "compress",
+          "UNIX \"compress\" data format [Welch]",
+          "8.4.1.1"
+        ],
+        [
+          "deflate \"deflate\" compressed data ([RFC1951]) inside the \"zlib\" data format ([RFC1950]) 8.4.1.2",
+          null,
+          null
+        ],
+        [
+          "gzip",
+          "GZIP file format [RFC1952]",
+          "8.4.1.3"
+        ],
+        [
+          "identity Reserved 12.5.3",
+          null,
+          null
+        ],
+        [
+          "x-compress",
+          "Deprecated (alias for compress)",
+          "8.4.1.1"
+        ],
+        [
+          "x-gzip Deprecated (alias for gzip) 8.4.1.3",
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Name</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>compress</td><td>UNIX &quot;compress&quot; data format [Welch]</td><td>8.4.1.1</td></tr>\n<tr><td>deflate &quot;deflate&quot; compressed data ([RFC1951]) inside the &quot;zlib&quot; data format ([RFC1950]) 8.4.1.2</td><td></td><td></td></tr>\n<tr><td>gzip</td><td>GZIP file format [RFC1952]</td><td>8.4.1.3</td></tr>\n<tr><td>identity Reserved 12.5.3</td><td></td><td></td></tr>\n<tr><td>x-compress</td><td>Deprecated (alias for compress)</td><td>8.4.1.1</td></tr>\n<tr><td>x-gzip Deprecated (alias for gzip) 8.4.1.3</td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0145-table-02",
+      "caption": "Table 10",
+      "source_pages": [
+        145
+      ],
+      "bbox": [
+        39.461536817307696,
+        467.49998052081963,
+        511.9687286679688,
+        540.3749774843612
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Range Unit Name",
+            "Description",
+            "Section"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "bytes",
+            "a range of octets",
+            "14.1.2"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "none",
+            "reserved as keyword to indicate range requests are not supported",
+            "14.3"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [
+        "Cells reconstructed from PDF word positions in source row 3"
+      ],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "Range Unit Name",
+          "Description",
+          "Section"
+        ],
+        [
+          "bytes",
+          "a range of octets",
+          "14.1.2"
+        ],
+        [
+          "none reserved as keyword to indicate range requests are not supported 14.3",
+          null,
+          null
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Range Unit Name</th><th>Description</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>bytes</td><td>a range of octets</td><td>14.1.2</td></tr>\n<tr><td>none reserved as keyword to indicate range requests are not supported 14.3</td><td></td><td></td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0146-table-01",
+      "caption": "Table 12",
+      "source_pages": [
+        146
+      ],
+      "bbox": [
+        39.49999835416667,
+        249.99878958337047,
+        420.9999824583333,
+        298.7487875521171
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Name",
+        "Description",
+        "Expected Version Tokens",
+        "Section"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "HTTP",
+            "Hypertext Transfer Protocol",
+            "any DIGIT.DIGIT (e.g., \"2.0\")",
+            "2.5"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "normalization_status": "normalized",
+      "raw_rows": [
+        [
+          "Name",
+          "Description",
+          "Expected Version Tokens",
+          "Section"
+        ],
+        [
+          "HTTP",
+          "Hypertext Transfer Protocol",
+          "any DIGIT.DIGIT (e.g., \"2.0\")",
+          "2.5"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Name</th><th>Description</th><th>Expected Version Tokens</th><th>Section</th></tr>\n</thead>\n<tbody>\n<tr><td>HTTP</td><td>Hypertext Transfer Protocol</td><td>any DIGIT.DIGIT (e.g., &quot;2.0&quot;)</td><td>2.5</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

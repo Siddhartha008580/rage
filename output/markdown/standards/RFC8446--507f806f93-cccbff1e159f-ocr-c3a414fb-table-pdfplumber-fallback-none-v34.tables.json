@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "source_file": "RFC8446.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": []
+}

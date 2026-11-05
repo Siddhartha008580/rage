@@ -14,9 +14,13 @@ PAGE_MARKER = re.compile(
 HEADING = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 TOKEN = re.compile(r"\w+|[^\w\s]", re.UNICODE)
 MAX_PARENT_TOKENS = 1200
-CHUNKER_VERSION = 3
+CHUNKER_VERSION = 4
 TABLE_ROW = re.compile(r"^\s*\|.*\|\s*$")
 TABLE_SEPARATOR = re.compile(r"^\s*\|(?:\s*:?-+:?\s*\|)+\s*$")
+HTML_TABLE_OPEN = re.compile(r"<table\b", re.I)
+HTML_TABLE_CLOSE = re.compile(r"</table\s*>", re.I)
+HTML_TABLE_ROW = re.compile(r"<tr\b[^>]*>.*?</tr\s*>", re.I | re.S)
+HTML_TABLE_HEAD = re.compile(r"<thead\b[^>]*>.*?</thead\s*>", re.I | re.S)
 TABLE_CAPTION = re.compile(r"^\*{0,2}Table\s+\d+\b.*\*{0,2}$", re.I | re.S)
 IMAGE = re.compile(r"^\s*!\[[^\]]*\]\([^)]+\)\s*$")
 AI_DESCRIPTION = re.compile(r"^\s*\*\*AI-generated image description\b", re.I)
@@ -63,6 +67,7 @@ def parse_markdown(markdown: str) -> list[Block]:
     lines: list[str] = []
     block_page = current_page
     block_printed_page = printed_page
+    in_html_table = False
 
     def flush() -> None:
         nonlocal lines
@@ -80,7 +85,9 @@ def parse_markdown(markdown: str) -> list[Block]:
                         heading_text=heading_match.group(2).strip(),
                     )
                 )
-            elif all(TABLE_ROW.match(line) for line in text.splitlines()):
+            elif all(TABLE_ROW.match(line) for line in text.splitlines()) or (
+                HTML_TABLE_OPEN.search(text) and HTML_TABLE_CLOSE.search(text)
+            ):
                 blocks.append(
                     Block(
                         text=text,
@@ -116,6 +123,28 @@ def parse_markdown(markdown: str) -> list[Block]:
             printed_page = None
             block_page = current_page
             block_printed_page = printed_page
+            continue
+
+        if in_html_table:
+            lines.append(line)
+            if HTML_TABLE_CLOSE.search(line):
+                flush()
+                in_html_table = False
+                block_page = current_page
+                block_printed_page = printed_page
+            continue
+
+        if HTML_TABLE_OPEN.search(line):
+            flush()
+            block_page = current_page
+            block_printed_page = printed_page
+            lines.append(line)
+            if HTML_TABLE_CLOSE.search(line):
+                flush()
+                block_page = current_page
+                block_printed_page = printed_page
+            else:
+                in_html_table = True
             continue
 
         heading_match = HEADING.match(line)
@@ -190,6 +219,56 @@ def _table_children(
     caption: str | None = None,
 ) -> list[tuple[str, str, Block]]:
     caption_prefix = f"{caption}\n\n" if caption else ""
+    open_match = re.search(r"<table\b[^>]*>", block.text, re.I)
+    close_match = re.search(r"</table\s*>", block.text, re.I)
+    if open_match and close_match:
+        table_open = open_match.group(0)
+        head_match = HTML_TABLE_HEAD.search(block.text)
+        table_head = head_match.group(0) if head_match else ""
+        all_rows = HTML_TABLE_ROW.findall(block.text)
+        header_rows = (
+            HTML_TABLE_ROW.findall(table_head)
+            if table_head
+            else []
+        )
+        body_rows = list(all_rows)
+        for header_row in header_rows:
+            try:
+                body_rows.remove(header_row)
+            except ValueError:
+                pass
+        tbody_open = "<tbody>"
+        tbody_close = "</tbody>"
+
+        def render_table(rows: list[str]) -> str:
+            parts = [table_open]
+            if table_head:
+                parts.append(table_head)
+            if rows:
+                parts.extend([tbody_open, *rows, tbody_close])
+            parts.append("</table>")
+            return "\n".join(parts)
+
+        if estimate_tokens(block.text) <= max_tokens or not body_rows:
+            return [(caption_prefix + block.text, "table", block)]
+
+        children: list[tuple[str, str, Block]] = []
+        current_rows: list[str] = []
+        for row in body_rows:
+            candidate = render_table(current_rows + [row])
+            if current_rows and estimate_tokens(candidate) > max_tokens:
+                children.append(
+                    (caption_prefix + render_table(current_rows), "table", block)
+                )
+                current_rows = [row]
+            else:
+                current_rows.append(row)
+        if current_rows:
+            children.append(
+                (caption_prefix + render_table(current_rows), "table", block)
+            )
+        return children
+
     rows = block.text.splitlines()
     if len(rows) < 2:
         return [(caption_prefix + block.text, "table", block)]
