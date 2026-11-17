@@ -1,0 +1,1171 @@
+[
+  {
+    "id": "C-01",
+    "type": "comparison",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "adderall.pdf",
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "adderall.pdf",
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "adderall.pdf",
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 4,
+    "expected_source_count": 4,
+    "terms_found": [
+      "neutropenia",
+      "respiratory depression",
+      "suicidal thoughts"
+    ],
+    "terms_missing": [
+      "abuse"
+    ],
+    "pages_retrieved": [
+      1,
+      3,
+      6,
+      7,
+      8,
+      10,
+      11,
+      16,
+      21
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 35791.65992700018,
+    "retrieved_chunks": [
+      {
+        "id": "prozac--4ef89a2945d7--p11--prose--4",
+        "source": "prozac.pdf",
+        "page": 11,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "suicidal thoughts"
+        ]
+      },
+      {
+        "id": "clozaril--fc38d9f2ea51--p1--prose--0",
+        "source": "clozaril.pdf",
+        "page": 1,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "neutropenia"
+        ]
+      },
+      {
+        "id": "adderall--c893c5165da5--p8--prose--1",
+        "source": "adderall.pdf",
+        "page": 8,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p1--prose--0",
+        "source": "prozac.pdf",
+        "page": 1,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "suicidal thoughts"
+        ]
+      },
+      {
+        "id": "clozaril--fc38d9f2ea51--p21--prose--0",
+        "source": "clozaril.pdf",
+        "page": 21,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "clozaril--fc38d9f2ea51--p10--prose--3",
+        "source": "clozaril.pdf",
+        "page": 10,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "neutropenia"
+        ]
+      },
+      {
+        "id": "clozaril--fc38d9f2ea51--p3--prose--2",
+        "source": "clozaril.pdf",
+        "page": 3,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "clozaril--fc38d9f2ea51--p6--table_row--9",
+        "source": "clozaril.pdf",
+        "page": 6,
+        "chunk_type": "table_row",
+        "matched_expected_terms": [
+          "neutropenia"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p16--prose--1",
+        "source": "oxycontin.pdf",
+        "page": 16,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "respiratory depression"
+        ]
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p7--prose--2",
+        "source": "prozac.pdf",
+        "page": 7,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "suicidal thoughts"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "C-02",
+    "type": "comparison",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf",
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf",
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf",
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 2,
+    "expected_source_count": 2,
+    "terms_found": [
+      "Major Depressive Disorder",
+      "Treatment-resistant schizophrenia"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      3,
+      4,
+      8,
+      10,
+      12,
+      22
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 10479.301524999755
+  },
+  {
+    "id": "C-03",
+    "type": "comparison",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "snurl1.pdf",
+      "snurl2.pdf"
+    ],
+    "expected_sources": [
+      "snurl1.pdf",
+      "snurl2.pdf"
+    ],
+    "sources_found": [
+      "snurl1.pdf",
+      "snurl2.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 2,
+    "expected_source_count": 2,
+    "terms_found": [
+      "significant new use rules",
+      "TSCA"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      3,
+      4,
+      32
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 11290.926720000243
+  },
+  {
+    "id": "M-01",
+    "type": "multi-hop",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "amzn-20251231.pdf"
+    ],
+    "expected_sources": [
+      "amzn-20251231.pdf"
+    ],
+    "sources_found": [
+      "amzn-20251231.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Net sales",
+      "716,924",
+      "637,959",
+      "Operating income",
+      "79,975",
+      "68,593"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      32,
+      35,
+      36,
+      39,
+      44,
+      46,
+      51,
+      81
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 9098.228561000724
+  },
+  {
+    "id": "M-02",
+    "type": "multi-hop",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf"
+    ],
+    "expected_sources": [
+      "10-K.pdf"
+    ],
+    "sources_found": [
+      "10-K.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Total revenue",
+      "24,216",
+      "assets under management",
+      "$14.0 trillion"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      5,
+      6,
+      52,
+      57,
+      79
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 8805.593072000192
+  },
+  {
+    "id": "M-03",
+    "type": "multi-hop",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "amzn-20251231.pdf",
+      "prozac.pdf",
+      "snurl2.pdf",
+      "snurl3.pdf"
+    ],
+    "expected_sources": [
+      "snurl2.pdf"
+    ],
+    "sources_found": [
+      "snurl2.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Frame No. 29",
+      "10x magnification",
+      "before further flight"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      28,
+      30,
+      35,
+      38,
+      64,
+      76,
+      87
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 11552.523569999721
+  },
+  {
+    "id": "M-04",
+    "type": "multi-hop",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "hydroflourocarbons.pdf"
+    ],
+    "expected_sources": [
+      "hydroflourocarbons.pdf"
+    ],
+    "sources_found": [
+      "hydroflourocarbons.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "disposable cylinders",
+      "tracking of cylinders",
+      "September 11, 2024"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 12412.5809749994
+  },
+  {
+    "id": "S-01",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf"
+    ],
+    "expected_sources": [
+      "10-K.pdf"
+    ],
+    "sources_found": [
+      "10-K.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Total revenue",
+      "24,216"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      4,
+      8,
+      13,
+      43,
+      78,
+      79,
+      103,
+      108,
+      116
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 8769.364672000847
+  },
+  {
+    "id": "S-02",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "amzn-20251231.pdf"
+    ],
+    "expected_sources": [
+      "amzn-20251231.pdf"
+    ],
+    "sources_found": [
+      "amzn-20251231.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Total assets",
+      "818,042"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      11,
+      47,
+      58,
+      59,
+      61,
+      69,
+      94,
+      98,
+      103
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 8048.124842000107
+  },
+  {
+    "id": "S-03",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "hydroflourocarbons.pdf",
+      "snurl1.pdf",
+      "snurl2.pdf"
+    ],
+    "expected_sources": [
+      "hydroflourocarbons.pdf"
+    ],
+    "sources_found": [
+      "hydroflourocarbons.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "September 11, 2024"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      4,
+      5
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 9862.572563999493
+  },
+  {
+    "id": "S-04",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "amzn-20251231.pdf",
+      "hydroflourocarbons.pdf",
+      "snurl1.pdf",
+      "snurl2.pdf",
+      "snurl3.pdf"
+    ],
+    "expected_sources": [
+      "snurl1.pdf"
+    ],
+    "sources_found": [
+      "snurl1.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Periodic Reporting",
+      "December 8, 2025"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      5,
+      6,
+      21,
+      33,
+      46
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 10520.747059000314
+  },
+  {
+    "id": "S-05",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "amzn-20251231.pdf",
+      "prozac.pdf",
+      "snurl2.pdf",
+      "snurl3.pdf"
+    ],
+    "expected_sources": [
+      "snurl2.pdf"
+    ],
+    "sources_found": [
+      "snurl2.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Frame No. 29",
+      "looseness or damage",
+      "replace or correct"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      28,
+      30,
+      35,
+      38,
+      68,
+      72,
+      87
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 11339.37992600022
+  },
+  {
+    "id": "S-06",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf",
+      "hydroflourocarbons.pdf",
+      "snurl1.pdf",
+      "snurl3.pdf"
+    ],
+    "expected_sources": [
+      "snurl3.pdf"
+    ],
+    "sources_found": [
+      "snurl3.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "triclopyr",
+      "orange subgroup 10–10A"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      5,
+      6,
+      12,
+      29
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 10355.341880999731
+  },
+  {
+    "id": "S-07",
+    "type": "single-fact",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "adderall.pdf",
+      "oxycontin.pdf"
+    ],
+    "expected_sources": [
+      "adderall.pdf"
+    ],
+    "sources_found": [
+      "adderall.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "sudden death"
+    ],
+    "terms_missing": [
+      "high potential for abuse",
+      "cardiovascular adverse events"
+    ],
+    "pages_retrieved": [
+      3,
+      4,
+      7,
+      8,
+      14,
+      15
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 11535.71880400068,
+    "retrieved_chunks": [
+      {
+        "id": "adderall--c893c5165da5--p7--prose--1",
+        "source": "adderall.pdf",
+        "page": 7,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "adderall--c893c5165da5--p7--prose--0",
+        "source": "adderall.pdf",
+        "page": 7,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p3--prose--2",
+        "source": "oxycontin.pdf",
+        "page": 3,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "adderall--c893c5165da5--p4--prose--0",
+        "source": "adderall.pdf",
+        "page": 4,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "sudden death"
+        ]
+      },
+      {
+        "id": "adderall--c893c5165da5--p4--prose--1",
+        "source": "adderall.pdf",
+        "page": 4,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "sudden death"
+        ]
+      },
+      {
+        "id": "adderall--c893c5165da5--p4--prose--2",
+        "source": "adderall.pdf",
+        "page": 4,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "adderall--c893c5165da5--p15--prose--0",
+        "source": "adderall.pdf",
+        "page": 15,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "sudden death"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p4--prose--0",
+        "source": "oxycontin.pdf",
+        "page": 4,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p14--prose--2",
+        "source": "oxycontin.pdf",
+        "page": 14,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "adderall--c893c5165da5--p8--prose--2",
+        "source": "adderall.pdf",
+        "page": 8,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      }
+    ]
+  },
+  {
+    "id": "S-08",
+    "type": "single-fact",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "12.5 mg",
+      "absolute neutrophil count"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      4,
+      6,
+      8,
+      9,
+      11,
+      27
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 11171.266078999906
+  },
+  {
+    "id": "S-09",
+    "type": "single-fact",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "oxycontin.pdf"
+    ],
+    "expected_sources": [
+      "oxycontin.pdf"
+    ],
+    "sources_found": [
+      "oxycontin.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "11 years"
+    ],
+    "terms_missing": [
+      "opioid-tolerant"
+    ],
+    "pages_retrieved": [
+      8,
+      9,
+      10,
+      27,
+      28
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 9202.650071999415,
+    "retrieved_chunks": [
+      {
+        "id": "oxycontin--c98e28fac348--p28--prose--0",
+        "source": "oxycontin.pdf",
+        "page": 28,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p27--prose--2",
+        "source": "oxycontin.pdf",
+        "page": 27,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p10--prose--0",
+        "source": "oxycontin.pdf",
+        "page": 10,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p9--prose--2",
+        "source": "oxycontin.pdf",
+        "page": 9,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p8--table_row--2",
+        "source": "oxycontin.pdf",
+        "page": 8,
+        "chunk_type": "table_row",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p8--table_row--3",
+        "source": "oxycontin.pdf",
+        "page": 8,
+        "chunk_type": "table_row",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p8--table_row--4",
+        "source": "oxycontin.pdf",
+        "page": 8,
+        "chunk_type": "table_row",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p8--table_row--5",
+        "source": "oxycontin.pdf",
+        "page": 8,
+        "chunk_type": "table_row",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p8--table_row--6",
+        "source": "oxycontin.pdf",
+        "page": 8,
+        "chunk_type": "table_row",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      },
+      {
+        "id": "oxycontin--c98e28fac348--p8--prose--0",
+        "source": "oxycontin.pdf",
+        "page": 8,
+        "chunk_type": "prose",
+        "matched_expected_terms": [
+          "11 years"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "S-10",
+    "type": "single-fact",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [],
+    "terms_missing": [
+      "MDD",
+      "20 mg/day in am"
+    ],
+    "pages_retrieved": [
+      1,
+      4,
+      5,
+      6,
+      22,
+      23,
+      25
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 10380.247455000244,
+    "retrieved_chunks": [
+      {
+        "id": "prozac--4ef89a2945d7--p5--prose--2",
+        "source": "prozac.pdf",
+        "page": 5,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p5--prose--4",
+        "source": "prozac.pdf",
+        "page": 5,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p5--prose--0",
+        "source": "prozac.pdf",
+        "page": 5,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p4--prose--3",
+        "source": "prozac.pdf",
+        "page": 4,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p23--prose--1",
+        "source": "prozac.pdf",
+        "page": 23,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p22--prose--3",
+        "source": "prozac.pdf",
+        "page": 22,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p23--prose--4",
+        "source": "prozac.pdf",
+        "page": 23,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p25--prose--0",
+        "source": "prozac.pdf",
+        "page": 25,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p6--prose--0",
+        "source": "prozac.pdf",
+        "page": 6,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      },
+      {
+        "id": "prozac--4ef89a2945d7--p1--prose--15",
+        "source": "prozac.pdf",
+        "page": 1,
+        "chunk_type": "prose",
+        "matched_expected_terms": []
+      }
+    ]
+  },
+  {
+    "id": "T-01",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "amzn-20251231.pdf"
+    ],
+    "expected_sources": [
+      "amzn-20251231.pdf"
+    ],
+    "sources_found": [
+      "amzn-20251231.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Net income",
+      "77,670"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      35,
+      45,
+      46,
+      47,
+      51
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 9148.82269500049
+  },
+  {
+    "id": "T-02",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "10-K.pdf"
+    ],
+    "expected_sources": [
+      "10-K.pdf"
+    ],
+    "sources_found": [
+      "10-K.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Total revenue",
+      "24,216",
+      "Operating income",
+      "7,045"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      44,
+      79,
+      116
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 10,
+    "retrieval_ms": 8720.942543000092
+  }
+]

@@ -317,17 +317,19 @@ class RagChunkTests(unittest.TestCase):
         chromadb = SimpleNamespace(
             PersistentClient=MagicMock(return_value=client)
         )
+        embedding_function = lambda input: [[1.0, 0.0] for _ in input]
         with tempfile.TemporaryDirectory() as directory:
             index_dir = Path(directory)
             with (
                 patch.dict(sys.modules, {"chromadb": chromadb}),
-                patch("src.rag._embed_fn", return_value=object()),
+                patch("src.rag._embed_fn", return_value=embedding_function),
             ):
                 build_index([chunk], index_dir)
 
             lexical = query_lexical_index(
                 index_dir, ["cash", "flow"], top_k=5
             )
+            self.assertTrue((index_dir / "spectrag_graph.npz").is_file())
 
         client.create_collection.assert_called_once()
         collection.add.assert_called_once()

@@ -15,6 +15,7 @@ from src.chat_rag import (
     run_interactive,
     select_best_per_source,
 )
+from src.spectrag import ChunkGraph
 
 
 class ChatRagTests(unittest.TestCase):
@@ -287,6 +288,59 @@ class ChatRagTests(unittest.TestCase):
         self.assertEqual({chunk["source"] for chunk in chunks}, {"a.pdf", "b.pdf"})
         self.assertEqual({chunk["id"] for chunk in chunks}, {"a-best", "b-best"})
 
+    def test_spectrag_retrieval_expands_and_returns_graph_scores(self) -> None:
+        metadata = {
+            "source": "report.pdf",
+            "domain": "financial",
+            "pdf_page": 1,
+            "citation": "[report.pdf p.1]",
+            "chunk_type": "prose",
+            "section_path": ["Results"],
+        }
+        dense_hits = [
+            {"id": "seed", "text": "revenue increased", "metadata": metadata}
+        ]
+        candidates = [
+            {"id": "seed", "text": "revenue increased", "metadata": metadata},
+            {
+                "id": "neighbor",
+                "text": "costs increased",
+                "metadata": metadata,
+            },
+        ]
+        graph = ChunkGraph(
+            ids=["seed", "neighbor"],
+            adjacency=__import__("scipy").sparse.csr_matrix(
+                [[0.0, 1.0], [1.0, 0.0]]
+            ),
+            coordinates=__import__("numpy").zeros((2, 1)),
+        )
+
+        def fake_rerank(query, hits, **kwargs):
+            return [
+                {**hit, "rerank_score": 0.9 - index * 0.1}
+                for index, hit in enumerate(hits)
+            ]
+
+        with (
+            patch("src.chat_rag.query_index", return_value=dense_hits),
+            patch("src.chat_rag.query_lexical_index", return_value=[]),
+            patch("src.chat_rag.ChunkGraph.load", return_value=graph),
+            patch("src.chat_rag.get_index_chunks", return_value=candidates),
+            patch("src.chat_rag.rerank_candidates", side_effect=fake_rerank),
+        ):
+            chunks = retrieve_chunks(
+                "revenue",
+                2,
+                index_dir=Path("test-index"),
+                candidate_k=2,
+                retrieval_mode="spectrag",
+            )
+
+        self.assertEqual({chunk["id"] for chunk in chunks}, {"seed", "neighbor"})
+        self.assertTrue(all("spectrag_score" in chunk for chunk in chunks))
+        self.assertTrue(all("ppr_score" in chunk for chunk in chunks))
+
     def test_openrouter_request_has_larger_budget_and_returns_diagnostics(self) -> None:
         create = Mock(
             return_value=SimpleNamespace(
@@ -367,7 +421,16 @@ class ChatRagTests(unittest.TestCase):
 
     def test_interactive_cli_answers_multiple_queries_and_exits(self) -> None:
         with (
-            patch("builtins.input", side_effect=["first question", "second", "quit"]),
+            patch(
+                "builtins.input",
+                side_effect=[
+                    "first question",
+                    "h",
+                    "second",
+                    "s",
+                    "quit",
+                ],
+            ),
             patch("src.chat_rag.run_one", return_value={"answer": "ok"}) as run,
             patch("builtins.print"),
         ):
@@ -392,6 +455,8 @@ class ChatRagTests(unittest.TestCase):
                     page=None,
                     candidate_k=20,
                     mmr_lambda=0.7,
+                    retrieval_mode="hybrid",
+                    token_budget=12000,
                 ),
                 call(
                     "second",
@@ -403,9 +468,42 @@ class ChatRagTests(unittest.TestCase):
                     page=None,
                     candidate_k=20,
                     mmr_lambda=0.7,
+                    retrieval_mode="spectrag",
+                    token_budget=12000,
                 ),
             ],
         )
+
+    def test_interactive_cli_generates_document_when_selected(self) -> None:
+        with (
+            patch(
+                "builtins.input",
+                side_effect=["write a briefing", "d", "quit"],
+            ),
+            patch(
+                "src.docgen.generate_with_markdown",
+                return_value=(Path("documents/briefing.pdf"), "# Briefing"),
+            ) as generate,
+            patch("builtins.print"),
+        ):
+            run_interactive(index_dir=Path("test-index"))
+
+        generate.assert_called_once_with(
+            "write a briefing", index_dir=Path("test-index")
+        )
+
+    def test_interactive_cli_reprompts_for_invalid_mode_and_can_cancel(self) -> None:
+        with (
+            patch(
+                "builtins.input",
+                side_effect=["first question", "invalid", "c", "quit"],
+            ),
+            patch("src.chat_rag.run_one") as run,
+            patch("builtins.print"),
+        ):
+            run_interactive()
+
+        run.assert_not_called()
 
     def test_interactive_cli_exits_on_eof(self) -> None:
         with (

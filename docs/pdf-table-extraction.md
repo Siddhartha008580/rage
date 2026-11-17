@@ -45,3 +45,25 @@ python -m pip install "unstructured[pdf]>=0.26"
 The fallback is intentionally opt-in because it has additional Python and
 system dependencies. Its configuration is included in output naming, so
 changing the setting produces a distinct conversion output.
+
+## Docling page fallback
+
+PDF pages with substantial image coverage and sparse text, aligned numeric
+columns, or repeated table-of-contents dot leaders can be routed through
+Docling's layout-aware PDF pipeline. Other pages continue through the existing
+PyMuPDF and pdfplumber pipeline. Docling is optional at runtime; if it is
+unavailable, the standard pipeline is used and a conversion warning is
+recorded when fallback pages were requested.
+
+```bash
+# Disable the fallback
+DOCLING_DISABLE=1 python src/ingest.py
+
+# Enable Docling OCR on pages routed to the fallback
+DOCLING_OCR=1 python src/ingest.py
+```
+
+Docling OCR is disabled by default. Its enabled/disabled and OCR settings are
+included in PDF output naming, so changing them causes a distinct conversion
+output rather than reusing pages produced with different settings. The first
+use may require downloading Docling's models.

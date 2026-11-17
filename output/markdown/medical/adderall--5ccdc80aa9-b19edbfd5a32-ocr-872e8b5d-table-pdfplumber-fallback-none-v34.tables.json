@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "source_file": "adderall.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0001-table-01",
+      "caption": null,
+      "source_pages": [
+        1
+      ],
+      "bbox": [
+        65.299561,
+        360.954366,
+        569.299561,
+        503.094366
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multiline-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4",
+        "Column 5",
+        "Column 6",
+        "Column 7",
+        "Column 8"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "EACH TABLET CONTAINS",
+            "5 mg",
+            "7.5 mg",
+            "10 mg",
+            "12.5 mg",
+            "15 mg",
+            "20 mg",
+            "30 mg"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dextroamphetamine\nSaccharate",
+            "1.25 mg",
+            "1.875 mg",
+            "2.5 mg",
+            "3.125 mg",
+            "3.75 mg",
+            "5 mg",
+            "7.5 mg"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Amphetamine Aspartate\nMonohydrate",
+            "1.25 mg",
+            "1.875 mg",
+            "2.5 mg",
+            "3.125 mg",
+            "3.75 mg",
+            "5 mg",
+            "7.5 mg"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dextroamphetamine\nSulfate, USP",
+            "1.25 mg",
+            "1.875 mg",
+            "2.5 mg",
+            "3.125 mg",
+            "3.75 mg",
+            "5 mg",
+            "7.5 mg"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Amphetamine\nSulfate, USP",
+            "1.25 mg",
+            "1.875 mg",
+            "2.5 mg",
+            "3.125 mg",
+            "3.75 mg",
+            "5 mg",
+            "7.5 mg"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total Amphetamine Base\nEquivalence",
+            "3.13 mg",
+            "4.7 mg",
+            "6.3 mg",
+            "7.8 mg",
+            "9.4 mg",
+            "12.6 mg",
+            "18.8 mg"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [
+        "Multiline cell alignment was ambiguous; original cell boundaries were retained"
+      ],
+      "repair_notes": [],
+      "normalization_status": "review_required",
+      "raw_rows": [
+        [
+          "EACH TABLET CONTAINS",
+          "5 mg",
+          "7.5 mg",
+          "10 mg",
+          "12.5 mg",
+          "15 mg",
+          "20 mg",
+          "30 mg"
+        ],
+        [
+          "Dextroamphetamine\nSaccharate",
+          "1.25 mg",
+          "1.875 mg",
+          "2.5 mg",
+          "3.125 mg",
+          "3.75 mg",
+          "5 mg",
+          "7.5 mg"
+        ],
+        [
+          "Amphetamine Aspartate\nMonohydrate",
+          "1.25 mg",
+          "1.875 mg",
+          "2.5 mg",
+          "3.125 mg",
+          "3.75 mg",
+          "5 mg",
+          "7.5 mg"
+        ],
+        [
+          "Dextroamphetamine\nSulfate, USP",
+          "1.25 mg",
+          "1.875 mg",
+          "2.5 mg",
+          "3.125 mg",
+          "3.75 mg",
+          "5 mg",
+          "7.5 mg"
+        ],
+        [
+          "Amphetamine\nSulfate, USP",
+          "1.25 mg",
+          "1.875 mg",
+          "2.5 mg",
+          "3.125 mg",
+          "3.75 mg",
+          "5 mg",
+          "7.5 mg"
+        ],
+        [
+          "Total Amphetamine Base\nEquivalence",
+          "3.13 mg",
+          "4.7 mg",
+          "6.3 mg",
+          "7.8 mg",
+          "9.4 mg",
+          "12.6 mg",
+          "18.8 mg"
+        ]
+      ],
+      "raw_html": "<table>\n<tbody>\n<tr><td>EACH TABLET CONTAINS</td><td>5 mg</td><td>7.5 mg</td><td>10 mg</td><td>12.5 mg</td><td>15 mg</td><td>20 mg</td><td>30 mg</td></tr>\n<tr><td>Dextroamphetamine<br>Saccharate</td><td>1.25 mg</td><td>1.875 mg</td><td>2.5 mg</td><td>3.125 mg</td><td>3.75 mg</td><td>5 mg</td><td>7.5 mg</td></tr>\n<tr><td>Amphetamine Aspartate<br>Monohydrate</td><td>1.25 mg</td><td>1.875 mg</td><td>2.5 mg</td><td>3.125 mg</td><td>3.75 mg</td><td>5 mg</td><td>7.5 mg</td></tr>\n<tr><td>Dextroamphetamine<br>Sulfate, USP</td><td>1.25 mg</td><td>1.875 mg</td><td>2.5 mg</td><td>3.125 mg</td><td>3.75 mg</td><td>5 mg</td><td>7.5 mg</td></tr>\n<tr><td>Amphetamine<br>Sulfate, USP</td><td>1.25 mg</td><td>1.875 mg</td><td>2.5 mg</td><td>3.125 mg</td><td>3.75 mg</td><td>5 mg</td><td>7.5 mg</td></tr>\n<tr><td>Total Amphetamine Base<br>Equivalence</td><td>3.13 mg</td><td>4.7 mg</td><td>6.3 mg</td><td>7.8 mg</td><td>9.4 mg</td><td>12.6 mg</td><td>18.8 mg</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

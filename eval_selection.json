@@ -1,0 +1,192 @@
+[
+  {
+    "id": "C-01",
+    "type": "comparison",
+    "hypothesis": "H1",
+    "query": "Compare the key boxed warnings for Adderall, CLOZARIL, OXYCONTIN, and PROZAC.",
+    "expected_sources": ["adderall.pdf", "clozaril.pdf", "oxycontin.pdf", "prozac.pdf"],
+    "expected_terms": ["abuse", "neutropenia", "respiratory depression", "suicidal thoughts"],
+    "expected_pages": [],
+    "notes": "Cross-label warning coverage for the four current medical documents."
+  },
+  {
+    "id": "C-02",
+    "type": "comparison",
+    "hypothesis": "H1",
+    "query": "What indications are listed for PROZAC and CLOZARIL?",
+    "expected_sources": ["prozac.pdf", "clozaril.pdf"],
+    "expected_terms": ["Major Depressive Disorder", "Treatment-resistant schizophrenia"],
+    "expected_pages": [],
+    "notes": "Compares indications across two current prescribing labels."
+  },
+  {
+    "id": "C-03",
+    "type": "comparison",
+    "hypothesis": "H1",
+    "query": "Compare the scope of the proposed and final significant new use rules in snurl1.pdf and snurl2.pdf.",
+    "expected_sources": ["snurl1.pdf", "snurl2.pdf"],
+    "expected_terms": ["significant new use rules", "TSCA"],
+    "expected_pages": [],
+    "notes": "Both Federal Register documents describe TSCA significant new use rules."
+  },
+  {
+    "id": "M-01",
+    "type": "multi-hop",
+    "hypothesis": "H2",
+    "query": "How did Amazon's 2025 net sales and operating income compare with 2024?",
+    "expected_sources": ["amzn-20251231.pdf"],
+    "expected_terms": ["Net sales", "716,924", "637,959", "Operating income", "79,975", "68,593"],
+    "expected_pages": [],
+    "notes": "Requires evidence from the comparative financial results table."
+  },
+  {
+    "id": "M-02",
+    "type": "multi-hop",
+    "hypothesis": "H2",
+    "query": "What does the BlackRock filing report about its 2025 revenue and assets under management?",
+    "expected_sources": ["10-K.pdf"],
+    "expected_terms": ["Total revenue", "24,216", "assets under management", "$14.0 trillion"],
+    "expected_pages": [],
+    "notes": "Connects BlackRock's financial highlights with its company overview."
+  },
+  {
+    "id": "M-03",
+    "type": "multi-hop",
+    "hypothesis": "H2",
+    "query": "What inspection is required for the rudder control unit mounting bracket, and what must happen if damage is found?",
+    "expected_sources": ["snurl2.pdf"],
+    "expected_terms": ["Frame No. 29", "10x magnification", "before further flight"],
+    "expected_pages": [],
+    "notes": "Uses the aircraft directive's affected-part definition and required actions."
+  },
+  {
+    "id": "M-04",
+    "type": "multi-hop",
+    "hypothesis": "H2",
+    "query": "What does the EPA rule say about hydrofluorocarbon cylinder restrictions and when does the action take effect?",
+    "expected_sources": ["hydroflourocarbons.pdf"],
+    "expected_terms": ["disposable cylinders", "tracking of cylinders", "September 11, 2024"],
+    "expected_pages": [],
+    "notes": "Tests retrieval of the rule summary and its effective date."
+  },
+  {
+    "id": "S-01",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What was BlackRock's total revenue in 2025?",
+    "expected_sources": ["10-K.pdf"],
+    "expected_terms": ["Total revenue", "24,216"],
+    "expected_pages": [],
+    "notes": "Current BlackRock Form 10-K."
+  },
+  {
+    "id": "S-02",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What were Amazon's total assets at December 31, 2025?",
+    "expected_sources": ["amzn-20251231.pdf"],
+    "expected_terms": ["Total assets", "818,042"],
+    "expected_pages": [],
+    "notes": "Balance-sheet table in the current Amazon Form 10-K."
+  },
+  {
+    "id": "S-03",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "When did the EPA's hydrofluorocarbon final rule become effective?",
+    "expected_sources": ["hydroflourocarbons.pdf"],
+    "expected_terms": ["September 11, 2024"],
+    "expected_pages": [],
+    "notes": "Effective date is stated in the Federal Register notice."
+  },
+  {
+    "id": "S-04",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What is the comment deadline for the Postal Regulatory Commission's periodic reporting order?",
+    "expected_sources": ["snurl1.pdf"],
+    "expected_terms": ["Periodic Reporting", "December 8, 2025"],
+    "expected_pages": [],
+    "notes": "snurl1.pdf contains the Postal Regulatory Commission order and EPA notices."
+  },
+  {
+    "id": "S-05",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What must be inspected on the rudder control unit mounting bracket, and what action is required if damage is found?",
+    "expected_sources": ["snurl2.pdf"],
+    "expected_terms": ["Frame No. 29", "looseness or damage", "replace or correct"],
+    "expected_pages": [],
+    "notes": "Aircraft airworthiness directive in the current Federal Register document."
+  },
+  {
+    "id": "S-06",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "On what crop group does the EPA's triclopyr tolerance apply?",
+    "expected_sources": ["snurl3.pdf"],
+    "expected_terms": ["triclopyr", "orange subgroup 10–10A"],
+    "expected_pages": [],
+    "notes": "Current document states the crop subgroup in its triclopyr tolerance notice."
+  },
+  {
+    "id": "S-07",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What major risks are emphasized for Adderall in the prescribing information?",
+    "expected_sources": ["adderall.pdf"],
+    "expected_terms": ["high potential for abuse", "sudden death", "cardiovascular adverse events"],
+    "expected_pages": [],
+    "notes": "Grounded in the Adderall prescribing information warning."
+  },
+  {
+    "id": "S-08",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What is the CLOZARIL starting dose, and what blood measure must be monitored?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["12.5 mg", "absolute neutrophil count"],
+    "expected_pages": [],
+    "notes": "Tests dosage and required ANC monitoring."
+  },
+  {
+    "id": "S-09",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "At what age may pediatric patients use OXYCONTIN, according to the label?",
+    "expected_sources": ["oxycontin.pdf"],
+    "expected_terms": ["11 years", "opioid-tolerant"],
+    "expected_pages": [],
+    "notes": "The pediatric dosing section limits use to eligible opioid-tolerant patients."
+  },
+  {
+    "id": "S-10",
+    "type": "single-fact",
+    "hypothesis": "H5",
+    "query": "What is the initial adult daily dose of PROZAC for major depressive disorder?",
+    "expected_sources": ["prozac.pdf"],
+    "expected_terms": ["MDD", "20 mg/day in am"],
+    "expected_pages": [],
+    "notes": "Dose is listed in the PROZAC dosage information."
+  },
+  {
+    "id": "T-01",
+    "type": "table",
+    "hypothesis": "chunker",
+    "query": "What was Amazon's net income in 2025?",
+    "expected_sources": ["amzn-20251231.pdf"],
+    "expected_terms": ["Net income", "77,670"],
+    "expected_pages": [],
+    "notes": "Tests retrieval of the cash-flow statement table row."
+  },
+  {
+    "id": "T-02",
+    "type": "table",
+    "hypothesis": "chunker",
+    "query": "What were BlackRock's revenue and operating income in 2025?",
+    "expected_sources": ["10-K.pdf"],
+    "expected_terms": ["Total revenue", "24,216", "Operating income", "7,045"],
+    "expected_pages": [],
+    "notes": "Tests retrieval of the comparative financial highlights table."
+  }
+]

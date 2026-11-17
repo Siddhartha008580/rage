@@ -27,6 +27,21 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
+try:
+    from .spectrag import (
+        ChunkGraph,
+        build_chunk_graph,
+        generate_utility_questions,
+        load_utility_questions,
+    )
+except ImportError:
+    from spectrag import (
+        ChunkGraph,
+        build_chunk_graph,
+        generate_utility_questions,
+        load_utility_questions,
+    )
+
 DEFAULT_OUTPUT = Path("output")
 DEFAULT_INDEX = Path("index")
 COLLECTION = "documents"
@@ -563,8 +578,18 @@ def _embed_fn():
     )
 
 
-def build_index(chunks: list[Chunk], index_dir: Path) -> None:
+def embed_texts(texts: list[str]) -> list[list[float]]:
+    """Embed text with the same model used by the vector index."""
+    return _embed_fn()(input=texts)
+
+
+def build_index(
+    chunks: list[Chunk],
+    index_dir: Path,
+    utility_questions_path: Path | None = None,
+) -> None:
     import chromadb
+    import numpy as np
 
     index_dir.mkdir(parents=True, exist_ok=True)
     client = chromadb.PersistentClient(path=str(index_dir))
@@ -572,19 +597,74 @@ def build_index(chunks: list[Chunk], index_dir: Path) -> None:
         client.delete_collection(COLLECTION)
     except Exception:
         pass
-    coll = client.create_collection(COLLECTION, embedding_function=_embed_fn())
+    embedding_function = _embed_fn()
+    coll = client.create_collection(
+        COLLECTION, embedding_function=embedding_function
+    )
 
     BATCH = 64
     n = len(chunks)
+    indexed_embeddings: list[np.ndarray] = []
     for i in range(0, n, BATCH):
         batch = chunks[i : i + BATCH]
+        embeddings = np.asarray(
+            embedding_function(input=[chunk.text for chunk in batch]),
+            dtype=np.float32,
+        )
+        indexed_embeddings.extend(embeddings)
         coll.add(
             ids=[c.chunk_id for c in batch],
             documents=[c.text for c in batch],
             metadatas=[c.metadata() for c in batch],
+            embeddings=embeddings.tolist(),
         )
         print(f"  indexed {min(i+BATCH, n)}/{n}", flush=True)
+
+    utility_embeddings = None
+    if utility_questions_path is not None:
+        questions_by_id = load_utility_questions(utility_questions_path)
+        questions = [
+            "\n".join(questions_by_id.get(chunk.chunk_id, []))
+            for chunk in chunks
+        ]
+        if any(questions):
+            utility_embeddings = np.asarray(
+                embedding_function(input=questions), dtype=np.float32
+            )
+            for index, question in enumerate(questions):
+                if not question:
+                    utility_embeddings[index] = 0.0
+    graph = build_chunk_graph(
+        chunks,
+        np.asarray(indexed_embeddings, dtype=np.float32),
+        utility_embeddings=utility_embeddings,
+    )
+    graph.save(index_dir)
     build_lexical_index(chunks, index_dir)
+
+
+def get_index_chunks(
+    chunk_ids: list[str], index_dir: Path
+) -> list[dict[str, Any]]:
+    """Fetch stored chunk text and metadata in the requested ID order."""
+    if not chunk_ids:
+        return []
+    import chromadb
+
+    client = chromadb.PersistentClient(path=str(index_dir))
+    collection = client.get_collection(COLLECTION)
+    result = collection.get(ids=chunk_ids, include=["documents", "metadatas"])
+    by_id = {
+        chunk_id: {
+            "id": chunk_id,
+            "text": text,
+            "metadata": metadata or {},
+        }
+        for chunk_id, text, metadata in zip(
+            result["ids"], result["documents"], result["metadatas"], strict=True
+        )
+    }
+    return [by_id[chunk_id] for chunk_id in chunk_ids if chunk_id in by_id]
 
 
 def build_lexical_index(chunks: list[Chunk], index_dir: Path) -> None:
@@ -776,7 +856,25 @@ def cmd_chunks(output_dir: Path) -> None:
         print(c.text[:280] + ("…" if len(c.text) > 280 else ""))
 
 
-def cmd_build(output_dir: Path, index_dir: Path) -> None:
+def cmd_utility_questions(
+    output_dir: Path, destination: Path, batch_size: int
+) -> None:
+    markdown_files = select_markdown_files(output_dir)
+    chunks = build_chunks(output_dir, markdown_files)
+    generated = generate_utility_questions(
+        chunks, destination, batch_size=batch_size
+    )
+    print(
+        f"utility questions: {generated} generated, "
+        f"{len(chunks) - generated} already present in {destination}"
+    )
+
+
+def cmd_build(
+    output_dir: Path,
+    index_dir: Path,
+    utility_questions_path: Path | None = None,
+) -> None:
     print(f"[build] scanning {output_dir}")
     markdown_files = select_markdown_files(output_dir)
     candidate_count = sum(
@@ -803,7 +901,7 @@ def cmd_build(output_dir: Path, index_dir: Path) -> None:
         encoding="utf-8",
     )
     print(f"[build] embedding into {index_dir}")
-    build_index(chunks, index_dir)
+    build_index(chunks, index_dir, utility_questions_path)
     print("[build] done")
 
 
@@ -859,9 +957,26 @@ def main() -> None:
     c = sub.add_parser("chunks")
     c.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
 
+    u = sub.add_parser(
+        "utility-questions",
+        help="Generate resumable SpectRAG utility questions using OpenRouter.",
+    )
+    u.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    u.add_argument(
+        "--questions-output",
+        type=Path,
+        default=Path("output/utility-questions.jsonl"),
+    )
+    u.add_argument("--batch-size", type=int, default=8)
+
     b = sub.add_parser("build")
     b.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
     b.add_argument("--index-dir", type=Path, default=DEFAULT_INDEX)
+    b.add_argument(
+        "--utility-questions",
+        type=Path,
+        help="Optional JSONL records with chunk_id and generated question list.",
+    )
 
     q = sub.add_parser("query")
     q.add_argument("query")
@@ -880,8 +995,12 @@ def main() -> None:
     a = p.parse_args()
     if a.cmd == "chunks":
         cmd_chunks(a.output)
+    elif a.cmd == "utility-questions":
+        if a.batch_size < 1:
+            p.error("--batch-size must be positive")
+        cmd_utility_questions(a.output, a.questions_output, a.batch_size)
     elif a.cmd == "build":
-        cmd_build(a.output, a.index_dir)
+        cmd_build(a.output, a.index_dir, a.utility_questions)
     elif a.cmd == "query":
         cmd_query(a.query, a.index_dir, a.top_k, a.page, a.table, a.domain)
     elif a.cmd == "stats":

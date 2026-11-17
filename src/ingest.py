@@ -48,6 +48,23 @@ except ImportError:
         worker_timeout_seconds,
     )
 
+try:
+    from .docling_fallback import (
+        DOCLING_HEADER,
+        convert_pages_with_docling,
+        docling_configuration,
+        find_pages_needing_docling,
+        summarize_usage as summarize_docling_usage,
+    )
+except ImportError:
+    from docling_fallback import (
+        DOCLING_HEADER,
+        convert_pages_with_docling,
+        docling_configuration,
+        find_pages_needing_docling,
+        summarize_usage as summarize_docling_usage,
+    )
+
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".pptx", ".xlsx"}
 CONVERSION_FORMAT_VERSION = 34
 PAGE_BREAK_PLACEHOLDER = "\n\n<!-- DOC_PAGE_BREAK -->\n\n"
@@ -562,6 +579,7 @@ def output_token(relative_path: Path, source_sha256: str) -> str:
             "ocr": _pdf_ocr_configuration(),
             "table_backend": _configured_pdf_table_backend(),
             "table_fallback": _configured_pdf_table_fallback(),
+            "docling": docling_configuration(),
         }
         configuration_json = json.dumps(
             configuration, sort_keys=True
@@ -3645,6 +3663,22 @@ def convert_pdf_in_batches(
         )
         repeated_furniture = _repeated_pdf_furniture(document)
         heading_font_sizes = _pdf_heading_font_sizes(document)
+        docling_pages = find_pages_needing_docling(document)
+        docling_results: dict[int, str] = {}
+        if docling_pages:
+            print(
+                f"[PDF] {summarize_docling_usage(docling_pages)}",
+                flush=True,
+            )
+            docling_results = convert_pages_with_docling(
+                source, set(docling_pages), warnings
+            )
+            if docling_results:
+                print(
+                    f"[PDF] Docling produced Markdown for "
+                    f"{len(docling_results)}/{len(docling_pages)} flagged pages",
+                    flush=True,
+                )
 
         for first_page in range(total_pages):
             page_number = first_page + 1
@@ -3656,12 +3690,68 @@ def convert_pdf_in_batches(
                     existing = checkpoint.read_text(encoding="utf-8")
                     if _markdown_images_exist(
                         existing, markdown_path.parent, image_dir
+                    ) and (
+                        first_page not in docling_results
+                        or existing.startswith(DOCLING_HEADER)
                     ):
                         cached_markdown = existing
                 except OSError:
                     cached_markdown = None
 
             if cached_markdown is None:
+                if first_page in docling_results:
+                    page = document[first_page]
+                    native_text_chars, image_coverage = (
+                        _pdf_page_content_metrics(page)
+                    )
+                    ocr_text = ""
+                    if (
+                        not docling_configuration()["ocr"]
+                        and _pdf_page_needs_ocr(
+                            native_text_chars, image_coverage
+                        )
+                    ):
+                        native_page_text = page.get_text("text")
+                        if ocr_backend != "none":
+                            ocr_text = _run_page_ocr(
+                                page,
+                                native_page_text,
+                                ocr_backend,
+                                page_number,
+                                warnings,
+                            )
+                        if ocr_text:
+                            warnings = [
+                                warning
+                                for warning in warnings
+                                if not warning.startswith(
+                                    f"Page {page_number} has "
+                                )
+                            ]
+                        elif ocr_backend == "none":
+                            warnings.append(
+                                f"Page {page_number} requires OCR, but "
+                                "PDF_OCR_BACKEND is set to none"
+                            )
+                    cached_markdown = (
+                        DOCLING_HEADER + docling_results[first_page]
+                    )
+                    if ocr_text:
+                        cached_markdown += (
+                            f"\n\n### OCR-only text (PDF page {page_number}; "
+                            "verify against source)\n\n"
+                            + ocr_text
+                            + "\n"
+                        )
+                    atomic_write_text(checkpoint, cached_markdown)
+                    markdown_pages.append(cached_markdown)
+                    print(
+                        f"[PDF] checkpointed page {page_number} "
+                        f"of {total_pages} (docling)",
+                        flush=True,
+                    )
+                    continue
+
                 page = document[first_page]
                 native_text_chars, image_coverage = (
                     _pdf_page_content_metrics(page)
@@ -3869,6 +3959,15 @@ def convert_pdf_in_batches(
                 atomic_write_text(checkpoint, page_markdown)
                 cached_markdown = page_markdown
 
+            if cached_markdown.startswith(DOCLING_HEADER):
+                markdown_pages.append(cached_markdown)
+                print(
+                    f"[PDF] checkpointed page {page_number} "
+                    f"of {total_pages} (docling)",
+                    flush=True,
+                )
+                continue
+
             normalized_markdown = _normalize_pdf_heading_levels(
                 _fence_unmarked_pdf_examples(
                     _normalize_pdf_fenced_blocks(cached_markdown)
@@ -3970,6 +4069,7 @@ def convert_file(
     }
     if source.suffix.lower() == ".pdf":
         record["pdf_ocr"] = _pdf_ocr_configuration()
+        record["docling"] = docling_configuration()
         record["pdf_table"] = {
             "backend": _configured_pdf_table_backend(),
             "fallback": _configured_pdf_table_fallback(),
@@ -4402,6 +4502,7 @@ def recover_completed_output(
     }
     if source.suffix.lower() == ".pdf":
         record["pdf_ocr"] = _pdf_ocr_configuration()
+        record["docling"] = docling_configuration()
         record["pdf_table"] = {
             "backend": _configured_pdf_table_backend(),
             "fallback": _configured_pdf_table_fallback(),

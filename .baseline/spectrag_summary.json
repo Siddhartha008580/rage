@@ -1,0 +1,34 @@
+{
+  "overall": {
+    "hits": 28,
+    "n": 38,
+    "rate": 0.7368421052631579
+  },
+  "by_type": {
+    "comparison": {
+      "hits": 9,
+      "n": 10,
+      "rate": 0.9
+    },
+    "multi-hop": {
+      "hits": 4,
+      "n": 8,
+      "rate": 0.5
+    },
+    "refusal": {
+      "hits": 4,
+      "n": 6,
+      "rate": 0.6666666666666666
+    },
+    "single-fact": {
+      "hits": 7,
+      "n": 8,
+      "rate": 0.875
+    },
+    "table": {
+      "hits": 4,
+      "n": 6,
+      "rate": 0.6666666666666666
+    }
+  }
+}

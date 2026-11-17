@@ -1,0 +1,41 @@
+{
+  "overall": {
+    "hits": 15,
+    "n": 19,
+    "rate": 0.7894736842105263,
+    "source_recall": 1.0,
+    "sources_found": 24,
+    "expected_sources": 24,
+    "avg_retrieval_ms": 11499.262786421144
+  },
+  "by_type": {
+    "comparison": {
+      "hits": 2,
+      "n": 3,
+      "rate": 0.6666666666666666,
+      "source_recall": 1.0,
+      "avg_retrieval_ms": 19187.296057333395
+    },
+    "multi-hop": {
+      "hits": 4,
+      "n": 4,
+      "rate": 1.0,
+      "source_recall": 1.0,
+      "avg_retrieval_ms": 10467.23154450001
+    },
+    "single-fact": {
+      "hits": 7,
+      "n": 10,
+      "rate": 0.7,
+      "source_recall": 1.0,
+      "avg_retrieval_ms": 10118.541335400096
+    },
+    "table": {
+      "hits": 2,
+      "n": 2,
+      "rate": 1.0,
+      "source_recall": 1.0,
+      "avg_retrieval_ms": 8934.882619000291
+    }
+  }
+}
