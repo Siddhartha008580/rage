@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "source_file": "part172.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0025-table-01",
+      "caption": null,
+      "source_pages": [
+        25
+      ],
+      "bbox": [
+        132.1,
+        398.2,
+        479.9,
+        484.7
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Category of Food",
+        "Maximum Levels in Food (as Served)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Edible plant-based beverages intended as milk alternatives",
+            "84 IU/100 g."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Edible plant-based yogurt alternatives",
+            "89 IU/100 g."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Soy beverage products",
+            "89 IU/100 g"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Soy-based butter substitute spreads",
+            "330 IU/100 g"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Soy-based cheese substitutes and soy-based cheese substitute\nproducts",
+            "270 IU/100 g"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Category of Food",
+          "Maximum Levels in Food (as Served)"
+        ],
+        [
+          "Edible plant-based beverages intended as milk alternatives",
+          "84 IU/100 g."
+        ],
+        [
+          "Edible plant-based yogurt alternatives",
+          "89 IU/100 g."
+        ],
+        [
+          "Soy beverage products",
+          "89 IU/100 g"
+        ],
+        [
+          "Soy-based butter substitute spreads",
+          "330 IU/100 g"
+        ],
+        [
+          "Soy-based cheese substitutes and soy-based cheese substitute\nproducts",
+          "270 IU/100 g"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Category of Food</th><th>Maximum Levels in Food (as Served)</th></tr>\n</thead>\n<tbody>\n<tr><td>Edible plant-based beverages intended as milk alternatives</td><td>84 IU/100 g.</td></tr>\n<tr><td>Edible plant-based yogurt alternatives</td><td>89 IU/100 g.</td></tr>\n<tr><td>Soy beverage products</td><td>89 IU/100 g</td></tr>\n<tr><td>Soy-based butter substitute spreads</td><td>330 IU/100 g</td></tr>\n<tr><td>Soy-based cheese substitutes and soy-based cheese substitute<br>products</td><td>270 IU/100 g</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0084-table-01",
+      "caption": null,
+      "source_pages": [
+        84
+      ],
+      "bbox": [
+        218.54000000000002,
+        413.7,
+        394.94,
+        672.8
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Limit",
+        "Method Cited"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not less than 90%..................",
+            "‘‘Method for Analyzing the Pu-\nrity of Sucrose Fatty Acid\nEsters,’’ Chemical Corp.,\nJune 17, 1998"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 45%................",
+            "‘‘Method for Measuring the\nEster Distribution of Su-\ncrose Oligoesters,’’ issued\nby Mitsubishi Chemical\nCorp., June 17, 1998."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not less than 50%..................",
+            "Do."
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 40%................",
+            "Do."
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 0.5%...............",
+            "‘‘Free Sucrose Method,’’\nissued by Mitsubishi Chem-\nical Corp., June 17, 1998."
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 4.0..................",
+            "‘‘Acid Value,’’ Appendix VII,\nMethod I (Commercial Fatty\nAcids), in the Food Chemi-\ncals Codex, 7th ed. (2010),\np. 1220."
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 0.7%...............",
+            "‘‘Residue on Ignition,’’ Appen-\ndix IIC, Method I, in the\nFood Chemicals Codex, 7th\ned. (2010), pp. 1141–1142\n(using a 1-gram sample)."
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Limit",
+          "Method Cited"
+        ],
+        [
+          "Not less than 90%..................",
+          "‘‘Method for Analyzing the Pu-\nrity of Sucrose Fatty Acid\nEsters,’’ Chemical Corp.,\nJune 17, 1998"
+        ],
+        [
+          "Not more than 45%................",
+          "‘‘Method for Measuring the\nEster Distribution of Su-\ncrose Oligoesters,’’ issued\nby Mitsubishi Chemical\nCorp., June 17, 1998."
+        ],
+        [
+          "Not less than 50%..................",
+          "Do."
+        ],
+        [
+          "Not more than 40%................",
+          "Do."
+        ],
+        [
+          "Not more than 0.5%...............",
+          "‘‘Free Sucrose Method,’’\nissued by Mitsubishi Chem-\nical Corp., June 17, 1998."
+        ],
+        [
+          "Not more than 4.0..................",
+          "‘‘Acid Value,’’ Appendix VII,\nMethod I (Commercial Fatty\nAcids), in the Food Chemi-\ncals Codex, 7th ed. (2010),\np. 1220."
+        ],
+        [
+          "Not more than 0.7%...............",
+          "‘‘Residue on Ignition,’’ Appen-\ndix IIC, Method I, in the\nFood Chemicals Codex, 7th\ned. (2010), pp. 1141–1142\n(using a 1-gram sample)."
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Limit</th><th>Method Cited</th></tr>\n</thead>\n<tbody>\n<tr><td>Not less than 90%..................</td><td>‘‘Method for Analyzing the Pu-<br>rity of Sucrose Fatty Acid<br>Esters,’’ Chemical Corp.,<br>June 17, 1998</td></tr>\n<tr><td>Not more than 45%................</td><td>‘‘Method for Measuring the<br>Ester Distribution of Su-<br>crose Oligoesters,’’ issued<br>by Mitsubishi Chemical<br>Corp., June 17, 1998.</td></tr>\n<tr><td>Not less than 50%..................</td><td>Do.</td></tr>\n<tr><td>Not more than 40%................</td><td>Do.</td></tr>\n<tr><td>Not more than 0.5%...............</td><td>‘‘Free Sucrose Method,’’<br>issued by Mitsubishi Chem-<br>ical Corp., June 17, 1998.</td></tr>\n<tr><td>Not more than 4.0..................</td><td>‘‘Acid Value,’’ Appendix VII,<br>Method I (Commercial Fatty<br>Acids), in the Food Chemi-<br>cals Codex, 7th ed. (2010),<br>p. 1220.</td></tr>\n<tr><td>Not more than 0.7%...............</td><td>‘‘Residue on Ignition,’’ Appen-<br>dix IIC, Method I, in the<br>Food Chemicals Codex, 7th<br>ed. (2010), pp. 1141–1142<br>(using a 1-gram sample).</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0085-table-01",
+      "caption": null,
+      "source_pages": [
+        85
+      ],
+      "bbox": [
+        218.54,
+        176.20000000000005,
+        394.94,
+        319.2
+      ],
+      "extractor": "pdfplumber",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "multiline-cells"
+        ]
+      },
+      "headers": [
+        "Limit",
+        "Method Cited"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 10 milligrams/\nkilogram.",
+            "Method listed in the mono-\ngraph for ‘‘Sucrose Fatty\nAcid Esters’’ in the Food\nChemicals Codex, 7th ed.\n(2010), pp. 998–1000."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 2.0 milligrams/\nkilogram.",
+            "......do"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 10 milligrams/\nkilogram.",
+            "......do"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Not more than 1.0 milligram/\nkilogram.",
+            "‘‘Atomic Absorption\nSpectrophometric Graphite\nFurnace Method,’’ Method I\nin the Food Chemicals\nCodex, 7th ed. (2010), p.\n1154–1155"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Limit",
+          "Method Cited"
+        ],
+        [
+          "Not more than 10 milligrams/\nkilogram.",
+          "Method listed in the mono-\ngraph for ‘‘Sucrose Fatty\nAcid Esters’’ in the Food\nChemicals Codex, 7th ed.\n(2010), pp. 998–1000."
+        ],
+        [
+          "Not more than 2.0 milligrams/\nkilogram.",
+          "......do"
+        ],
+        [
+          "Not more than 10 milligrams/\nkilogram.",
+          "......do"
+        ],
+        [
+          "Not more than 1.0 milligram/\nkilogram.",
+          "‘‘Atomic Absorption\nSpectrophometric Graphite\nFurnace Method,’’ Method I\nin the Food Chemicals\nCodex, 7th ed. (2010), p.\n1154–1155"
+        ]
+      ],
+      "raw_html": "<table>\n<thead>\n<tr><th>Limit</th><th>Method Cited</th></tr>\n</thead>\n<tbody>\n<tr><td>Not more than 10 milligrams/<br>kilogram.</td><td>Method listed in the mono-<br>graph for ‘‘Sucrose Fatty<br>Acid Esters’’ in the Food<br>Chemicals Codex, 7th ed.<br>(2010), pp. 998–1000.</td></tr>\n<tr><td>Not more than 2.0 milligrams/<br>kilogram.</td><td>......do</td></tr>\n<tr><td>Not more than 10 milligrams/<br>kilogram.</td><td>......do</td></tr>\n<tr><td>Not more than 1.0 milligram/<br>kilogram.</td><td>‘‘Atomic Absorption<br>Spectrophometric Graphite<br>Furnace Method,’’ Method I<br>in the Food Chemicals<br>Codex, 7th ed. (2010), p.<br>1154–1155</td></tr>\n</tbody>\n</table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

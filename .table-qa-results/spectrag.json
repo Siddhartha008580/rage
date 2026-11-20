@@ -1,0 +1,763 @@
+[
+  {
+    "id": "TB-01",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Normal range",
+      "weekly",
+      "every 2 weeks",
+      "monthly"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      6,
+      7,
+      21
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 35276.85839000014
+  },
+  {
+    "id": "TB-02",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "500",
+      "999",
+      "Interrupt treatment",
+      "Three times weekly"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 33767.87512400006
+  },
+  {
+    "id": "TB-03",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Severe Neutropenia",
+      "500",
+      "hematology",
+      "rechallenge"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      4,
+      6,
+      7,
+      8,
+      26
+    ],
+    "expected_pages": [
+      7
+    ],
+    "pages_found": [
+      7
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 33566.872848
+  },
+  {
+    "id": "TB-04",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "10+2.5",
+      "40+10"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      5,
+      6,
+      11,
+      20
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 32343.252461000247
+  },
+  {
+    "id": "TB-05",
+    "type": "table",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "5 mg",
+      "20 mg"
+    ],
+    "terms_missing": [
+      "6 mg/25 mg"
+    ],
+    "pages_retrieved": [
+      1,
+      5,
+      6,
+      11
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 33273.73432700006
+  },
+  {
+    "id": "TB-06",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Mild Neutropenia",
+      "Moderate Neutropenia",
+      "continue treatment",
+      "Interrupt treatment"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 91317.2228999997
+  },
+  {
+    "id": "TB-07",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "10+2.5",
+      "40+10"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      6,
+      24,
+      25
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 28187.225528
+  },
+  {
+    "id": "TB-08",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Severe Neutropenia",
+      "500"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      6,
+      7,
+      8
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 32653.54456799969
+  },
+  {
+    "id": "TB-09",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf",
+      "oxycontin.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "repeat",
+      "24 hours",
+      "1500"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      13
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 33488.675011999934
+  },
+  {
+    "id": "TB-10",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "monotherapy",
+      "not indicated",
+      "Bipolar I"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      9,
+      30
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 32520.8169980001
+  },
+  {
+    "id": "TB-11",
+    "type": "table",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "1000"
+    ],
+    "terms_missing": [
+      "two baseline ANC measurements"
+    ],
+    "pages_retrieved": [
+      3,
+      4,
+      6,
+      7
+    ],
+    "expected_pages": [
+      7
+    ],
+    "pages_found": [
+      7
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 31979.941490999863
+  },
+  {
+    "id": "TB-12",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "1000",
+      "1499",
+      "500",
+      "continue treatment",
+      "Interrupt treatment"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      4,
+      6,
+      7
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 32897.384414000044
+  },
+  {
+    "id": "TB-13",
+    "type": "table",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "adderall.pdf",
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 3,
+    "expected_source_count": 3,
+    "terms_found": [
+      "opioid"
+    ],
+    "terms_missing": [
+      "CYP1A2",
+      "Symbyax"
+    ],
+    "pages_retrieved": [
+      1,
+      7,
+      8,
+      9,
+      13,
+      14,
+      24
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 25866.284795999945
+  },
+  {
+    "id": "TB-15",
+    "type": "table",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf",
+      "oxycontin.pdf",
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 3,
+    "expected_source_count": 3,
+    "terms_found": [],
+    "terms_missing": [
+      "39%",
+      "48%",
+      "23%",
+      "33%"
+    ],
+    "pages_retrieved": [
+      12,
+      14,
+      15,
+      19
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 29587.926960000004
+  },
+  {
+    "id": "TB-16",
+    "type": "table",
+    "hit": true,
+    "sources_ok": true,
+    "terms_ok": true,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "clozaril.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "500",
+      "999",
+      "Interrupt treatment",
+      "continue treatment",
+      "1000"
+    ],
+    "terms_missing": [],
+    "pages_retrieved": [
+      3,
+      4,
+      6,
+      7,
+      8
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 33578.15219599979
+  },
+  {
+    "id": "TB-17",
+    "type": "table",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "prozac.pdf"
+    ],
+    "sources_found": [
+      "prozac.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "5 mg",
+      "40+10"
+    ],
+    "terms_missing": [
+      "6 mg/50 mg"
+    ],
+    "pages_retrieved": [
+      1,
+      2,
+      5,
+      6,
+      25
+    ],
+    "expected_pages": [
+      6
+    ],
+    "pages_found": [
+      6
+    ],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 31232.93648700019
+  },
+  {
+    "id": "TB-19",
+    "type": "table",
+    "hit": false,
+    "sources_ok": true,
+    "terms_ok": false,
+    "pages_ok": true,
+    "sources_retrieved": [
+      "adderall.pdf",
+      "amzn.pdf",
+      "clozaril.pdf",
+      "prozac.pdf"
+    ],
+    "expected_sources": [
+      "clozaril.pdf"
+    ],
+    "sources_found": [
+      "clozaril.pdf"
+    ],
+    "sources_missing": [],
+    "expected_any_sources": [],
+    "any_sources_found": [],
+    "source_recall": 1.0,
+    "sources_found_count": 1,
+    "expected_source_count": 1,
+    "terms_found": [
+      "Treatment Recommendations",
+      "ANC Monitoring"
+    ],
+    "terms_missing": [
+      "Severe Neutropenia"
+    ],
+    "pages_retrieved": [
+      1,
+      7,
+      24,
+      84,
+      85
+    ],
+    "expected_pages": [],
+    "pages_found": [],
+    "pages_missing": [],
+    "n_chunks": 13,
+    "retrieval_ms": 24307.79402600001
+  }
+]

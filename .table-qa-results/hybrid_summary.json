@@ -1,0 +1,20 @@
+{
+  "overall": {
+    "hits": 10,
+    "n": 17,
+    "rate": 0.5882352941176471,
+    "source_recall": 1.0,
+    "sources_found": 21,
+    "expected_sources": 21,
+    "avg_retrieval_ms": 13875.822381941201
+  },
+  "by_type": {
+    "table": {
+      "hits": 10,
+      "n": 17,
+      "rate": 0.5882352941176471,
+      "source_recall": 1.0,
+      "avg_retrieval_ms": 13875.8223819412
+    }
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "CFR-01",
+    "type": "cross-page-rule",
+    "hypothesis": "retrieves-related-provisions",
+    "query": "Under 27 CFR § 24.291, if a vinegar-plant proprietor is different from the proprietor of adjacent or contiguous bonded wine premises, how may the plant receive wine without payment of tax, and what must the bond cover?",
+    "expected_sources": ["part24.pdf"],
+    "expected_terms": [
+      "without payment of tax",
+      "bond under the provisions of § 24.146(c)",
+      "cover the removal to and use of wine at the vinegar plant"
+    ],
+    "expected_pages": [81, 82],
+    "gold_answer": "The vinegar-plant proprietor may receive the wine without payment of tax for vinegar manufacture by filing a bond under § 24.146(c). The bond must cover removal of the wine to the vinegar plant and its use there.",
+    "notes": "Gold checked against input/part24.pdf, § 24.291, PDF pages 81–82. This corrects the earlier confusion between a wine-vinegar plant and an alcohol-fuel plant. Retrieval-only scoring checks source, key evidence terms, and both pages; it does not score answer correctness."
+  }
+]

@@ -1,0 +1,187 @@
+[
+  {
+    "id": "TB-01",
+    "type": "table",
+    "hypothesis": "table-single-lookup",
+    "query": "In Clozaril Table 2, what is the monitoring frequency for the normal range from months 1 to 6, 6 to 12, and after 12 months?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["Normal range", "weekly", "every 2 weeks", "monthly"],
+    "expected_pages": [6],
+    "notes": "Checks ANC monitoring intervals in the general-population table."
+  },
+  {
+    "id": "TB-02",
+    "type": "table",
+    "hypothesis": "table-single-lookup",
+    "query": "In Clozaril Table 2, what treatment and ANC monitoring does the label give for moderate neutropenia (500 to 999/µL)?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["500", "999", "Interrupt treatment", "Three times weekly"],
+    "expected_pages": [6],
+    "notes": "The indexed row is truncated before its full monitoring thresholds."
+  },
+  {
+    "id": "TB-03",
+    "type": "table",
+    "hypothesis": "table-single-lookup",
+    "query": "In Clozaril Table 3 (BEN patients), what is the action for severe neutropenia, and what ANC must the patient reach before monitoring changes?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["Severe Neutropenia", "500", "hematology", "rechallenge"],
+    "expected_pages": [7],
+    "notes": "Checks the BEN severe-neutropenia row and its monitoring thresholds."
+  },
+  {
+    "id": "TB-04",
+    "type": "table",
+    "hypothesis": "table-single-lookup",
+    "query": "In the Prozac label’s Symbyax-to-components table, what olanzapine and fluoxetine doses correspond to 12 mg olanzapine / 50 mg fluoxetine?",
+    "expected_sources": ["prozac.pdf"],
+    "expected_terms": ["10+2.5", "40+10"],
+    "expected_pages": [6],
+    "notes": "Checks a single conversion row in the Prozac label."
+  },
+  {
+    "id": "TB-05",
+    "type": "table",
+    "hypothesis": "table-single-lookup",
+    "query": "In that same table, which Symbyax strength corresponds to olanzapine 5 mg plus fluoxetine 20 mg?",
+    "expected_sources": ["prozac.pdf"],
+    "expected_terms": ["6 mg/25 mg", "5 mg", "20 mg"],
+    "expected_pages": [6],
+    "notes": "Gold: Symbyax 6 mg/25 mg."
+  },
+  {
+    "id": "TB-06",
+    "type": "table",
+    "hypothesis": "table-row-column",
+    "query": "For Clozaril, what does the table say to do for mild neutropenia versus moderate neutropenia, and what ANC target ends the extra monitoring in each?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["Mild Neutropenia", "Moderate Neutropenia", "continue treatment", "Interrupt treatment"],
+    "expected_pages": [6],
+    "notes": "Compares treatment and monitoring cells across two rows."
+  },
+  {
+    "id": "TB-07",
+    "type": "table",
+    "hypothesis": "table-row-column",
+    "query": "In the Prozac conversion table, which rows use a “+” dose such as 10+2.5 or 40+10, and what do they mean?",
+    "expected_sources": ["prozac.pdf"],
+    "expected_terms": ["10+2.5", "40+10"],
+    "expected_pages": [6],
+    "notes": "Checks multiple conversion rows and component-dose cells."
+  },
+  {
+    "id": "TB-08",
+    "type": "table",
+    "hypothesis": "table-row-column",
+    "query": "Do the Clozaril general-population table and the BEN table use the same ANC thresholds for severe neutropenia? Give both.",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["Severe Neutropenia", "500"],
+    "notes": "Requires evidence from both Clozaril monitoring tables."
+  },
+  {
+    "id": "TB-09",
+    "type": "table",
+    "hypothesis": "table-plus-text",
+    "query": "The Clozaril footnote to the ANC tables says to confirm low ANC reports. What is the confirmation rule and the time limit?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["repeat", "24 hours", "1500"],
+    "notes": "Checks a table footnote rather than a table body cell."
+  },
+  {
+    "id": "TB-10",
+    "type": "table",
+    "hypothesis": "table-plus-text",
+    "query": "The Prozac dosing table has a footnote about monotherapy. What does it say about Prozac alone for bipolar depression?",
+    "expected_sources": ["prozac.pdf"],
+    "expected_terms": ["monotherapy", "not indicated", "Bipolar I"],
+    "expected_pages": [6],
+    "notes": "Checks table-adjacent labeling text."
+  },
+  {
+    "id": "TB-11",
+    "type": "table",
+    "hypothesis": "table-plus-text",
+    "query": "In the Clozaril BEN table, what does the label say about baseline ANC measurements before initiating?",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["two baseline ANC measurements", "1000"],
+    "expected_pages": [7],
+    "notes": "Checks the BEN table's baseline requirement."
+  },
+  {
+    "id": "TB-12",
+    "type": "table",
+    "hypothesis": "cross-table",
+    "query": "Compare the ANC action thresholds in the Clozaril general-population table with those in the BEN table. List the rows where they differ.",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["1000", "1499", "500", "continue treatment", "Interrupt treatment"],
+    "notes": "Cross-table comparison of ANC bands and actions."
+  },
+  {
+    "id": "TB-13",
+    "type": "table",
+    "hypothesis": "cross-document",
+    "query": "Which drug labels contain a dosing table, and what does each table convert or recommend?",
+    "expected_sources": ["clozaril.pdf", "oxycontin.pdf", "prozac.pdf"],
+    "expected_terms": ["CYP1A2", "opioid", "Symbyax"],
+    "notes": "Limited to dosing-related tables found in the current indexed labels."
+  },
+  {
+    "id": "TB-14",
+    "type": "table",
+    "hypothesis": "cross-document",
+    "status": "blocked",
+    "query": "Compare the efficacy tables for the semaglutide labels and the Trulicity label. Which gives a hazard ratio for MACE, and what is each value with its confidence interval?",
+    "expected_sources": [],
+    "expected_terms": [],
+    "expected_pages": [],
+    "notes": "Blocked: semaglutide and Trulicity label sources are not in the current index. Add the source PDFs and gold values before scoring."
+  },
+  {
+    "id": "TB-15",
+    "type": "table",
+    "hypothesis": "cross-document",
+    "query": "Which label tables list adverse reactions with percentages, and what does each give for the most frequent reaction?",
+    "expected_sources": ["clozaril.pdf", "oxycontin.pdf", "prozac.pdf"],
+    "expected_terms": ["39%", "48%", "23%", "33%"],
+    "notes": "Checks percentage adverse-reaction tables across the currently indexed labels."
+  },
+  {
+    "id": "TB-16",
+    "type": "table",
+    "hypothesis": "cross-cell-reasoning",
+    "query": "A patient’s Clozaril ANC is 800/µL. Using the general-population table, what are the treatment and monitoring instructions? Then say how they change if the patient has BEN.",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["500", "999", "Interrupt treatment", "continue treatment", "1000"],
+    "notes": "Applies the corresponding general-population and BEN table rows."
+  },
+  {
+    "id": "TB-17",
+    "type": "table",
+    "hypothesis": "cross-cell-reasoning",
+    "query": "A patient needs the equivalent of Symbyax 6 mg/50 mg using separate Prozac and olanzapine doses. What are the component doses?",
+    "expected_sources": ["prozac.pdf"],
+    "expected_terms": ["6 mg/50 mg", "5 mg", "40+10"],
+    "expected_pages": [6],
+    "notes": "Gold: olanzapine 5 mg and Prozac 40+10 mg."
+  },
+  {
+    "id": "TB-18",
+    "type": "table",
+    "hypothesis": "extraction-layout",
+    "status": "blocked",
+    "query": "Which table rows or cells in the Clozaril monitoring tables span two columns, and what do they say?",
+    "expected_sources": [],
+    "expected_terms": [],
+    "expected_pages": [],
+    "notes": "Blocked: the indexed text has no cell-span/layout metadata, and the source PDF is unavailable for visual verification."
+  },
+  {
+    "id": "TB-19",
+    "type": "table",
+    "hypothesis": "extraction-integrity",
+    "query": "In multi-column label layouts, does the extracted text keep each table cell attached to its row? Ask for a row with a long cell, such as the Clozaril “Severe Neutropenia” row, and check the answer against the PDF.",
+    "expected_sources": ["clozaril.pdf"],
+    "expected_terms": ["Severe Neutropenia", "Treatment Recommendations", "ANC Monitoring"],
+    "notes": "Retrieval proxy for row integrity; PDF-level verification remains necessary."
+  }
+]

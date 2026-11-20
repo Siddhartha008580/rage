@@ -1,0 +1,68 @@
+[
+  {
+    "pdf_page": 1,
+    "printed_page": null,
+    "char_start": 20,
+    "char_end": 4380
+  },
+  {
+    "pdf_page": 2,
+    "printed_page": null,
+    "char_start": 4401,
+    "char_end": 8620
+  },
+  {
+    "pdf_page": 3,
+    "printed_page": null,
+    "char_start": 8641,
+    "char_end": 13042
+  },
+  {
+    "pdf_page": 4,
+    "printed_page": null,
+    "char_start": 13063,
+    "char_end": 17390
+  },
+  {
+    "pdf_page": 5,
+    "printed_page": null,
+    "char_start": 17411,
+    "char_end": 21695
+  },
+  {
+    "pdf_page": 6,
+    "printed_page": null,
+    "char_start": 21716,
+    "char_end": 26014
+  },
+  {
+    "pdf_page": 7,
+    "printed_page": null,
+    "char_start": 26035,
+    "char_end": 30109
+  },
+  {
+    "pdf_page": 8,
+    "printed_page": null,
+    "char_start": 30130,
+    "char_end": 34447
+  },
+  {
+    "pdf_page": 9,
+    "printed_page": null,
+    "char_start": 34468,
+    "char_end": 38701
+  },
+  {
+    "pdf_page": 10,
+    "printed_page": null,
+    "char_start": 38723,
+    "char_end": 43072
+  },
+  {
+    "pdf_page": 11,
+    "printed_page": null,
+    "char_start": 43094,
+    "char_end": 47252
+  }
+]

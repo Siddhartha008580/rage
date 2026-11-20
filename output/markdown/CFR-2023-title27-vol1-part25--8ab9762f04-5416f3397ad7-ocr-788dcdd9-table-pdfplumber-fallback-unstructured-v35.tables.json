@@ -1,0 +1,967 @@
+{
+  "schema_version": 1,
+  "source_file": "CFR-2023-title27-vol1-part25.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "unstructured",
+  "tables": [
+    {
+      "table_id": "page-0027-table-01",
+      "caption": null,
+      "source_pages": [
+        27
+      ],
+      "bbox": [
+        313.88416259765626,
+        495.946494140625,
+        482.2705810546875,
+        543.72076171875
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Size of keg",
+        "Barrel equivalent"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "} gallons .",
+            "0.16129"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "30 liter ..",
+            "0.25565"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "50 liter",
+            "0.42608"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Size of keg",
+          "Barrel equivalent"
+        ],
+        [
+          "} gallons .",
+          "0.16129"
+        ],
+        [
+          "30 liter ..",
+          "0.25565"
+        ],
+        [
+          "50 liter",
+          "0.42608"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Size of keg</th><th>Barrel equivalent</th></tr></thead><tbody><tr><td>} gallons .</td><td>0.16129</td></tr><tr><td>30 liter ..</td><td>0.25565</td></tr><tr><td>50 liter</td><td>0.42608</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0028-table-01",
+      "caption": null,
+      "source_pages": [
+        28
+      ],
+      "bbox": [
+        311.7292163085938,
+        174.14698974609374,
+        483.8132373046875,
+        240.07704345703124
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Bottle size (metric net contents) _|",
+        "Number | of bottles per case",
+        "Barrel | equiva- lent"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "500 milliliters",
+            "24]",
+            "0.10226"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "750 milliliters",
+            "12|",
+            "0.07670"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "1 liter",
+            "12|",
+            "0.10226"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "2 liters",
+            "6|",
+            "0.10226"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "5 liters",
+            "1",
+            "0.04261"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Bottle size (metric net contents) _|",
+          "Number | of bottles per case",
+          "Barrel | equiva- lent"
+        ],
+        [
+          "500 milliliters",
+          "24]",
+          "0.10226"
+        ],
+        [
+          "750 milliliters",
+          "12|",
+          "0.07670"
+        ],
+        [
+          "1 liter",
+          "12|",
+          "0.10226"
+        ],
+        [
+          "2 liters",
+          "6|",
+          "0.10226"
+        ],
+        [
+          "5 liters",
+          "1",
+          "0.04261"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Bottle size (metric net contents) _|</th><th>Number | of bottles per case</th><th>Barrel | equiva- lent</th></tr></thead><tbody><tr><td>500 milliliters</td><td>24]</td><td>0.10226</td></tr><tr><td>750 milliliters</td><td>12|</td><td>0.07670</td></tr><tr><td>1 liter</td><td>12|</td><td>0.10226</td></tr><tr><td>2 liters</td><td>6|</td><td>0.10226</td></tr><tr><td>5 liters</td><td>1</td><td>0.04261</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0028-table-02",
+      "caption": null,
+      "source_pages": [
+        28
+      ],
+      "bbox": [
+        128.80618286132812,
+        348.8441528320312,
+        309.49015869140624,
+        695.0276806640625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Bottle size (net contents in fluid | ounces)",
+        "Number. percase | / 12| / 24]",
+        "cai lent / 0.01815 / 0.03629 / 0.02117"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24]",
+            "0.04234"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "32|",
+            "0.05645"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "35|",
+            "0.06174"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "36 |",
+            "0.06351"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "40 |",
+            "0.07056"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "48 |",
+            "0.08468"
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "12|",
+            "0.02419"
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24]",
+            "0.04839"
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "36 |",
+            "0.07258"
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "48",
+            "0.09677"
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "|",
+            ""
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "12|",
+            "0.03024"
+          ],
+          "source_row_index": 15,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24]",
+            "0.06048"
+          ],
+          "source_row_index": 16,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "48 |",
+            "0.12097"
+          ],
+          "source_row_index": 17,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "12|",
+            "0.03327"
+          ],
+          "source_row_index": 18,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24]",
+            "0.06653"
+          ],
+          "source_row_index": 19,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24|",
+            "0.06956"
+          ],
+          "source_row_index": 20,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "12|",
+            "0.03629"
+          ],
+          "source_row_index": 21,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "15|",
+            "0.04536"
+          ],
+          "source_row_index": 22,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "20]",
+            "0.06048"
+          ],
+          "source_row_index": 23,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24|",
+            "0.07258"
+          ],
+          "source_row_index": 24,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "30 |",
+            "0.09073"
+          ],
+          "source_row_index": 25,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "48 |",
+            "0.14516"
+          ],
+          "source_row_index": 26,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "50|",
+            "0.15121"
+          ],
+          "source_row_index": 27,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "12|",
+            "0.04234"
+          ],
+          "source_row_index": 28,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "",
+            "24]",
+            "0.08468"
+          ],
+          "source_row_index": 29,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "16 (1 pint)",
+            "12|",
+            "0.04839"
+          ],
+          "source_row_index": 30,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "16 (1 pint)",
+            "24|",
+            "0.09677"
+          ],
+          "source_row_index": 31,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "22",
+            "12|",
+            "0.06653"
+          ],
+          "source_row_index": 32,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "22",
+            "24]",
+            "0.13306"
+          ],
+          "source_row_index": 33,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "24",
+            "12|",
+            "0.07258"
+          ],
+          "source_row_index": 34,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "24",
+            "24|",
+            "0.14516"
+          ],
+          "source_row_index": 35,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "30.",
+            "12|",
+            "0.09073"
+          ],
+          "source_row_index": 36,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "32 (1 quar)",
+            "12|",
+            "0.09677"
+          ],
+          "source_row_index": 37,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "40...",
+            "12|",
+            "0.12097"
+          ],
+          "source_row_index": 38,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "64",
+            "1|",
+            "0.01613"
+          ],
+          "source_row_index": 39,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "64",
+            "4|",
+            "0.06452"
+          ],
+          "source_row_index": 40,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "64",
+            "6|",
+            "0.09677"
+          ],
+          "source_row_index": 41,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "128 (1 gallon)",
+            "1|",
+            "0.03226"
+          ],
+          "source_row_index": 42,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "288",
+            "1|",
+            "0.07258"
+          ],
+          "source_row_index": 43,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Bottle size (net contents in fluid | ounces)",
+          "Number. percase |",
+          "cai lent"
+        ],
+        [
+          "",
+          "12|",
+          "0.01815"
+        ],
+        [
+          "",
+          "24]",
+          "0.03629"
+        ],
+        [
+          "",
+          "12|",
+          "0.02117"
+        ],
+        [
+          "",
+          "24]",
+          "0.04234"
+        ],
+        [
+          "",
+          "32|",
+          "0.05645"
+        ],
+        [
+          "",
+          "35|",
+          "0.06174"
+        ],
+        [
+          "",
+          "36 |",
+          "0.06351"
+        ],
+        [
+          "",
+          "40 |",
+          "0.07056"
+        ],
+        [
+          "",
+          "48 |",
+          "0.08468"
+        ],
+        [
+          "",
+          "12|",
+          "0.02419"
+        ],
+        [
+          "",
+          "24]",
+          "0.04839"
+        ],
+        [
+          "",
+          "36 |",
+          "0.07258"
+        ],
+        [
+          "",
+          "48",
+          "0.09677"
+        ],
+        [
+          "",
+          "|",
+          ""
+        ],
+        [
+          "",
+          "12|",
+          "0.03024"
+        ],
+        [
+          "",
+          "24]",
+          "0.06048"
+        ],
+        [
+          "",
+          "48 |",
+          "0.12097"
+        ],
+        [
+          "",
+          "12|",
+          "0.03327"
+        ],
+        [
+          "",
+          "24]",
+          "0.06653"
+        ],
+        [
+          "",
+          "24|",
+          "0.06956"
+        ],
+        [
+          "",
+          "12|",
+          "0.03629"
+        ],
+        [
+          "",
+          "15|",
+          "0.04536"
+        ],
+        [
+          "",
+          "20]",
+          "0.06048"
+        ],
+        [
+          "",
+          "24|",
+          "0.07258"
+        ],
+        [
+          "",
+          "30 |",
+          "0.09073"
+        ],
+        [
+          "",
+          "48 |",
+          "0.14516"
+        ],
+        [
+          "",
+          "50|",
+          "0.15121"
+        ],
+        [
+          "",
+          "12|",
+          "0.04234"
+        ],
+        [
+          "",
+          "24]",
+          "0.08468"
+        ],
+        [
+          "16 (1 pint)",
+          "12|",
+          "0.04839"
+        ],
+        [
+          "16 (1 pint)",
+          "24|",
+          "0.09677"
+        ],
+        [
+          "22",
+          "12|",
+          "0.06653"
+        ],
+        [
+          "22",
+          "24]",
+          "0.13306"
+        ],
+        [
+          "24",
+          "12|",
+          "0.07258"
+        ],
+        [
+          "24",
+          "24|",
+          "0.14516"
+        ],
+        [
+          "30.",
+          "12|",
+          "0.09073"
+        ],
+        [
+          "32 (1 quar)",
+          "12|",
+          "0.09677"
+        ],
+        [
+          "40...",
+          "12|",
+          "0.12097"
+        ],
+        [
+          "64",
+          "1|",
+          "0.01613"
+        ],
+        [
+          "64",
+          "4|",
+          "0.06452"
+        ],
+        [
+          "64",
+          "6|",
+          "0.09677"
+        ],
+        [
+          "128 (1 gallon)",
+          "1|",
+          "0.03226"
+        ],
+        [
+          "288",
+          "1|",
+          "0.07258"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Bottle size (net contents in fluid | ounces)</th><th>Number. percase |</th><th>cai lent</th></tr></thead><tbody><tr><td></td><td>12|</td><td>0.01815</td></tr><tr><td></td><td>24]</td><td>0.03629</td></tr><tr><td></td><td>12|</td><td>0.02117</td></tr><tr><td></td><td>24]</td><td>0.04234</td></tr><tr><td></td><td>32|</td><td>0.05645</td></tr><tr><td></td><td>35|</td><td>0.06174</td></tr><tr><td></td><td>36 |</td><td>0.06351</td></tr><tr><td></td><td>40 |</td><td>0.07056</td></tr><tr><td></td><td>48 |</td><td>0.08468</td></tr><tr><td></td><td>12|</td><td>0.02419</td></tr><tr><td></td><td>24]</td><td>0.04839</td></tr><tr><td></td><td>36 |</td><td>0.07258</td></tr><tr><td></td><td>48</td><td>0.09677</td></tr><tr><td></td><td>|</td><td></td></tr><tr><td></td><td>12|</td><td>0.03024</td></tr><tr><td></td><td>24]</td><td>0.06048</td></tr><tr><td></td><td>48 |</td><td>0.12097</td></tr><tr><td></td><td>12|</td><td>0.03327</td></tr><tr><td></td><td>24]</td><td>0.06653</td></tr><tr><td></td><td>24|</td><td>0.06956</td></tr><tr><td></td><td>12|</td><td>0.03629</td></tr><tr><td></td><td>15|</td><td>0.04536</td></tr><tr><td></td><td>20]</td><td>0.06048</td></tr><tr><td></td><td>24|</td><td>0.07258</td></tr><tr><td></td><td>30 |</td><td>0.09073</td></tr><tr><td></td><td>48 |</td><td>0.14516</td></tr><tr><td></td><td>50|</td><td>0.15121</td></tr><tr><td></td><td>12|</td><td>0.04234</td></tr><tr><td></td><td>24]</td><td>0.08468</td></tr><tr><td>16 (1 pint)</td><td>12|</td><td>0.04839</td></tr><tr><td>16 (1 pint)</td><td>24|</td><td>0.09677</td></tr><tr><td>22</td><td>12|</td><td>0.06653</td></tr><tr><td>22</td><td>24]</td><td>0.13306</td></tr><tr><td>24</td><td>12|</td><td>0.07258</td></tr><tr><td>24</td><td>24|</td><td>0.14516</td></tr><tr><td>30.</td><td>12|</td><td>0.09073</td></tr><tr><td>32 (1 quar)</td><td>12|</td><td>0.09677</td></tr><tr><td>40...</td><td>12|</td><td>0.12097</td></tr><tr><td>64</td><td>1|</td><td>0.01613</td></tr><tr><td>64</td><td>4|</td><td>0.06452</td></tr><tr><td>64</td><td>6|</td><td>0.09677</td></tr><tr><td>128 (1 gallon)</td><td>1|</td><td>0.03226</td></tr><tr><td>288</td><td>1|</td><td>0.07258</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

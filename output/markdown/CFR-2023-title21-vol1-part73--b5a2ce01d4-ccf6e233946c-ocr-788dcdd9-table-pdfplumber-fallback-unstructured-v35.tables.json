@@ -1,0 +1,993 @@
+{
+  "schema_version": 1,
+  "source_file": "CFR-2023-title21-vol1-part73.pdf",
+  "table_backend": "pdfplumber",
+  "fallback_backend": "unstructured",
+  "tables": [
+    {
+      "table_id": "page-0003-table-01",
+      "caption": null,
+      "source_pages": [
+        3
+      ],
+      "bbox": [
+        129.992607421875,
+        175.47343505859374,
+        480.4706689453125,
+        390.02044921875
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Substances",
+        "Definitions and specifications",
+        "Restrictions"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Calcium disodium EDTA (calcium diso- dium ethyl- enediamine- tetraacetate).",
+            "Contains calcium disodium —ethyl- enediamine- tetraacetate dihydrate (CAS Reg. No. 6766-87-6) as set forth in the Food Chemicals Codex, 3d ed., p. 50, 1981.",
+            "May be used in aqueous solutions and aqueous dispersions as a_ preservative and sequestrant in color additive mixtures intended only for ingested use; the color additive mixture (solution or dispersion) may contain not more than 1 percent by weight of the diluent (calculated as anhy- drous calcium ~— disodium —_ethyl- enediamine-tetraacetate)."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Castor oil .",
+            "As set forth in U.S.P. XVI ....",
+            "Not more than 500 p.p.m. in the finished food. Labeling of color additive mixtures containing castor oil shall bear adequate directions for use that will result in a food meeting this restriction."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dioctylsodium sulfosuccinate ....",
+            "As set forth in sec. 172.810 of this chapter.",
+            "Not more than 9 p.p.m. in the finished food. Labeling of color additive mixtures con- taining dioctylsodium sulfosuccinate shall bear adequate directions for use that will result in a food meeting this restriction."
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Disodium EDTA (disodium enediamine- tetraacetate). ethyl-",
+            "Contains disodium ethyl- enediamine- tetraacetate dihydrate (CAS Reg. No. 6381-92-6) as set forth in the Food Chemicals Codex, 3d ed., p. 104, 1981.",
+            "May be used in aqueous solutions and aqueous dispersions as a preservative and sequestrant in color additive mixtures intended only for ingested use; the color additive mixture (solution or dispersion) may contain not more than 1 percent by weight of the diluent (calculated as anhy- drous disodium ethyl enediamine- tetraacetate)."
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Definitions and specifications",
+          "Restrictions"
+        ],
+        [
+          "Calcium disodium EDTA (calcium diso- dium ethyl- enediamine- tetraacetate).",
+          "Contains calcium disodium —ethyl- enediamine- tetraacetate dihydrate (CAS Reg. No. 6766-87-6) as set forth in the Food Chemicals Codex, 3d ed., p. 50, 1981.",
+          "May be used in aqueous solutions and aqueous dispersions as a_ preservative and sequestrant in color additive mixtures intended only for ingested use; the color additive mixture (solution or dispersion) may contain not more than 1 percent by weight of the diluent (calculated as anhy- drous calcium ~— disodium —_ethyl- enediamine-tetraacetate)."
+        ],
+        [
+          "Castor oil .",
+          "As set forth in U.S.P. XVI ....",
+          "Not more than 500 p.p.m. in the finished food. Labeling of color additive mixtures containing castor oil shall bear adequate directions for use that will result in a food meeting this restriction."
+        ],
+        [
+          "Dioctylsodium sulfosuccinate ....",
+          "As set forth in sec. 172.810 of this chapter.",
+          "Not more than 9 p.p.m. in the finished food. Labeling of color additive mixtures con- taining dioctylsodium sulfosuccinate shall bear adequate directions for use that will result in a food meeting this restriction."
+        ],
+        [
+          "Disodium EDTA (disodium enediamine- tetraacetate). ethyl-",
+          "Contains disodium ethyl- enediamine- tetraacetate dihydrate (CAS Reg. No. 6381-92-6) as set forth in the Food Chemicals Codex, 3d ed., p. 104, 1981.",
+          "May be used in aqueous solutions and aqueous dispersions as a preservative and sequestrant in color additive mixtures intended only for ingested use; the color additive mixture (solution or dispersion) may contain not more than 1 percent by weight of the diluent (calculated as anhy- drous disodium ethyl enediamine- tetraacetate)."
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th>Definitions and specifications</th><th>Restrictions</th></tr></thead><tbody><tr><td>Calcium disodium EDTA (calcium diso- dium ethyl- enediamine- tetraacetate).</td><td>Contains calcium disodium —ethyl- enediamine- tetraacetate dihydrate (CAS Reg. No. 6766-87-6) as set forth in the Food Chemicals Codex, 3d ed., p. 50, 1981.</td><td>May be used in aqueous solutions and aqueous dispersions as a_ preservative and sequestrant in color additive mixtures intended only for ingested use; the color additive mixture (solution or dispersion) may contain not more than 1 percent by weight of the diluent (calculated as anhy- drous calcium ~— disodium —_ethyl- enediamine-tetraacetate).</td></tr><tr><td>Castor oil .</td><td>As set forth in U.S.P. XVI ....</td><td>Not more than 500 p.p.m. in the finished food. Labeling of color additive mixtures containing castor oil shall bear adequate directions for use that will result in a food meeting this restriction.</td></tr><tr><td>Dioctylsodium sulfosuccinate ....</td><td>As set forth in sec. 172.810 of this chapter.</td><td>Not more than 9 p.p.m. in the finished food. Labeling of color additive mixtures con- taining dioctylsodium sulfosuccinate shall bear adequate directions for use that will result in a food meeting this restriction.</td></tr><tr><td>Disodium EDTA (disodium enediamine- tetraacetate). ethyl-</td><td>Contains disodium ethyl- enediamine- tetraacetate dihydrate (CAS Reg. No. 6381-92-6) as set forth in the Food Chemicals Codex, 3d ed., p. 104, 1981.</td><td>May be used in aqueous solutions and aqueous dispersions as a preservative and sequestrant in color additive mixtures intended only for ingested use; the color additive mixture (solution or dispersion) may contain not more than 1 percent by weight of the diluent (calculated as anhy- drous disodium ethyl enediamine- tetraacetate).</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0003-table-02",
+      "caption": null,
+      "source_pages": [
+        3
+      ],
+      "bbox": [
+        130.9706872558594,
+        442.527978515625,
+        469.4267724609375,
+        577.9057763671875
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Isopropyl alcohol Polyoxyethylene so! (polysorbate 80).",
+        "As set fol chapter. in sec.",
+        "Do."
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polyvinyl acetate",
+            "Molecular weight, minimum 2,000.",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polyvinylpyrrolidone .",
+            "As set forth in sec. 173.55 of this chap- ter.",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Rosin and rosin derivatives ..",
+            "As set forth in sec. chapter. 172.615 of this",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Shellac, purified ..",
+            "Food grade.",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Isopropyl alcohol Polyoxyethylene so! (polysorbate 80).",
+          "As set fol chapter. in sec.",
+          "Do."
+        ],
+        [
+          "Polyvinyl acetate",
+          "Molecular weight, minimum 2,000.",
+          ""
+        ],
+        [
+          "Polyvinylpyrrolidone .",
+          "As set forth in sec. 173.55 of this chap- ter.",
+          ""
+        ],
+        [
+          "Rosin and rosin derivatives ..",
+          "As set forth in sec. chapter. 172.615 of this",
+          ""
+        ],
+        [
+          "Shellac, purified ..",
+          "Food grade.",
+          ""
+        ]
+      ],
+      "raw_html": "<table><tbody><tr><td>Isopropyl alcohol Polyoxyethylene so! (polysorbate 80).</td><td>As set fol chapter. in sec.</td><td>Do.</td></tr><tr><td>Polyvinyl acetate</td><td>Molecular weight, minimum 2,000.</td><td></td></tr><tr><td>Polyvinylpyrrolidone .</td><td>As set forth in sec. 173.55 of this chap- ter.</td><td></td></tr><tr><td>Rosin and rosin derivatives ..</td><td>As set forth in sec. chapter. 172.615 of this</td><td></td></tr><tr><td>Shellac, purified ..</td><td>Food grade.</td><td></td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0003-table-03",
+      "caption": null,
+      "source_pages": [
+        3
+      ],
+      "bbox": [
+        130.440849609375,
+        607.9032861328125,
+        469.2618017578125,
+        706.830556640625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Substances",
+        "Definitions and specifications",
+        "Restrictions"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Acetone ... Alcohol, SDA-3A Benzoin Copal, Manila .",
+            "As set forth in NF. XI .. As set forth in 26 CFR pt. 212 .. As set forth in U.S.P. XVI. :",
+            "No residue. Do."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Ethyl acetate Ethyl cellulose",
+            "As set forth in NF. XI .. As set forth in sec. 172.868 of this chapter.",
+            "Do."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Methylene chloride Polyvinylpyrrolidone .",
+            "AS set forth in sec. 173.55 of this chap- ter.",
+            "Do."
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Rosin and rosin derivatives ..",
+            "As set forth in sec. 172.615 of this chapter.",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Definitions and specifications",
+          "Restrictions"
+        ],
+        [
+          "Acetone ... Alcohol, SDA-3A Benzoin Copal, Manila .",
+          "As set forth in NF. XI .. As set forth in 26 CFR pt. 212 .. As set forth in U.S.P. XVI. :",
+          "No residue. Do."
+        ],
+        [
+          "Ethyl acetate Ethyl cellulose",
+          "As set forth in NF. XI .. As set forth in sec. 172.868 of this chapter.",
+          "Do."
+        ],
+        [
+          "Methylene chloride Polyvinylpyrrolidone .",
+          "AS set forth in sec. 173.55 of this chap- ter.",
+          "Do."
+        ],
+        [
+          "Rosin and rosin derivatives ..",
+          "As set forth in sec. 172.615 of this chapter.",
+          ""
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th>Definitions and specifications</th><th>Restrictions</th></tr></thead><tbody><tr><td>Acetone ... Alcohol, SDA-3A Benzoin Copal, Manila .</td><td>As set forth in NF. XI .. As set forth in 26 CFR pt. 212 .. As set forth in U.S.P. XVI. :</td><td>No residue. Do.</td></tr><tr><td>Ethyl acetate Ethyl cellulose</td><td>As set forth in NF. XI .. As set forth in sec. 172.868 of this chapter.</td><td>Do.</td></tr><tr><td>Methylene chloride Polyvinylpyrrolidone .</td><td>AS set forth in sec. 173.55 of this chap- ter.</td><td>Do.</td></tr><tr><td>Rosin and rosin derivatives ..</td><td>As set forth in sec. 172.615 of this chapter.</td><td></td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0004-table-01",
+      "caption": null,
+      "source_pages": [
+        4
+      ],
+      "bbox": [
+        127.546962890625,
+        174.1532080078125,
+        486.1562255859375,
+        229.940244140625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "sparse-cells"
+        ]
+      },
+      "headers": [
+        "Substances",
+        "Restrictions"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Silicon dioxide ..",
+            "Not more than 2 pct of the ink solids."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Terpene resins, natural",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Terpene resins, synthetic ..",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Restrictions"
+        ],
+        [
+          "Silicon dioxide ..",
+          "Not more than 2 pct of the ink solids."
+        ],
+        [
+          "Terpene resins, natural",
+          ""
+        ],
+        [
+          "Terpene resins, synthetic ..",
+          ""
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th>Restrictions</th></tr></thead><tbody><tr><td>Silicon dioxide ..</td><td>Not more than 2 pct of the ink solids.</td></tr><tr><td>Terpene resins, natural</td><td></td></tr><tr><td>Terpene resins, synthetic ..</td><td></td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0004-table-02",
+      "caption": null,
+      "source_pages": [
+        4
+      ],
+      "bbox": [
+        130.3042126464844,
+        384.026396484375,
+        480.0131103515625,
+        445.484794921875
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Substances",
+        "Definitions and specifications",
+        "Restrictions"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polyvinylpyrrolidone .",
+            "As set forth in sec. 173.55 of this chap- ter.",
+            "In or as food-tablet coatings; limit, not more than 0.1 pet in the finished food; labeling of color additive mixtures containing polyvinylpyrrolidone shall bear adequate directions for use that will result in a food meeting this restriction."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Definitions and specifications",
+          "Restrictions"
+        ],
+        [
+          "Polyvinylpyrrolidone .",
+          "As set forth in sec. 173.55 of this chap- ter.",
+          "In or as food-tablet coatings; limit, not more than 0.1 pet in the finished food; labeling of color additive mixtures containing polyvinylpyrrolidone shall bear adequate directions for use that will result in a food meeting this restriction."
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th>Definitions and specifications</th><th>Restrictions</th></tr></thead><tbody><tr><td>Polyvinylpyrrolidone .</td><td>As set forth in sec. 173.55 of this chap- ter.</td><td>In or as food-tablet coatings; limit, not more than 0.1 pet in the finished food; labeling of color additive mixtures containing polyvinylpyrrolidone shall bear adequate directions for use that will result in a food meeting this restriction.</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0020-table-01",
+      "caption": null,
+      "source_pages": [
+        20
+      ],
+      "bbox": [
+        130.58058471679686,
+        372.263291015625,
+        290.1617797851562,
+        404.019228515625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 0.805,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Acetone",
+            "Isopropyl] alcohol"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Ethyl] alcohol",
+            "Methyl alcohol"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Ethylene dichloride",
+            "Methylene chloride"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hexane",
+            "Trichloroethylene"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Acetone",
+          "Isopropyl] alcohol"
+        ],
+        [
+          "Ethyl] alcohol",
+          "Methyl alcohol"
+        ],
+        [
+          "Ethylene dichloride",
+          "Methylene chloride"
+        ],
+        [
+          "Hexane",
+          "Trichloroethylene"
+        ]
+      ],
+      "raw_html": "<table><tbody><tr><td>Acetone</td><td>Isopropyl] alcohol</td></tr><tr><td>Ethyl] alcohol</td><td>Methyl alcohol</td></tr><tr><td>Ethylene dichloride</td><td>Methylene chloride</td></tr><tr><td>Hexane</td><td>Trichloroethylene</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0026-table-01",
+      "caption": null,
+      "source_pages": [
+        26
+      ],
+      "bbox": [
+        130.62874877929687,
+        310.14740478515625,
+        290.596640625,
+        341.75572998046874
+      ],
+      "extractor": "unstructured",
+      "structure_score": 0.805,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Ethylene dichloride",
+            "Methylene chloride"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hexane",
+            "Trichloroethylene"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Ethylene dichloride",
+          "Methylene chloride"
+        ],
+        [
+          "Hexane",
+          "Trichloroethylene"
+        ]
+      ],
+      "raw_html": "<table><tbody><tr><td>Ethylene dichloride</td><td>Methylene chloride</td></tr><tr><td>Hexane</td><td>Trichloroethylene</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0026-table-02",
+      "caption": null,
+      "source_pages": [
+        26
+      ],
+      "bbox": [
+        130.96224975585938,
+        587.82234375,
+        475.4872705078125,
+        696.744228515625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 1.0,
+        "signals": [
+          "multilevel-header",
+          "irregular-row-widths",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Substances",
+        "Definitions and specifications As set forth in 26 CFR, pt. 212 ...",
+        "Restrictions",
+        "Restrictions (2)"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Alcohol, specially denatured ..",
+            "As set forth in 26 CFR, pt. 211.",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cetyl Isopropyl alcohol",
+            "",
+            "",
+            "In color coatings for pharmaceutic forms, no residue."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polyoxyethylene (20) sorbitan monostearate (Polysorbate 60).",
+            "As set forth in sec. chapter.",
+            "172.836 of this",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polyoxyethylene (20) sorbitan tristearate (Poly- sorbate 65).",
+            "As set forth in sec. chapter.",
+            "172.838 of this",
+            ""
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polysorbate 80 ...",
+            "As set forth in sec. chapter.",
+            "172.840 of this",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Polyvinyl-pyrrolidone ...",
+            "As set forth in sec. chapter.",
+            "173.55 of this",
+            ""
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Definitions and specifications As set forth in 26 CFR, pt. 212 ...",
+          "Restrictions"
+        ],
+        [
+          "Alcohol, specially denatured ..",
+          "As set forth in 26 CFR, pt. 211."
+        ],
+        [
+          "Cetyl Isopropyl alcohol",
+          "",
+          "",
+          "In color coatings for pharmaceutic forms, no residue."
+        ],
+        [
+          "Polyoxyethylene (20) sorbitan monostearate (Polysorbate 60).",
+          "As set forth in sec. chapter.",
+          "172.836 of this",
+          ""
+        ],
+        [
+          "Polyoxyethylene (20) sorbitan tristearate (Poly- sorbate 65).",
+          "As set forth in sec. chapter.",
+          "172.838 of this",
+          ""
+        ],
+        [
+          "Polysorbate 80 ...",
+          "As set forth in sec. chapter.",
+          "172.840 of this",
+          ""
+        ],
+        [
+          "Polyvinyl-pyrrolidone ...",
+          "As set forth in sec. chapter.",
+          "173.55 of this",
+          ""
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th colspan=\"2\" rowspan=\"2\">Definitions and specifications As set forth in 26 CFR, pt. 212 ...</th><th>Restrictions</th></tr></thead><tbody><tr><td>Alcohol, specially denatured ..</td><td>As set forth in 26 CFR, pt. 211.</td></tr><tr><td>Cetyl Isopropyl alcohol</td><td></td><td></td><td>In color coatings for pharmaceutic forms, no residue.</td></tr><tr><td>Polyoxyethylene (20) sorbitan monostearate (Polysorbate 60).</td><td>As set forth in sec. chapter.</td><td>172.836 of this</td><td></td></tr><tr><td>Polyoxyethylene (20) sorbitan tristearate (Poly- sorbate 65).</td><td>As set forth in sec. chapter.</td><td>172.838 of this</td><td></td></tr><tr><td>Polysorbate 80 ...</td><td>As set forth in sec. chapter.</td><td>172.840 of this</td><td></td></tr><tr><td>Polyvinyl-pyrrolidone ...</td><td>As set forth in sec. chapter.</td><td>173.55 of this</td><td></td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0027-table-01",
+      "caption": null,
+      "source_pages": [
+        27
+      ],
+      "bbox": [
+        128.95842041015624,
+        175.54694458007813,
+        368.27611083984374,
+        215.9088134765625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Substances",
+        "Definitions and specifications"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Sorbitan monostearate ...",
+            "As set forth in sec. 172.842 of thi chapter."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Sorbitan trioleate.",
+            ""
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Definitions and specifications"
+        ],
+        [
+          "Sorbitan monostearate ...",
+          "As set forth in sec. 172.842 of thi chapter."
+        ],
+        [
+          "Sorbitan trioleate.",
+          ""
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th>Definitions and specifications</th></tr></thead><tbody><tr><td>Sorbitan monostearate ...</td><td>As set forth in sec. 172.842 of thi chapter.</td></tr><tr><td>Sorbitan trioleate.</td><td></td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0027-table-02",
+      "caption": null,
+      "source_pages": [
+        27
+      ],
+      "bbox": [
+        130.12243286132812,
+        326.6145703125,
+        300.79039306640624,
+        386.44224609375
+      ],
+      "extractor": "unstructured",
+      "structure_score": 0.805,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "irregular-row-widths"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Substances",
+            "Definitions and specifications",
+            "",
+            ""
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Benzyl alcohol ... Ethyl cellulose ... cellulose.",
+            "As set forth in N.F. As set forth in chapter.",
+            "of",
+            "this"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Hydroxyethyl Hydroxypropyl cellulose",
+            "As set forth in chapter.",
+            "of",
+            "this"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Substances",
+          "Definitions and specifications"
+        ],
+        [
+          "Benzyl alcohol ... Ethyl cellulose ... cellulose.",
+          "As set forth in N.F. As set forth in chapter.",
+          "of",
+          "this"
+        ],
+        [
+          "Hydroxyethyl Hydroxypropyl cellulose",
+          "As set forth in chapter.",
+          "of",
+          "this"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Substances</th><th colspan=\"3\">Definitions and specifications</th></tr></thead><tbody><tr><td>Benzyl alcohol ... Ethyl cellulose ... cellulose.</td><td>As set forth in N.F. As set forth in chapter.</td><td>of</td><td>this</td></tr><tr><td>Hydroxyethyl Hydroxypropyl cellulose</td><td>As set forth in chapter.</td><td>of</td><td>this</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}
