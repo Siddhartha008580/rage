@@ -585,6 +585,18 @@ def main() -> None:
         parser.error("--modes must not contain duplicates")
 
     specs = _validate_specs(json.loads(args.eval_file.read_text(encoding="utf-8")))
+    blocked_specs = [spec for spec in specs if spec.get("status") == "blocked"]
+    specs = [spec for spec in specs if spec.get("status") != "blocked"]
+    if not specs:
+        parser.error("evaluation file has no scoreable queries")
+    if blocked_specs:
+        print(
+            "Skipping blocked queries: "
+            + ", ".join(
+                f"{spec['id']} ({spec.get('notes', 'no reason provided')})"
+                for spec in blocked_specs
+            )
+        )
     args.out_dir.mkdir(parents=True, exist_ok=True)
 
     summaries: dict[str, dict[str, Any]] = {}

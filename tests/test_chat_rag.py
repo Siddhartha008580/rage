@@ -1,14 +1,20 @@
 import unittest
 from types import ModuleType, SimpleNamespace
 from pathlib import Path
-from unittest.mock import Mock, call, patch
+from unittest.mock import Mock, patch
 
 from src.chat_rag import (
+    MAX_COMPLETION_TOKENS,
     SYSTEM_PROMPT,
+    QueryPlan,
+    _normalize_chunk,
+    _select_retrieval_mode,
     ask_openrouter,
     build_context,
     diversify_candidates,
     is_comparison_query,
+    is_high_stakes_query,
+    plan_logical_query,
     rerank_candidates,
     reciprocal_rank_fusion,
     retrieve_chunks,
@@ -19,6 +25,79 @@ from src.spectrag import ChunkGraph
 
 
 class ChatRagTests(unittest.TestCase):
+    def test_auto_retrieval_mode_uses_query_shape_not_stakes(self) -> None:
+        def plan(query: str, *, is_complex: bool = False) -> QueryPlan:
+            return QueryPlan(
+                original_query=query,
+                standalone_query=query,
+                is_complex=is_complex,
+                sub_queries=[query],
+            )
+
+        self.assertEqual(
+            _select_retrieval_mode(
+                "What does the label say about pregnancy?",
+                plan("What does the label say about pregnancy?"),
+                "hybrid",
+                table_only=False,
+            ),
+            "hybrid",
+        )
+        self.assertEqual(
+            _select_retrieval_mode(
+                "Compare revenue across two years",
+                plan("Compare revenue across two years"),
+                "hybrid",
+                table_only=False,
+            ),
+            "spectrag",
+        )
+        self.assertEqual(
+            _select_retrieval_mode(
+                "If the threshold is met, what happens unless an exception applies?",
+                plan(
+                    "If the threshold is met, what happens unless an exception applies?",
+                    is_complex=True,
+                ),
+                "hybrid",
+                table_only=False,
+            ),
+            "agentic",
+        )
+        self.assertEqual(
+            _select_retrieval_mode(
+                "What is shown in Table 2?",
+                plan("What is shown in Table 2?"),
+                "hybrid",
+                table_only=False,
+            ),
+            "hybrid",
+        )
+        self.assertEqual(
+            _select_retrieval_mode(
+                "Compare revenue across two years",
+                plan("Compare revenue across two years"),
+                "agentic",
+                table_only=False,
+            ),
+            "agentic",
+        )
+
+    def test_table_row_context_uses_self_contained_row(self) -> None:
+        normalized = _normalize_chunk(
+            {
+                "id": "row-1",
+                "text": "Caption; Columns: Year | Revenue; Row: 2025 | 100",
+                "metadata": {
+                    "chunk_type": "table_row",
+                    "parent_text": "The full table with many rows",
+                },
+                "rerank_score": 0.9,
+            }
+        )
+
+        self.assertEqual(normalized["context_text"], normalized["text"])
+
     def test_retrieval_passes_domain_table_and_page_filters(self) -> None:
         metadata = {
             "source": "RFC9110.pdf",
@@ -60,7 +139,7 @@ class ChatRagTests(unittest.TestCase):
         reranker = type(
             "FakeCrossEncoder",
             (),
-            {"predict": lambda self, pairs, show_progress_bar: [0.9, 0.1]},
+            {"predict": lambda self, pairs, **kwargs: [0.9, 0.1]},
         )()
         with (
             patch("src.chat_rag.query_index", return_value=dense_hits) as query,
@@ -127,7 +206,7 @@ class ChatRagTests(unittest.TestCase):
         model = type(
             "FakeCrossEncoder",
             (),
-            {"predict": lambda self, pairs, show_progress_bar: [0.2, 0.9]},
+            {"predict": lambda self, pairs, **kwargs: [0.2, 0.9]},
         )()
         with patch("src.chat_rag._reranker", return_value=model):
             reranked = rerank_candidates("query", candidates)
@@ -227,7 +306,45 @@ class ChatRagTests(unittest.TestCase):
         )
         self.assertTrue(is_comparison_query("Compare warnings across labels"))
         self.assertTrue(is_comparison_query("What are the differences?"))
+        self.assertTrue(is_comparison_query("Which of the drug labels says this?"))
         self.assertFalse(is_comparison_query("What is the recommended dose?"))
+
+    def test_planner_omits_unrelated_history_for_standalone_question(self) -> None:
+        history = [{"query": "Earlier question", "answer": "Earlier answer"}]
+        with (
+            patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}),
+            patch("src.chat_rag._get_openrouter_client") as get_client,
+        ):
+            plan = plan_logical_query(
+                "What are the REMS ANC monitoring requirements for clozapine?",
+                history=history,
+            )
+
+        get_client.assert_not_called()
+        self.assertEqual(len(plan.sub_queries), 1)
+
+    def test_planner_uses_history_for_a_short_follow_up(self) -> None:
+        history = [{"query": "Earlier question", "answer": "Earlier answer"}]
+        with (
+            patch.dict("os.environ", {"OPENROUTER_API_KEY": "test-key"}),
+            patch("src.chat_rag._get_openrouter_client", return_value=object()),
+            patch(
+                "src.chat_rag._json_completion",
+                return_value={
+                    "standalone_query": "Resolved follow-up question",
+                    "is_complex": False,
+                    "sub_queries": ["Unneeded alternate query"],
+                    "logical_conditions": ["Unneeded condition"],
+                },
+            ) as json_completion,
+        ):
+            plan = plan_logical_query("What about it?", history=history)
+
+        prompt = json_completion.call_args.kwargs["user_prompt"]
+        self.assertIn("PRIOR CONVERSATION", prompt)
+        self.assertEqual(plan.standalone_query, "Resolved follow-up question")
+        self.assertEqual(plan.sub_queries, ["Resolved follow-up question"])
+        self.assertEqual(plan.logical_conditions, [])
 
     def test_retrieval_uses_source_coverage_for_comparison_queries(self) -> None:
         reranked = [
@@ -384,7 +501,9 @@ class ChatRagTests(unittest.TestCase):
         ):
             result = ask_openrouter("question", chunks)
 
-        self.assertEqual(create.call_args.kwargs["max_tokens"], 2000)
+        self.assertEqual(
+            create.call_args.kwargs["max_tokens"], MAX_COMPLETION_TOKENS
+        )
         self.assertIn("each relevant source", SYSTEM_PROMPT)
         self.assertEqual(result["answer"], "Answer")
         self.assertEqual(result["finish_reason"], "stop")
@@ -396,6 +515,111 @@ class ChatRagTests(unittest.TestCase):
                 "total_tokens": 25,
             },
         )
+
+    def test_openrouter_recovers_a_truncated_answer(self) -> None:
+        responses = [
+            SimpleNamespace(
+                model="test-model",
+                choices=[
+                    SimpleNamespace(
+                        message=SimpleNamespace(content="Partial"),
+                        finish_reason="length",
+                    )
+                ],
+                usage=None,
+            ),
+            SimpleNamespace(
+                model="test-model",
+                choices=[
+                    SimpleNamespace(
+                        message=SimpleNamespace(content="Fact [a.pdf p.1]"),
+                        finish_reason="stop",
+                    )
+                ],
+                usage=None,
+            ),
+        ]
+        create = Mock(side_effect=responses)
+        client = SimpleNamespace(
+            chat=SimpleNamespace(
+                completions=SimpleNamespace(create=create)
+            )
+        )
+        openai_module = ModuleType("openai")
+        openai_module.OpenAI = Mock(return_value=client)
+        chunks = [
+            {
+                "id": "chunk-1",
+                "text": "Fact.",
+                "source": "a.pdf",
+                "domain": "",
+                "page": 1,
+                "citation": "[a.pdf p.1]",
+                "chunk_type": "prose",
+                "section_path": [],
+            }
+        ]
+
+        with (
+            patch.dict("sys.modules", {"openai": openai_module}),
+            patch.dict(
+                "os.environ",
+                {"OPENROUTER_API_KEY": "test-key-truncated-recovery"},
+            ),
+        ):
+            result = ask_openrouter("question", chunks)
+
+        self.assertEqual(create.call_count, 2)
+        self.assertEqual(result["answer"], "Fact [a.pdf p.1]")
+        self.assertTrue(result["generation_complete"])
+        self.assertEqual(result["finish_reason"], "stop")
+
+    def test_openrouter_does_not_return_an_unrecovered_partial_answer(self) -> None:
+        responses = [
+            SimpleNamespace(
+                model="test-model",
+                choices=[
+                    SimpleNamespace(
+                        message=SimpleNamespace(content="Partial answer"),
+                        finish_reason="length",
+                    )
+                ],
+                usage=None,
+            ),
+            SimpleNamespace(
+                model="test-model",
+                choices=[
+                    SimpleNamespace(
+                        message=SimpleNamespace(content="Still partial"),
+                        finish_reason="length",
+                    )
+                ],
+                usage=None,
+            ),
+        ]
+        client = SimpleNamespace(
+            chat=SimpleNamespace(
+                completions=SimpleNamespace(create=Mock(side_effect=responses))
+            )
+        )
+        openai_module = ModuleType("openai")
+        openai_module.OpenAI = Mock(return_value=client)
+
+        with (
+            patch.dict("sys.modules", {"openai": openai_module}),
+            patch.dict(
+                "os.environ",
+                {"OPENROUTER_API_KEY": "test-key-truncated-fail"},
+            ),
+        ):
+            result = ask_openrouter("question", [])
+
+        self.assertFalse(result["generation_complete"])
+        self.assertNotIn("Partial answer", result["answer"])
+        self.assertIn("couldn't produce a complete answer", result["answer"])
+
+    def test_cfr_questions_require_claim_support_verification(self) -> None:
+        self.assertTrue(is_high_stakes_query("What does 21 CFR Part 73 require?"))
 
     def test_context_uses_general_source_page_citation(self) -> None:
         context = build_context(
@@ -424,13 +648,15 @@ class ChatRagTests(unittest.TestCase):
             patch(
                 "builtins.input",
                 side_effect=[
-                    "first question",
-                    "h",
-                    "second",
-                    "s",
+                    "write a briefing",
+                    "second question",
                     "quit",
                 ],
             ),
+            patch(
+                "src.chat_rag.route_mcp_tools",
+                side_effect=["Generated document: briefing.pdf", None],
+            ) as route,
             patch("src.chat_rag.run_one", return_value={"answer": "ok"}) as run,
             patch("builtins.print"),
         ):
@@ -442,67 +668,47 @@ class ChatRagTests(unittest.TestCase):
                 candidate_k=20,
             )
 
-        self.assertEqual(
-            run.call_args_list,
-            [
-                call(
-                    "first question",
-                    False,
-                    top_k=3,
-                    index_dir=Path("test-index"),
-                    domain="standards",
-                    table_only=True,
-                    page=None,
-                    candidate_k=20,
-                    mmr_lambda=0.7,
-                    retrieval_mode="hybrid",
-                    token_budget=12000,
-                ),
-                call(
-                    "second",
-                    False,
-                    top_k=3,
-                    index_dir=Path("test-index"),
-                    domain="standards",
-                    table_only=True,
-                    page=None,
-                    candidate_k=20,
-                    mmr_lambda=0.7,
-                    retrieval_mode="spectrag",
-                    token_budget=12000,
-                ),
-            ],
-        )
+        self.assertEqual(route.call_count, 2)
+        self.assertEqual(route.call_args_list[0].args, ("write a briefing",))
+        self.assertEqual(route.call_args_list[1].args, ("second question",))
+        self.assertEqual(run.call_count, 1)
+        rag_call = run.call_args_list[0]
+        self.assertEqual(rag_call.args, ("second question", False))
+        self.assertEqual(rag_call.kwargs["retrieval_mode"], "hybrid")
 
-    def test_interactive_cli_generates_document_when_selected(self) -> None:
+    def test_interactive_cli_returns_mcp_response_without_rag(self) -> None:
         with (
             patch(
                 "builtins.input",
-                side_effect=["write a briefing", "d", "quit"],
+                side_effect=["write a briefing", "quit"],
             ),
             patch(
-                "src.docgen.generate_with_markdown",
-                return_value=(Path("documents/briefing.pdf"), "# Briefing"),
-            ) as generate,
+                "src.chat_rag.route_mcp_tools",
+                return_value="Generated document: briefing.pdf",
+            ) as route,
+            patch("src.chat_rag.run_one") as run,
             patch("builtins.print"),
         ):
             run_interactive(index_dir=Path("test-index"))
 
-        generate.assert_called_once_with(
-            "write a briefing", index_dir=Path("test-index")
-        )
+        route.assert_called_once()
+        run.assert_not_called()
 
-    def test_interactive_cli_reprompts_for_invalid_mode_and_can_cancel(self) -> None:
+    def test_one_shot_cli_routes_mcp_tools_before_rag(self) -> None:
         with (
+            patch("sys.argv", ["chat_rag.py", "write a briefing"]),
             patch(
-                "builtins.input",
-                side_effect=["first question", "invalid", "c", "quit"],
-            ),
+                "src.chat_rag.route_mcp_tools",
+                return_value="Generated document: briefing.pdf",
+            ) as route,
             patch("src.chat_rag.run_one") as run,
             patch("builtins.print"),
         ):
-            run_interactive()
+            from src.chat_rag import main
 
+            main()
+
+        route.assert_called_once()
         run.assert_not_called()
 
     def test_interactive_cli_exits_on_eof(self) -> None:

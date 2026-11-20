@@ -154,6 +154,55 @@ class RagChunkTests(unittest.TestCase):
             ["Operations", "Risk Factors", "Supply Chain"],
         )
 
+    def test_cfr_running_header_does_not_replace_continued_section(self) -> None:
+        first_page = "## § 73.30 Annatto extract\n\n(a) Annatto identity.\n"
+        second_page = (
+            "§ 73.32 21 CFR Ch. I (4-1-23 Edition)\n"
+            "(c) Uses and restrictions continue here.\n\n"
+            "## § 73.32 Antarctic krill meal\n\n"
+            "(a) Krill identity.\n"
+        )
+        markdown = first_page + second_page
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory)
+            domain_dir = output_dir / "regulations"
+            domain_dir.mkdir()
+            path = domain_dir / "part73.md"
+            path.write_text(markdown, encoding="utf-8")
+            path.with_suffix(".pages.json").write_text(
+                json.dumps(
+                    [
+                        {
+                            "pdf_page": 4,
+                            "char_start": 0,
+                            "char_end": len(first_page),
+                            "printed_page": "4",
+                        },
+                        {
+                            "pdf_page": 5,
+                            "char_start": len(first_page),
+                            "char_end": len(markdown),
+                            "printed_page": "5",
+                        },
+                    ]
+                ),
+                encoding="utf-8",
+            )
+
+            chunks = build_chunks(output_dir)
+
+        continuation = next(
+            chunk for chunk in chunks if "Uses and restrictions continue" in chunk.text
+        )
+        next_section = next(
+            chunk for chunk in chunks if "(a) Krill identity." in chunk.text
+        )
+        self.assertEqual(continuation.section_path, ["§ 73.30 Annatto extract"])
+        self.assertEqual(
+            next_section.section_path,
+            ["§ 73.32 Antarctic krill meal"],
+        )
+
     def test_exact_duplicate_table_chunks_are_emitted_once(self) -> None:
         table = (
             "| Metric | Value |\n"
@@ -189,7 +238,7 @@ class RagChunkTests(unittest.TestCase):
 
         with (
             patch.dict(sys.modules, {"chromadb": chromadb}),
-            patch("src.rag._embed_fn", return_value=object()),
+            patch("src.rag.embed_texts", return_value=[[0.1, 0.2]]),
         ):
             query_index(
                 "revenue",
@@ -200,7 +249,7 @@ class RagChunkTests(unittest.TestCase):
             )
 
         collection.query.assert_called_once_with(
-            query_texts=["revenue"],
+            query_embeddings=[[0.1, 0.2]],
             n_results=5,
             where={
                 "$and": [
@@ -317,12 +366,11 @@ class RagChunkTests(unittest.TestCase):
         chromadb = SimpleNamespace(
             PersistentClient=MagicMock(return_value=client)
         )
-        embedding_function = lambda input: [[1.0, 0.0] for _ in input]
         with tempfile.TemporaryDirectory() as directory:
             index_dir = Path(directory)
             with (
                 patch.dict(sys.modules, {"chromadb": chromadb}),
-                patch("src.rag._embed_fn", return_value=embedding_function),
+                patch("src.rag._embed_documents", return_value=[[1.0, 0.0]]),
             ):
                 build_index([chunk], index_dir)
 

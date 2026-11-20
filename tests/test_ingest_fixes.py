@@ -1,16 +1,39 @@
+import io
 import unittest
+from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import Mock, patch
 
 from src.ingest_fixes import (
     clean_page_markdown,
     consistent_printed_labels,
     plan_source,
     printed_pdf_page_number,
+    run_command_streaming,
     value_table_from_rows,
 )
 
 
 class IngestFixesTests(unittest.TestCase):
+    def test_worker_command_waits_without_a_timeout(self) -> None:
+        process = SimpleNamespace(
+            stdout=io.StringIO(
+                '__INGEST_RESULT__{"source":"doc.pdf","status":"converted"}\n'
+            ),
+            wait=Mock(return_value=0),
+        )
+
+        with patch("src.ingest_fixes.subprocess.Popen", return_value=process):
+            result, return_code = run_command_streaming(
+                ["python", "worker.py"], Path(".")
+            )
+
+        self.assertEqual(
+            result, {"source": "doc.pdf", "status": "converted"}
+        )
+        self.assertEqual(return_code, 0)
+        process.wait.assert_called_once_with()
+
     def test_clean_page_removes_timestamp_footer_and_html_wrappers(self) -> None:
         cleaned = clean_page_markdown(
             "10/27/26, 4:55 PM <u>Table of Contents</u>\n"
@@ -75,6 +98,18 @@ class IngestFixesTests(unittest.TestCase):
             ],
         )
         self.assertIn("| Item | 2024 | 2025 |", result.markdown)
+
+    def test_value_table_keeps_explicit_non_year_column_headers(self) -> None:
+        result = value_table_from_rows(
+            [
+                ["Treatment Arm", "Baseline concentration", "Change (%)"],
+                ["Group A", "184", "+13 (7)"],
+                ["Group B", "182", "+15 (8)"],
+                ["Group C", "130", "+71 (54)"],
+            ]
+        )
+
+        self.assertIsNone(result)
 
     def test_force_plan_overrides_reuse_and_recovery(self) -> None:
         self.assertEqual(

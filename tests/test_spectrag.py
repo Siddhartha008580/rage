@@ -178,6 +178,51 @@ class SpectragGraphTests(unittest.TestCase):
         )
         self.assertEqual(len(selected), 2)
 
+    def test_selector_can_include_multiple_rows_from_one_table(self) -> None:
+        graph = build_chunk_graph(
+            [
+                {"chunk_id": "row-1", "text": "Revenue 2024", "source": "a.pdf"},
+                {"chunk_id": "row-2", "text": "Revenue 2025", "source": "a.pdf"},
+            ],
+            np.asarray([[1.0, 0.0], [0.9, 0.1]], dtype=np.float32),
+            dimensions=2,
+        )
+        candidates = [
+            {
+                "id": "row-1",
+                "text": "Revenue: 2024",
+                "source": "a.pdf",
+                "spectrag_score": 0.9,
+                "metadata": {
+                    "chunk_type": "table_row",
+                    "parent_id": "table-1",
+                },
+            },
+            {
+                "id": "row-2",
+                "text": "Revenue: 2025",
+                "source": "a.pdf",
+                "spectrag_score": 0.8,
+                "metadata": {
+                    "chunk_type": "table_row",
+                    "parent_id": "table-1",
+                },
+            },
+        ]
+
+        selected = select_under_token_budget(
+            candidates,
+            graph,
+            100,
+            context_renderer=lambda items: " ".join(
+                item["text"] for item in items
+            ),
+            max_chunks=2,
+            token_counter=lambda text: len(text.split()),
+        )
+
+        self.assertEqual({item["id"] for item in selected}, {"row-1", "row-2"})
+
 
 if __name__ == "__main__":
     unittest.main()

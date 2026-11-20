@@ -300,6 +300,16 @@ def value_table_from_rows(
             header_years = row_years
             header_rows.add(row_index)
 
+    first_row = rows[0]
+    explicit_text_headers = sum(
+        bool(cell and cell.strip())
+        and _parse_number(cell) is None
+        and not YEAR_RE.search(cell)
+        for cell in first_row
+    )
+    if 0 not in header_rows and explicit_text_headers >= 2:
+        return None
+
     numeric_columns = [
         column
         for column in range(1, width)
@@ -488,21 +498,12 @@ def remove_stale_outputs(
     return removed
 
 
-# ----------------------------------------------------------- subprocess guard
-def worker_timeout_seconds() -> float:
-    try:
-        return float(os.environ.get("INGEST_WORKER_TIMEOUT_SECONDS", "3600"))
-    except ValueError:
-        return 3600.0
-
-
-def run_command_with_timeout(
+def run_command_streaming(
     command: list[str],
     cwd: Path,
-    timeout_secs: float,
     label: str = "worker",
-) -> tuple[dict[str, Any] | None, int, bool]:
-    """Run a subprocess with streaming + hard timeout. Returns (result, code, timed_out)."""
+) -> tuple[dict[str, Any] | None, int]:
+    """Run a subprocess without a time limit and stream its output."""
     result_box: list[dict[str, Any] | None] = [None]
     process = subprocess.Popen(
         command,
@@ -532,23 +533,12 @@ def run_command_with_timeout(
     thread = threading.Thread(target=reader, daemon=True)
     thread.start()
 
-    timed_out = False
-    try:
-        return_code = process.wait(timeout=timeout_secs)
-    except subprocess.TimeoutExpired:
-        timed_out = True
-        process.terminate()
-        try:
-            process.wait(timeout=30)
-        except subprocess.TimeoutExpired:
-            process.kill()
-            process.wait()
-        return_code = process.returncode if process.returncode is not None else -1
+    return_code = process.wait()
 
     thread.join(timeout=15)
     if process.stdout is not None:
         process.stdout.close()
-    return result_box[0], return_code, timed_out
+    return result_box[0], return_code
 
 
 # ------------------------------------------------------ environment checks
@@ -562,13 +552,8 @@ def validate_environment() -> str | None:
     if table not in {"pdfplumber", "hybrid", "table-transformer"}:
         errors.append(f"Invalid PDF_TABLE_BACKEND: {table}")
     fallback = os.environ.get("PDF_TABLE_FALLBACK", "none").strip().lower()
-    if fallback not in {"none", "unstructured"}:
+    if fallback not in {"none", "unstructured", "camelot"}:
         errors.append(f"Invalid PDF_TABLE_FALLBACK: {fallback}")
-    try:
-        float(os.environ.get("INGEST_WORKER_TIMEOUT_SECONDS", "3600"))
-    except ValueError:
-        errors.append("INGEST_WORKER_TIMEOUT_SECONDS is not numeric")
-
     for module in ("pymupdf", "pymupdf4llm", "pdfplumber"):
         if importlib.util.find_spec(module) is None:
             errors.append(f"Missing required module: {module}")

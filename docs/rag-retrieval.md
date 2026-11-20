@@ -75,11 +75,21 @@ python src/chat_rag.py
 ```
 
 The interactive prompt accepts multiple questions; type `quit` or `exit` to
-close it. After each question, choose `h` for hybrid retrieval, `s` for
-SpectRAG, or `d` to generate a citation-grounded PDF with the document
-generator. Press Enter to use the configured `RAG_RETRIEVAL_MODE`, or `c` to
-cancel that question. PDF generation requires `OPENROUTER_API_KEY` and writes
-the result under `documents/`. You can also send a single question directly:
+close it. With hybrid selected, direct lookups and table-focused questions use
+hybrid retrieval, comparisons use SpectRAG, and complex logical or multi-hop
+questions use agentic retrieval. High-stakes questions still receive the
+claim-to-evidence check regardless of retrieval mode and are withheld if that
+check fails or cannot be interpreted. Agentic retrieval reports when its
+evidence-gap audit is skipped, fails, or cannot confirm that follow-up
+retrieval closed a gap; these diagnostics do not prove answer correctness.
+Queries containing more than four numbered requests are rejected so they can
+be split into smaller batches rather than silently under-retrieved.
+`--retrieval-mode` can select another primary mode. In interactive chat, choose
+document generation to call `docgen` directly and write a citation-grounded PDF
+under `documents/`. The standalone MCP server separately exposes a
+`create_document` tool. `src/chat_mcp.py` is a compatibility launcher for the
+same chat and CLI; it does not run a separate answer pipeline.
+You can also send a single question directly:
 
 ```bash
 python src/chat_rag.py "quarterly net sales" \
@@ -116,13 +126,39 @@ The metadata domain currently comes from the first folder below
 reranker and diversity settings are starting defaults, not measured quality
 claims. Evaluate with labeled queries across each domain before tuning or
 shipping production thresholds.
+Retrieved chunks retain their original metadata through normalization so
+table-row deduplication can use source, page, and character-span fields.
+Citation verification checks each source-page citation separately, including
+comma- or semicolon-separated citations grouped inside one pair of brackets.
+For long regulatory PDFs, the chunker removes common CFR running headers and
+printer slugs before carrying section headings across page boundaries. The
+document generator retrieves a larger candidate set for each outline query and
+reserves final context slots across queries, instead of letting one aspect
+dominate the evidence bundle. If generation is still truncated after one
+recovery attempt, it omits that section rather than publishing a partial body.
+Questions that mention CFR or regulations receive the claim-to-evidence check.
+
+The active indexer uses `BAAI/bge-small-en-v1.5` for dense embeddings without
+query instructions. It is an English-focused 384-dimensional model, selected
+to fit lower-memory indexing environments. Prose is indexed as overlapping
+260-token child chunks with 45-token overlap, grouped under same-page,
+same-section parents of up to 900 tokens. Search and reranking operate on child
+text, while answer context expands each selected child to its parent text.
+Table-row chunks include their caption, section, column headers, and row values;
+answer context uses the self-contained row rather than repeating the entire
+table for every selected row. Multiple rows from one table can therefore
+contribute evidence to the same answer. Rebuild the index after changing the
+embedding model or chunker; the build replaces the existing Chroma collection
+and graph.
 
 ## Retrieval-only evaluation
 
 To compare retrieval modes without OpenRouter generation calls, provide a JSON
 array of labeled queries with `id`, `type`, and `query` fields. Optionally add
 `expected_sources` and `expected_terms`; every listed source and term must be
-present in the retrieved chunks for that query to count as a hit. For example:
+present in the retrieved chunks for that query to count as a hit. Queries marked
+`"status": "blocked"` are retained in the set but excluded from scoring until
+their sources or gold evidence are available. For example:
 
 ```json
 [
@@ -144,6 +180,19 @@ python scripts/eval_retrieval.py eval_selection.json \
   --modes hybrid spectrag agentic --top-k 10 --out-dir .baseline
 ```
 
+For the CFR corpus, use its source-matched evaluation set rather than the
+financial/medical/Federal Register questions in `eval_selection.json`:
+
+```bash
+python scripts/eval_retrieval.py eval_cfr.json \
+  --modes hybrid spectrag logical --top-k 10 --out-dir .cfr-eval
+```
+
+The CFR set includes a question grounded in 27 CFR § 24.291 on tax-free wine
+removal for vinegar production. Its gold answer and source pages are included
+for review; the retrieval evaluator scores evidence coverage, not answer
+correctness.
+
 The evaluator checks expected sources, terms, and pages directly in retrieved
 chunks. Its side-by-side summary reports hit rates and the best retrieval-only
 hit rate for this eval set; this measures evidence coverage, not answer quality,
@@ -153,3 +202,26 @@ set, so it may make one planner call per query with initially retrieved chunks.
 Without that key, agentic mode skips the gap audit and only measures its initial
 retrieval pass. Retrieval or input errors are surfaced instead of being counted
 as retrieval misses.
+
+## Answer-level evaluation
+
+For a new corpus or evaluator set, use `eval_retrieval.py` first to measure
+evidence coverage. To check generated answers against a changing set, provide
+the same JSON records with optional `expected_sources`, `expected_terms`,
+`expected_pages`, and `expected_answer_terms`. The answer evaluator runs the
+selected retrieval mode, generates each answer, forces the claim-support check,
+and reports missing expectations, invalid citations, and truncation:
+
+```bash
+python scripts/eval_answers.py evaluator-set.json \
+  --retrieval-mode hybrid --top-k 10 --out .answer-eval/results.json
+```
+
+`expected_terms` are checked in retrieved evidence; `expected_answer_terms`
+are checked in the generated answer. The script exits nonzero if any case
+misses its expectations, has an invalid citation, is incomplete, or fails the
+claim-support check. It makes generation and verification API calls, so it is
+intended for explicit evaluation runs, not every interactive query. Rebuild the
+index when the source documents change, then run both retrieval and answer
+evaluations on the supplied set; a retrieval hit alone does not prove a correct
+answer.

@@ -1,10 +1,12 @@
 import argparse
 from collections import Counter
+import glob
 import hashlib
 from html import escape, unescape
 from html.parser import HTMLParser
 import importlib.util
 import json
+import math
 import os
 import re
 import shutil
@@ -26,11 +28,10 @@ try:
         plan_source,
         printed_pdf_page_number,
         remove_stale_outputs,
-        run_command_with_timeout,
+        run_command_streaming,
         strip_repeated_lines,
         validate_environment,
         value_table_from_rows,
-        worker_timeout_seconds,
     )
 except ImportError:
     from ingest_fixes import (
@@ -41,11 +42,10 @@ except ImportError:
         plan_source,
         printed_pdf_page_number,
         remove_stale_outputs,
-        run_command_with_timeout,
+        run_command_streaming,
         strip_repeated_lines,
         validate_environment,
         value_table_from_rows,
-        worker_timeout_seconds,
     )
 
 try:
@@ -66,7 +66,7 @@ except ImportError:
     )
 
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".pptx", ".xlsx"}
-CONVERSION_FORMAT_VERSION = 34
+CONVERSION_FORMAT_VERSION = 35
 PAGE_BREAK_PLACEHOLDER = "\n\n<!-- DOC_PAGE_BREAK -->\n\n"
 GROQ_VISION_MODEL = "qwen/qwen3.8-27b"
 GROQ_IMAGE_BATCH_SIZE = 3
@@ -75,13 +75,20 @@ MAX_VISION_IMAGE_BYTES = 20 * 1024 * 1024
 MAX_VISION_BATCH_BYTES = 20 * 1024 * 1024
 MIN_VISION_IMAGE_DIMENSION = 32
 SLIDE_RENDER_DPI = 144
-IMAGE_LINK_PATTERN = re.compile(r"!\[([^\]]*)\]\(([^)]+)\)")
+IMAGE_LINK_PATTERN = re.compile(
+    r"!\[([^\]]*)\]\(((?:[^()\s]+|\([^()\s]*\))+)\)"
+)
 PAGE_FURNITURE_EDGE_FRACTION = 0.1
 SPARSE_PAGE_TEXT_CHARS = 300
 MIN_IMAGE_COVERAGE_FOR_OCR_WARNING = 0.05
+MIN_REDACT_TABLE_QUALITY = 0.55
+HIGH_QUALITY_TABLE_SCORE = 0.75
 PDF_OCR_BACKEND = "tesseract"
 PDF_OCR_LANGUAGES = "eng"
 TABLE_PLACEHOLDER_PREFIX = "ZZTABLE"
+NUMERIC_TOKEN_RE = re.compile(
+    r"(?<!\w)(?:[$€£¥₹₩₽¢]\s*)?\(?[+-]?\d[\d,]*(?:\.\d+)?%?\)?(?!\w)"
+)
 FIGURE_CAPTION_PATTERN = re.compile(
     r"^(?:figure|fig\.?|chart|exhibit|diagram|graph|illustration|flowchart)"
     r"\s*(?:no\.?\s*)?\d+[a-z]?(?:\s*[:.)\-–—]\s*|\s+).+",
@@ -260,7 +267,20 @@ def _normalize_pdf_heading_levels(
     lines = markdown.splitlines()
     current_major_font_size: float | None = None
     found_major_heading = False
+    active_fence: tuple[str, int] | None = None
     for index, line in enumerate(lines):
+        fence_match = re.match(r"^\s*(`{3,}|~{3,})", line)
+        if active_fence is not None:
+            if fence_match:
+                marker = fence_match.group(1)
+                if marker[0] == active_fence[0] and len(marker) >= active_fence[1]:
+                    active_fence = None
+            continue
+        if fence_match:
+            marker = fence_match.group(1)
+            active_fence = (marker[0], len(marker))
+            continue
+
         match = re.match(r"^(#{1,6})\s+(.+?)\s*$", line)
         if not match:
             continue
@@ -457,9 +477,9 @@ def _run_page_ocr(
     backend: str,
     page_number: int,
     warnings: list[str],
-) -> str:
+) -> tuple[str, bool]:
     if backend == "none":
-        return ""
+        return "", False
     try:
         if backend == "tesseract":
             ocr_textpage = page.get_textpage_ocr(
@@ -482,18 +502,19 @@ def _run_page_ocr(
                     ocr_text = _unstructured_ocr_image(image_path)
         if not ocr_text.strip():
             warnings.append(f"Page {page_number} {backend} OCR returned no text")
-            return ""
+            return "", True
         supplemental_text = _supplemental_ocr_text(native_text, ocr_text)
         if supplemental_text:
             warnings.append(
                 f"Page {page_number} added OCR-only text from {backend}; "
                 "verify recognized text against the source"
             )
-            return supplemental_text
+            return supplemental_text, True
         warnings.append(
             f"Page {page_number} {backend} OCR found no text missing from the "
             "native text layer"
         )
+        return "", True
     except Exception as error:
         warnings.append(f"Page {page_number} {backend} OCR failed: {error}")
         if backend != "tesseract":
@@ -510,7 +531,7 @@ def _run_page_ocr(
                     warnings.append(
                         f"Page {page_number} Tesseract fallback returned no text"
                     )
-                    return ""
+                    return "", True
                 supplemental_text = _supplemental_ocr_text(native_text, ocr_text)
                 if supplemental_text:
                     warnings.append(
@@ -520,13 +541,22 @@ def _run_page_ocr(
                         f"Page {page_number} added OCR-only text from Tesseract; "
                         "verify recognized text against the source"
                     )
-                    return supplemental_text
+                    return supplemental_text, True
             except Exception as fallback_error:
                 warnings.append(
                     f"Page {page_number} Tesseract fallback also failed: "
                     f"{fallback_error}"
                 )
-    return ""
+    return "", False
+
+
+def _clear_unconfirmed_ocr_warning(
+    warnings: list[str], page_number: int
+) -> None:
+    prefix = f"Page {page_number} has "
+    warnings[:] = [
+        warning for warning in warnings if not warning.startswith(prefix)
+    ]
 
 
 # ---------------------------------------------------------------- token/config
@@ -559,8 +589,10 @@ def _configured_pdf_table_backend() -> str:
 
 def _configured_pdf_table_fallback() -> str:
     fallback = os.environ.get("PDF_TABLE_FALLBACK", "none").strip().lower()
-    if fallback not in {"none", "unstructured"}:
-        raise ValueError("PDF_TABLE_FALLBACK must be none or unstructured")
+    if fallback not in {"none", "unstructured", "camelot"}:
+        raise ValueError(
+            "PDF_TABLE_FALLBACK must be none, unstructured, or camelot"
+        )
     return fallback
 
 
@@ -626,13 +658,18 @@ def relative_output_path(path: Path, workspace: Path) -> str:
     return path.relative_to(workspace).as_posix()
 
 
+def _clean_image_uri(raw_uri: str) -> str:
+    return unquote(raw_uri.split("#", 1)[0].split("?", 1)[0]).strip()
+
+
 def _markdown_images_exist(
     markdown: str, markdown_dir: Path, image_root: Path
 ) -> bool:
-    for image_uri in re.findall(r"!\[[^\]]*\]\(([^)]+)\)", markdown):
+    for match in IMAGE_LINK_PATTERN.finditer(markdown):
+        image_uri = _clean_image_uri(match.group(2))
         if image_uri.startswith(("http://", "https://", "data:")):
             continue
-        image_path = (markdown_dir / image_uri.split("#", 1)[0]).resolve()
+        image_path = (markdown_dir / image_uri).resolve()
         try:
             image_path.relative_to(image_root.resolve())
         except ValueError:
@@ -896,9 +933,29 @@ def _enrich_markdown_images(
     except Exception as error:
         warnings.append(
             f"Groq image enrichment could not be initialized: {error}; "
-            "image links and source captions remain unchanged"
+            "image descriptions were marked unavailable"
         )
-        return markdown
+        enriched: list[str] = []
+        cursor = 0
+        for match in image_matches:
+            enriched.append(markdown[cursor : match.end()])
+            image_uri = _clean_image_uri(match.group(2))
+            following = markdown[match.end() :]
+            if (
+                not image_uri.startswith(("http://", "https://", "data:"))
+                and not re.match(
+                    r"\s*\n\s*\*\*(?:AI-generated image description|"
+                    r"Image description unavailable:)",
+                    following,
+                )
+            ):
+                enriched.append(
+                    "\n\n**Image description unavailable:** "
+                    "Groq client initialization failed."
+                )
+            cursor = match.end()
+        enriched.append(markdown[cursor:])
+        return "".join(enriched)
 
     enriched: list[str] = []
     cursor = 0
@@ -913,9 +970,7 @@ def _enrich_markdown_images(
             markdown[match.end() :],
         ):
             continue
-        image_uri = unquote(
-            match.group(2).split("#", 1)[0].split("?", 1)[0]
-        )
+        image_uri = _clean_image_uri(match.group(2))
         if image_uri.startswith(("http://", "https://", "data:")):
             continue
         image_path = (markdown_dir / image_uri).resolve()
@@ -976,7 +1031,7 @@ def _enrich_markdown_images(
 
     for match in image_matches:
         enriched.append(markdown[cursor : match.start()])
-        image_uri = unquote(match.group(2).split("#", 1)[0].split("?", 1)[0])
+        image_uri = _clean_image_uri(match.group(2))
         if image_uri.startswith(("http://", "https://", "data:")):
             enriched.append(match.group(0))
             cursor = match.end()
@@ -1009,12 +1064,17 @@ def _enrich_markdown_images(
         existing_fallback = re.match(
             r"\n\n\*\*Image description unavailable:\*\*[^\n]*", next_text
         )
-        if existing_fallback:
-            cursor = match.end() + len(existing_fallback.group(0))
+        next_cursor = match.end() + (
+            len(existing_fallback.group(0)) if existing_fallback else 0
+        )
         if image_path.stat().st_size > MAX_VISION_IMAGE_BYTES:
-            enriched.append(match.group(0))
+            notice = existing_fallback.group(0) if existing_fallback else (
+                "\n\n**Image description unavailable:** "
+                "Image exceeds the 20 MiB analysis limit."
+            )
+            enriched.append(match.group(0) + notice)
             failed_images.append(f"{image_path.name} (exceeds 20 MiB)")
-            cursor = match.end()
+            cursor = next_cursor
             continue
 
         try:
@@ -1026,12 +1086,16 @@ def _enrich_markdown_images(
                 raise cached_analysis
             analysis = cached_analysis
         except Exception as error:
-            enriched.append(match.group(0))
+            notice = existing_fallback.group(0) if existing_fallback else (
+                "\n\n**Image description unavailable:** "
+                "Groq image analysis failed."
+            )
+            enriched.append(match.group(0) + notice)
             analysis_cache[image_path] = error
             failed_images.append(
                 f"{image_path.name} ({str(error)[:160]})"
             )
-            cursor = match.end()
+            cursor = next_cursor
             continue
 
         addition = (
@@ -1045,7 +1109,7 @@ def _enrich_markdown_images(
                 f"(verify against image):**\n\n```mermaid\n{mermaid}\n```"
             )
         enriched.append(match.group(0) + addition)
-        cursor = match.end()
+        cursor = next_cursor
 
     enriched.append(markdown[cursor:])
     if failed_images:
@@ -1063,7 +1127,7 @@ def _vision_enrichment_is_current(
     if not os.environ.get("GROQ_API_KEY"):
         return True
     for match in IMAGE_LINK_PATTERN.finditer(markdown):
-        image_uri = unquote(match.group(2).split("#", 1)[0].split("?", 1)[0])
+        image_uri = _clean_image_uri(match.group(2))
         if image_uri.startswith(("http://", "https://", "data:")):
             continue
         image_path = (markdown_dir / image_uri).resolve()
@@ -1073,6 +1137,8 @@ def _vision_enrichment_is_current(
             return False
         if not image_path.is_file():
             return False
+        if image_path.stat().st_size > MAX_VISION_IMAGE_BYTES:
+            continue
         try:
             if _image_is_too_small(image_path):
                 continue
@@ -1080,7 +1146,9 @@ def _vision_enrichment_is_current(
             return False
         following_text = markdown[match.end() :]
         if not re.match(
-            r"\s*\n\s*\*\*AI-generated image description", following_text
+            r"\s*\n\s*\*\*(?:AI-generated image description|"
+            r"Image description unavailable:)",
+            following_text,
         ):
             return False
     return True
@@ -1106,21 +1174,7 @@ def _table_to_markdown(rows: list[list[str | None]]) -> str:
         [clean(row[index]) if index < len(row) else "" for index in range(columns)]
         for row in rows
     ]
-    has_blank_header_stub = bool(
-        len(rows) > 1
-        and not (rows[0][0] or "").strip()
-        and any(cell and cell.strip() for cell in rows[0][1:])
-    )
-    header_row_count = int(
-        bool(_table_header_signature(rows) or has_blank_header_stub)
-    )
-    while header_row_count < len(rows):
-        row = rows[header_row_count]
-        if (row[0] or "").strip() or not any(
-            cell and cell.strip() for cell in row[1:]
-        ):
-            break
-        header_row_count += 1
+    header_row_count = _table_header_row_count(rows)
 
     if header_row_count:
         previous_header = ""
@@ -1157,21 +1211,7 @@ def _table_to_html(rows: list[list[str | None]]) -> str:
     if not columns:
         return ""
 
-    header_row_count = int(
-        bool(_table_header_signature(rows))
-        or (
-            len(rows) > 1
-            and not (rows[0][0] or "").strip()
-            and any(cell and cell.strip() for cell in rows[0][1:])
-        )
-    )
-    while header_row_count < len(rows):
-        row = rows[header_row_count]
-        if (row[0] or "").strip() or not any(
-            cell and cell.strip() for cell in row[1:]
-        ):
-            break
-        header_row_count += 1
+    header_row_count = _table_header_row_count(rows)
 
     def render_row(row: list[str | None], tag: str) -> str:
         cells = []
@@ -1205,6 +1245,8 @@ def _table_to_html(rows: list[list[str | None]]) -> str:
 def _table_header_row_count(rows: list[list[str | None]]) -> int:
     if not rows:
         return 0
+    if _has_sparse_multilevel_header(rows):
+        return 2
     first_cell = rows[0][0] if rows[0] else None
     header_row_count = int(
         bool(_table_header_signature(rows))
@@ -1214,7 +1256,8 @@ def _table_header_row_count(rows: list[list[str | None]]) -> int:
             and any(cell and cell.strip() for cell in rows[0][1:])
         )
     )
-    while header_row_count < len(rows):
+    max_header_rows = min(4, max(1, len(rows) - 1))
+    while header_row_count < max_header_rows:
         row = rows[header_row_count]
         if ((row[0] if row else None) or "").strip() or not any(
             cell and cell.strip() for cell in row[1:]
@@ -1222,6 +1265,37 @@ def _table_header_row_count(rows: list[list[str | None]]) -> int:
             break
         header_row_count += 1
     return header_row_count
+
+
+def _has_sparse_multilevel_header(
+    rows: list[list[str | None]],
+) -> bool:
+    if len(rows) < 3:
+        return False
+    columns = max((len(row) for row in rows[:2]), default=0)
+    if columns < 3 or not rows[0] or not rows[1]:
+        return False
+    first = list(rows[0][:columns]) + [None] * max(
+        0, columns - len(rows[0])
+    )
+    second = list(rows[1][:columns]) + [None] * max(
+        0, columns - len(rows[1])
+    )
+    first_values = [cell for cell in first if cell and cell.strip()]
+    second_values = [cell for cell in second if cell and cell.strip()]
+    fills_merged_header = any(
+        not (first[column] or "").strip()
+        and (second[column] or "").strip()
+        for column in range(columns)
+    )
+    return (
+        bool((first[0] or "").strip())
+        and not (second[0] or "").strip()
+        and len(first_values) >= 2
+        and len(first_values) < columns
+        and len(second_values) >= 2
+        and fills_merged_header
+    )
 
 
 def _table_complexity(rows: list[list[str | None]]) -> dict[str, Any]:
@@ -1324,6 +1398,7 @@ def _normalized_table_data(
     normalization_warnings: list[str] = []
     active_group: list[str] = []
     active_group_markers: list[str] = []
+    previous_stub = ""
 
     def cell_lines(
         cell: str | None,
@@ -1378,127 +1453,38 @@ def _normalized_table_data(
             active_group_markers = (
                 line_markers[0][0] if line_markers[0] else []
             )
+            previous_stub = ""
             continue
 
-        repeated_lengths = Counter(
-            len(cell) for cell in line_cells if len(cell) > 1
-        )
-        aligned_count, aligned_lines = max(
-            ((count, length) for length, count in repeated_lengths.items()),
-            default=(0, 0),
-        )
-        context_lines: list[str] = []
-        if aligned_count >= 2 and aligned_lines >= 2:
-            if len(first_cell) > aligned_lines:
-                context_lines = first_cell[:-aligned_lines]
-                line_cells[0] = first_cell[-aligned_lines:]
-                if len(line_markers[0]) > aligned_lines:
-                    context_marker_lines = line_markers[0][:-aligned_lines]
-                    line_markers[0] = line_markers[0][-aligned_lines:]
-                else:
-                    context_marker_lines = []
-                if context_lines:
-                    active_group = [
-                        item.rstrip(":")
-                        for item in context_lines
-                        if item.strip()
-                    ]
-                    active_group_markers = list(
-                        dict.fromkeys(
-                            marker
-                            for marker_line in context_marker_lines
-                            for marker in marker_line
-                        )
-                    )
-                if (
-                    context_lines
-                    and len(active_group) > 1
-                    and line_markers[0]
-                ):
-                    active_group_markers.extend(line_markers[0][0])
-                    line_markers[0][0] = []
-            matching_columns = sum(
-                len(cell) == aligned_lines for cell in line_cells
+        values = ["\n".join(cell) for cell in line_cells]
+        if not any(value.strip() for value in values):
+            continue
+        if not values[0].strip() and previous_stub and any(
+            value.strip() for value in values[1:]
+        ):
+            values[0] = previous_stub
+        elif values[0].strip():
+            previous_stub = values[0]
+        markers = list(
+            dict.fromkeys(
+                marker
+                for cell_markers in line_markers
+                for line_marker in cell_markers
+                for marker in line_marker
             )
-            if matching_columns < 2:
-                aligned_lines = 0
-        else:
-            aligned_lines = 0
-            if (
-                len(first_cell) > 1
-                and first_cell[0].endswith(":")
-                and all(len(cell) <= 1 for cell in line_cells[1:])
-            ):
-                context_lines = [first_cell[0]]
-                active_group = [first_cell[0].rstrip(":")]
-                active_group_markers = (
-                    line_markers[0][0] if line_markers[0] else []
-                )
-                line_cells[0] = first_cell[1:]
-                line_markers[0] = line_markers[0][1:]
-
-        if aligned_lines:
-            for line_index in range(aligned_lines):
-                values = [
-                    cell[line_index]
-                    if len(cell) == aligned_lines
-                    else (cell[0] if len(cell) == 1 else "<br>".join(cell))
-                    for cell in line_cells
-                ]
-                normalized_rows.append(
-                    {
-                        "row_group_path": list(active_group),
-                        "row_group_footnote_markers": list(
-                            dict.fromkeys(active_group_markers)
-                        ),
-                        "values": values,
-                        "source_row_index": source_row_index,
-                        "subrow_index": line_index + 1,
-                        "footnote_markers": list(
-                            dict.fromkeys(
-                                marker
-                                for cell_markers in line_markers
-                                for marker in (
-                                    cell_markers[line_index]
-                                    if len(cell_markers) == aligned_lines
-                                    else cell_markers[0]
-                                    if line_index == 0 and cell_markers
-                                    else []
-                                )
-                            )
-                        ),
-                    }
-                )
-        else:
-            nonempty_lengths = {
-                len(cell) for cell in line_cells if len(cell) > 1
+        )
+        normalized_rows.append(
+            {
+                "row_group_path": list(active_group),
+                "row_group_footnote_markers": list(
+                    dict.fromkeys(active_group_markers)
+                ),
+                "values": values,
+                "source_row_index": source_row_index,
+                "subrow_index": 1,
+                "footnote_markers": markers,
             }
-            if nonempty_lengths:
-                normalization_warnings.append(
-                    "Multiline cell alignment was ambiguous; original cell "
-                    "boundaries were retained"
-                )
-            values = ["\n".join(cell) for cell in line_cells]
-            markers = list(
-                dict.fromkeys(
-                    marker
-                    for cell_markers in line_markers
-                    for line_marker in cell_markers
-                    for marker in line_marker
-                )
-            )
-            normalized_rows.append(
-                {
-                    "row_group_path": list(active_group),
-                    "row_group_footnote_markers": list(
-                        dict.fromkeys(active_group_markers)
-                    ),
-                    "values": values,
-                    "source_row_index": source_row_index,
-                    "subrow_index": 1,
-                    "footnote_markers": markers,
-                }
-            )
+        )
         if first_cell and any(
             label.casefold().startswith("total ")
             for label in first_cell
@@ -1592,13 +1578,24 @@ def _table_footnote_definitions(
     markers: set[str],
 ) -> dict[str, str]:
     definitions: dict[str, str] = {}
+    if not markers:
+        return definitions
     pattern = re.compile(
-        r"(?im)^\s*(?:[-*]\s*)?([a-z]|\*|†|‡)\s+(.+?)\s*$"
+        r"(?m)^\s*(?:[-*]\s*)?"
+        r"(?:"
+        r"(\*|†|‡)\s+"
+        r"|(?:\(([a-zA-Z])\)|([a-zA-Z])[.)]|<sup>\s*([a-zA-Z])\s*</sup>)\s*"
+        r"|([a-z])\s+(?=[A-Z0-9])"
+        r")"
+        r"(.+?)\s*$"
     )
     for match in pattern.finditer(page_markdown):
-        marker = match.group(1).casefold()
-        if marker in markers:
-            definitions[marker] = match.group(2).strip()
+        raw_marker = next(
+            group for group in match.groups()[:-1] if group is not None
+        )
+        marker = raw_marker.casefold()
+        if marker in markers and marker not in definitions:
+            definitions[marker] = match.group(6).strip()
     return definitions
 
 
@@ -1619,8 +1616,17 @@ def _pdf_table_artifacts(
             markers = _table_footnote_markers(rows)
             page_number = page_index + 1
             related_pages = [page_number]
-            if isinstance(table.get("continues_to_page"), int):
-                related_pages.append(table["continues_to_page"])
+            continuation_pages = table.get(
+                "continues_to_pages",
+                [table["continues_to_page"]]
+                if isinstance(table.get("continues_to_page"), int)
+                else [],
+            )
+            related_pages.extend(
+                page
+                for page in continuation_pages
+                if page not in related_pages
+            )
             definitions = {}
             for related_page in related_pages:
                 if 1 <= related_page <= len(markdown_pages):
@@ -1661,13 +1667,6 @@ def _pdf_table_artifacts(
                     ],
                     "normalization_warnings": normalization_warnings,
                     "repair_notes": table.get("repair_notes", []),
-                    "normalization_status": (
-                        "review_required"
-                        if normalization_warnings
-                        or _table_complexity(rows)["is_complex"]
-                        or table.get("repair_notes")
-                        else "normalized"
-                    ),
                     "raw_rows": raw_rows,
                     "raw_html": table.get("html") or _table_to_html(raw_rows),
                     "alternative": table.get("alternative"),
@@ -1675,6 +1674,32 @@ def _pdf_table_artifacts(
                 }
             )
     return artifacts
+
+
+def _populate_table_metadata_for_page(
+    tables: list[dict[str, Any]],
+    page_markdown: str,
+    page_number: int,
+    warnings: list[str] | None = None,
+) -> None:
+    for table_index, table in enumerate(tables, start=1):
+        if "merged_into_page" in table:
+            continue
+        placeholder = (
+            f"{TABLE_PLACEHOLDER_PREFIX}{page_number:04}_{table_index:02}ZZ"
+        )
+        if placeholder not in page_markdown:
+            continue
+        context = page_markdown.split(placeholder, 1)[0]
+        value = value_table_from_rows(table["rows"], context)
+        if value is None:
+            continue
+        table["value_table"] = value.records
+        if warnings is not None:
+            warnings.extend(
+                f"Table on PDF page {page_number}: {warning}"
+                for warning in value.warnings
+            )
 
 
 def _pdf_table_caption(
@@ -1885,6 +1910,7 @@ def _xlsx_to_markdown(source: Path) -> str | None:
     ):
         workbook.close()
         return None
+    cached_workbook = load_workbook(source, data_only=True)
 
     def cell_text(value: Any) -> str:
         if value is None:
@@ -1912,18 +1938,34 @@ def _xlsx_to_markdown(source: Path) -> str | None:
         )
 
     def merged_value(worksheet: Any, row: int, column: int) -> Any:
-        value = worksheet.cell(row, column).value
-        if value is not None:
-            return value
-        for merged_range in worksheet.merged_cells.ranges:
-            if (
-                merged_range.min_row <= row <= merged_range.max_row
-                and merged_range.min_col <= column <= merged_range.max_col
-            ):
-                return worksheet.cell(
-                    merged_range.min_row, merged_range.min_col
-                ).value
-        return None
+        source_cell = worksheet.cell(row, column)
+        if source_cell.value is not None:
+            target_row, target_column = row, column
+        else:
+            target = None
+            for merged_range in worksheet.merged_cells.ranges:
+                if (
+                    merged_range.min_row <= row <= merged_range.max_row
+                    and merged_range.min_col <= column <= merged_range.max_col
+                ):
+                    target = worksheet.cell(
+                        merged_range.min_row, merged_range.min_col
+                    )
+                    break
+            if target is None:
+                return None
+            target_row, target_column = target.row, target.column
+            source_cell = target
+        if source_cell.data_type == "f":
+            cached_value = cached_workbook[worksheet.title].cell(
+                target_row, target_column
+            ).value
+            if cached_value is not None:
+                return cached_value
+        return source_cell.value
+
+    def display_value(worksheet: Any, row: int, column: int) -> Any:
+        return merged_value(worksheet, row, column)
 
     sections: list[str] = []
     try:
@@ -1956,7 +1998,7 @@ def _xlsx_to_markdown(source: Path) -> str | None:
                 None,
             )
             if data_start is None:
-                return None
+                continue
 
             header_rows: list[int] = []
             blank_rows = 0
@@ -1993,7 +2035,7 @@ def _xlsx_to_markdown(source: Path) -> str | None:
                 labels: list[str] = []
                 for header_row in header_rows:
                     label = cell_text(
-                        merged_value(worksheet, header_row, column)
+                        display_value(worksheet, header_row, column)
                     )
                     if label and (not labels or labels[-1] != label):
                         labels.append(label)
@@ -2014,7 +2056,7 @@ def _xlsx_to_markdown(source: Path) -> str | None:
                 if not set(columns).intersection(table_columns):
                     break
                 values = [
-                    cell_text(merged_value(worksheet, body_row, column))
+                    cell_text(display_value(worksheet, body_row, column))
                     for column in table_columns
                 ]
                 body_rows.append((body_row, values))
@@ -2044,9 +2086,9 @@ def _xlsx_to_markdown(source: Path) -> str | None:
             lines = [f"## {worksheet.title}"]
             for title_row in range(1, header_rows[0]):
                 title = " ".join(
-                    cell_text(worksheet.cell(title_row, column).value)
+                    cell_text(display_value(worksheet, title_row, column))
                     for column in range(1, worksheet.max_column + 1)
-                    if worksheet.cell(title_row, column).value is not None
+                    if display_value(worksheet, title_row, column) is not None
                 ).strip()
                 if title:
                     lines.extend(["", title])
@@ -2077,7 +2119,7 @@ def _xlsx_to_markdown(source: Path) -> str | None:
                 if columns:
                     note = " ".join(
                         cell_text(
-                            worksheet.cell(note_row, column).value
+                            display_value(worksheet, note_row, column)
                         )
                         for column in columns
                     ).strip()
@@ -2088,6 +2130,7 @@ def _xlsx_to_markdown(source: Path) -> str | None:
             sections.append("\n".join(lines))
     finally:
         workbook.close()
+        cached_workbook.close()
 
     return "\n\n".join(sections) if sections else None
 
@@ -2970,6 +3013,110 @@ def _unstructured_tables_by_page(
     return tables_by_page
 
 
+def _camelot_tables_by_page(
+    source: Path,
+    warnings: list[str],
+    pages: set[int],
+) -> dict[int, list[dict[str, Any]]]:
+    try:
+        camelot = importlib.import_module("camelot")
+    except ImportError as error:
+        warnings.append(
+            f"Camelot table fallback is unavailable: {error}; "
+            "pdfplumber output, when available, was retained"
+        )
+        return {}
+
+    import pymupdf
+
+    tables_by_page: dict[int, list[dict[str, Any]]] = {}
+    with pymupdf.open(source) as document:
+        for page_index in sorted(pages):
+            if page_index < 0 or page_index >= len(document):
+                continue
+            page_number = page_index + 1
+            page = document[page_index]
+            try:
+                detected_tables = camelot.read_pdf(
+                    str(source),
+                    pages=str(page_number),
+                    flavor="auto",
+                    suppress_stdout=True,
+                )
+            except Exception as error:
+                warnings.append(
+                    f"Camelot table extraction failed on PDF page "
+                    f"{page_number}: {error}; pdfplumber output, when "
+                    "available, was retained"
+                )
+                continue
+
+            for detected in detected_tables:
+                bbox = getattr(
+                    detected,
+                    "bbox",
+                    getattr(detected, "_bbox", None),
+                )
+                try:
+                    x0, y0, x1, y1 = (float(value) for value in bbox)
+                except (TypeError, ValueError):
+                    warnings.append(
+                        f"Camelot table on PDF page {page_number} had no "
+                        "usable bounding box and was skipped"
+                    )
+                    continue
+                if not all(math.isfinite(value) for value in (x0, y0, x1, y1)):
+                    warnings.append(
+                        f"Camelot table on PDF page {page_number} had a "
+                        "non-finite bounding box and was skipped"
+                    )
+                    continue
+                bbox = (
+                    x0,
+                    page.rect.height - y1,
+                    x1,
+                    page.rect.height - y0,
+                )
+                if bbox[2] <= bbox[0] or bbox[3] <= bbox[1]:
+                    warnings.append(
+                        f"Camelot table on PDF page {page_number} had an "
+                        "invalid bounding box and was skipped"
+                    )
+                    continue
+
+                dataframe = getattr(detected, "df", None)
+                if dataframe is None or not callable(
+                    getattr(dataframe, "fillna", None)
+                ):
+                    warnings.append(
+                        f"Camelot table on PDF page {page_number} had no "
+                        "readable cell data and was skipped"
+                    )
+                    continue
+                rows = [
+                    [
+                        str(cell).strip() if cell is not None else ""
+                        for cell in row
+                    ]
+                    for row in dataframe.fillna("").values.tolist()
+                ]
+                if not _table_rows_are_plausible(rows):
+                    continue
+
+                page_tables = tables_by_page.setdefault(page_index, [])
+                page_tables.append(
+                    {
+                        "bbox": bbox,
+                        "page_height": page.rect.height,
+                        "rows": rows,
+                        "html": _table_to_html(rows),
+                        "table_index": len(page_tables) + 1,
+                        "extractor": "camelot",
+                    }
+                )
+    return tables_by_page
+
+
 def _bbox_iou(
     first: tuple[float, float, float, float],
     second: tuple[float, float, float, float],
@@ -3160,21 +3307,64 @@ def _merge_table_transformer_predictions(
 
 def _table_structure_quality(table: dict[str, Any]) -> float:
     rows = table.get("rows", [])
-    if not rows:
+    if len(rows) < 2:
         return 0.0
     columns = max((len(row) for row in rows), default=0)
     if columns < 2:
         return 0.0
-    width_consistency = sum(len(row) == columns for row in rows) / len(rows)
-    cell_count = sum(len(row) for row in rows)
-    populated = sum(
-        bool(cell and cell.strip()) for row in rows for cell in row
+    populated_cells = [
+        cell.strip()
+        for row in rows
+        for cell in row
+        if cell and cell.strip()
+    ]
+    if len(populated_cells) < 4:
+        return 0.0
+
+    density = len(populated_cells) / max(1, len(rows) * columns)
+    crammed_ratio = sum(
+        _cell_is_crammed(cell) for cell in populated_cells
+    ) / len(populated_cells)
+    cram_penalty = min(0.65, crammed_ratio * 2.5)
+    has_header = 1.0 if _table_header_signature(rows) else 0.35
+    non_empty_columns = sum(
+        any(
+            column < len(row) and row[column] and row[column].strip()
+            for row in rows
+        )
+        for column in range(columns)
     )
-    density = populated / max(1, cell_count)
-    return 0.6 * width_consistency + 0.4 * density
+    column_utilization = non_empty_columns / columns
+    score = (
+        0.35 * column_utilization
+        + 0.35 * min(1.0, density / 0.55)
+        + 0.30 * has_header
+        - cram_penalty
+    )
+    return max(0.0, min(1.0, score))
 
 
-def _unstructured_candidate_pages(
+def _cell_is_crammed(cell: str | None) -> bool:
+    if not cell or not cell.strip():
+        return False
+    for line in cell.splitlines():
+        line = line.strip()
+        if len(re.findall(r"[A-Za-z]{3,}", line)) >= 5:
+            continue
+        cleaned = re.sub(
+            r"\d+(?:\.\d+)?\s*[–—-]\s*\d+(?:\.\d+)?",
+            "RANGE",
+            line,
+        )
+        numeric_tokens = NUMERIC_TOKEN_RE.findall(cleaned)
+        if len(numeric_tokens) >= 3 or (
+            len(numeric_tokens) == 2 and "  " in line
+        ):
+            return True
+    return False
+
+
+def _table_fallback_candidate_pages(
     source: Path,
     tables_by_page: dict[int, list[dict[str, Any]]],
 ) -> set[int]:
@@ -3206,15 +3396,17 @@ def _unstructured_candidate_pages(
     return candidates
 
 
-def _merge_unstructured_fallback(
+def _merge_table_fallback(
     primary: dict[int, list[dict[str, Any]]],
     fallback: dict[int, list[dict[str, Any]]],
     warnings: list[str],
+    fallback_name: str,
 ) -> dict[int, list[dict[str, Any]]]:
     merged = {
         page: [dict(table) for table in tables]
         for page, tables in primary.items()
     }
+    fallback_label = fallback_name.capitalize()
     for page_index, candidates in fallback.items():
         page_tables = merged.setdefault(page_index, [])
         for candidate in candidates:
@@ -3227,7 +3419,7 @@ def _merge_unstructured_fallback(
                 candidate["table_index"] = len(page_tables) + 1
                 page_tables.append(candidate)
                 warnings.append(
-                    f"Unstructured supplied an additional table on PDF page "
+                    f"{fallback_label} supplied an additional table on PDF page "
                     f"{page_index + 1}; verify it against the source"
                 )
                 continue
@@ -3245,18 +3437,18 @@ def _merge_unstructured_fallback(
                 }
                 page_tables[match_index] = candidate
                 warnings.append(
-                    f"Unstructured replaced a structurally weaker table "
+                    f"{fallback_label} replaced a structurally weaker table "
                     f"on PDF page {page_index + 1}; verify the result"
                 )
             else:
                 existing["alternative"] = {
-                    "extractor": "unstructured",
+                    "extractor": fallback_name,
                     "structure_score": round(candidate_quality, 3),
                     "rows": candidate["rows"],
                     "html": candidate["html"],
                 }
                 warnings.append(
-                    f"Unstructured alternative on PDF page "
+                    f"{fallback_label} alternative on PDF page "
                     f"{page_index + 1} was retained for audit; "
                     "pdfplumber output was used"
                 )
@@ -3264,6 +3456,16 @@ def _merge_unstructured_fallback(
         for index, table in enumerate(page_tables, start=1):
             table["table_index"] = index
     return merged
+
+
+def _merge_unstructured_fallback(
+    primary: dict[int, list[dict[str, Any]]],
+    fallback: dict[int, list[dict[str, Any]]],
+    warnings: list[str],
+) -> dict[int, list[dict[str, Any]]]:
+    return _merge_table_fallback(
+        primary, fallback, warnings, "unstructured"
+    )
 
 
 def _pdf_tables_by_page(
@@ -3277,13 +3479,13 @@ def _pdf_tables_by_page(
     try:
         pdfplumber_tables = _pdfplumber_tables_by_page(source, warnings)
     except Exception as error:
-        if fallback_backend != "unstructured":
+        if fallback_backend not in {"unstructured", "camelot"}:
             raise
         pdfplumber_error = error
         pdfplumber_tables = {}
         warnings.append(
             f"pdfplumber table extraction failed: {error}; "
-            "trying the configured Unstructured fallback"
+            f"trying the configured {fallback_backend} fallback"
         )
 
     if backend == "pdfplumber" or pdfplumber_error is not None:
@@ -3317,7 +3519,7 @@ def _pdf_tables_by_page(
             with pymupdf.open(source) as document:
                 candidate_pages = set(range(len(document)))
         else:
-            candidate_pages = _unstructured_candidate_pages(source, tables)
+            candidate_pages = _table_fallback_candidate_pages(source, tables)
         if candidate_pages:
             unstructured_tables = _unstructured_tables_by_page(
                 source, warnings, candidate_pages,
@@ -3328,6 +3530,28 @@ def _pdf_tables_by_page(
         if pdfplumber_error is not None and not tables:
             raise RuntimeError(
                 "pdfplumber failed and Unstructured did not return usable "
+                f"tables: {pdfplumber_error}"
+            )
+    elif fallback_backend == "camelot":
+        if pdfplumber_error is not None:
+            import pymupdf
+
+            with pymupdf.open(source) as document:
+                candidate_pages = set(range(len(document)))
+        else:
+            candidate_pages = _table_fallback_candidate_pages(source, tables)
+        if pages is not None:
+            candidate_pages &= pages
+        if candidate_pages:
+            camelot_tables = _camelot_tables_by_page(
+                source, warnings, candidate_pages,
+            )
+            tables = _merge_table_fallback(
+                tables, camelot_tables, warnings, "camelot",
+            )
+        if pdfplumber_error is not None and not tables:
+            raise RuntimeError(
+                "pdfplumber failed and Camelot did not return usable "
                 f"tables: {pdfplumber_error}"
             )
     return tables
@@ -3364,17 +3588,25 @@ def _mark_pdf_table_continuations(
             previous_columns = max(
                 (len(row) for row in previous["rows"]), default=0
             )
-            previous_header = _table_header_signature(previous["rows"])
+            previous_header = _effective_table_header_signature(
+                previous, tables_by_page
+            )
             if not previous_header:
                 continue
             for following in next_candidates:
                 following_columns = max(
                     (len(row) for row in following["rows"]), default=0
                 )
+                following_header = _table_header_signature(
+                    following["rows"]
+                )
+                compatible_header = (
+                    previous_header == following_header
+                    or (not following_header and not following.get("caption"))
+                )
                 if (
                     previous_columns != following_columns
-                    or previous_header
-                    != _table_header_signature(following["rows"])
+                    or not compatible_header
                 ):
                     continue
                 previous["continues_to_page"] = next_page_index + 1
@@ -3385,6 +3617,33 @@ def _mark_pdf_table_continuations(
                 next_candidates.remove(following)
                 break
     return continuations
+
+
+def _effective_table_header_signature(
+    table: dict[str, Any],
+    tables_by_page: dict[int, list[dict[str, Any]]],
+) -> tuple[str, ...]:
+    signature = _table_header_signature(table["rows"])
+    if signature:
+        return signature
+    current = table
+    visited: set[tuple[int, int]] = set()
+    while (
+        isinstance(current.get("merged_into_page"), int)
+        and isinstance(current.get("merged_into_table"), int)
+    ):
+        key = (current["merged_into_page"], current["merged_into_table"])
+        if key in visited:
+            break
+        visited.add(key)
+        previous_tables = tables_by_page.get(key[0] - 1, [])
+        if not 1 <= key[1] <= len(previous_tables):
+            break
+        current = previous_tables[key[1] - 1]
+        signature = _table_header_signature(current["rows"])
+        if signature:
+            return signature
+    return ()
 
 
 def _merge_pdf_table_continuations(
@@ -3406,9 +3665,14 @@ def _merge_pdf_table_continuations(
                     "references a missing preceding table"
                 )
             previous = previous_tables[previous_table_index - 1]
-            previous_header = _table_header_signature(previous["rows"])
+            previous_header = _effective_table_header_signature(
+                previous, tables_by_page
+            )
             current_header = _table_header_signature(table["rows"])
-            if not previous_header or previous_header != current_header:
+            if (
+                not previous_header
+                or (current_header and previous_header != current_header)
+            ):
                 raise RuntimeError(
                     f"PDF table continuation on page {page_index + 1} "
                     "has inconsistent headers"
@@ -3427,8 +3691,24 @@ def _merge_pdf_table_continuations(
                 root = root_tables[root_table_index - 1]
             table["merged_into_page"] = root_page
             table["merged_into_table"] = root["table_index"]
-            continuation_rows = table["rows"][1:]
+            continuation_has_header = bool(
+                current_header and current_header == previous_header
+            )
+            header_rows = (
+                _table_header_row_count(table["rows"])
+                if continuation_has_header
+                else 0
+            )
+            continuation_rows = table["rows"][header_rows:]
+            raw_rows = table.get("raw_rows", table["rows"])
+            root.setdefault("raw_rows", list(root["rows"]))
             root["rows"].extend(continuation_rows)
+            root["raw_rows"].extend(raw_rows[header_rows:])
+            root.setdefault("continues_to_pages", [])
+            continuation_page = page_index + 1
+            if continuation_page not in root["continues_to_pages"]:
+                root["continues_to_pages"].append(continuation_page)
+            root["continues_to_page"] = max(root["continues_to_pages"])
             table["merged_row_count"] = len(continuation_rows)
 
 
@@ -3618,6 +3898,22 @@ def _build_toc_headers(document: Any) -> Any:
     return toc_headers(document)
 
 
+def _docling_pages_without_detected_tables(
+    docling_pages: dict[int, str],
+    tables_by_page: dict[int, list[dict[str, Any]]],
+) -> dict[int, str]:
+    return {
+        page_index: reason
+        for page_index, reason in docling_pages.items()
+        if not tables_by_page.get(page_index)
+        or any(
+            _table_structure_quality(table) < 0.80
+            or _table_complexity(table["rows"])["is_complex"]
+            for table in tables_by_page[page_index]
+        )
+    }
+
+
 # ============================================================ PDF conversion
 def convert_pdf_in_batches(
     source: Path,
@@ -3663,7 +3959,10 @@ def convert_pdf_in_batches(
         )
         repeated_furniture = _repeated_pdf_furniture(document)
         heading_font_sizes = _pdf_heading_font_sizes(document)
-        docling_pages = find_pages_needing_docling(document)
+        docling_pages = _docling_pages_without_detected_tables(
+            find_pages_needing_docling(document),
+            tables_by_page,
+        )
         docling_results: dict[int, str] = {}
         if docling_pages:
             print(
@@ -3695,6 +3994,20 @@ def convert_pdf_in_batches(
                         or existing.startswith(DOCLING_HEADER)
                     ):
                         cached_markdown = existing
+                        page_tables = [
+                            table
+                            for table in tables_by_page.get(first_page, [])
+                            if "merged_into_page" in table
+                            or _table_structure_quality(table)
+                            >= MIN_REDACT_TABLE_QUALITY
+                        ]
+                        if page_tables:
+                            _populate_table_metadata_for_page(
+                                page_tables,
+                                existing,
+                                page_number,
+                                warnings,
+                            )
                 except OSError:
                     cached_markdown = None
 
@@ -3705,6 +4018,7 @@ def convert_pdf_in_batches(
                         _pdf_page_content_metrics(page)
                     )
                     ocr_text = ""
+                    ocr_confirmed = False
                     if (
                         not docling_configuration()["ocr"]
                         and _pdf_page_needs_ocr(
@@ -3713,21 +4027,17 @@ def convert_pdf_in_batches(
                     ):
                         native_page_text = page.get_text("text")
                         if ocr_backend != "none":
-                            ocr_text = _run_page_ocr(
+                            ocr_text, ocr_confirmed = _run_page_ocr(
                                 page,
                                 native_page_text,
                                 ocr_backend,
                                 page_number,
                                 warnings,
                             )
-                        if ocr_text:
-                            warnings = [
-                                warning
-                                for warning in warnings
-                                if not warning.startswith(
-                                    f"Page {page_number} has "
-                                )
-                            ]
+                        if ocr_confirmed:
+                            _clear_unconfirmed_ocr_warning(
+                                warnings, page_number
+                            )
                         elif ocr_backend == "none":
                             warnings.append(
                                 f"Page {page_number} requires OCR, but "
@@ -3758,31 +4068,34 @@ def convert_pdf_in_batches(
                 )
                 native_page_text = page.get_text("text")
                 ocr_text = ""
+                ocr_confirmed = False
                 if _pdf_page_needs_ocr(
                     native_text_chars, image_coverage
                 ):
                     if ocr_backend != "none":
-                        ocr_text = _run_page_ocr(
+                        ocr_text, ocr_confirmed = _run_page_ocr(
                             page,
                             native_page_text,
                             ocr_backend,
                             page_number,
                             warnings,
                         )
-                    if ocr_text:
-                        warnings = [
-                            warning
-                            for warning in warnings
-                            if not warning.startswith(
-                                f"Page {page_number} has "
-                            )
-                        ]
+                    if ocr_confirmed:
+                        _clear_unconfirmed_ocr_warning(
+                            warnings, page_number
+                        )
                     elif ocr_backend == "none":
                         warnings.append(
                             f"Page {page_number} requires OCR, but "
                             "PDF_OCR_BACKEND is set to none"
                         )
-                page_tables = tables_by_page.get(first_page, [])
+                page_tables = [
+                    table
+                    for table in tables_by_page.get(first_page, [])
+                    if "merged_into_page" in table
+                    or _table_structure_quality(table)
+                    >= MIN_REDACT_TABLE_QUALITY
+                ]
                 for table_index, table in enumerate(
                     page_tables, start=1
                 ):
@@ -3939,7 +4252,9 @@ def convert_pdf_in_batches(
                     )
 
                 page_images = sorted(
-                    image_dir.glob(f"{source.name}-{page_number:04d}-*")
+                    image_dir.glob(
+                        f"{glob.escape(source.name)}-{page_number:04d}-*"
+                    )
                 )
                 image_prefix = image_dir.relative_to(
                     markdown_path.parent
@@ -4164,6 +4479,12 @@ def convert_file(
         if enriched_markdown != markdown:
             markdown = enriched_markdown
             atomic_write_text(markdown_path, markdown)
+
+        if source.suffix.lower() == ".pdf":
+            atomic_write_text(
+                pages_path,
+                json.dumps(build_page_index(markdown), indent=2) + "\n",
+            )
 
         image_files = sorted(
             path for path in image_dir.rglob("*") if path.is_file()
@@ -4572,21 +4893,9 @@ def run_worker(
     if force:
         command.append("--force")
     print(f"[Worker] Starting {relative_source}", flush=True)
-    # PATCH: timeout-guarded subprocess
-    result, return_code, timed_out = run_command_with_timeout(
-        command, workspace, worker_timeout_seconds(), relative_source
+    result, return_code = run_command_streaming(
+        command, workspace, relative_source
     )
-    if timed_out:
-        return {
-            "source": relative_source,
-            "format": source.suffix.lower(),
-            "source_sha256": sha256_file(source),
-            "status": "failed",
-            "error": (
-                f"Worker timed out after "
-                f"{worker_timeout_seconds():.0f}s"
-            ),
-        }
     if result is not None:
         return result
     if return_code < 0:

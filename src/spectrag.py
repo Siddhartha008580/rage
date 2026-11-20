@@ -648,17 +648,35 @@ def select_under_token_budget(
     )
     selected: list[dict[str, Any]] = []
     selected_ids: set[str] = set()
+    selected_parent_ids: set[str] = set()
     def fits(items: list[dict[str, Any]]) -> bool:
         return token_counter(context_renderer(items)) <= token_budget
 
     def add(candidate: dict[str, Any]) -> bool:
         if candidate["id"] in selected_ids or len(selected) >= max_chunks:
             return False
+        metadata = candidate.get("metadata") or {}
+        parent_id = metadata.get("parent_id")
+        is_table_row = metadata.get("chunk_type") == "table_row"
+        if (
+            parent_id
+            and parent_id in selected_parent_ids
+            and not is_table_row
+        ):
+            return False
+        if is_table_row and parent_id and any(
+            (item.get("metadata") or {}).get("parent_id") == parent_id
+            and (item.get("metadata") or {}).get("chunk_type") == "table"
+            for item in selected
+        ):
+            return False
         proposal = selected + [candidate]
         if not fits(proposal):
             return False
         selected.append(candidate)
         selected_ids.add(candidate["id"])
+        if parent_id:
+            selected_parent_ids.add(parent_id)
         return True
 
     # Protect a high-relevance core before spending the rest on coverage.
@@ -669,6 +687,21 @@ def select_under_token_budget(
 
     graph_positions = {chunk_id: index for index, chunk_id in enumerate(graph.ids)}
     terms = {candidate["id"]: _terms(candidate.get("text", "")) for candidate in eligible}
+
+    def pair_redundancy(first: dict[str, Any], second: dict[str, Any]) -> float:
+        first_metadata = first.get("metadata") or {}
+        second_metadata = second.get("metadata") or {}
+        first_parent = first_metadata.get("parent_id")
+        if (
+            first_metadata.get("chunk_type") == "table_row"
+            and second_metadata.get("chunk_type") == "table_row"
+            and first_parent == second_metadata.get("parent_id")
+        ):
+            return 0.0
+        if first_parent and first_parent == second_metadata.get("parent_id"):
+            return 1.0
+        return _jaccard(terms[first["id"]], terms[second["id"]])
+
     remaining = [candidate for candidate in ranked if candidate["id"] not in selected_ids]
     while remaining and len(selected) < max_chunks:
         best: dict[str, Any] | None = None
@@ -678,8 +711,8 @@ def select_under_token_budget(
             if not fits(proposal):
                 continue
             candidate_terms = terms[candidate["id"]]
-            redundancy = max(
-                (_jaccard(candidate_terms, terms[item["id"]]) for item in selected),
+            redundancy_score = max(
+                (pair_redundancy(candidate, item) for item in selected),
                 default=0.0,
             )
             selected_sources = {item.get("source", "") for item in selected}
@@ -707,7 +740,7 @@ def select_under_token_budget(
                 + source_bonus
                 + section_bonus
                 + 0.12 * connectivity
-                - 0.32 * redundancy
+                - 0.32 * redundancy_score
             )
             if value > best_value:
                 best, best_value = candidate, value

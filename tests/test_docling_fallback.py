@@ -19,6 +19,7 @@ def _page(
     *,
     words: list[tuple] | None = None,
     blocks: list[dict] | None = None,
+    text_blocks: list[tuple] | None = None,
     images: list[dict] | None = None,
 ) -> SimpleNamespace:
     rect = SimpleNamespace(
@@ -30,6 +31,8 @@ def _page(
             return words or []
         if kind == "dict":
             return {"blocks": blocks or []}
+        if kind == "blocks":
+            return text_blocks or []
         return text
 
     return SimpleNamespace(
@@ -40,6 +43,21 @@ def _page(
 
 
 class DoclingFallbackTests(unittest.TestCase):
+    def test_routes_pages_with_separate_text_columns(self) -> None:
+        text_blocks = [
+            (10, y, 42, y + 12, f"Left paragraph {index}", 0, index, 0)
+            for index, y in enumerate((10, 30, 50, 70))
+        ] + [
+            (60, y, 92, y + 12, f"Right paragraph {index}", 0, index, 0)
+            for index, y in enumerate((12, 32, 52, 72))
+        ]
+        page = _page("x" * 250, text_blocks=text_blocks)
+
+        self.assertEqual(
+            page_needs_docling(page),
+            (True, "multiple text columns (reading order)"),
+        )
+
     def test_routes_aligned_numeric_columns(self) -> None:
         words = []
         for line_number, value in enumerate(

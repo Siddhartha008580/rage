@@ -90,6 +90,44 @@ def _has_dot_leader_rows(page: Any) -> bool:
     return len(page_numbers) >= 4 and len(set(page_numbers)) >= 3
 
 
+def _has_multiple_text_columns(page: Any) -> bool:
+    page_width = float(page.rect.width)
+    if page_width <= 0:
+        return False
+    center = page_width / 2
+    minimum_gap = page_width * 0.025
+    left_blocks: list[tuple[float, float]] = []
+    right_blocks: list[tuple[float, float]] = []
+    for block in page.get_text("blocks"):
+        if len(block) < 5 or not str(block[4]).strip():
+            continue
+        x0, y0, x1, y1 = (float(value) for value in block[:4])
+        block_width = x1 - x0
+        if block_width <= 0 or block_width > page_width * 0.65:
+            continue
+        if x1 <= center - minimum_gap:
+            left_blocks.append((y0, y1))
+        elif x0 >= center + minimum_gap:
+            right_blocks.append((y0, y1))
+
+    if len(left_blocks) < 3 or len(right_blocks) < 3:
+        return False
+    left_top = min(y0 for y0, _ in left_blocks)
+    left_bottom = max(y1 for _, y1 in left_blocks)
+    right_top = min(y0 for y0, _ in right_blocks)
+    right_bottom = max(y1 for _, y1 in right_blocks)
+    shared_height = max(
+        0.0, min(left_bottom, right_bottom) - max(left_top, right_top)
+    )
+    smaller_column_height = min(
+        left_bottom - left_top, right_bottom - right_top
+    )
+    return (
+        smaller_column_height > 0
+        and shared_height / smaller_column_height >= 0.5
+    )
+
+
 def page_needs_docling(page: Any) -> tuple[bool, str]:
     """Return whether layout-aware processing may improve this PDF page."""
     native_text_chars = len(page.get_text().strip())
@@ -122,6 +160,8 @@ def page_needs_docling(page: Any) -> tuple[bool, str]:
             f"sparse page with images "
             f"({native_text_chars} chars, {image_coverage:.0%} coverage)",
         )
+    if _has_multiple_text_columns(page):
+        return True, "multiple text columns (reading order)"
     if (
         native_text_chars > MIN_TEXT_FOR_TABLE_DETECTION
         and _has_aligned_numeric_column(page)

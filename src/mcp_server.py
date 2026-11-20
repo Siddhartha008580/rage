@@ -36,7 +36,11 @@ except ImportError:
         RETRIEVAL_MODE,
         retrieve_chunks,
     )
-    from docgen import MAX_SECTIONS_HARD_CAP, generate_markdown, generate_with_markdown
+    from docgen import (
+        MAX_SECTIONS_HARD_CAP,
+        generate_markdown,
+        generate_with_markdown,
+    )
 
 MAX_TOP_K = 20
 MAX_CHARS_PER_CHUNK = 4000
@@ -151,7 +155,9 @@ def search_documents(
                     if hit.get("spectrag_score") is not None
                     else None
                 ),
-                text=hit["text"][:max_chars_per_chunk],
+                text=(hit.get("context_text") or hit["text"])[
+                    :max_chars_per_chunk
+                ],
             )
             for hit in hits
         ],

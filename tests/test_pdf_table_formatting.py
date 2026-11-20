@@ -1,4 +1,5 @@
 import unittest
+import sys
 from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
@@ -8,6 +9,10 @@ from src.ingest import (
     _configured_pdf_table_fallback,
     _insert_pdf_tables,
     _fence_unmarked_pdf_examples,
+    _camelot_tables_by_page,
+    _docling_pages_without_detected_tables,
+    _mark_pdf_table_continuations,
+    _merge_pdf_table_continuations,
     _merge_unstructured_fallback,
     _normalize_markdown_tables,
     _normalize_pdf_header,
@@ -25,6 +30,7 @@ from src.ingest import (
     _normalized_table_data,
     _table_to_html,
     _table_to_markdown,
+    _table_fallback_candidate_pages,
     _unstructured_table_bbox,
 )
 
@@ -156,6 +162,59 @@ class PDFTableFormattingTests(unittest.TestCase):
             self.assertEqual(_configured_pdf_table_fallback(), "none")
         with patch.dict("os.environ", {"PDF_TABLE_FALLBACK": "unstructured"}):
             self.assertEqual(_configured_pdf_table_fallback(), "unstructured")
+        with patch.dict("os.environ", {"PDF_TABLE_FALLBACK": "camelot"}):
+            self.assertEqual(_configured_pdf_table_fallback(), "camelot")
+
+    def test_camelot_table_rows_and_bbox_are_converted(self) -> None:
+        dataframe = SimpleNamespace(
+            fillna=lambda _value: SimpleNamespace(
+                values=SimpleNamespace(
+                    tolist=lambda: [["Name", "Value"], ["A", "1"]]
+                )
+            )
+        )
+        table = SimpleNamespace(_bbox=(10, 10, 90, 70), df=dataframe)
+        camelot = SimpleNamespace(read_pdf=lambda *args, **kwargs: [table])
+        page = SimpleNamespace(rect=SimpleNamespace(height=100))
+        document = [page]
+        pdf_context = MagicMock()
+        pdf_context.__enter__.return_value = document
+        pdf_context.__exit__.return_value = False
+
+        with (
+            patch.dict(
+                sys.modules,
+                {
+                    "pymupdf": SimpleNamespace(
+                        open=lambda _path: pdf_context
+                    )
+                },
+            ),
+            patch(
+                "src.ingest.importlib.import_module",
+                return_value=camelot,
+            ),
+        ):
+            tables = _camelot_tables_by_page(Path("sample.pdf"), [], {0})
+
+        [extracted] = tables[0]
+        self.assertEqual(extracted["rows"], [["Name", "Value"], ["A", "1"]])
+        self.assertEqual(extracted["bbox"], (10, 30, 90, 90))
+        self.assertEqual(extracted["extractor"], "camelot")
+
+    def test_docling_layout_fallback_skips_pages_with_extracted_tables(self) -> None:
+        pages = {
+            0: "multiple text columns (reading order)",
+            1: "aligned numeric column (potential table)",
+        }
+
+        self.assertEqual(
+            _docling_pages_without_detected_tables(
+                pages,
+                {1: [{"rows": [["A", "B"]]}]},
+            ),
+            {0: "multiple text columns (reading order)"},
+        )
 
     def test_unstructured_fills_missing_pdfplumber_tables(self) -> None:
         fallback_table = {
@@ -170,7 +229,7 @@ class PDFTableFormattingTests(unittest.TestCase):
         with (
             patch.dict("os.environ", {"PDF_TABLE_FALLBACK": "unstructured"}),
             patch("src.ingest._pdfplumber_tables_by_page", return_value={}),
-            patch("src.ingest._unstructured_candidate_pages", return_value={0}),
+            patch("src.ingest._table_fallback_candidate_pages", return_value={0}),
             patch(
                 "src.ingest._unstructured_tables_by_page",
                 return_value={0: [fallback_table]},
@@ -220,7 +279,7 @@ class PDFTableFormattingTests(unittest.TestCase):
 
         self.assertEqual(bbox, (50, 100, 150, 200))
 
-    def test_complex_table_normalization_expands_aligned_rows_and_groups(self) -> None:
+    def test_multiline_cells_stay_in_their_source_rows(self) -> None:
         source_rows = [
             ["Subject group", "Cmax", "Tmax", "Renal clearance"],
             [
@@ -249,30 +308,56 @@ class PDFTableFormattingTests(unittest.TestCase):
         markdown = _render_normalized_table(headers, rows)
 
         self.assertEqual(headers, ["Subject group", "Cmax", "Tmax", "Renal clearance"])
-        self.assertEqual(len(rows), 7)
-        self.assertTrue(
-            all(
-                row["row_group_path"] == ["Healthy adults"]
-                for row in rows[:3]
-            )
-        )
-        self.assertEqual(rows[1]["values"][1], "1.60")
-        self.assertEqual(rows[1]["footnote_markers"], ["d"])
-        self.assertEqual(rows[2]["footnote_markers"], ["e"])
-        self.assertEqual(rows[3]["row_group_path"], ["Elderly adults"])
-        self.assertEqual(rows[3]["row_group_footnote_markers"], ["f"])
+        self.assertEqual(len(rows), 3)
         self.assertEqual(
-            rows[4]["row_group_path"],
-            ["Renal-impaired adults", "850 mg single dose"],
+            rows[0]["values"][0],
+            "Healthy adults:\n500 mg single dose\n850 mg single dose\n"
+            "850 mg multiple dose",
         )
-        self.assertEqual(rows[4]["row_group_footnote_markers"], ["g"])
-        self.assertEqual(rows[4]["footnote_markers"], [])
+        self.assertEqual(rows[0]["values"][1], "1.03\n1.60\n2.01")
+        self.assertEqual(rows[0]["footnote_markers"], ["d", "e"])
         self.assertEqual(warnings, [])
-        self.assertTrue(markdown.startswith("| Row group | Subject group |"))
-        self.assertIn("| Footnote markers |", markdown)
-        self.assertIn("| Healthy adults | 500 mg single dose |", markdown)
-        self.assertIn(" | d |", markdown)
-        self.assertIn(" | g |", markdown)
+        self.assertIn(
+            "500 mg single dose<br>850 mg single dose<br>850 mg multiple dose",
+            markdown,
+        )
+        self.assertIn("1.03<br>1.60<br>2.01", markdown)
+
+    def test_sparse_multilevel_headers_are_preserved(self) -> None:
+        rows = [
+            ["Co-medications", "Scenarios", None, None],
+            [
+                None,
+                "Initiating treatment\nwhile taking a medication",
+                "Adding a medication",
+                "Discontinuing a medication",
+            ],
+            ["Strong inhibitor", "Reduce dose", None, "Increase by response"],
+        ]
+
+        headers, normalized_rows, _ = _normalized_table_data(rows)
+
+        self.assertEqual(
+            headers,
+            [
+                "Co-medications",
+                "Scenarios / Initiating treatment while taking a medication",
+                "Scenarios / Adding a medication",
+                "Scenarios / Discontinuing a medication",
+            ],
+        )
+        self.assertEqual(len(normalized_rows), 1)
+
+    def test_blank_stub_cells_inherit_their_row_label(self) -> None:
+        _, rows, _ = _normalized_table_data(
+            [
+                ["Measure", "Group A", "Group B"],
+                ["Outcome", "1", "2"],
+                [None, "3", "4"],
+            ]
+        )
+
+        self.assertEqual(rows[1]["values"], ["Outcome", "3", "4"])
 
     def test_complexity_flags_multiline_and_footnote_structures(self) -> None:
         complexity = _table_complexity(
@@ -307,8 +392,11 @@ class PDFTableFormattingTests(unittest.TestCase):
         self.assertEqual(artifact["raw_rows"], table["rows"])
         self.assertEqual(artifact["footnote_markers"], ["a"])
         self.assertEqual(artifact["footnotes"], {"a": "Footnote text"})
-        self.assertEqual(artifact["normalized_rows"][0]["values"], ["Outcome", "2"])
-        self.assertEqual(artifact["normalization_status"], "review_required")
+        self.assertEqual(
+            artifact["normalized_rows"][0]["values"],
+            ["Outcome\nBaseline", "2\n3"],
+        )
+        self.assertNotIn("normalization_status", artifact)
         self.assertEqual(artifact["structure_score"], 1.0)
 
     def test_table_sidecar_retains_rows_before_coordinate_repair(self) -> None:
@@ -326,7 +414,38 @@ class PDFTableFormattingTests(unittest.TestCase):
 
         self.assertEqual(artifact["raw_rows"], original_rows)
         self.assertEqual(artifact["repair_notes"], table["repair_notes"])
-        self.assertEqual(artifact["normalization_status"], "review_required")
+        self.assertNotIn("normalization_status", artifact)
+
+    def test_continuation_without_repeated_header_is_joined(self) -> None:
+        first = {
+            "bbox": (10, 600, 200, 750),
+            "page_height": 792,
+            "rows": [
+                ["Measure", "Group A", "Group B"],
+                ["Outcome", "1", "2"],
+            ],
+            "raw_rows": [
+                ["Measure", "Group A", "Group B"],
+                ["Outcome", "1", "2"],
+            ],
+            "table_index": 1,
+        }
+        continuation = {
+            "bbox": (10, 40, 200, 150),
+            "page_height": 792,
+            "caption": None,
+            "rows": [[None, "3", "4"], [None, "5", "6"]],
+            "raw_rows": [[None, "3", "4"], [None, "5", "6"]],
+            "table_index": 1,
+        }
+        tables = {0: [first], 1: [continuation]}
+
+        self.assertEqual(_mark_pdf_table_continuations(tables), [(1, 2)])
+        _merge_pdf_table_continuations(tables)
+
+        self.assertEqual(len(first["rows"]), 4)
+        self.assertEqual(first["rows"][-1], [None, "5", "6"])
+        self.assertEqual(first["continues_to_pages"], [2])
 
     def test_extracted_table_is_not_nested_inside_layout_table(self) -> None:
         markdown = "\n".join(
