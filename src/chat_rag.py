@@ -72,7 +72,7 @@ MAX_GAP_QUERIES = 3
 AGENTIC_CONFIDENCE_THRESHOLD = float(
     os.environ.get("RAG_AGENTIC_CONFIDENCE_THRESHOLD", "2.5")
 )
-RERANK_CACHE_MAX_SIZE = 4096
+RERANK_CACHE_MAX_SIZE = 5084
 _RERANK_SCORE_CACHE: dict[tuple[str, str, str], float] = {}
 
 NUMBERED_REQUEST_RE = re.compile(
@@ -94,8 +94,22 @@ CITATION_ITEM_RE = re.compile(r".+\s+p\.\d+")
 COMPARISON_RE = re.compile(
     r"\b(compar(?:e|ison)s?|differ(?:ence)?s?|different|versus|vs\.?|contrasts?|"
     r"across|each|both|neither|either|"
-    r"all \w+ (?:documents|files|sources|sections|tables|models|systems|options|entities|products|items|versions|standards)|"
-    r"which (?:of the )?(?:[\w-]+\s+)?(?:documents|files|sources|sections|tables|models|systems|options|entities|products|items|versions|standards))\b",
+    r"same\s+(?:unit|definition|requirement|rule|standard|method|amount)|"
+    r"all \w+ (?:documents|files|sources|sections|parts|chapters|subparts|provisions|tables|models|systems|options|entities|products|items|versions|standards)|"
+    r"which (?:of the )?(?:[\w-]+\s+)?(?:documents|files|sources|sections|parts|chapters|subparts|provisions|tables|models|systems|options|entities|products|items|versions|standards))\b",
+    re.IGNORECASE,
+)
+CLAIM_VERIFICATION_RE = re.compile(
+    r"\b(?:is|are|was|were|does|do|did)\s+(?:that|this|it)\s+"
+    r"(?:right|correct|true|accurate)\b|"
+    r"\b(?:colleague|coworker|someone)\s+(?:says?|claims?|told me)\b",
+    re.IGNORECASE,
+)
+MULTI_ASPECT_RE = re.compile(
+    r"\bwhich\s+(?P<noun>parts?)\s+(?P<verb>bear\s+on|apply\s+to)\s+"
+    r"(?P<first>.+?)\s+and\s+which\s+(?:(?P=noun)\s+)?"
+    r"(?:(?:bear\s+)?on|(?:apply\s+)?to)\s+"
+    r"(?P<second>.+?)(?:\?|$)",
     re.IGNORECASE,
 )
 TABLE_QUERY_RE = re.compile(
@@ -114,7 +128,7 @@ LOGICAL_CONDITION_RE = re.compile(
     r"contraindicat(?:ed|ion)|interaction|impairment|adjust(?:ment)?|"
     r"exceed(?:s|ing)?|greater than|less than|at least|at most|no more than|"
     r"minimum|maximum|threshold|ratio|margin|growth|net of|excluding|"
-    r"and/or|without|whereas)\b|[<>]=?|\b\d+(?:\.\d+)?%",
+    r"and/or|without|whereas|regardless\s+of)\b|[<>]=?|\b\d+(?:\.\d+)?%",
     re.IGNORECASE,
 )
 CROSS_REF_RE = re.compile(
@@ -168,6 +182,9 @@ Rules:
   `sub_queries` entry and an empty `logical_conditions` array.
 - When complex, generate 2 to 4 concise queries, each targeting a distinct
   document, entity, fact, threshold, or logical branch.
+- Treat claim checks (for example, "is that right?") and qualifiers such as
+    "regardless of" as requiring verification. For comparisons, preserve each
+    explicit document or citation in its targeted sub-query.
 - Do not create multiple paraphrases that search for the same fact.
 - Output raw JSON only, with no markdown fences or extra text."""
 
@@ -265,7 +282,7 @@ def _select_retrieval_mode(
 
 def is_complex_logical_query(query: str) -> bool:
     """Detect queries involving conditional logic, comparisons, or multi-constraint rules."""
-    if is_comparison_query(query):
+    if is_comparison_query(query) or CLAIM_VERIFICATION_RE.search(query):
         return True
     matches = LOGICAL_CONDITION_RE.findall(query)
     return len(matches) >= 2 or (len(matches) >= 1 and len(_tokens(query)) >= 14)
@@ -469,13 +486,30 @@ def _heuristic_decompose(query: str) -> QueryPlan:
             is_complex=False,
             sub_queries=[query],
         )
-    parts = re.split(
-        r"\b(?:versus|vs\.?|compared to|compared with|whereas|while|"
-        r"and if|unless|provided that|assuming|as well as)\b|;",
-        query,
-        flags=re.IGNORECASE,
-    )
-    sub_queries = [p.strip(" ,?.") for p in parts if len(_tokens(p)) >= 3]
+    multi_aspect = MULTI_ASPECT_RE.search(query)
+    if multi_aspect:
+        noun = multi_aspect.group("noun")
+        verb = "bear on" if multi_aspect.group("verb").lower().startswith("bear") else "apply to"
+        sub_queries = [
+            f"Which {noun} {verb} {multi_aspect.group('first').strip(' ,?.')}?",
+            f"Which {noun} {verb} {multi_aspect.group('second').strip(' ,?.')}?",
+        ]
+    else:
+        claim_query = re.sub(
+            r"\s+(?:is|are|was|were|does|do|did)\s+(?:that|this|it)\s+"
+            r"(?:right|correct|true|accurate)\s*[?.!]*$",
+            "",
+            query,
+            flags=re.IGNORECASE,
+        ).strip(" ,;?.!")
+        parts = re.split(
+            r"\b(?:versus|vs\.?|compared to|compared with|whereas|while|"
+            r"and if|and does|and whether|and which|and what|and how|"
+            r"unless|provided that|assuming|as well as)\b|;",
+            claim_query,
+            flags=re.IGNORECASE,
+        )
+        sub_queries = [p.strip(" ,?.") for p in parts if len(_tokens(p)) >= 3]
     if len(sub_queries) <= 1:
         sub_queries = [query]
     else:

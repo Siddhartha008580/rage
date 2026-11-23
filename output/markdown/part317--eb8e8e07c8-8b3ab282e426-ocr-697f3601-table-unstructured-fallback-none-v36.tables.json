@@ -1,0 +1,934 @@
+{
+  "schema_version": 1,
+  "source_file": "part317.pdf",
+  "table_backend": "unstructured",
+  "fallback_backend": "none",
+  "tables": [
+    {
+      "table_id": "page-0031-table-01",
+      "caption": null,
+      "source_pages": [
+        31
+      ],
+      "bbox": [
+        132.64816772460938,
+        564.6149560546875,
+        300.0816650390625,
+        638.0562744140625
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Food component",
+        "Unit of measurement"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fat ...",
+            "grams (g)"
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Saturated fatty acids .......",
+            "| do .."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cholesterol ....",
+            "milligrams (mg)"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total carbohydrate ..",
+            "grams (9)"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Fiber",
+            "do"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Sodium",
+            "milligrams (mg)"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Potassium ..",
+            "do .."
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Protein ..",
+            "grams (@)"
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Food component",
+          "Unit of measurement"
+        ],
+        [
+          "Fat ...",
+          "grams (g)"
+        ],
+        [
+          "Saturated fatty acids .......",
+          "| do .."
+        ],
+        [
+          "Cholesterol ....",
+          "milligrams (mg)"
+        ],
+        [
+          "Total carbohydrate ..",
+          "grams (9)"
+        ],
+        [
+          "Fiber",
+          "do"
+        ],
+        [
+          "Sodium",
+          "milligrams (mg)"
+        ],
+        [
+          "Potassium ..",
+          "do .."
+        ],
+        [
+          "Protein ..",
+          "grams (@)"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Food component</th><th>Unit of measurement</th></tr></thead><tbody><tr><td>Fat ...</td><td>grams (g)</td></tr><tr><td>Saturated fatty acids .......</td><td>| do ..</td></tr><tr><td>Cholesterol ....</td><td>milligrams (mg)</td></tr><tr><td>Total carbohydrate ..</td><td>grams (9)</td></tr><tr><td>Fiber</td><td>do</td></tr><tr><td>Sodium</td><td>milligrams (mg)</td></tr><tr><td>Potassium ..</td><td>do ..</td></tr><tr><td>Protein ..</td><td>grams (@)</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0033-table-01",
+      "caption": null,
+      "source_pages": [
+        33
+      ],
+      "bbox": [
+        131.4526904296875,
+        245.9218798828125,
+        300.46985595703126,
+        308.069033203125
+      ],
+      "extractor": "unstructured",
+      "structure_score": 0.805,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.75,
+        "signals": [
+          "irregular-row-widths",
+          "sparse-cells",
+          "large-grid"
+        ]
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3",
+        "Column 4"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total fat ..",
+            "Calories:",
+            "",
+            "2,500 80g"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Less than",
+            "..",
+            "",
+            ""
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Saturated fat",
+            "Less than",
+            "..",
+            "25g"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Cholesterol",
+            "Less than",
+            "..",
+            "300 mg"
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Sodium ...",
+            "Less than",
+            "",
+            "2,400 mg"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Total carbohydrate",
+            "",
+            "",
+            "375g"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dietary fiber .",
+            "",
+            "",
+            "30g"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Total fat ..",
+          "Calories:",
+          "",
+          "2,500 80g"
+        ],
+        [
+          "Less than",
+          ".."
+        ],
+        [
+          "Saturated fat",
+          "Less than",
+          "..",
+          "25g"
+        ],
+        [
+          "Cholesterol",
+          "Less than",
+          "..",
+          "300 mg"
+        ],
+        [
+          "Sodium ...",
+          "Less than",
+          "",
+          "2,400 mg"
+        ],
+        [
+          "Total carbohydrate",
+          "",
+          "",
+          "375g"
+        ],
+        [
+          "Dietary fiber .",
+          "",
+          "",
+          "30g"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th rowspan=\"2\">Total fat ..</th><th>Calories:</th><th></th><th rowspan=\"2\">2,500 80g</th></tr><tr><th>Less than</th><th>..</th></tr></thead><tbody><tr><td>Saturated fat</td><td>Less than</td><td>..</td><td>25g</td></tr><tr><td>Cholesterol</td><td>Less than</td><td>..</td><td>300 mg</td></tr><tr><td>Sodium ...</td><td>Less than</td><td></td><td>2,400 mg</td></tr><tr><td>Total carbohydrate</td><td></td><td></td><td>375g</td></tr><tr><td>Dietary fiber .</td><td></td><td></td><td>30g</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0041-table-01",
+      "caption": "TABLE 1-REFERENCE AMOUNTS CUSTOMARILY CONSUMED PER EATING OCCASION-INFANT AND TODDLER FOODS 1 2 3",
+      "source_pages": [
+        41
+      ],
+      "bbox": [
+        313.2502734375,
+        233.10028564453125,
+        486.050888671875,
+        307.0614111328125
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": true,
+        "score": 0.5,
+        "signals": [
+          "multilevel-header",
+          "irregular-row-widths"
+        ]
+      },
+      "headers": [
+        "Product category",
+        "Reference"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [
+            "infant & Toddler Foods"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dinner Dry Mix",
+            "159"
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "infant & Toddler Foods"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dinner, strained .",
+            ""
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "infant & Toddler Foods"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "ready-to-serve, type",
+            "60g"
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "infant & Toddler Foods"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dinner, soups, ready-to-serve junior type . Dinner, stew or tod-",
+            "1109"
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "infant & Toddler Foods"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "soup ready-to-serve dlers",
+            "1709"
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [
+            "infant & Toddler Foods"
+          ],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Plain meats and meat sticks, ready-to-serve",
+            "559"
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Product category",
+          "Reference"
+        ],
+        [
+          "infant & Toddler Foods:"
+        ],
+        [
+          "Dinner Dry Mix",
+          "159"
+        ],
+        [
+          "Dinner, strained .",
+          ""
+        ],
+        [
+          "ready-to-serve, type",
+          "60g"
+        ],
+        [
+          "Dinner, soups, ready-to-serve junior type . Dinner, stew or tod-",
+          "1109"
+        ],
+        [
+          "soup ready-to-serve dlers",
+          "1709"
+        ],
+        [
+          "Plain meats and meat sticks, ready-to-serve",
+          "559"
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th>Product category</th><th>Reference</th></tr></thead><tbody><tr><td colspan=\"2\">infant &amp; Toddler Foods:</td></tr><tr><td>Dinner Dry Mix</td><td>159</td></tr><tr><td>Dinner, strained .</td><td></td></tr><tr><td>ready-to-serve, type</td><td>60g</td></tr><tr><td>Dinner, soups, ready-to-serve junior type . Dinner, stew or tod-</td><td>1109</td></tr><tr><td>soup ready-to-serve dlers</td><td>1709</td></tr><tr><td>Plain meats and meat sticks, ready-to-serve</td><td>559</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0041-table-02",
+      "caption": "TABLE 2-REFERENCE AMOUNTS CUSTOMARILY CONSUMED PER EATING OCCASION-GENERAL FOOD SUPPLY 1 2 3 4 5",
+      "source_pages": [
+        41
+      ],
+      "bbox": [
+        126.32578857421875,
+        427.8617578125,
+        483.22599609375,
+        709.41796875
+      ],
+      "extractor": "unstructured",
+      "structure_score": 1.0,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.25,
+        "signals": [
+          "multilevel-header"
+        ]
+      },
+      "headers": [
+        "Product category",
+        "Reference amount Ready-to-serve",
+        "Reference amount Ready-to-cook"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Egg mixtures, (western style omelet, souffle, egg foo young Lard, margarine, shortening Salad and bacon bits",
+            "110g 1 tbsp",
+            "na. na. na."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "potato toppers; e.g., .. Bacon (bacon, beef breakfast strips, pork breakfast strips, pork rinds)",
+            "79 159",
+            "54 g = bacon. 30 g = breakfast strips."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Dried; e.g., jerky, dried beef, Parma ham sausage products with a moisture/protein ratio of less than 2:1; e.g., pepperoni.",
+            "30g",
+            "na."
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Snacks; e.g., meat snack food sticks . Luncheon meat, bologna, Canadian style bacon, pork pattie crumbles, beef pattie crum-",
+            "30g 559",
+            "na. na."
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "bles, blood pudding, luncheon loaf, old fashioned loaf, berlinger, bangers, minced luncheon roll, thuringer, liver sausage, mortadella, uncured sausage (franks), ham and cheese loaf, P&P loaf, scrapple souse, head cheese, pizza loaf, olive loaf, pate, deviled ham, sandwich spread, teawurst, cervelet, Lebanon bologna, potted meat food product, taco fillings, meat pie fillings.",
+            "",
+            ""
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Linked meat sausage products, Vienna sausage, frankfurters, pork sausage, imitation frankfurters, bratwurst, Kielbasa, Polish sausage, summer sausage, mettwurst, smoked country sausage, smoked sausage, smoked or pickled meat, pickled pigs feet.",
+            "55g",
+            "nia. 75 g = uncooked sau- sage."
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Entrees without sauce, cuts of meat including marinated, tenderized, injected cuts of meat, beef patty, corn dog, croquettes, fritters, cured ham, dry cured ham, dry cured cappicola, corned beef, pastrami, country ham, pork shoulder picnic, meatballs, pu- reed adult foods.",
+            "85g",
+            "114g."
+          ],
+          "source_row_index": 7,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Canned meats, canned beef, canned pork. +",
+            "55g",
+            "na."
+          ],
+          "source_row_index": 8,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Entrees with sauce, barbecued meats in sauce",
+            "140 g",
+            "na."
+          ],
+          "source_row_index": 9,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mixed dishes NOT measurable with a cup;® e.g., burrito, egg roll, enchilada, pizza, pizza roll, quiche, all types of sandwiches, cracker and meat lunch type packages, gyro, stromboli, burger on a bun, frank on a bun, calzone, taco, pockets stuffed with meat, foldovers, stuffed vegetables with meat, shish kabobs, empanada.",
+            "140 g (plus 55 g for products with sauce top- pings)",
+            "na."
+          ],
+          "source_row_index": 10,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Mixed dishes measurable with a cup; e.g., meat casserole, macaroni and cheese with meat, pot pie, spaghetti with sauce, meat chili, chili with beans, meat hash, creamed chipped beef, beef ravioli in sauce, beef stroganoff, Brunswick stew, goulash, meat stew, ragout, meat lasagna, meat filled pasta.",
+            "1 cup",
+            "na."
+          ],
+          "source_row_index": 11,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Salads—pasta or potato, potato salad with bacon, macaroni and meat salad ..",
+            "140 g",
+            ""
+          ],
+          "source_row_index": 12,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Salads—all other meat, salads, ham salad ..",
+            "100 g",
+            "na."
+          ],
+          "source_row_index": 13,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Soups—all varieties",
+            "245 9",
+            "na."
+          ],
+          "source_row_index": 14,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Product category",
+          "Reference amount Ready-to-serve",
+          "Reference amount Ready-to-cook"
+        ],
+        [
+          "Egg mixtures, (western style omelet, souffle, egg foo young Lard, margarine, shortening Salad and bacon bits",
+          "110g 1 tbsp",
+          "na. na. na."
+        ],
+        [
+          "potato toppers; e.g., .. Bacon (bacon, beef breakfast strips, pork breakfast strips, pork rinds)",
+          "79 159",
+          "54 g = bacon. 30 g = breakfast strips."
+        ],
+        [
+          "Dried; e.g., jerky, dried beef, Parma ham sausage products with a moisture/protein ratio of less than 2:1; e.g., pepperoni.",
+          "30g",
+          "na."
+        ],
+        [
+          "Snacks; e.g., meat snack food sticks . Luncheon meat, bologna, Canadian style bacon, pork pattie crumbles, beef pattie crum-",
+          "30g 559",
+          "na. na."
+        ],
+        [
+          "bles, blood pudding, luncheon loaf, old fashioned loaf, berlinger, bangers, minced luncheon roll, thuringer, liver sausage, mortadella, uncured sausage (franks), ham and cheese loaf, P&P loaf, scrapple souse, head cheese, pizza loaf, olive loaf, pate, deviled ham, sandwich spread, teawurst, cervelet, Lebanon bologna, potted meat food product, taco fillings, meat pie fillings.",
+          "",
+          ""
+        ],
+        [
+          "Linked meat sausage products, Vienna sausage, frankfurters, pork sausage, imitation frankfurters, bratwurst, Kielbasa, Polish sausage, summer sausage, mettwurst, smoked country sausage, smoked sausage, smoked or pickled meat, pickled pigs feet.",
+          "55g",
+          "nia. 75 g = uncooked sau- sage."
+        ],
+        [
+          "Entrees without sauce, cuts of meat including marinated, tenderized, injected cuts of meat, beef patty, corn dog, croquettes, fritters, cured ham, dry cured ham, dry cured cappicola, corned beef, pastrami, country ham, pork shoulder picnic, meatballs, pu- reed adult foods.",
+          "85g",
+          "114g."
+        ],
+        [
+          "Canned meats, canned beef, canned pork. +",
+          "55g",
+          "na."
+        ],
+        [
+          "Entrees with sauce, barbecued meats in sauce",
+          "140 g",
+          "na."
+        ],
+        [
+          "Mixed dishes NOT measurable with a cup;® e.g., burrito, egg roll, enchilada, pizza, pizza roll, quiche, all types of sandwiches, cracker and meat lunch type packages, gyro, stromboli, burger on a bun, frank on a bun, calzone, taco, pockets stuffed with meat, foldovers, stuffed vegetables with meat, shish kabobs, empanada.",
+          "140 g (plus 55 g for products with sauce top- pings)",
+          "na."
+        ],
+        [
+          "Mixed dishes measurable with a cup; e.g., meat casserole, macaroni and cheese with meat, pot pie, spaghetti with sauce, meat chili, chili with beans, meat hash, creamed chipped beef, beef ravioli in sauce, beef stroganoff, Brunswick stew, goulash, meat stew, ragout, meat lasagna, meat filled pasta.",
+          "1 cup",
+          "na."
+        ],
+        [
+          "Salads—pasta or potato, potato salad with bacon, macaroni and meat salad ..",
+          "140 g",
+          ""
+        ],
+        [
+          "Salads—all other meat, salads, ham salad ..",
+          "100 g",
+          "na."
+        ],
+        [
+          "Soups—all varieties",
+          "245 9",
+          "na."
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th rowspan=\"2\">Product category</th><th rowspan=\"2\">Reference amount Ready-to-serve</th><th rowspan=\"2\">Reference amount Ready-to-cook</th></tr></thead><tbody><tr><td>Egg mixtures, (western style omelet, souffle, egg foo young Lard, margarine, shortening Salad and bacon bits</td><td>110g 1 tbsp</td><td>na. na. na.</td></tr><tr><td>potato toppers; e.g., .. Bacon (bacon, beef breakfast strips, pork breakfast strips, pork rinds)</td><td>79 159</td><td>54 g = bacon. 30 g = breakfast strips.</td></tr><tr><td>Dried; e.g., jerky, dried beef, Parma ham sausage products with a moisture/protein ratio of less than 2:1; e.g., pepperoni.</td><td>30g</td><td>na.</td></tr><tr><td>Snacks; e.g., meat snack food sticks . Luncheon meat, bologna, Canadian style bacon, pork pattie crumbles, beef pattie crum-</td><td>30g 559</td><td>na. na.</td></tr><tr><td>bles, blood pudding, luncheon loaf, old fashioned loaf, berlinger, bangers, minced luncheon roll, thuringer, liver sausage, mortadella, uncured sausage (franks), ham and cheese loaf, P&amp;P loaf, scrapple souse, head cheese, pizza loaf, olive loaf, pate, deviled ham, sandwich spread, teawurst, cervelet, Lebanon bologna, potted meat food product, taco fillings, meat pie fillings.</td><td></td><td></td></tr><tr><td>Linked meat sausage products, Vienna sausage, frankfurters, pork sausage, imitation frankfurters, bratwurst, Kielbasa, Polish sausage, summer sausage, mettwurst, smoked country sausage, smoked sausage, smoked or pickled meat, pickled pigs feet.</td><td>55g</td><td>nia. 75 g = uncooked sau- sage.</td></tr><tr><td>Entrees without sauce, cuts of meat including marinated, tenderized, injected cuts of meat, beef patty, corn dog, croquettes, fritters, cured ham, dry cured ham, dry cured cappicola, corned beef, pastrami, country ham, pork shoulder picnic, meatballs, pu- reed adult foods.</td><td>85g</td><td>114g.</td></tr><tr><td>Canned meats, canned beef, canned pork. +</td><td>55g</td><td>na.</td></tr><tr><td>Entrees with sauce, barbecued meats in sauce</td><td>140 g</td><td>na.</td></tr><tr><td>Mixed dishes NOT measurable with a cup;® e.g., burrito, egg roll, enchilada, pizza, pizza roll, quiche, all types of sandwiches, cracker and meat lunch type packages, gyro, stromboli, burger on a bun, frank on a bun, calzone, taco, pockets stuffed with meat, foldovers, stuffed vegetables with meat, shish kabobs, empanada.</td><td>140 g (plus 55 g for products with sauce top- pings)</td><td>na.</td></tr><tr><td>Mixed dishes measurable with a cup; e.g., meat casserole, macaroni and cheese with meat, pot pie, spaghetti with sauce, meat chili, chili with beans, meat hash, creamed chipped beef, beef ravioli in sauce, beef stroganoff, Brunswick stew, goulash, meat stew, ragout, meat lasagna, meat filled pasta.</td><td>1 cup</td><td>na.</td></tr><tr><td>Salads—pasta or potato, potato salad with bacon, macaroni and meat salad ..</td><td>140 g</td><td></td></tr><tr><td>Salads—all other meat, salads, ham salad ..</td><td>100 g</td><td>na.</td></tr><tr><td>Soups—all varieties</td><td>245 9</td><td>na.</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    },
+    {
+      "table_id": "page-0042-table-01",
+      "caption": "TABLE 2-REFERENCE AMOUNTS CUSTOMARILY CONSUMED PER EATING OCCASION-GENERAL FOOD SUPPLY 1 2 3 4 5 -Continued",
+      "source_pages": [
+        42
+      ],
+      "bbox": [
+        132.81238037109375,
+        197.17543212890624,
+        476.8887744140625,
+        311.6028076171875
+      ],
+      "extractor": "unstructured",
+      "structure_score": 0.805,
+      "complexity": {
+        "is_complex": false,
+        "score": 0.0,
+        "signals": []
+      },
+      "headers": [
+        "Column 1",
+        "Column 2",
+        "Column 3"
+      ],
+      "header_footnote_markers": [],
+      "normalized_rows": [
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Product category",
+            "Reference amount Ready-to-serve",
+            "Reference amount Ready-to-cook"
+          ],
+          "source_row_index": 0,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Major main entree type sauce; e.g., spaghetti sauce with meat, spaghetti sauce with | meatballs.",
+            "125 g",
+            "na."
+          ],
+          "source_row_index": 1,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Minor main entree sauce; e.g., pizza sauce with meat, gravy . Seasoning mixes dry, bases, extracts, dried broths and stock/juice, freeze dry trail mix products with meat... As reconstituted: Amount to make one Reference Amount of the final dish; e.g.,",
+            "Ya cup",
+            "na."
+          ],
+          "source_row_index": 2,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Gravy .",
+            "Ya cup",
+            "na."
+          ],
+          "source_row_index": 3,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Major main entree type sauce",
+            "125g",
+            "na."
+          ],
+          "source_row_index": 4,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Soup",
+            "245 9",
+            "na."
+          ],
+          "source_row_index": 5,
+          "subrow_index": 1,
+          "footnote_markers": []
+        },
+        {
+          "row_group_path": [],
+          "row_group_footnote_markers": [],
+          "values": [
+            "Entree measurable with a cup",
+            "1 cup",
+            "na."
+          ],
+          "source_row_index": 6,
+          "subrow_index": 1,
+          "footnote_markers": []
+        }
+      ],
+      "footnote_markers": [],
+      "footnotes": {},
+      "unresolved_footnote_markers": [],
+      "normalization_warnings": [],
+      "repair_notes": [],
+      "raw_rows": [
+        [
+          "Product category",
+          "Reference amount Ready-to-serve",
+          "Reference amount Ready-to-cook"
+        ],
+        [
+          "Major main entree type sauce; e.g., spaghetti sauce with meat, spaghetti sauce with | meatballs.",
+          "125 g",
+          "na."
+        ],
+        [
+          "Minor main entree sauce; e.g., pizza sauce with meat, gravy . Seasoning mixes dry, bases, extracts, dried broths and stock/juice, freeze dry trail mix products with meat... As reconstituted: Amount to make one Reference Amount of the final dish; e.g.,",
+          "Ya cup",
+          "na."
+        ],
+        [
+          "Gravy .",
+          "Ya cup",
+          "na."
+        ],
+        [
+          "Major main entree type sauce",
+          "125g",
+          "na."
+        ],
+        [
+          "Soup",
+          "245 9",
+          "na."
+        ],
+        [
+          "Entree measurable with a cup",
+          "1 cup",
+          "na."
+        ]
+      ],
+      "raw_html": "<table><thead><tr><th rowspan=\"2\">Product category</th><th rowspan=\"2\">Reference amount Ready-to-serve</th><th rowspan=\"2\">Reference amount Ready-to-cook</th></tr></thead><tbody><tr><td>Major main entree type sauce; e.g., spaghetti sauce with meat, spaghetti sauce with | meatballs.</td><td>125 g</td><td>na.</td></tr><tr><td>Minor main entree sauce; e.g., pizza sauce with meat, gravy . Seasoning mixes dry, bases, extracts, dried broths and stock/juice, freeze dry trail mix products with meat... As reconstituted: Amount to make one Reference Amount of the final dish; e.g.,</td><td>Ya cup</td><td>na.</td></tr><tr><td>Gravy .</td><td>Ya cup</td><td>na.</td></tr><tr><td>Major main entree type sauce</td><td>125g</td><td>na.</td></tr><tr><td>Soup</td><td>245 9</td><td>na.</td></tr><tr><td>Entree measurable with a cup</td><td>1 cup</td><td>na.</td></tr></tbody></table>",
+      "alternative": null,
+      "value_table": null
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hybrid document output",
+  "type": "object",
+  "required": ["document_id", "source", "route_summary", "content", "provenance", "warnings", "versions"],
+  "properties": {
+    "document_id": {"type": "string"},
+    "source": {"type": "object"},
+    "route_summary": {"type": "object"},
+    "content": {"type": "object"},
+    "provenance": {"type": "object"},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "versions": {"type": "object"}
+  }
+}

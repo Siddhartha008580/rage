@@ -43,6 +43,10 @@ def _page(
 
 
 class DoclingFallbackTests(unittest.TestCase):
+    def test_docling_is_enabled_by_default(self) -> None:
+        with patch.dict("os.environ", {}, clear=True):
+            self.assertTrue(docling_configuration()["enabled"])
+
     def test_routes_pages_with_separate_text_columns(self) -> None:
         text_blocks = [
             (10, y, 42, y + 12, f"Left paragraph {index}", 0, index, 0)

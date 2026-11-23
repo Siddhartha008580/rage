@@ -46,7 +46,8 @@ except ImportError:
 DEFAULT_OUTPUT = Path("output")
 DEFAULT_INDEX = Path("index")
 COLLECTION = "documents"
-EMBED_MODEL = "BAAI/bge-small-en-v1.5"
+INDEX_MANIFEST = "index_manifest.json"
+EMBED_MODEL = "BAAI/bge-base-en-v1.5"
 BGE_QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
 PARENT_MAX_TOKENS = 900
 CHILD_MAX_TOKENS = 260
@@ -1059,6 +1060,43 @@ def _embed_documents(texts: list[str]) -> list[list[float]]:
     return _encode_texts(texts)
 
 
+def _validate_index_manifest(index_dir: Path, query_dimension: int) -> None:
+    manifest_path = index_dir / INDEX_MANIFEST
+    if not manifest_path.is_file():
+        raise RuntimeError(
+            f"Embedding manifest is missing from {index_dir}; rebuild the index "
+            "with `python src/rag.py build` before querying."
+        )
+    try:
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as error:
+        raise RuntimeError(
+            f"Could not read embedding manifest at {manifest_path}; rebuild the index."
+        ) from error
+    if not isinstance(manifest, dict):
+        raise RuntimeError(
+            f"Embedding manifest at {manifest_path} is invalid; rebuild the index."
+        )
+
+    expected = {
+        "embedding_model": EMBED_MODEL,
+        "embedding_dimension": query_dimension,
+        "index_version": INDEX_VERSION,
+    }
+    mismatches = [
+        f"{key}: index has {manifest.get(key)!r}, runtime expects {value!r}"
+        for key, value in expected.items()
+        if manifest.get(key) != value
+    ]
+    if mismatches:
+        raise RuntimeError(
+            "The index is incompatible with the configured embedding model or "
+            "index format ("
+            + "; ".join(mismatches)
+            + "). Rebuild it with `python src/rag.py build`."
+        )
+
+
 def build_index(
     chunks: list[Chunk],
     index_dir: Path,
@@ -1068,6 +1106,7 @@ def build_index(
     import numpy as np
 
     index_dir.mkdir(parents=True, exist_ok=True)
+    (index_dir / INDEX_MANIFEST).unlink(missing_ok=True)
     client = chromadb.PersistentClient(path=str(index_dir))
     try:
         client.delete_collection(COLLECTION)
@@ -1118,6 +1157,20 @@ def build_index(
     )
     graph.save(index_dir)
     build_lexical_index(chunks, index_dir)
+    embedding_dimension = (
+        int(indexed_embeddings[0].shape[0])
+        if indexed_embeddings
+        else int(_embedding_model().get_sentence_embedding_dimension())
+    )
+    manifest = {
+        "embedding_model": EMBED_MODEL,
+        "embedding_dimension": embedding_dimension,
+        "index_version": INDEX_VERSION,
+        "chunk_count": len(chunks),
+    }
+    (index_dir / INDEX_MANIFEST).write_text(
+        json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
+    )
 
 
 def get_index_chunks(
@@ -1304,13 +1357,18 @@ def query_index(
 ) -> list[dict[str, Any]]:
     import chromadb
 
+    query_embeddings = embed_texts([query])
+    if not query_embeddings or not query_embeddings[0]:
+        return []
+    _validate_index_manifest(index_dir, len(query_embeddings[0]))
+
     client = chromadb.PersistentClient(path=str(index_dir))
     coll = client.get_collection(COLLECTION)
 
     where = _index_where(page, table_only, domain)
 
     kwargs: dict[str, Any] = {
-        "query_embeddings": embed_texts([query]),
+        "query_embeddings": query_embeddings,
         "n_results": top_k,
     }
     if where:

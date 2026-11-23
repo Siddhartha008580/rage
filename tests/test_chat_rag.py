@@ -309,6 +309,48 @@ class ChatRagTests(unittest.TestCase):
         self.assertTrue(is_comparison_query("Which of the drug labels says this?"))
         self.assertFalse(is_comparison_query("What is the recommended dose?"))
 
+    def test_heuristic_planner_handles_regulatory_compound_questions(self) -> None:
+        claim_check = plan_logical_query(
+            "A medium alcohol fuel plant needs a $50,000 bond regardless of size. Is that right?",
+            use_llm=False,
+        )
+        parts_question = plan_logical_query(
+            "Which three parts could all apply to a single bottle of vinegar-based sauce, and why?",
+            use_llm=False,
+        )
+        unit_comparison = plan_logical_query(
+            "How is 'proof gallon' defined or used in 27 CFR 19, and does 27 CFR 25 use the same unit?",
+            use_llm=False,
+        )
+        aspect_comparison = plan_logical_query(
+            "Which parts bear on the color itself and which on the product grade?",
+            use_llm=False,
+        )
+        standalone = plan_logical_query(
+            "What does 27 CFR Part 25 say about bottling?",
+            use_llm=False,
+        )
+
+        self.assertTrue(claim_check.is_complex)
+        self.assertEqual(
+            claim_check.sub_queries,
+            ["A medium alcohol fuel plant needs a $50,000 bond regardless of size"],
+        )
+        self.assertTrue(parts_question.is_complex)
+        self.assertTrue(unit_comparison.is_complex)
+        self.assertEqual(len(unit_comparison.sub_queries), 2)
+        self.assertIn("27 CFR 19", unit_comparison.sub_queries[0])
+        self.assertIn("27 CFR 25", unit_comparison.sub_queries[1])
+        self.assertTrue(aspect_comparison.is_complex)
+        self.assertEqual(
+            aspect_comparison.sub_queries,
+            [
+                "Which parts bear on the color itself?",
+                "Which parts bear on the product grade?",
+            ],
+        )
+        self.assertFalse(standalone.is_complex)
+
     def test_planner_omits_unrelated_history_for_standalone_question(self) -> None:
         history = [{"query": "Earlier question", "answer": "Earlier answer"}]
         with (

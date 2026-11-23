@@ -1,5 +1,8 @@
 docling>=2.0
 docling-core>=2.0
+mineru>=4.0,<5
+PyYAML>=6.0
+rapidfuzz>=3.0
 groq>=0.11
 pdfplumber>=0.11
 camelot-py>=2.0,<3

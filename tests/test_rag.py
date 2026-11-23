@@ -8,7 +8,11 @@ from types import SimpleNamespace
 from unittest.mock import MagicMock, patch
 
 from src.rag import (
+    EMBED_MODEL,
+    INDEX_MANIFEST,
+    INDEX_VERSION,
     Chunk,
+    _validate_index_manifest,
     build_chunks,
     build_index,
     build_lexical_index,
@@ -236,17 +240,29 @@ class RagChunkTests(unittest.TestCase):
             PersistentClient=MagicMock(return_value=client)
         )
 
-        with (
-            patch.dict(sys.modules, {"chromadb": chromadb}),
-            patch("src.rag.embed_texts", return_value=[[0.1, 0.2]]),
-        ):
-            query_index(
-                "revenue",
-                Path("index"),
-                page=3,
-                table_only=True,
-                domain="financial",
+        with tempfile.TemporaryDirectory() as directory:
+            index_dir = Path(directory)
+            (index_dir / INDEX_MANIFEST).write_text(
+                json.dumps(
+                    {
+                        "embedding_model": EMBED_MODEL,
+                        "embedding_dimension": 2,
+                        "index_version": INDEX_VERSION,
+                    }
+                ),
+                encoding="utf-8",
             )
+            with (
+                patch.dict(sys.modules, {"chromadb": chromadb}),
+                patch("src.rag.embed_texts", return_value=[[0.1, 0.2]]),
+            ):
+                query_index(
+                    "revenue",
+                    index_dir,
+                    page=3,
+                    table_only=True,
+                    domain="financial",
+                )
 
         collection.query.assert_called_once_with(
             query_embeddings=[[0.1, 0.2]],
@@ -259,6 +275,28 @@ class RagChunkTests(unittest.TestCase):
                 ]
             },
         )
+
+    def test_index_manifest_rejects_an_embedding_model_mismatch(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            index_dir = Path(directory)
+            (index_dir / INDEX_MANIFEST).write_text(
+                json.dumps(
+                    {
+                        "embedding_model": "BAAI/bge-small-en-v1.5",
+                        "embedding_dimension": 384,
+                        "index_version": INDEX_VERSION,
+                    }
+                ),
+                encoding="utf-8",
+            )
+
+            with self.assertRaisesRegex(RuntimeError, "embedding_model"):
+                _validate_index_manifest(index_dir, 768)
+
+    def test_index_manifest_rejects_a_missing_manifest(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            with self.assertRaisesRegex(RuntimeError, "manifest is missing"):
+                _validate_index_manifest(Path(directory), 768)
 
     def test_chroma_accepts_chunks_without_heading_paths(self) -> None:
         import chromadb
@@ -378,10 +416,17 @@ class RagChunkTests(unittest.TestCase):
                 index_dir, ["cash", "flow"], top_k=5
             )
             self.assertTrue((index_dir / "spectrag_graph.npz").is_file())
+            manifest = json.loads(
+                (index_dir / INDEX_MANIFEST).read_text(encoding="utf-8")
+            )
 
         client.create_collection.assert_called_once()
         collection.add.assert_called_once()
         self.assertEqual([hit["id"] for hit in lexical], ["chunk-1"])
+        self.assertEqual(manifest["embedding_model"], EMBED_MODEL)
+        self.assertEqual(manifest["embedding_dimension"], 2)
+        self.assertEqual(manifest["index_version"], INDEX_VERSION)
+        self.assertEqual(manifest["chunk_count"], 1)
 
 
 if __name__ == "__main__":

@@ -120,6 +120,10 @@ The lexical index is built together with Chroma so queries do not download and
 rescore every document from the vector store. Rebuild both indexes after
 changing chunks or metadata. A missing lexical index is an error; run the build
 command rather than silently falling back to dense-only retrieval.
+Each successful build writes `index/index_manifest.json` with the embedding
+model, vector dimension, index version, and chunk count. Dense queries verify
+these values before searching and ask for a rebuild if the manifest is missing
+or incompatible. Existing indexes without a manifest must be rebuilt once.
 
 The metadata domain currently comes from the first folder below
 `output/markdown` (for example, `financial`, `medical`, or `standards`). The
@@ -138,9 +142,9 @@ dominate the evidence bundle. If generation is still truncated after one
 recovery attempt, it omits that section rather than publishing a partial body.
 Questions that mention CFR or regulations receive the claim-to-evidence check.
 
-The active indexer uses `BAAI/bge-small-en-v1.5` for dense embeddings without
-query instructions. It is an English-focused 384-dimensional model, selected
-to fit lower-memory indexing environments. Prose is indexed as overlapping
+The active indexer uses `BAAI/bge-base-en-v1.5` for dense embeddings. It is an
+English-focused 768-dimensional model. Indexed passages are embedded without
+an instruction prefix; search queries use the BGE query instruction. Prose is indexed as overlapping
 260-token child chunks with 45-token overlap, grouped under same-page,
 same-section parents of up to 900 tokens. Search and reranking operate on child
 text, while answer context expands each selected child to its parent text.

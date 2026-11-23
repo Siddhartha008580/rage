@@ -1,7 +1,0 @@
-{
-  "schema_version": 1,
-  "source_file": "CFR-2023-title21-vol2-part139.pdf",
-  "table_backend": "pdfplumber",
-  "fallback_backend": "unstructured",
-  "tables": []
-}

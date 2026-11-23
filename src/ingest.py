@@ -53,7 +53,7 @@ try:
         DOCLING_HEADER,
         convert_pages_with_docling,
         docling_configuration,
-        find_pages_needing_docling,
+        mineru_configuration,
         summarize_usage as summarize_docling_usage,
     )
 except ImportError:
@@ -61,12 +61,22 @@ except ImportError:
         DOCLING_HEADER,
         convert_pages_with_docling,
         docling_configuration,
-        find_pages_needing_docling,
+        mineru_configuration,
         summarize_usage as summarize_docling_usage,
     )
 
+try:
+    from .backends.mineru import MINERU_HEADER, convert_pages_with_mineru
+except ImportError:
+    from backends.mineru import MINERU_HEADER, convert_pages_with_mineru
+
+try:
+    from .backends.native import extract_native_links
+except ImportError:
+    from backends.native import extract_native_links
+
 SUPPORTED_EXTENSIONS = {".pdf", ".docx", ".pptx", ".xlsx"}
-CONVERSION_FORMAT_VERSION = 35
+CONVERSION_FORMAT_VERSION = 36
 PAGE_BREAK_PLACEHOLDER = "\n\n<!-- DOC_PAGE_BREAK -->\n\n"
 GROQ_VISION_MODEL = "qwen/qwen3.8-27b"
 GROQ_IMAGE_BATCH_SIZE = 3
@@ -579,10 +589,16 @@ def _pdf_ocr_configuration() -> dict[str, str]:
 
 
 def _configured_pdf_table_backend() -> str:
-    backend = os.environ.get("PDF_TABLE_BACKEND", "pdfplumber").strip().lower()
-    if backend not in {"pdfplumber", "hybrid", "table-transformer"}:
+    backend = os.environ.get("PDF_TABLE_BACKEND", "unstructured").strip().lower()
+    if backend not in {
+        "pdfplumber",
+        "unstructured",
+        "hybrid",
+        "table-transformer",
+    }:
         raise ValueError(
-            "PDF_TABLE_BACKEND must be pdfplumber, hybrid, or table-transformer"
+            "PDF_TABLE_BACKEND must be pdfplumber, unstructured, hybrid, "
+            "or table-transformer"
         )
     return backend
 
@@ -613,6 +629,9 @@ def output_token(relative_path: Path, source_sha256: str) -> str:
             "table_fallback": _configured_pdf_table_fallback(),
             "docling": docling_configuration(),
         }
+        mineru = mineru_configuration()
+        if mineru["enabled"]:
+            configuration["mineru"] = mineru
         configuration_json = json.dumps(
             configuration, sort_keys=True
         ).encode("utf-8")
@@ -2930,6 +2949,8 @@ def _unstructured_tables_by_page(
     source: Path,
     warnings: list[str],
     pages: set[int],
+    *,
+    strict: bool = False,
 ) -> dict[int, list[dict[str, Any]]]:
     try:
         pdf_partition = importlib.import_module(
@@ -2955,9 +2976,12 @@ def _unstructured_tables_by_page(
             languages=languages,
         )
     except Exception as error:
+        if strict:
+            raise RuntimeError(
+                f"Unstructured table extraction failed: {error}"
+            ) from error
         warnings.append(
-            f"Unstructured table fallback failed: {error}; "
-            "pdfplumber results were retained"
+            f"Unstructured table extraction failed: {error}"
         )
         return {}
 
@@ -3430,7 +3454,7 @@ def _merge_table_fallback(
             if candidate_quality > existing_quality + 0.1:
                 candidate["table_index"] = existing["table_index"]
                 candidate["alternative"] = {
-                    "extractor": existing.get("extractor", "pdfplumber"),
+                    "extractor": existing.get("extractor", "unstructured"),
                     "structure_score": round(existing_quality, 3),
                     "rows": existing["rows"],
                     "html": existing.get("html"),
@@ -3445,7 +3469,7 @@ def _merge_table_fallback(
                     "extractor": fallback_name,
                     "structure_score": round(candidate_quality, 3),
                     "rows": candidate["rows"],
-                    "html": candidate["html"],
+                    "html": candidate.get("html"),
                 }
                 warnings.append(
                     f"{fallback_label} alternative on PDF page "
@@ -3475,6 +3499,29 @@ def _pdf_tables_by_page(
     pages: set[int] | None = None,
 ) -> dict[int, list[dict[str, Any]]]:
     fallback_backend = _configured_pdf_table_fallback()
+    if backend == "unstructured":
+        import pymupdf
+
+        with pymupdf.open(source) as document:
+            candidate_pages = (
+                set(range(len(document))) if pages is None else pages
+            )
+        tables = _unstructured_tables_by_page(
+            source, warnings, candidate_pages, strict=True
+        )
+        if fallback_backend == "camelot":
+            candidate_pages = _table_fallback_candidate_pages(source, tables)
+            if pages is not None:
+                candidate_pages &= pages
+            if candidate_pages:
+                camelot_tables = _camelot_tables_by_page(
+                    source, warnings, candidate_pages,
+                )
+                tables = _merge_table_fallback(
+                    tables, camelot_tables, warnings, "camelot",
+                )
+        return tables
+
     pdfplumber_error: Exception | None = None
     try:
         pdfplumber_tables = _pdfplumber_tables_by_page(source, warnings)
@@ -3898,19 +3945,17 @@ def _build_toc_headers(document: Any) -> Any:
     return toc_headers(document)
 
 
-def _docling_pages_without_detected_tables(
-    docling_pages: dict[int, str],
-    tables_by_page: dict[int, list[dict[str, Any]]],
+def _pdf_pages_for_layout_extraction(
+    document: Any,
 ) -> dict[int, str]:
+    if not (
+        docling_configuration()["enabled"]
+        or mineru_configuration()["enabled"]
+    ):
+        return {}
     return {
-        page_index: reason
-        for page_index, reason in docling_pages.items()
-        if not tables_by_page.get(page_index)
-        or any(
-            _table_structure_quality(table) < 0.80
-            or _table_complexity(table["rows"])["is_complex"]
-            for table in tables_by_page[page_index]
-        )
+        page_index: "primary layout extraction"
+        for page_index in range(len(document))
     }
 
 
@@ -3925,6 +3970,14 @@ def convert_pdf_in_batches(
     import pymupdf4llm
 
     warnings = pdf_ocr_warnings(source)
+    if not (
+        docling_configuration()["enabled"]
+        or mineru_configuration()["enabled"]
+    ):
+        raise RuntimeError(
+            "PDF text extraction requires Docling or MinerU; enable at least "
+            "one with DOCLING_ENABLED or MINERU_ENABLED"
+        )
     ocr_backend = _configured_pdf_ocr_backend()
     tables_by_page = _pdf_tables_by_page(
         source,
@@ -3959,25 +4012,88 @@ def convert_pdf_in_batches(
         )
         repeated_furniture = _repeated_pdf_furniture(document)
         heading_font_sizes = _pdf_heading_font_sizes(document)
-        docling_pages = _docling_pages_without_detected_tables(
-            find_pages_needing_docling(document),
-            tables_by_page,
-        )
+        docling_pages = _pdf_pages_for_layout_extraction(document)
         docling_results: dict[int, str] = {}
+        native_links_by_page: dict[int, list[Any]] = {}
         if docling_pages:
-            print(
-                f"[PDF] {summarize_docling_usage(docling_pages)}",
-                flush=True,
-            )
-            docling_results = convert_pages_with_docling(
-                source, set(docling_pages), warnings
-            )
+            if docling_configuration()["enabled"]:
+                print(
+                    f"[PDF] {summarize_docling_usage(docling_pages)}",
+                    flush=True,
+                )
+            else:
+                print(
+                    f"[PDF] MinerU primary layout extraction: "
+                    f"{len(docling_pages)} pages",
+                    flush=True,
+                )
+            for page_index in docling_pages:
+                native_links_by_page[page_index] = extract_native_links(
+                    document[page_index]
+                )
+                if native_links_by_page[page_index]:
+                    reason = docling_pages[page_index]
+                    docling_pages[page_index] = (
+                        f"{reason}; HYPERLINK_RISK"
+                        if "HYPERLINK_RISK" not in reason
+                        else reason
+                    )
+            if docling_configuration()["enabled"]:
+                docling_results = convert_pages_with_docling(
+                    source,
+                    set(docling_pages),
+                    warnings,
+                    native_links_by_page,
+                )
             if docling_results:
                 print(
                     f"[PDF] Docling produced Markdown for "
                     f"{len(docling_results)}/{len(docling_pages)} flagged pages",
                     flush=True,
                 )
+        mineru_results: dict[int, str] = {}
+        mineru = mineru_configuration()
+        if mineru["enabled"] and docling_pages:
+            mineru_pages = set(docling_pages) - set(docling_results)
+            mineru_results = convert_pages_with_mineru(
+                source,
+                mineru_pages,
+                warnings,
+                native_links_by_page,
+                tier=mineru["tier"],
+                timeout_seconds=mineru["timeout_seconds"],
+                max_pages=mineru["max_pages"],
+            )
+            if mineru_results:
+                print(
+                    f"[PDF] MinerU produced Markdown for "
+                    f"{len(mineru_results)}/{len(mineru_pages)} fallback pages",
+                    flush=True,
+                )
+        layout_results = {**mineru_results, **docling_results}
+        layout_headers = {
+            page_index: (
+                MINERU_HEADER
+                if page_index in mineru_results
+                else DOCLING_HEADER
+            )
+            for page_index in layout_results
+        }
+        unconverted_layout_pages = set(docling_pages) - set(layout_results)
+        if unconverted_layout_pages:
+            pages = ", ".join(
+                str(page_index + 1)
+                for page_index in sorted(unconverted_layout_pages)[:10]
+            )
+            remaining = len(unconverted_layout_pages) - min(
+                len(unconverted_layout_pages), 10
+            )
+            if remaining:
+                pages += f", and {remaining} more"
+            raise RuntimeError(
+                "Docling and MinerU failed to produce Markdown for PDF "
+                f"page(s) {pages}; refusing to use the PyMuPDF text path"
+            )
 
         for first_page in range(total_pages):
             page_number = first_page + 1
@@ -3990,8 +4106,8 @@ def convert_pdf_in_batches(
                     if _markdown_images_exist(
                         existing, markdown_path.parent, image_dir
                     ) and (
-                        first_page not in docling_results
-                        or existing.startswith(DOCLING_HEADER)
+                        first_page not in layout_results
+                        or existing.startswith(layout_headers[first_page])
                     ):
                         cached_markdown = existing
                         page_tables = [
@@ -4012,7 +4128,7 @@ def convert_pdf_in_batches(
                     cached_markdown = None
 
             if cached_markdown is None:
-                if first_page in docling_results:
+                if first_page in layout_results:
                     page = document[first_page]
                     native_text_chars, image_coverage = (
                         _pdf_page_content_metrics(page)
@@ -4020,7 +4136,8 @@ def convert_pdf_in_batches(
                     ocr_text = ""
                     ocr_confirmed = False
                     if (
-                        not docling_configuration()["ocr"]
+                        first_page in docling_results
+                        and not docling_configuration()["ocr"]
                         and _pdf_page_needs_ocr(
                             native_text_chars, image_coverage
                         )
@@ -4044,7 +4161,7 @@ def convert_pdf_in_batches(
                                 "PDF_OCR_BACKEND is set to none"
                             )
                     cached_markdown = (
-                        DOCLING_HEADER + docling_results[first_page]
+                        layout_headers[first_page] + layout_results[first_page]
                     )
                     if ocr_text:
                         cached_markdown += (
@@ -4057,7 +4174,8 @@ def convert_pdf_in_batches(
                     markdown_pages.append(cached_markdown)
                     print(
                         f"[PDF] checkpointed page {page_number} "
-                        f"of {total_pages} (docling)",
+                        f"of {total_pages} "
+                        f"({layout_headers[first_page].split(': ')[1].split(' ')[0]})",
                         flush=True,
                     )
                     continue
@@ -4274,11 +4392,16 @@ def convert_pdf_in_batches(
                 atomic_write_text(checkpoint, page_markdown)
                 cached_markdown = page_markdown
 
-            if cached_markdown.startswith(DOCLING_HEADER):
+            if cached_markdown.startswith((DOCLING_HEADER, MINERU_HEADER)):
+                backend_name = (
+                    "mineru"
+                    if cached_markdown.startswith(MINERU_HEADER)
+                    else "docling"
+                )
                 markdown_pages.append(cached_markdown)
                 print(
                     f"[PDF] checkpointed page {page_number} "
-                    f"of {total_pages} (docling)",
+                    f"of {total_pages} ({backend_name})",
                     flush=True,
                 )
                 continue
@@ -4385,6 +4508,9 @@ def convert_file(
     if source.suffix.lower() == ".pdf":
         record["pdf_ocr"] = _pdf_ocr_configuration()
         record["docling"] = docling_configuration()
+        mineru = mineru_configuration()
+        if mineru["enabled"]:
+            record["mineru"] = mineru
         record["pdf_table"] = {
             "backend": _configured_pdf_table_backend(),
             "fallback": _configured_pdf_table_fallback(),
@@ -4824,6 +4950,9 @@ def recover_completed_output(
     if source.suffix.lower() == ".pdf":
         record["pdf_ocr"] = _pdf_ocr_configuration()
         record["docling"] = docling_configuration()
+        mineru = mineru_configuration()
+        if mineru["enabled"]:
+            record["mineru"] = mineru
         record["pdf_table"] = {
             "backend": _configured_pdf_table_backend(),
             "fallback": _configured_pdf_table_fallback(),

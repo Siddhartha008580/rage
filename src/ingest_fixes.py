@@ -548,13 +548,23 @@ def validate_environment() -> str | None:
     backend = os.environ.get("PDF_OCR_BACKEND", "tesseract").strip().lower()
     if backend not in {"tesseract", "paddle", "unstructured", "auto", "none"}:
         errors.append(f"Invalid PDF_OCR_BACKEND: {backend}")
-    table = os.environ.get("PDF_TABLE_BACKEND", "pdfplumber").strip().lower()
-    if table not in {"pdfplumber", "hybrid", "table-transformer"}:
+    table = os.environ.get("PDF_TABLE_BACKEND", "unstructured").strip().lower()
+    if table not in {
+        "pdfplumber",
+        "unstructured",
+        "hybrid",
+        "table-transformer",
+    }:
         errors.append(f"Invalid PDF_TABLE_BACKEND: {table}")
     fallback = os.environ.get("PDF_TABLE_FALLBACK", "none").strip().lower()
     if fallback not in {"none", "unstructured", "camelot"}:
         errors.append(f"Invalid PDF_TABLE_FALLBACK: {fallback}")
-    for module in ("pymupdf", "pymupdf4llm", "pdfplumber"):
+    required_modules = ["pymupdf", "pymupdf4llm"]
+    if table in {"pdfplumber", "hybrid", "table-transformer"}:
+        required_modules.append("pdfplumber")
+    elif table == "unstructured":
+        required_modules.append("unstructured")
+    for module in required_modules:
         if importlib.util.find_spec(module) is None:
             errors.append(f"Missing required module: {module}")
 

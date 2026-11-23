@@ -10,7 +10,7 @@ from src.ingest import (
     _insert_pdf_tables,
     _fence_unmarked_pdf_examples,
     _camelot_tables_by_page,
-    _docling_pages_without_detected_tables,
+    _pdf_pages_for_layout_extraction,
     _mark_pdf_table_continuations,
     _merge_pdf_table_continuations,
     _merge_unstructured_fallback,
@@ -36,9 +36,9 @@ from src.ingest import (
 
 
 class PDFTableFormattingTests(unittest.TestCase):
-    def test_pdfplumber_is_the_default_pdf_table_backend(self) -> None:
+    def test_unstructured_is_the_default_pdf_table_backend(self) -> None:
         with patch.dict("os.environ", {}, clear=True):
-            self.assertEqual(_configured_pdf_table_backend(), "pdfplumber")
+            self.assertEqual(_configured_pdf_table_backend(), "unstructured")
 
     def test_pdfplumber_is_a_selectable_pdf_table_backend(self) -> None:
         with patch.dict("os.environ", {"PDF_TABLE_BACKEND": "pdfplumber"}):
@@ -54,6 +54,59 @@ class PDFTableFormattingTests(unittest.TestCase):
 
         self.assertIs(result, expected_tables)
         extract.assert_called_once_with(None, [])
+
+    def test_unstructured_backend_uses_unstructured_extractor(self) -> None:
+        expected_tables = {0: [{"rows": [["A", "B"]]}]}
+
+        class Document(list):
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+        document = Document([None])
+        with (
+            patch.dict("os.environ", {}, clear=True),
+            patch.dict(
+                sys.modules,
+                {"pymupdf": SimpleNamespace(open=lambda _source: document)},
+            ),
+            patch(
+                "src.ingest._unstructured_tables_by_page",
+                return_value=expected_tables,
+            ) as extract,
+        ):
+            result = _pdf_tables_by_page(
+                Path("sample.pdf"), "unstructured", []
+            )
+
+        self.assertIs(result, expected_tables)
+        extract.assert_called_once_with(
+            Path("sample.pdf"), [], {0}, strict=True
+        )
+
+    def test_unstructured_primary_errors_are_surfaced(self) -> None:
+        class Document(list):
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args):
+                return False
+
+        with (
+            patch.dict("os.environ", {}, clear=True),
+            patch.dict(
+                sys.modules,
+                {"pymupdf": SimpleNamespace(open=lambda _source: Document([None]))},
+            ),
+            patch(
+                "src.ingest._unstructured_tables_by_page",
+                side_effect=RuntimeError("Unstructured unavailable"),
+            ),
+            self.assertRaisesRegex(RuntimeError, "Unstructured unavailable"),
+        ):
+            _pdf_tables_by_page(Path("sample.pdf"), "unstructured", [])
 
     def test_sparse_diagram_rows_are_not_classified_as_tables(self) -> None:
         diagram_rows = [
@@ -202,19 +255,27 @@ class PDFTableFormattingTests(unittest.TestCase):
         self.assertEqual(extracted["bbox"], (10, 30, 90, 90))
         self.assertEqual(extracted["extractor"], "camelot")
 
-    def test_docling_layout_fallback_skips_pages_with_extracted_tables(self) -> None:
-        pages = {
-            0: "multiple text columns (reading order)",
-            1: "aligned numeric column (potential table)",
-        }
+    def test_docling_primary_processes_every_page(self) -> None:
+        with patch.dict(
+            "os.environ",
+            {"DOCLING_ENABLED": "1", "MINERU_ENABLED": "0"},
+            clear=True,
+        ):
+            pages = _pdf_pages_for_layout_extraction(
+                [None, None, None],
+            )
 
-        self.assertEqual(
-            _docling_pages_without_detected_tables(
-                pages,
-                {1: [{"rows": [["A", "B"]]}]},
-            ),
-            {0: "multiple text columns (reading order)"},
-        )
+        self.assertEqual(set(pages), {0, 1, 2})
+
+    def test_pdf_layout_extraction_requires_docling_or_mineru(self) -> None:
+        with patch.dict(
+            "os.environ",
+            {"DOCLING_ENABLED": "0", "MINERU_ENABLED": "0"},
+            clear=True,
+        ):
+            pages = _pdf_pages_for_layout_extraction([None])
+
+        self.assertEqual(pages, {})
 
     def test_unstructured_fills_missing_pdfplumber_tables(self) -> None:
         fallback_table = {

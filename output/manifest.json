@@ -1,58 +1,265 @@
 {
   "status": "completed_with_errors",
-  "started_at": "2026-11-19T09:39:34.936055+00:00",
-  "finished_at": "2026-11-19T09:40:38.137673+00:00",
+  "started_at": "2026-11-23T06:54:13.780841+00:00",
+  "finished_at": "2026-11-23T08:46:34.906640+00:00",
   "records": [
     {
-      "source": "part24.pdf",
-      "source_sha256": "05fc3754c6539d7bf546165eeda0d060a3ad94640de61557a3e13b4dd88dbb8a",
+      "source": "CFR-2023-title21-vol1-part73.pdf",
       "format": ".pdf",
-      "format_version": 35,
+      "source_sha256": "ccf6e233946cead6b8b8d432fb6f594cf2f4108c3fcc9b0766c5ff8fc51c02b1",
+      "status": "failed",
+      "error": "Worker terminated by signal 15"
+    },
+    {
+      "source": "CFR-2023-title21-vol2-part139.pdf",
+      "format": ".pdf",
+      "source_sha256": "aef53f739fc8dc0d8e6ef1d022837ca1207c8163866ec6ab76f7c94604ee2bc4",
+      "status": "failed",
+      "error": "Worker terminated by signal 15"
+    },
+    {
+      "source": "CFR-2023-title27-vol1-part19.pdf",
+      "format": ".pdf",
+      "source_sha256": "75d4cce57d97a3cbb4b4a6f55c7c2848a22dfd1fbd67fccd554a61eda9e3c39a",
+      "status": "failed",
+      "error": "Worker terminated by signal 15"
+    },
+    {
+      "source": "CFR-2023-title27-vol1-part25.pdf",
+      "source_sha256": "5416f3397ad74d68b17dce9ed0be14eb35cc2da01842c30adfd0219360d67c4f",
+      "format": ".pdf",
+      "format_version": 36,
       "markdown": {
         "status": "converted",
-        "format_version": 35,
-        "output": "output/markdown/part24--eb42045058-05fc3754c653-ocr-51775f29-table-pdfplumber-fallback-none-v35.md",
-        "output_sha256": "0d1c9ca9b900c48df8f24dcd4928ebf4ae6c605e2061ca709dd11957e2427527",
-        "images": [
-          "output/markdown/images/part24--eb42045058-05fc3754c653-ocr-51775f29-table-pdfplumber-fallback-none-v35/part24.pdf-0001-00.png"
-        ]
+        "format_version": 36,
+        "output": "output/markdown/CFR-2023-title27-vol1-part25--8ab9762f04-5416f3397ad7-ocr-697f3601-table-unstructured-fallback-none-v36.md",
+        "output_sha256": "dd8079db35132a863a45c67b5d6c614fb0e501ed06ceea297e6c4a014609bc57",
+        "images": []
       },
       "pdf_ocr": {
         "backend": "tesseract",
         "languages": "eng"
       },
       "docling": {
-        "enabled": false,
+        "enabled": true,
         "ocr": false,
         "available": true
       },
+      "mineru": {
+        "enabled": true,
+        "available": true,
+        "tier": "standard",
+        "timeout_seconds": 300,
+        "max_pages": 20
+      },
       "pdf_table": {
-        "backend": "pdfplumber",
+        "backend": "unstructured",
         "fallback": "none"
       },
       "tables": {
         "status": "converted",
-        "output": "output/markdown/part24--eb42045058-05fc3754c653-ocr-51775f29-table-pdfplumber-fallback-none-v35.tables.json",
-        "output_sha256": "2a16c7258eac7e29b4c289d1709669dbccdc321fd12eef44fa2c34eb37efd6b1",
-        "count": 1
+        "output": "output/markdown/CFR-2023-title27-vol1-part25--8ab9762f04-5416f3397ad7-ocr-697f3601-table-unstructured-fallback-none-v36.tables.json",
+        "output_sha256": "996d565bc8bbf3c6404b0d52686619693a5c88ea8008fe257e56f8e361981de1",
+        "count": 3
       },
       "pages": {
         "status": "converted",
-        "output": "output/markdown/part24--eb42045058-05fc3754c653-ocr-51775f29-table-pdfplumber-fallback-none-v35.pages.json",
-        "output_sha256": "bd406875e0b6aa934971989cc712ea8592bf4db0a1a0e8649c149d6d107c4fed",
+        "output": "output/markdown/CFR-2023-title27-vol1-part25--8ab9762f04-5416f3397ad7-ocr-697f3601-table-unstructured-fallback-none-v36.pages.json",
+        "output_sha256": "099314e6d6b54fedd41ea52a4535d4e7ff5f7a0ef727fb40d86814578b600bd9",
+        "count": 53
+      },
+      "status": "converted"
+    },
+    {
+      "source": "part172.pdf",
+      "source_sha256": "547c70bf707cfe68efeaea33a88f46d5f89ddfaa967b4202187ac6d8bbb4b8e9",
+      "format": ".pdf",
+      "format_version": 36,
+      "markdown": {
+        "status": "converted",
+        "format_version": 36,
+        "output": "output/markdown/part172--7dd761ea7a-547c70bf707c-ocr-697f3601-table-unstructured-fallback-none-v36.md",
+        "output_sha256": "b4fe44a4422bc6d902a2c676359361342a8e88a382caac70a5c09a46f2f8d26a",
+        "images": []
+      },
+      "pdf_ocr": {
+        "backend": "tesseract",
+        "languages": "eng"
+      },
+      "docling": {
+        "enabled": true,
+        "ocr": false,
+        "available": true
+      },
+      "mineru": {
+        "enabled": true,
+        "available": true,
+        "tier": "standard",
+        "timeout_seconds": 300,
+        "max_pages": 20
+      },
+      "pdf_table": {
+        "backend": "unstructured",
+        "fallback": "none"
+      },
+      "tables": {
+        "status": "converted",
+        "output": "output/markdown/part172--7dd761ea7a-547c70bf707c-ocr-697f3601-table-unstructured-fallback-none-v36.tables.json",
+        "output_sha256": "5cc0de31c9199405d65f7021aca82a61158c643f5911c386c5171afbb78daa86",
+        "count": 48
+      },
+      "pages": {
+        "status": "converted",
+        "output": "output/markdown/part172--7dd761ea7a-547c70bf707c-ocr-697f3601-table-unstructured-fallback-none-v36.pages.json",
+        "output_sha256": "1ecd61f8fb7389da1c86660420dcfdd3f08c5daed8b8525677a5102376f8c81a",
+        "count": 98
+      },
+      "status": "converted"
+    },
+    {
+      "source": "part24.pdf",
+      "source_sha256": "05fc3754c6539d7bf546165eeda0d060a3ad94640de61557a3e13b4dd88dbb8a",
+      "format": ".pdf",
+      "format_version": 36,
+      "markdown": {
+        "status": "converted",
+        "format_version": 36,
+        "output": "output/markdown/part24--eb42045058-05fc3754c653-ocr-697f3601-table-unstructured-fallback-none-v36.md",
+        "output_sha256": "cad364873e7c09701664b1fbdee9b32ca010cfa1b2d93651856163e5d3fd2978",
+        "images": []
+      },
+      "pdf_ocr": {
+        "backend": "tesseract",
+        "languages": "eng"
+      },
+      "docling": {
+        "enabled": true,
+        "ocr": false,
+        "available": true
+      },
+      "mineru": {
+        "enabled": true,
+        "available": true,
+        "tier": "standard",
+        "timeout_seconds": 300,
+        "max_pages": 20
+      },
+      "pdf_table": {
+        "backend": "unstructured",
+        "fallback": "none"
+      },
+      "tables": {
+        "status": "converted",
+        "output": "output/markdown/part24--eb42045058-05fc3754c653-ocr-697f3601-table-unstructured-fallback-none-v36.tables.json",
+        "output_sha256": "9dd14be5ed169f191cb2b403a79b3ad20b8d31296cfd92e17a1aeab9654a1483",
+        "count": 10
+      },
+      "pages": {
+        "status": "converted",
+        "output": "output/markdown/part24--eb42045058-05fc3754c653-ocr-697f3601-table-unstructured-fallback-none-v36.pages.json",
+        "output_sha256": "e39b4b6aad0f4bbc19a03e1c136681db62622e342f88921b79bea19a22327e82",
         "count": 95
       },
-      "warnings": [
-        "Complex table on PDF page 36 was normalized into row-oriented Markdown; raw extraction is available in the tables sidecar"
-      ],
-      "status": "converted_with_warnings"
+      "status": "converted"
+    },
+    {
+      "source": "part317.pdf",
+      "source_sha256": "8b3ab282e426852fa29771452be3a2e23b0878b582379d69fc0f5ae12771578c",
+      "format": ".pdf",
+      "format_version": 36,
+      "markdown": {
+        "status": "converted",
+        "format_version": 36,
+        "output": "output/markdown/part317--eb8e8e07c8-8b3ab282e426-ocr-697f3601-table-unstructured-fallback-none-v36.md",
+        "output_sha256": "0b7b0bf6ddd83c9325649e75ae29ccfd909fefe3a73a129601f6239176df3f84",
+        "images": []
+      },
+      "pdf_ocr": {
+        "backend": "tesseract",
+        "languages": "eng"
+      },
+      "docling": {
+        "enabled": true,
+        "ocr": false,
+        "available": true
+      },
+      "mineru": {
+        "enabled": true,
+        "available": true,
+        "tier": "standard",
+        "timeout_seconds": 300,
+        "max_pages": 20
+      },
+      "pdf_table": {
+        "backend": "unstructured",
+        "fallback": "none"
+      },
+      "tables": {
+        "status": "converted",
+        "output": "output/markdown/part317--eb8e8e07c8-8b3ab282e426-ocr-697f3601-table-unstructured-fallback-none-v36.tables.json",
+        "output_sha256": "3ccd5edec397e3e32017d0b286723d2d51cbcc9af3968834073307b7e3ea6d1b",
+        "count": 5
+      },
+      "pages": {
+        "status": "converted",
+        "output": "output/markdown/part317--eb8e8e07c8-8b3ab282e426-ocr-697f3601-table-unstructured-fallback-none-v36.pages.json",
+        "output_sha256": "80d1d727144691aa6eea021693baef410f8990c2753671f5475d610346a6679f",
+        "count": 73
+      },
+      "status": "converted"
+    },
+    {
+      "source": "part58.pdf",
+      "source_sha256": "331fc624862d6958acd58f54e1240185f7f4dbdd784f9916f729baea6fad4b02",
+      "format": ".pdf",
+      "format_version": 36,
+      "markdown": {
+        "status": "converted",
+        "format_version": 36,
+        "output": "output/markdown/part58--f74535b6e7-331fc624862d-ocr-697f3601-table-unstructured-fallback-none-v36.md",
+        "output_sha256": "01e58e98f42e42f5d012a2465d46993e36f13a0a104c8077ce7d9928a06bae8c",
+        "images": []
+      },
+      "pdf_ocr": {
+        "backend": "tesseract",
+        "languages": "eng"
+      },
+      "docling": {
+        "enabled": true,
+        "ocr": false,
+        "available": true
+      },
+      "mineru": {
+        "enabled": true,
+        "available": true,
+        "tier": "standard",
+        "timeout_seconds": 300,
+        "max_pages": 20
+      },
+      "pdf_table": {
+        "backend": "unstructured",
+        "fallback": "none"
+      },
+      "tables": {
+        "status": "converted",
+        "output": "output/markdown/part58--f74535b6e7-331fc624862d-ocr-697f3601-table-unstructured-fallback-none-v36.tables.json",
+        "output_sha256": "44f9f0e7187c9ff20cf6644df6b5bb31e453ace68b0033bdd7d472cf906486bc",
+        "count": 11
+      },
+      "pages": {
+        "status": "converted",
+        "output": "output/markdown/part58--f74535b6e7-331fc624862d-ocr-697f3601-table-unstructured-fallback-none-v36.pages.json",
+        "output_sha256": "ccd307a416649f1900b9b6943fd6b33b6162add4a80a7845ed8be8b96019bca1",
+        "count": 78
+      },
+      "status": "converted"
     }
   ],
   "summary": {
-    "discovered": 1,
+    "discovered": 8,
     "reused": 0,
-    "converted": 0,
-    "warnings": 1,
-    "failed": 0
+    "converted": 5,
+    "warnings": 0,
+    "failed": 3
   }
 }

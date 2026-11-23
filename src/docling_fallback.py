@@ -5,6 +5,7 @@ import importlib.util
 import os
 import re
 from pathlib import Path
+import shutil
 from typing import Any
 
 
@@ -24,10 +25,41 @@ def _enabled(value: str | None) -> bool:
 
 def docling_configuration() -> dict[str, bool]:
     """Return settings that affect cached PDF conversion output."""
+    explicitly_enabled = os.environ.get("DOCLING_ENABLED")
+    if explicitly_enabled is not None:
+        enabled = _enabled(explicitly_enabled)
+    else:
+        enabled = not _enabled(os.environ.get("DOCLING_DISABLE"))
     return {
-        "enabled": not _enabled(os.environ.get("DOCLING_DISABLE")),
+        "enabled": enabled,
         "ocr": _enabled(os.environ.get("DOCLING_OCR")),
         "available": importlib.util.find_spec("docling") is not None,
+    }
+
+
+def mineru_configuration() -> dict[str, Any]:
+    tier = os.environ.get("MINERU_TIER", "standard").strip().lower()
+    if tier not in {"flash", "basic", "standard", "advanced"}:
+        raise ValueError(
+            "MINERU_TIER must be flash, basic, standard, or advanced"
+        )
+    try:
+        timeout = int(os.environ.get("MINERU_TIMEOUT_SECONDS", "300"))
+        max_pages = int(os.environ.get("MINERU_MAX_PAGES", "20"))
+    except ValueError as error:
+        raise ValueError(
+            "MINERU_TIMEOUT_SECONDS and MINERU_MAX_PAGES must be integers"
+        ) from error
+    if timeout < 1:
+        raise ValueError("MINERU_TIMEOUT_SECONDS must be at least 1")
+    if max_pages < 1:
+        raise ValueError("MINERU_MAX_PAGES must be at least 1")
+    return {
+        "enabled": _enabled(os.environ.get("MINERU_ENABLED", "1")),
+        "available": shutil.which("mineru-kit") is not None,
+        "tier": tier,
+        "timeout_seconds": timeout,
+        "max_pages": max_pages,
     }
 
 
@@ -173,8 +205,11 @@ def page_needs_docling(page: Any) -> tuple[bool, str]:
 
 
 def find_pages_needing_docling(document: Any) -> dict[int, str]:
-    """Return flagged zero-based page indices unless fallback is disabled."""
-    if not docling_configuration()["enabled"]:
+    """Return flagged zero-based page indices for enabled layout fallbacks."""
+    if not (
+        docling_configuration()["enabled"]
+        or mineru_configuration()["enabled"]
+    ):
         return {}
     pages: dict[int, str] = {}
     for page_index, page in enumerate(document):
@@ -198,6 +233,7 @@ def convert_pages_with_docling(
     source: Path,
     page_indices: set[int],
     warnings: list[str],
+    native_links_by_page: dict[int, list[Any]] | None = None,
 ) -> dict[int, str]:
     """Convert flagged pages, retaining standard-pipeline fallback on errors."""
     if not page_indices:
@@ -250,6 +286,22 @@ def convert_pages_with_docling(
             markdown = _strip_docling_page_artifacts(
                 conversion.document.export_to_markdown()
             )
+            if native_links_by_page:
+                native_links = native_links_by_page.get(page_index, [])
+                if native_links:
+                    try:
+                        from .backends.hyperlink_reinject import reinject_links
+                    except ImportError:
+                        from backends.hyperlink_reinject import reinject_links
+                    markdown, link_warnings = reinject_links(
+                        markdown,
+                        native_links,
+                        {},
+                    )
+                    warnings.extend(
+                        f"Page {page_index + 1}: {warning}"
+                        for warning in link_warnings
+                    )
             if markdown:
                 results[page_index] = markdown
             else:

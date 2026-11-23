@@ -1,0 +1,6 @@
+routing:
+  docling_confidence_threshold: 0.55
+  force_native_page_types: ["digital_text", "clean_table"]
+  max_docling_pages_per_document: 20
+  hyperlink_guard: true
+  coalesce_page_ranges: true

@@ -1,0 +1,6 @@
+{
+  "embedding_model": "BAAI/bge-base-en-v1.5",
+  "embedding_dimension": 768,
+  "index_version": "v5",
+  "chunk_count": 3504
+}
