@@ -12,10 +12,14 @@ from src.rag import (
     INDEX_MANIFEST,
     INDEX_VERSION,
     Chunk,
+    _build_source_inventory,
+    _source_fingerprint,
+    _update_lexical_index,
     _validate_index_manifest,
     build_chunks,
     build_index,
     build_lexical_index,
+    cmd_add,
     query_index,
     query_lexical_index,
     select_markdown_files,
@@ -23,6 +27,133 @@ from src.rag import (
 
 
 class RagChunkTests(unittest.TestCase):
+    def test_source_inventory_tracks_chunk_ids_and_sidecar_changes(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            output_dir = Path(directory) / "markdown"
+            source_dir = output_dir / "financial"
+            source_dir.mkdir(parents=True)
+            markdown_path = source_dir / "report.md"
+            markdown_path.write_text(
+                "# Revenue\n\nQuarterly revenue increased year over year.",
+                encoding="utf-8",
+            )
+            chunks = build_chunks(output_dir, [markdown_path])
+            inventory = _build_source_inventory(
+                output_dir, [markdown_path], chunks
+            )
+            record = inventory["financial/report.md"]
+            fingerprint = record["fingerprint"]
+
+            markdown_path.with_suffix(".tables.json").write_text(
+                '{"source_file":"report.pdf"}', encoding="utf-8"
+            )
+
+            self.assertTrue(record["chunk_ids"])
+            self.assertNotEqual(fingerprint, _source_fingerprint(markdown_path))
+
+    def test_incremental_lexical_update_replaces_old_document_text(self) -> None:
+        original = Chunk(
+            "replace-me", "obsolete terminology", "report.pdf", "financial",
+            1, "1", "", "", [], "prose", "", "", "[report.pdf p.1]", 0, 20,
+        )
+        updated = Chunk(
+            "replace-me", "current terminology", "report.pdf", "financial",
+            1, "1", "", "", [], "prose", "", "", "[report.pdf p.1]", 0, 20,
+        )
+        with tempfile.TemporaryDirectory() as directory:
+            index_dir = Path(directory)
+            build_lexical_index([original], index_dir)
+
+            _update_lexical_index(index_dir, {original.chunk_id}, [updated])
+
+            old_results = query_lexical_index(
+                index_dir, ["obsolete"], top_k=5
+            )
+            new_results = query_lexical_index(
+                index_dir, ["current"], top_k=5
+            )
+
+        self.assertEqual(old_results, [])
+        self.assertEqual([hit["id"] for hit in new_results], [updated.chunk_id])
+
+    def test_add_reindexes_only_changed_sources_and_removes_deleted_ids(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            output_dir = root / "output"
+            source_dir = output_dir / "finance"
+            source_dir.mkdir(parents=True)
+            changed_path = source_dir / "changed.md"
+            stable_path = source_dir / "stable.md"
+            changed_path.write_text("changed source", encoding="utf-8")
+            stable_path.write_text("stable source", encoding="utf-8")
+            index_dir = root / "index"
+            index_dir.mkdir()
+            stable_fingerprint = _source_fingerprint(stable_path)
+            manifest = {
+                "embedding_model": EMBED_MODEL,
+                "embedding_dimension": 768,
+                "index_version": INDEX_VERSION,
+                "chunk_count": 3,
+                "sources": {
+                    "finance/changed.md": {
+                        "fingerprint": "old-fingerprint",
+                        "chunk_ids": ["old-changed"],
+                    },
+                    "finance/stable.md": {
+                        "fingerprint": stable_fingerprint,
+                        "chunk_ids": ["stable-id"],
+                    },
+                    "finance/deleted.md": {
+                        "fingerprint": "deleted-fingerprint",
+                        "chunk_ids": ["old-deleted"],
+                    },
+                },
+            }
+            (index_dir / INDEX_MANIFEST).write_text(
+                json.dumps(manifest), encoding="utf-8"
+            )
+            changed_fingerprint = _source_fingerprint(changed_path)
+            replacement = Chunk(
+                "new-changed",
+                "changed body",
+                "changed.pdf",
+                "finance",
+                1,
+                "1",
+                "",
+                "",
+                [],
+                "prose",
+                "",
+                "",
+                "[changed.pdf p.1]",
+                0,
+                20,
+            )
+            with (
+                patch(
+                    "src.rag._build_source_inventory",
+                    return_value={
+                        "finance/changed.md": {
+                            "document_id": "123456789abc",
+                            "fingerprint": changed_fingerprint,
+                            "source": "changed.pdf",
+                            "chunk_ids": [replacement.chunk_id],
+                        }
+                    },
+                ),
+                patch("src.rag.build_chunks", return_value=[replacement]) as build,
+                patch("src.rag._apply_index_delta") as apply_delta,
+            ):
+                cmd_add(output_dir, index_dir)
+
+        build.assert_called_once_with(output_dir, [changed_path])
+        self.assertEqual(
+            apply_delta.call_args.args[3], {"old-changed", "old-deleted"}
+        )
+        self.assertEqual(apply_delta.call_args.args[4], [replacement])
+
+
     def test_ambiguous_conversion_variants_require_a_ledger_selection(self) -> None:
         markdown = (
             "# Dosage\n\n"

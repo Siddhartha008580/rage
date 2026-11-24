@@ -27,25 +27,31 @@ os.environ.setdefault("TOKENIZERS_PARALLELISM", "false")
 from pydantic import BaseModel, Field
 from mcp.server.fastmcp import FastMCP
 
-try:
-    from . import chat_rag as _rag_mod
-except ImportError:
+if __package__:
     try:
-        import chat_rag as _rag_mod  # type: ignore[no-redef]
-    except ImportError:
-        try:
-            from . import query as _rag_mod  # type: ignore[no-redef]
-        except ImportError:
-            import query as _rag_mod  # type: ignore[no-redef]
+        from . import chat_rag as _rag_mod
+    except ModuleNotFoundError as error:
+        if error.name != f"{__package__}.chat_rag":
+            raise
+        from . import query as _rag_mod  # type: ignore[no-redef]
+else:
+    try:
+        import chat_rag as _rag_mod
+    except ModuleNotFoundError as error:
+        if error.name != "chat_rag":
+            raise
+        import query as _rag_mod  # type: ignore[no-redef]
 
-try:
+if __package__:
     from .docgen import (
+        DOCS_DIR as _DEFAULT_DOCS_DIR,
         MAX_SECTIONS_HARD_CAP,
         generate_markdown,
         generate_with_markdown,
     )
-except ImportError:
+else:
     from docgen import (  # type: ignore[no-redef]
+        DOCS_DIR as _DEFAULT_DOCS_DIR,
         MAX_SECTIONS_HARD_CAP,
         generate_markdown,
         generate_with_markdown,
@@ -53,12 +59,19 @@ except ImportError:
 
 
 retrieve_chunks = _rag_mod.retrieve_chunks
+_heuristic_decompose = getattr(_rag_mod, "_heuristic_decompose", None)
+_select_retrieval_mode = getattr(_rag_mod, "_select_retrieval_mode", None)
 CONTEXT_TOKEN_BUDGET: int = int(getattr(_rag_mod, "CONTEXT_TOKEN_BUDGET", 12000))
+CANDIDATE_K: int = int(getattr(_rag_mod, "CANDIDATE_K", 50))
 RETRIEVAL_MODE: str = str(
-    getattr(_rag_mod, "RETRIEVAL_MODE", getattr(_rag_mod, "DEFAULT_RETRIEVAL_MODE", "hybrid"))
+    getattr(
+        _rag_mod,
+        "RETRIEVAL_MODE",
+        getattr(_rag_mod, "DEFAULT_RETRIEVAL_MODE", "hybrid"),
+    )
 )
 _DEFAULT_INDEX_DIR = Path(
-    getattr(_rag_mod, "INDEX_DIR", getattr(_rag_mod, "DEFAULT_INDEX_DIR", Path("./rag_index")))
+    getattr(_rag_mod, "INDEX_DIR", getattr(_rag_mod, "DEFAULT_INDEX_DIR", Path("index")))
 )
 
 
@@ -68,6 +81,27 @@ def _get_active_index_dir() -> Path:
     if env_dir:
         return Path(env_dir)
     return _DEFAULT_INDEX_DIR
+
+
+def _get_active_docs_dir() -> Path:
+    """Resolve the active generated-documents directory, honoring RAG_DOCS_DIR if set."""
+    env_dir = os.environ.get("RAG_DOCS_DIR", "").strip()
+    if env_dir:
+        return Path(env_dir)
+    return Path(_DEFAULT_DOCS_DIR)
+
+
+def _ensure_safe_output_path(path: Path | None, docs_dir: Path) -> Path | None:
+    """Verify that any generated output file path resolves inside the allowed docs_dir."""
+    if path is None:
+        return None
+    resolved_docs = docs_dir.resolve()
+    resolved_target = path.resolve()
+    if not resolved_target.is_relative_to(resolved_docs):
+        raise ValueError(
+            f"Output path {resolved_target} is outside allowed directory {resolved_docs}"
+        )
+    return resolved_target
 
 
 INDEX_DIR: Path = _get_active_index_dir()
@@ -82,11 +116,12 @@ mcp = FastMCP(
     name="knowledge-rag",
     instructions=(
         "Grounded retrieval and document generation over an indexed document corpus.\n\n"
-        "Use search_documents for factual questions; it returns cited source "
-        "excerpts. Use create_document only when the user explicitly asks for "
-        "a document, briefing, report, memo, or comparison write-up. That tool "
-        "generates and writes a PDF file. Use list_indexed_documents to "
-        "discover indexed sources and their major topics.\n\n"
+        "Use search_documents for factual questions, single-fact lookups, multi-hop rules, "
+        "and cross-document comparisons; it returns cited source excerpts. "
+        "Use create_document only when the user explicitly asks to generate/export "
+        "a PDF document, briefing, report, memo, worksheet, checklist, template, "
+        "form, guide, or comparison write-up. "
+        "Use list_indexed_documents to discover indexed sources and their major topics.\n\n"
         "Do not state facts that are not supported by tool results. If a tool "
         "returns no supporting material, say so instead of guessing."
     ),
@@ -166,7 +201,9 @@ def _normalize_hit(hit: dict[str, Any]) -> dict[str, Any]:
     """Normalize a raw chunk dict from retrieve_chunks() into a consistent schema."""
     meta = hit.get("metadata") or {}
     source = str(hit.get("source") or meta.get("source") or "unknown")
-    page_raw = hit.get("page") if hit.get("page") is not None else meta.get("pdf_page", 1)
+    page_raw = (
+        hit.get("page") if hit.get("page") is not None else meta.get("pdf_page", 1)
+    )
     try:
         page = int(page_raw)
     except (TypeError, ValueError):
@@ -175,8 +212,15 @@ def _normalize_hit(hit: dict[str, Any]) -> dict[str, Any]:
     citation = str(hit.get("citation") or f"[{source} p.{page}]")
     chunk_type = str(hit.get("chunk_type") or meta.get("chunk_type") or "prose")
     section_path = _coerce_section_path(
-        hit.get("section_path") if hit.get("section_path") is not None else meta.get("section_path")
+        hit.get("section_path")
+        if hit.get("section_path") is not None
+        else meta.get("section_path")
     )
+    if not section_path and (hit.get("section") or meta.get("section")):
+        section_path = _coerce_section_path(
+            hit.get("section") or meta.get("section")
+        )
+
     rerank_score = float(
         hit.get("rerank_score")
         if hit.get("rerank_score") is not None
@@ -184,7 +228,13 @@ def _normalize_hit(hit: dict[str, Any]) -> dict[str, Any]:
     )
     spectrag_raw = hit.get("spectrag_score")
     spectrag_score = float(spectrag_raw) if spectrag_raw is not None else None
-    text = str(hit.get("context_text") or hit.get("text") or "")
+
+    raw_text = str(hit.get("context_text") or hit.get("text") or "")
+    parent_text = str(meta.get("parent_text") or "")
+    if chunk_type == "table_row" and parent_text and parent_text not in raw_text:
+        text = f"{raw_text}\n\n[Table Context]\n{parent_text}"
+    else:
+        text = raw_text
 
     return {
         "id": str(hit.get("id") or ""),
@@ -198,6 +248,17 @@ def _normalize_hit(hit: dict[str, Any]) -> dict[str, Any]:
         "text": text,
         "domain": str(hit.get("domain") or meta.get("domain") or "uncategorized"),
     }
+
+
+def _matches_source_filter(hit_source: str, requested_source: str) -> bool:
+    """Match a chunk's source against a requested source filename, substring, or stem."""
+    h_low = hit_source.lower().strip()
+    r_low = requested_source.lower().strip()
+    if not r_low:
+        return True
+    if r_low in h_low or h_low in r_low:
+        return True
+    return Path(h_low).stem == Path(r_low).stem
 
 
 def _call_retrieve_chunks(
@@ -219,15 +280,54 @@ def _call_retrieve_chunks(
         p.kind == inspect.Parameter.VAR_KEYWORD for p in params.values()
     )
 
+    has_native_source_filter = "source_filter" in params or "source" in params
+    # If filtering by source post-retrieval, oversample so chunks from the target
+    # source are not crowded out by other documents before filtering.
+    request_top_k = (
+        min(max(top_k * 4, 24), CANDIDATE_K)
+        if (source and not has_native_source_filter)
+        else top_k
+    )
+    request_candidate_k = max(CANDIDATE_K, request_top_k * 2)
+
+    query_plan = None
+    effective_mode = retrieval_mode
+    if callable(_heuristic_decompose):
+        try:
+            plan_input = f"{source} {query}".strip() if source else query
+            decomp_sig = inspect.signature(_heuristic_decompose)
+            if "index_dir" in decomp_sig.parameters:
+                query_plan = _heuristic_decompose(
+                    plan_input, index_dir=index_dir
+                )
+            else:
+                query_plan = _heuristic_decompose(plan_input)
+            if callable(_select_retrieval_mode) and retrieval_mode == "hybrid":
+                selected_mode = _select_retrieval_mode(
+                    query,
+                    query_plan,
+                    retrieval_mode,
+                    table_only=table_only,
+                )
+                # Prefer spectrag/hybrid in synchronous MCP tool calls for low latency
+                if selected_mode in {"hybrid", "spectrag"}:
+                    effective_mode = selected_mode
+        except Exception:
+            query_plan = None
+
     kwargs: dict[str, Any] = {}
     if "top_k" in params or accepts_var_kw:
-        kwargs["top_k"] = top_k
+        kwargs["top_k"] = request_top_k
+    if "candidate_k" in params:
+        kwargs["candidate_k"] = request_candidate_k
     if "index_dir" in params or accepts_var_kw:
         kwargs["index_dir"] = index_dir
     if "retrieval_mode" in params or accepts_var_kw:
-        kwargs["retrieval_mode"] = retrieval_mode
+        kwargs["retrieval_mode"] = effective_mode
     if "token_budget" in params:
         kwargs["token_budget"] = token_budget
+    if query_plan is not None and "query_plan" in params:
+        kwargs["query_plan"] = query_plan
 
     if source:
         if "source_filter" in params:
@@ -256,15 +356,21 @@ def _call_retrieve_chunks(
     normalized = [_normalize_hit(h) for h in (raw_hits or [])]
 
     if source:
-        src_low = source.lower()
-        normalized = [h for h in normalized if src_low in h["source"].lower()]
+        normalized = [
+            h for h in normalized if _matches_source_filter(h["source"], source)
+        ]
     if domain:
-        dom_low = domain.lower()
+        dom_low = domain.lower().strip()
         normalized = [h for h in normalized if h["domain"].lower() == dom_low]
     if table_only:
-        normalized = [h for h in normalized if h["chunk_type"] == "table"]
+        normalized = [
+            h for h in normalized if h["chunk_type"] in {"table", "table_row"}
+        ]
     if page is not None:
         normalized = [h for h in normalized if h["page"] == int(page)]
+
+    # Sort descending by rerank_score so the most relevant chunks come first
+    normalized.sort(key=lambda h: (-float(h["rerank_score"]), h["id"]))
 
     if token_budget and token_budget > 0 and "token_budget" not in params:
         char_budget = token_budget * 4
@@ -292,7 +398,7 @@ def search_documents(
     max_chars_per_chunk: Annotated[
         int, Field(ge=1, le=MAX_CHARS_PER_CHUNK)
     ] = 1200,
-    retrieval_mode: Literal["hybrid", "spectrag"] = "hybrid",
+    retrieval_mode: Literal["hybrid", "spectrag", "agentic"] = "hybrid",
     token_budget: Annotated[int, Field(ge=1, le=100000)] = CONTEXT_TOKEN_BUDGET,
 ) -> SearchResult:
     """Search the corpus and return up to 20 cited source excerpts."""
@@ -404,12 +510,13 @@ def create_document(
     ] = 4,
     dry_run: bool = False,
 ) -> DocumentResult:
-    """Generate a grounded PDF briefing; writes a file unless dry_run."""
+    """Generate a grounded PDF document; writes a file unless dry_run."""
     request = request.strip()
     if not request:
         raise ValueError("request must not be empty")
 
     active_index_dir = _get_active_index_dir()
+    active_docs_dir = _get_active_docs_dir()
     started = time.monotonic()
 
     with contextlib.redirect_stdout(sys.stderr):
@@ -424,34 +531,68 @@ def create_document(
             path, markdown = generate_with_markdown(
                 request,
                 max_sections=max_sections,
+                output_dir=active_docs_dir,
                 index_dir=active_index_dir,
             )
-            result = _summarize_document(markdown, request, path=path)
+            safe_path = _ensure_safe_output_path(path, active_docs_dir)
+            result = _summarize_document(markdown, request, path=safe_path)
 
     result.warnings.append(f"generated in {time.monotonic() - started:.0f}s")
     return result
 
 
-@mcp.tool()
-def list_indexed_documents() -> IndexInventory:
-    """List sources in the current index, with distinct page counts, chunk counts, and sample headings."""
+def _load_metadatas_for_inventory(active_index_dir: Path) -> list[dict[str, Any]]:
+    """Load chunk metadata list from chunks.json (fast, lock-free) with ChromaDB fallback."""
+    chunks_path = active_index_dir / "chunks.json"
+    if chunks_path.exists():
+        try:
+            payload = json.loads(chunks_path.read_text(encoding="utf-8"))
+            raw_chunks = (
+                payload.get("chunks", [])
+                if isinstance(payload, dict)
+                else payload
+            )
+            if isinstance(raw_chunks, list) and raw_chunks:
+                metadatas: list[dict[str, Any]] = []
+                for item in raw_chunks:
+                    if not isinstance(item, dict):
+                        continue
+                    meta = dict(item.get("metadata") or {})
+                    for key in ("source", "domain", "pdf_page", "section", "section_path"):
+                        if key not in meta and item.get(key) is not None:
+                            meta[key] = item[key]
+                    metadatas.append(meta)
+                if metadatas:
+                    return metadatas
+        except Exception:
+            pass
+
     import chromadb
 
-    active_index_dir = _get_active_index_dir()
     with contextlib.redirect_stdout(sys.stderr):
         client = chromadb.PersistentClient(path=str(active_index_dir))
         try:
             collection = client.get_collection("documents")
         except Exception:
-            return IndexInventory(
-                index_dir=str(active_index_dir),
-                total_chunks=0,
-                documents=[],
-            )
+            return []
         data = collection.get(include=["metadatas"])
+    return [m for m in (data.get("metadatas") or []) if isinstance(m, dict)]
+
+
+@mcp.tool()
+def list_indexed_documents() -> IndexInventory:
+    """List sources in the current index, with distinct page counts, chunk counts, and sample headings."""
+    active_index_dir = _get_active_index_dir()
+    metadatas = _load_metadatas_for_inventory(active_index_dir)
+    if not metadatas:
+        return IndexInventory(
+            index_dir=str(active_index_dir),
+            total_chunks=0,
+            documents=[],
+        )
 
     aggregated: dict[str, dict[str, Any]] = {}
-    for metadata in data.get("metadatas") or []:
+    for metadata in metadatas:
         if not metadata:
             continue
         source = str(metadata.get("source", "unknown"))
@@ -466,14 +607,17 @@ def list_indexed_documents() -> IndexInventory:
             },
         )
         pages = entry["pages"]
-        if isinstance(pages, set):
-            pages.add(metadata.get("pdf_page", 0))
+        pdf_page = metadata.get("pdf_page")
+        if isinstance(pages, set) and pdf_page is not None:
+            pages.add(pdf_page)
         entry["chunks"] = int(entry["chunks"]) + 1
 
         sec_path = _coerce_section_path(metadata.get("section_path"))
+        if not sec_path and metadata.get("section"):
+            sec_path = _coerce_section_path(metadata.get("section"))
         if sec_path and len(entry["headings"]) < 8:
             top_h = sec_path[0]
-            if top_h not in entry["seen_headings"]:
+            if top_h and top_h not in entry["seen_headings"]:
                 entry["seen_headings"].add(top_h)
                 entry["headings"].append(top_h)
 
@@ -481,7 +625,7 @@ def list_indexed_documents() -> IndexInventory:
         DocumentInfo(
             source=source,
             domain=str(entry["domain"]),
-            pages=len(entry["pages"]),
+            pages=max(1, len(entry["pages"])) if entry["chunks"] > 0 else 0,
             chunks=int(entry["chunks"]),
             sample_headings=list(entry["headings"]),
         )

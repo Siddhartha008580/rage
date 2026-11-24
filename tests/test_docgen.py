@@ -1,4 +1,5 @@
 import unittest
+from pathlib import Path
 from unittest.mock import MagicMock, patch
 
 from src.docgen import (
@@ -8,12 +9,28 @@ from src.docgen import (
     _validate_outline,
     assemble,
     build_outline,
+    generate_with_markdown,
     gather_section_sources,
     write_section,
 )
 
 
 class DocgenTests(unittest.TestCase):
+    def test_generate_with_markdown_uses_requested_output_directory(self) -> None:
+        output_dir = Path("custom-documents")
+        with (
+            patch("src.docgen.generate_markdown", return_value="# Brief"),
+            patch("src.docgen.markdown_to_pdf") as render_pdf,
+        ):
+            path, markdown = generate_with_markdown(
+                "Write a brief", output_dir=output_dir
+            )
+
+        self.assertEqual(path.parent, output_dir)
+        self.assertEqual(path.suffix, ".pdf")
+        self.assertEqual(markdown, "# Brief")
+        render_pdf.assert_called_once_with("# Brief", path)
+
     def test_call_llm_does_not_retry_rate_limit_as_reasoning_fallback(self) -> None:
         class RateLimitError(Exception):
             status_code = 429

@@ -5,6 +5,7 @@ import argparse
 import asyncio
 import json
 import os
+import random
 import re
 import sys
 from pathlib import Path
@@ -14,41 +15,75 @@ from typing import Any
 MCP_BASE_URL = "https://openrouter.ai/api/v1"
 MAX_TOOL_ROUNDS = 6
 MAX_TOOL_COMPLETION_TOKENS = 4096
+OPENROUTER_TIMEOUT = float(os.environ.get("RAG_OPENROUTER_TIMEOUT", "90.0"))
+OPENROUTER_MAX_RETRIES = int(os.environ.get("RAG_OPENROUTER_MAX_RETRIES", "4"))
+MCP_INIT_TIMEOUT = float(os.environ.get("RAG_MCP_INIT_TIMEOUT", "45.0"))
+MCP_EXECUTION_TIMEOUT = float(os.environ.get("RAG_MCP_EXECUTION_TIMEOUT", "240.0"))
 CHAT_PIPELINE_TOOL_NAMES = {"search_documents"}
 
 # Targeted intent patterns so ordinary factual questions ("check if...", "show me the rule...")
 # do not spawn unnecessary MCP subprocesses and LLM router round-trips.
 DOC_GENERATION_INTENT_RE = re.compile(
     r"(?:"
-    r"\b(?:create|generate|write|draft|prepare|produce|make|build|export|compile|render|save)\b"
-    r".{0,45}?"
-    r"\b(?:pdf|document|doc|briefing|report|memo|memorandum|write-?up|dossier|guide|handout|paper|file|index)\b"
+    r"\b(?:create|generate|write|draft|prepare|produce|make|build|export|compile|render|save|design|assemble|put\s+together)\b"
+    r"\s+(?:me\s+)?(?:a|an|the|our|this|new|comprehensive|detailed|grounded|summary|formal|short|brief)?\s*"
+    r"(?:[\w\-]+\s+){0,4}?"
+    r"\b(?:pdf|document|doc|briefing|report|memo|memorandum|write-?up|dossier|guide|handout|worksheet|checklist|template|form|rubric|scorecard|fact\s+sheet|one[- ]pager|whitepaper|comparison)\b"
     r"|"
-    r"\b(?:pdf|document|briefing|report|memo|write-?up)\b"
+    r"\b(?:pdf|document|briefing|report|memo|worksheet|checklist|template|form|rubric|scorecard|fact\s+sheet|one[- ]pager|guide|handout|comparison)\b"
     r".{0,30}?"
-    r"\b(?:create|generate|write|draft|prepare|produce|make|build|export)\b"
+    r"\b(?:create|generate|write|draft|prepare|produce|make|build|export|compile|render|save|design|assemble)\b"
     r"|"
-    r"\b(?:as\s+a\s+pdf|to\s+pdf|into\s+a\s+pdf|pdf\s+report|pdf\s+briefing|briefing\s+document)\b"
+    r"\b(?:as\s+a\s+pdf|to\s+pdf|into\s+a\s+pdf|export\s+to\s+pdf|save\s+as\s+pdf)\b"
     r")",
+    re.IGNORECASE | re.DOTALL,
+)
+
+CONVERT_TO_DOCUMENT_RE = re.compile(
+    r"\b(?:turn|convert|transform)\s+(?:this|these|it|them|my|our)?\s*"
+    r".{0,80}?\binto\s+(?:a|an|the)?\s*"
+    r"(?:pdf|document|briefing|report|memo|worksheet|checklist|template|form|guide|handout)\b",
     re.IGNORECASE | re.DOTALL,
 )
 
 INVENTORY_INTENT_RE = re.compile(
     r"(?:"
-    r"\b(?:list|show|what|which|display|inspect|inventory)\b"
-    r".{0,35}?"
-    r"\b(?:indexed|documents|files|sources|pdfs|corpus|database|collection|available\s+sources)\b"
+    r"\b(?:list|show|display|inspect|inventory)\b"
+    r"\s+(?:all\s+|the\s+|me\s+the\s+|available\s+|indexed\s+)*"
+    r"\b(?:indexed\s+documents|indexed\s+files|indexed\s+sources|documents\s+in\s+the\s+(?:index|corpus|database|collection)|"
+    r"files\s+in\s+the\s+(?:index|corpus|database|collection)|sources\s+in\s+the\s+(?:index|corpus|database|collection)|"
+    r"corpus\s+inventory|available\s+sources|available\s+documents|indexed\s+corpus)\b"
     r"|"
-    r"\b(?:what|which)\s+(?:documents|files|sources|pdfs)\s+(?:are|do\s+you\s+have|exist)\b"
+    r"\b(?:what|which)\s+(?:documents|files|sources|pdfs)\s+"
+    r"(?:are\s+(?:indexed|in\s+the\s+(?:index|corpus|database|collection)|available)|"
+    r"do\s+you\s+have(?:\s+indexed|\s+in\s+the\s+corpus)?|"
+    r"exist\s+in\s+the\s+(?:index|corpus|database|collection))\b"
     r")",
     re.IGNORECASE | re.DOTALL,
+)
+
+# Guard against factual corpus questions being misclassified as tool requests:
+# e.g. "Which documents mention X?", "Which sources govern Y?", "When must a party prepare a report?"
+FACTUAL_CORPUS_QUERY_GUARD_RE = re.compile(
+    r"(?:"
+    r"\b(?:which|what)\s+(?:of\s+the\s+)?(?:[\w\-]+\s+)?(?:documents|files|sources|pdfs|sections|parts|subparts|provisions|tables)\s+"
+    r"(?:mention\w*|discuss\w*|govern\w*|bear\s+on|apply\s+to|address\w*|cover\w*|contain\w*|state\w*|require\w*|specify|define\w*|prohibit\w*|allow\w*|permit\w*|say|deal\s+with|talk\s+about)\b"
+    r"|"
+    r"\b(?:when|why|how\s+often|under\s+what\s+conditions|who)\s+(?:must|should|shall|does|do|is|are|may|can)\b"
+    r".{0,40}?\b(?:prepare|file|submit|maintain|keep|produce|draft|write|make)\s+(?:a|an|the)?\s*(?:report|document|filing|record|notice|statement)\b"
+    r")",
+    re.IGNORECASE | re.DOTALL,
+)
+
+HOW_TO_QUERY_RE = re.compile(
+    r"^\s*how\s+(?:to|do|does|can|should|would)\b",
+    re.IGNORECASE,
 )
 
 EXPLICIT_TOOL_INTENT_RE = re.compile(
     r"\b(?:mcp|use\s+tool|call\s+tool|create_document|list_indexed_documents)\b",
     re.IGNORECASE,
 )
-
 
 TOOL_ROUTER_SYSTEM = """You route explicit user requests to available MCP tools.
 Call a tool only when the user clearly asks to perform an action that the tool
@@ -63,15 +98,37 @@ results clearly and accurately, including the output file path, title, grounded
 section count, citations, and any warnings or errors."""
 
 
+def _strip_think_tags(raw: str) -> str:
+    """Remove closed or unclosed <think>...</think> blocks from model outputs."""
+    if not raw:
+        return ""
+    cleaned = re.sub(r"<think>.*?</think>", "", raw, flags=re.DOTALL).strip()
+    if "</think>" in cleaned:
+        cleaned = cleaned.split("</think>")[-1].strip()
+    elif cleaned.startswith("<think>"):
+        cleaned = cleaned[len("<think>") :].strip()
+    return cleaned
+
+
 def has_tool_intent(query: str) -> bool:
     """Return True only when the query plausibly requests a routable MCP tool."""
     q = (query or "").strip()
     if not q:
         return False
+    if EXPLICIT_TOOL_INTENT_RE.search(q):
+        return True
+    if HOW_TO_QUERY_RE.search(q):
+        return False
+    if FACTUAL_CORPUS_QUERY_GUARD_RE.search(q) and not re.search(
+        r"\b(?:as\s+a\s+pdf|to\s+pdf|into\s+a\s+pdf|pdf\s+report|pdf\s+briefing)\b",
+        q,
+        re.IGNORECASE,
+    ):
+        return False
     return bool(
         DOC_GENERATION_INTENT_RE.search(q)
+        or CONVERT_TO_DOCUMENT_RE.search(q)
         or INVENTORY_INTENT_RE.search(q)
-        or EXPLICIT_TOOL_INTENT_RE.search(q)
     )
 
 
@@ -175,7 +232,7 @@ def _sanitize_assistant_message(message: Any) -> dict[str, Any]:
     """Build a clean OpenAI-compatible assistant message dict without provider-specific clutter."""
     msg: dict[str, Any] = {
         "role": "assistant",
-        "content": message.content or "",
+        "content": _strip_think_tags(message.content or ""),
     }
     if getattr(message, "tool_calls", None):
         msg["tool_calls"] = [
@@ -190,6 +247,95 @@ def _sanitize_assistant_message(message: Any) -> dict[str, Any]:
             for tc in message.tool_calls
         ]
     return msg
+
+
+def _is_retryable_api_error(exc: Exception) -> bool:
+    status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
+    if isinstance(status, int) and (status == 429 or status >= 500):
+        return True
+    name = type(exc).__name__.lower()
+    if any(
+        token in name
+        for token in (
+            "ratelimit",
+            "timeout",
+            "connection",
+            "internalserver",
+            "serviceunavailable",
+            "apiconnection",
+        )
+    ):
+        return True
+    msg = str(exc).lower()
+    return any(
+        token in msg
+        for token in (
+            "429",
+            "rate limit",
+            "timed out",
+            "timeout",
+            "502",
+            "503",
+            "504",
+            "overloaded",
+            "temporarily unavailable",
+            "connection reset",
+        )
+    )
+
+
+async def _create_router_completion(
+    client: Any,
+    request_options: dict[str, Any],
+) -> Any:
+    """Call OpenRouter with automatic extra_body fallback and exponential backoff."""
+    attempts = max(1, OPENROUTER_MAX_RETRIES)
+    opts = dict(request_options)
+    last_exc: Exception | None = None
+
+    for attempt in range(attempts):
+        try:
+            response = await client.chat.completions.create(**opts)
+            if getattr(response, "choices", None):
+                return response
+            last_exc = RuntimeError("OpenRouter returned no tool-routing choices")
+        except Exception as exc:
+            last_exc = exc
+            status = getattr(exc, "status_code", None) or getattr(exc, "status", None)
+            if "extra_body" in opts and (
+                status in (400, 422) or not _is_retryable_api_error(exc)
+            ):
+                opts.pop("extra_body", None)
+                try:
+                    response = await client.chat.completions.create(**opts)
+                    if getattr(response, "choices", None):
+                        return response
+                except Exception as fallback_exc:
+                    last_exc = fallback_exc
+                    if not _is_retryable_api_error(fallback_exc):
+                        raise
+            elif not _is_retryable_api_error(exc):
+                raise
+
+        if attempt + 1 < attempts:
+            await asyncio.sleep(
+                min(10.0, (1.6 ** attempt) + random.uniform(0.15, 0.65))
+            )
+
+    if last_exc is not None:
+        raise last_exc
+    raise RuntimeError("OpenRouter returned no tool-routing choices")
+
+
+def _resolve_server_and_root() -> tuple[Path, Path]:
+    """Locate mcp_server.py and the project working directory whether in root or src/."""
+    here = Path(__file__).resolve()
+    server_path = here.with_name("mcp_server.py")
+    if here.parent.name == "src":
+        project_root = here.parents[1]
+    else:
+        project_root = here.parent
+    return server_path, project_root
 
 
 async def _route_mcp_tools(
@@ -210,8 +356,7 @@ async def _route_mcp_tools(
             "install dependencies with: pip install -r requirements.txt"
         ) from exc
 
-    project_root = Path(__file__).resolve().parents[1]
-    server_path = Path(__file__).resolve().with_name("mcp_server.py")
+    server_path, project_root = _resolve_server_and_root()
     server_env = os.environ.copy()
     server_env["RAG_INDEX_DIR"] = str(index_dir.resolve())
     server_env["HF_HUB_DISABLE_PROGRESS_BARS"] = "1"
@@ -231,15 +376,19 @@ async def _route_mcp_tools(
     client = AsyncOpenAI(
         base_url=MCP_BASE_URL,
         api_key=api_key,
-        timeout=180.0,
+        timeout=OPENROUTER_TIMEOUT,
+        max_retries=OPENROUTER_MAX_RETRIES,
     )
 
     async with (
         stdio_client(server_params) as (read_stream, write_stream),
         ClientSession(read_stream, write_stream) as session,
     ):
-        await session.initialize()
-        available_tools = (await session.list_tools()).tools
+        await asyncio.wait_for(session.initialize(), timeout=MCP_INIT_TIMEOUT)
+        tools_response = await asyncio.wait_for(
+            session.list_tools(), timeout=MCP_INIT_TIMEOUT
+        )
+        available_tools = tools_response.tools
         routable_tools = [
             tool
             for tool in available_tools
@@ -250,6 +399,15 @@ async def _route_mcp_tools(
             return None
 
         known_tool_names = {tool.name for tool in routable_tools}
+        force_document_tool = bool(
+            DOC_GENERATION_INTENT_RE.search(query)
+            or CONVERT_TO_DOCUMENT_RE.search(query)
+        )
+        if force_document_tool and "create_document" not in known_tool_names:
+            raise RuntimeError(
+                "Document generation was requested, but the MCP server does "
+                "not expose create_document."
+            )
         messages: list[dict[str, Any]] = [
             {"role": "system", "content": TOOL_ROUTER_SYSTEM}
         ]
@@ -273,13 +431,22 @@ async def _route_mcp_tools(
                 "temperature": 0.1,
                 "max_tokens": MAX_TOOL_COMPLETION_TOKENS,
             }
+            if force_document_tool and round_number == 1:
+                request_options["tool_choice"] = {
+                    "type": "function",
+                    "function": {"name": "create_document"},
+                }
             if reasoning_effort and reasoning_effort != "none":
-                router_effort = "low" if reasoning_effort in {"medium", "high"} else reasoning_effort
+                router_effort = (
+                    "low"
+                    if reasoning_effort in {"medium", "high"}
+                    else reasoning_effort
+                )
                 request_options["extra_body"] = {
                     "reasoning": {"effort": router_effort}
                 }
 
-            response = await client.chat.completions.create(**request_options)
+            response = await _create_router_completion(client, request_options)
             if not response.choices:
                 raise RuntimeError("OpenRouter returned no tool-routing choices")
 
@@ -289,7 +456,7 @@ async def _route_mcp_tools(
             if not message.tool_calls:
                 if not executed_tools:
                     return None
-                final_text = (message.content or "").strip()
+                final_text = _strip_think_tags((message.content or "").strip())
                 if final_text:
                     return final_text
                 return _format_fallback_tool_summary(executed_tools)
@@ -317,7 +484,10 @@ async def _route_mcp_tools(
                     f"[mcp tool {round_number}] {name}({arguments})",
                     file=sys.stderr,
                 )
-                result = await session.call_tool(name, arguments)
+                result = await asyncio.wait_for(
+                    session.call_tool(name, arguments),
+                    timeout=MCP_EXECUTION_TIMEOUT,
+                )
                 error = _tool_error(result, name)
                 if error:
                     raise RuntimeError(error)
@@ -353,12 +523,15 @@ def route_mcp_tools(
         return None
     try:
         return asyncio.run(
-            _route_mcp_tools(
-                query,
-                index_dir=index_dir,
-                model=model,
-                reasoning_effort=reasoning_effort,
-                history=history,
+            asyncio.wait_for(
+                _route_mcp_tools(
+                    query,
+                    index_dir=index_dir,
+                    model=model,
+                    reasoning_effort=reasoning_effort,
+                    history=history,
+                ),
+                timeout=MCP_EXECUTION_TIMEOUT + 30.0,
             )
         )
     except (ImportError, RuntimeError, ValueError):
@@ -378,12 +551,14 @@ def main() -> None:
     parser.add_argument(
         "--index",
         type=Path,
-        default=Path(os.environ.get("RAG_INDEX_DIR", "./rag_index")),
+        default=Path(os.environ.get("RAG_INDEX_DIR", "index")),
         help="Path to the RAG index directory",
     )
     parser.add_argument(
         "--model",
-        default=os.environ.get("OPENROUTER_MODEL", "nvidia/nemotron-3-super-120b-a12b:free"),
+        default=os.environ.get(
+            "OPENROUTER_MODEL", "nvidia/nemotron-3-ultra-550b-a55b:free"
+        ),
         help="OpenRouter model ID",
     )
     parser.add_argument(
