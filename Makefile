@@ -1,13 +1,15 @@
 .PHONY: test benchmark-baseline benchmark-hybrid bench-diff
 
+PYTHON ?= python
+
 test:
-	pytest -q tests/
+	$(PYTHON) -m pytest -q tests/
 
 benchmark-baseline:
-	@echo "No benchmark fixtures are committed; baseline benchmark is not yet runnable"
+	$(PYTHON) scripts/eval_retrieval.py --mode vector --index-dir index
 
 benchmark-hybrid:
-	@echo "No benchmark fixtures are committed; hybrid benchmark is not yet runnable"
+	$(PYTHON) scripts/eval_retrieval.py --mode hybrid --index-dir index
 
 bench-diff:
-	@echo "No benchmark results are committed; benchmark diff is not yet runnable"
+	$(PYTHON) scripts/eval_answers.py --index-dir index

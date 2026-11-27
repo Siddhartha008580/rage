@@ -43,35 +43,10 @@ FIGURE_CAPTION_PATTERN = re.compile(
 )
 
 
-def format_markdown(
-    markdown: str,
-    first_page: int = 1,
-    page_label_prefix: str = "Page",
-    printed_page_labels: list[str | None] | None = None,
-) -> str:
-    page_number = first_page
-
-    def replace_page_break(_match: re.Match[str]) -> str:
-        nonlocal page_number
-        printed_index = page_number - first_page
-        printed_page = (
-            printed_page_labels[printed_index]
-            if printed_page_labels and printed_index < len(printed_page_labels)
-            else None
-        )
-        marker = f"\n\n> **{page_label_prefix} {page_number}"
-        if printed_page:
-            marker += f" (printed page {printed_page})"
-        marker += "**\n\n"
-        page_number += 1
-        return marker
-
-    markdown = re.sub(
-        re.escape(PAGE_BREAK_PLACEHOLDER),
-        replace_page_break,
-        markdown,
-    )
-    return markdown
+if __package__:
+    from .ingest_fixes import format_markdown
+else:
+    from ingest_fixes import format_markdown
 
 
 def _normalized_heading_text(text: str) -> str:

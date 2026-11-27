@@ -45,6 +45,14 @@ if __package__:
         sanitize_fts_terms as _sanitize_fts_terms,
         update_lexical_index as _update_lexical_index,
     )
+    from .indexing.vector import (
+        embed_documents as _embed_documents,
+        embed_texts,
+        embedding_model as _embedding_model,
+        embedding_model_cached as _embedding_model_cached,
+        encode_texts as _encode_texts,
+        get_chroma_client as _get_chroma_client,
+    )
     from .locking import file_lock
     from .spectrag import (
         ChunkGraph,
@@ -65,6 +73,14 @@ else:
         query_lexical_index,
         sanitize_fts_terms as _sanitize_fts_terms,
         update_lexical_index as _update_lexical_index,
+    )
+    from indexing.vector import (
+        embed_documents as _embed_documents,
+        embed_texts,
+        embedding_model as _embedding_model,
+        embedding_model_cached as _embedding_model_cached,
+        encode_texts as _encode_texts,
+        get_chroma_client as _get_chroma_client,
     )
     from locking import file_lock
     from spectrag import (
@@ -207,14 +223,6 @@ ABBREVIATIONS = frozenset(
         "vs", "v", "etc", "al", "eg", "ie", "cf", "inc", "ltd", "co", "corp",
     }
 )
-def _get_chroma_client(index_dir: Path, *, reset: bool = False) -> Any:
-    """Return a thread-safe cached ChromaDB PersistentClient for index_dir."""
-    import chromadb
-    key = str(index_dir.resolve())
-    with _CHROMA_LOCK:
-        if reset or key not in _CHROMA_CLIENTS:
-            _CHROMA_CLIENTS[key] = chromadb.PersistentClient(path=str(index_dir))
-        return _CHROMA_CLIENTS[key]
 # ---------------------------------------------------------------- noise
 def strip_noise(text: str) -> str:
     out = []
@@ -1290,54 +1298,7 @@ def _build_source_inventory(
 
 # ---------------------------------------------------------------- index
 @lru_cache(maxsize=1)
-def _embedding_model_cached() -> Any:
-    from sentence_transformers import SentenceTransformer
-    return SentenceTransformer(EMBED_MODEL)
-def _embedding_model() -> Any:
-    with _EMBEDDER_LOCK:
-        return _embedding_model_cached()
-def _encode_texts(
-    texts: list[str],
-) -> list[list[float]]:
-    if not texts:
-        return []
-    with _EMBEDDER_LOCK:
-        model = _embedding_model()
 
-        def encode(batch: list[str], batch_size: int):
-            for attempt in range(3):
-                try:
-                    return model.encode(
-                        batch,
-                        batch_size=batch_size,
-                        normalize_embeddings=True,
-                        convert_to_numpy=True,
-                        show_progress_bar=False,
-                    )
-                except (OSError, TimeoutError, RuntimeError):
-                    if attempt == 2:
-                        raise
-                    time.sleep(0.25 * (2**attempt))
-
-        try:
-            embeddings = encode(texts, max(1, EMBED_BATCH_SIZE))
-        except RuntimeError:
-            embeddings = encode(texts, 1)
-    return embeddings.tolist()
-def embed_texts(texts: list[str]) -> list[list[float]]:
-    """Embed search queries with BGE's asymmetric query instruction prefix."""
-    if not texts:
-        return []
-    prefixed = [
-        text
-        if text.startswith(BGE_QUERY_PREFIX)
-        else f"{BGE_QUERY_PREFIX}{text}"
-        for text in texts
-    ]
-    return _encode_texts(prefixed)
-def _embed_documents(texts: list[str]) -> list[list[float]]:
-    """Embed indexed passages without a query prompt."""
-    return _encode_texts(texts)
 def _validate_index_manifest(index_dir: Path, query_dimension: int) -> None:
     manifest_path = index_dir / INDEX_MANIFEST
     if not manifest_path.is_file():
