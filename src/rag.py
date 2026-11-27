@@ -31,18 +31,16 @@ import tempfile
 import threading
 import time
 from typing import Any
-try:
-    import fcntl
-except ImportError:
-    fcntl = None
-try:
+if __package__:
+    from .locking import file_lock
     from .spectrag import (
         ChunkGraph,
         build_chunk_graph,
         generate_utility_questions,
         load_utility_questions,
     )
-except ImportError:
+else:
+    from locking import file_lock
     from spectrag import (
         ChunkGraph,
         build_chunk_graph,
@@ -72,15 +70,8 @@ _CHUNKS_BY_ID_CACHE: dict[str, tuple[float, dict[str, dict[str, Any]]]] = {}
 
 @contextmanager
 def _index_file_lock(index_dir: Path):
-    index_dir.mkdir(parents=True, exist_ok=True)
-    with (index_dir / ".index.lock").open("a+") as lock_file:
-        if fcntl is not None:
-            fcntl.flock(lock_file.fileno(), fcntl.LOCK_EX)
-        try:
-            yield
-        finally:
-            if fcntl is not None:
-                fcntl.flock(lock_file.fileno(), fcntl.LOCK_UN)
+    with file_lock(index_dir / ".index.lock"):
+        yield
 
 
 NOISE_LINE_RE = re.compile(

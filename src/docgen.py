@@ -32,25 +32,11 @@ def _load_dotenv() -> None:
 
 _load_dotenv()
 
-_BACKEND_MOD: Any = None
-for _mod_candidate in (
-    f"{__package__}.chat_rag" if __package__ else "chat_rag",
-    "chat_rag",
-    f"{__package__}.query" if __package__ else "query",
-    "query",
-):
-    try:
-        _BACKEND_MOD = importlib.import_module(_mod_candidate)
-        break
-    except ModuleNotFoundError as error:
-        if error.name != _mod_candidate and not str(error.name).startswith(
-            f"{_mod_candidate}."
-        ):
-            raise
-        continue
-
-if _BACKEND_MOD is None or not hasattr(_BACKEND_MOD, "retrieve_chunks"):
-    raise ImportError("Unable to import a retrieval backend (`chat_rag` or `query`) with `retrieve_chunks`")
+_BACKEND_MOD = importlib.import_module(
+    f"{__package__}.chat_rag" if __package__ else "chat_rag"
+)
+if not hasattr(_BACKEND_MOD, "retrieve_chunks"):
+    raise ImportError("Unable to import `chat_rag` with `retrieve_chunks`")
 
 retrieve_chunks = _BACKEND_MOD.retrieve_chunks
 INDEX_DIR: Path = getattr(

@@ -28,19 +28,9 @@ from pydantic import BaseModel, Field
 from mcp.server.fastmcp import FastMCP
 
 if __package__:
-    try:
-        from . import chat_rag as _rag_mod
-    except ModuleNotFoundError as error:
-        if error.name != f"{__package__}.chat_rag":
-            raise
-        from . import query as _rag_mod  # type: ignore[no-redef]
+    from . import chat_rag as _rag_mod
 else:
-    try:
-        import chat_rag as _rag_mod
-    except ModuleNotFoundError as error:
-        if error.name != "chat_rag":
-            raise
-        import query as _rag_mod  # type: ignore[no-redef]
+    import chat_rag as _rag_mod
 
 if __package__:
     from .docgen import (
